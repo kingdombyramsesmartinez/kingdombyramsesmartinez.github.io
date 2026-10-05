@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sustituye SITIO-PUBLICO.example por el dominio HTTPS real antes de renombrar este archivo como sitemap.xml. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://SITIO-PUBLICO.example/</loc></url>
+  <url><loc>https://SITIO-PUBLICO.example/legal/privacy.html</loc></url>
+  <url><loc>https://SITIO-PUBLICO.example/legal/terms.html</loc></url>
+  <url><loc>https://SITIO-PUBLICO.example/legal/intellectual-property.html</loc></url>
+  <url><loc>https://SITIO-PUBLICO.example/legal/cookies.html</loc></url>
+  <url><loc>https://SITIO-PUBLICO.example/legal/security.html</loc></url>
+  <url><loc>https://SITIO-PUBLICO.example/legal/accessibility.html</loc></url>
+  <url><loc>https://SITIO-PUBLICO.example/404.html</loc></url>
+</urlset>

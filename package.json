@@ -1,0 +1,8 @@
+{
+  "name": "kingdom-portfolio",
+  "private": true,
+  "version": "1.1.0",
+  "scripts": {
+    "audit:local": "node tools/audit-site.mjs"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "kingdom-portfolio-hardened",
+  "version": "1.1.0",
+  "date": "2026-10-02",
+  "type": "static-site",
+  "runtimeDependencies": [],
+  "externalRuntimeCDNs": [],
+  "features": [
+    "custom-favicon",
+    "mobile-navigation",
+    "custom-404",
+    "responsive-overflow-hardening",
+    "toast-success-error-messages",
+    "clickable-contact-actions",
+    "optimized-webp-assets",
+    "local-link-audit"
+  ]
+}
