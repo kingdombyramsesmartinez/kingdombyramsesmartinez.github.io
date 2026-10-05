@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="{{LANG}}" dir="{{DIR}}">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
+  <title>{{META_TITLE}}</title>
+  <meta name="description" content="{{META_DESCRIPTION}}"/>
+  <meta content="#070706" name="theme-color"/>
+  <meta content="index,follow,max-image-preview:large" name="robots"/>
+  <meta content="strict-origin-when-cross-origin" name="referrer"/>
+  <meta content="dark" name="color-scheme"/>
+
+  <!-- CSP equivalente para GitHub Pages -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self'; style-src 'self'; style-src-attr 'none'; script-src-attr 'none'; img-src 'self' data: blob:; font-src 'self'; media-src 'self'; connect-src 'self'; worker-src 'self' blob:; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests;"/>
+
+  <!-- Alternates Multilenguaje SEO -->
+  <link rel="canonical" href="{{CANONICAL_URL}}"/>
+  <link rel="alternate" hreflang="es" href="{{SITE_URL}}/"/>
+  <link rel="alternate" hreflang="en" href="{{SITE_URL}}/en/"/>
+  <link rel="alternate" hreflang="x-default" href="{{SITE_URL}}/"/>
+
+  <!-- Favicons y Manifiesto -->
+  <link rel="icon" type="image/svg+xml" href="{{ASSET_PREFIX}}assets/brand/favicon.svg"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ASSET_PREFIX}}assets/brand/favicon-32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ASSET_PREFIX}}assets/brand/favicon-16.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ASSET_PREFIX}}assets/brand/apple-touch-icon.png"/>
+  <link rel="manifest" href="{{ASSET_PREFIX}}site-manifest.json"/>
+
+  <!-- Open Graph / Twitter Cards -->
+  <meta property="og:title" content="{{OG_TITLE}}"/>
+  <meta property="og:description" content="{{OG_DESC}}"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="{{CANONICAL_URL}}"/>
+  <meta property="og:site_name" content="Kingdom"/>
+  <meta property="og:locale" content="{{OG_LOCALE}}"/>
+  <meta property="og:locale:alternate" content="{{OG_LOCALE_ALT}}"/>
+  <meta property="og:image" content="{{SITE_URL}}/assets/brand/kingdom-logo-white.png"/>
+  <meta property="og:image:alt" content="Kingdom — Ramses Martínez Logo"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="{{OG_TITLE}}"/>
+  <meta name="twitter:description" content="{{OG_DESC}}"/>
+  <meta name="twitter:image" content="{{SITE_URL}}/assets/brand/kingdom-logo-white.png"/>
+
+  <!-- Preload Fuente Principal WOFF2 -->
+  <link rel="preload" as="font" type="font/woff2" href="{{ASSET_PREFIX}}assets/fonts/montserrat-latin-wght-normal.woff2" crossorigin/>
+  <link rel="stylesheet" href="{{ASSET_PREFIX}}assets/css/style.css"/>
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">{{NAV_SKIP}}</a>
+
+  <!-- Header Sticky Street-Editorial -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand-link" href="#top" aria-label="Kingdom — Ramses Martínez">
+        <img src="{{ASSET_PREFIX}}assets/brand/logo.svg" alt="Kingdom Tag Logo" width="1024" height="691"/>
+      </a>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
+        <a class="nav-link link-magic" href="#trayectoria">{{NAV_ABOUT}}</a>
+        <a class="nav-link link-magic" href="#servicios">{{NAV_SERVICES}}</a>
+        <a class="nav-link link-magic" href="#materiales">{{NAV_MATERIALS}}</a>
+        <a class="nav-link link-magic" href="#portafolio">{{NAV_PORTFOLIO}}</a>
+        <a class="nav-link link-magic" href="#contacto">{{NAV_CONTACT}}</a>
+        <a class="nav-link link-magic" href="{{NAV_LANG_HREF}}" hreflang="{{NAV_LANG_TARGET}}" aria-label="{{NAV_LANG_ARIA}}"><b>{{NAV_LANG_TEXT}}</b></a>
+      </nav>
+
+      <div class="header-cta-group">
+        <a class="btn-premium" href="#contacto">{{NAV_QUOTE}}</a>
+        <button class="burger-btn" id="burgerBtn" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú">
+          {{NAV_MENU}}
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <!-- Hero Section Street-Editorial -->
+    <section class="hero-section" id="top">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="section-eyebrow">{{HERO_EYEBROW}}</div>
+          <h1>
+            {{HERO_TITLE_LINE1}} <br/>
+            <span class="highlight">{{HERO_TITLE_LINE2}}</span>
+          </h1>
+          <p class="hero-lead">
+            {{HERO_LEAD}}
+          </p>
+          <div class="hero-actions">
+            <a class="btn-premium" href="https://wa.me/{{WHATSAPP_NUMBER}}?text={{HERO_WA_MSG}}" target="_blank" rel="noopener noreferrer">
+              {{HERO_CTA_WA}}
+            </a>
+            <a class="btn-secondary" href="#portafolio">{{HERO_CTA_PORTFOLIO}}</a>
+          </div>
+          <div class="hero-badges">
+            {{HERO_BADGES_HTML}}
+          </div>
+        </div>
+
+        <div class="hero-mosaic" aria-label="Muestra de piezas textiles">
+          <div class="hero-mosaic-item tall">
+            <img src="{{ASSET_PREFIX}}assets/work-amigoscafe.webp" alt="Jersey sublimado deportivo Kit Amigo Café" width="900" height="1125" fetchpriority="high"/>
+            <div class="hero-mosaic-tag">
+              <span>{{HERO_TAG_SPORTS}}</span>
+              <span class="status-indicator-active">●</span>
+            </div>
+          </div>
+          <div class="hero-mosaic-item">
+            <img src="{{ASSET_PREFIX}}assets/work-dbs.webp" alt="Camiseta streetwear Dragon Ball Super" width="900" height="1125" loading="lazy" decoding="async"/>
+            <div class="hero-mosaic-tag">
+              <span>{{HERO_TAG_STREETWEAR}}</span>
+            </div>
+          </div>
+          <div class="hero-mosaic-item">
+            <img src="{{ASSET_PREFIX}}assets/work-alcaldia.webp" alt="Hoodies confeccionados diseño personalizado" width="900" height="1125" loading="lazy" decoding="async"/>
+            <div class="hero-mosaic-tag">
+              <span>{{HERO_TAG_HOODIES}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Strip -->
+    <div class="trust-strip">
+      <div class="container trust-items">
+        {{TRUST_ITEMS_HTML}}
+      </div>
+    </div>
+
+    <!-- Sección Trayectoria & Perfil -->
+    <section id="trayectoria">
+      <div class="container">
+        <div class="section-eyebrow">{{ABOUT_EYEBROW}}</div>
+        <h2 class="section-title">{{ABOUT_TITLE}}</h2>
+        <p class="section-desc">{{ABOUT_DESC}}</p>
+
+        <div class="timeline-grid">
+          {{ABOUT_TIMELINE_HTML}}
+        </div>
+
+        <div class="tools-wrap">
+          <div class="section-eyebrow tools-eyebrow">{{ABOUT_TOOLS_TITLE}}</div>
+          <div class="tools-list">
+            {{ABOUT_TOOLS_HTML}}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="servicios" class="section-bg-subtle">
+      <div class="container">
+        <div class="section-eyebrow">{{SERVICES_EYEBROW}}</div>
+        <h2 class="section-title">{{SERVICES_TITLE}}</h2>
+        <p class="section-desc">{{SERVICES_DESC}}</p>
+
+        <div class="services-grid">
+          {{SERVICES_ITEMS_HTML}}
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Materiales y Fichas Técnicas -->
+    <section id="materiales">
+      <div class="container">
+        <div class="section-eyebrow">{{MATERIALS_EYEBROW}}</div>
+        <h2 class="section-title">{{MATERIALS_TITLE}}</h2>
+        <p class="section-desc">{{MATERIALS_DESC}}</p>
+
+        <div class="tech-table-wrap glass">
+          <table class="tech-table">
+            <thead>
+              <tr>
+                {{MATERIALS_HEADERS_HTML}}
+              </tr>
+            </thead>
+            <tbody>
+              {{MATERIALS_ROWS_HTML}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Portafolio con Filtros -->
+    <section id="portafolio" class="section-bg-subtle">
+      <div class="container">
+        <div class="section-eyebrow">{{PORTFOLIO_EYEBROW}}</div>
+        <h2 class="section-title">{{PORTFOLIO_TITLE}}</h2>
+        <p class="section-desc">{{PORTFOLIO_DESC}}</p>
+
+        <div class="portfolio-filters" role="group" aria-label="Filtros por categoría">
+          {{PORTFOLIO_FILTERS_HTML}}
+        </div>
+
+        <div class="portfolio-grid">
+          {{PORTFOLIO_CARDS_HTML}}
+        </div>
+
+        <p class="portfolio-disclaimer">
+          {{PORTFOLIO_DISCLAIMER}}
+        </p>
+      </div>
+    </section>
+
+    <!-- Sección Contacto y Cotizador -->
+    <section id="contacto">
+      <div class="container contact-grid">
+        <div class="glass-card quote-box">
+          <div class="section-eyebrow">{{CONTACT_EYEBROW}}</div>
+          <h2 class="quote-title">{{CONTACT_QUOTE_TITLE}}</h2>
+          <p class="quote-subtitle">{{CONTACT_QUOTE_DESC}}</p>
+
+          <form id="quickQuoteForm">
+            <div class="quote-field">
+              <label for="quoteService">{{FORM_SERVICE_LABEL}}</label>
+              <select class="quote-select" id="quoteService" required>
+                {{FORM_SERVICES_OPTIONS_HTML}}
+              </select>
+            </div>
+
+            <div class="quote-field">
+              <label for="quoteVolume">{{FORM_VOLUME_LABEL}}</label>
+              <select class="quote-select" id="quoteVolume" required>
+                {{FORM_VOLUMES_OPTIONS_HTML}}
+              </select>
+            </div>
+
+            <div class="quote-field">
+              <label for="quoteNote">{{FORM_NOTE_LABEL}}</label>
+              <input class="quote-input" type="text" id="quoteNote" placeholder="{{FORM_NOTE_PLACEHOLDER}}"/>
+            </div>
+
+            <button class="btn-premium quote-submit-btn" type="submit">
+              {{FORM_SUBMIT_BTN}}
+            </button>
+          </form>
+        </div>
+
+        <div class="atelier-column">
+          <div class="section-eyebrow">{{CONTACT_EYEBROW}}</div>
+          <h2 class="atelier-title">{{BLOCK1_TITLE}}</h2>
+          <p class="atelier-desc">{{BLOCK1_DESC}}</p>
+
+          <div class="contact-meta-item">
+            <span>{{BLOCK1_WA_LABEL}}</span>
+            <a class="link-magic" href="https://wa.me/{{WHATSAPP_NUMBER}}" target="_blank" rel="noopener noreferrer">{{WHATSAPP_DISPLAY}}</a>
+          </div>
+          <div class="contact-meta-item">
+            <span>{{BLOCK1_EMAIL_LABEL}}</span>
+            <a class="link-magic" href="mailto:{{EMAIL_WORK}}">{{EMAIL_WORK}}</a>
+          </div>
+
+          <div class="atelier-secondary-block">
+            <div class="section-eyebrow">{{CONTACT_EYEBROW}}</div>
+            <h2 class="atelier-title">{{BLOCK2_TITLE}}</h2>
+            <p class="atelier-desc">{{BLOCK2_DESC}}</p>
+
+            <div class="contact-meta-item">
+              <span>{{BLOCK2_EMAIL_LABEL}}</span>
+              <a class="link-magic" href="mailto:{{EMAIL_PERSONAL}}">{{EMAIL_PERSONAL}}</a>
+            </div>
+            <div class="contact-meta-item">
+              <span>{{BLOCK2_LINKEDIN_LABEL}}</span>
+              <a class="link-magic" href="{{LINKEDIN_URL}}" target="_blank" rel="noopener noreferrer">Ramses Martínez ↗</a>
+            </div>
+            <div class="contact-meta-item">
+              <span>{{LOCATION_LABEL}}</span>
+              <span class="text-white">{{LOCATION_VAL}}</span>
+            </div>
+            <div class="contact-meta-item">
+              <span>{{CATALOG_LABEL}}</span>
+              <a class="link-magic" href="{{DRIVE_CATALOG_URL}}" target="_blank" rel="noopener noreferrer">{{CATALOG_LINK_TEXT}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Accesible de Ficha Técnica -->
+  <div class="modal-backdrop" id="portfolioModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle">
+    <div class="modal-sheet glass">
+      <button class="modal-close-btn" id="modalCloseBtn" type="button" aria-label="{{MODAL_CLOSE_ARIA}}">{{MODAL_CLOSE_TEXT}}</button>
+      <div class="modal-label">{{MODAL_EYEBROW}}</div>
+      <h3 id="modalTitle" class="modal-heading"></h3>
+      <div class="modal-body-grid">
+        <div class="modal-img-wrap">
+          <img id="modalImg" src="{{ASSET_PREFIX}}assets/work-amigoscafe.webp" alt="Muestra de producción ampliada" width="900" height="1125" loading="lazy"/>
+        </div>
+        <div>
+          <div class="modal-info-panel">
+            <div class="modal-info-row">
+              <strong class="text-muted-gray">{{MODAL_TECH_LABEL}}</strong> <span id="modalTag" class="text-white"></span>
+            </div>
+            <div class="modal-info-row">
+              <strong class="text-muted-gray">{{MODAL_GARMENT_LABEL}}</strong> <span id="modalSpecs" class="text-white"></span>
+            </div>
+          </div>
+          <p id="modalDesc" class="modal-description"></p>
+          <a class="btn-premium" href="https://wa.me/{{WHATSAPP_NUMBER}}?text={{MODAL_WA_MSG}}" target="_blank" rel="noopener noreferrer">
+            {{MODAL_CTA}}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Region -->
+  <div class="toast-region" id="toastRegion" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <img src="{{ASSET_PREFIX}}assets/brand/logo.svg" alt="Kingdom Tag Logo" width="1024" height="691" class="footer-logo"/>
+          <p class="footer-brand-text">
+            {{FOOTER_BRAND_DESC}}
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-nav-title">{{FOOTER_LEGAL_TITLE}}</div>
+          <div class="footer-legal-links">
+            <a class="link-magic" href="{{LEGAL_PREFIX}}privacy.html">{{FOOTER_LINK_PRIVACY}}</a>
+            <a class="link-magic" href="{{LEGAL_PREFIX}}terms.html">{{FOOTER_LINK_TERMS}}</a>
+            <a class="link-magic" href="{{LEGAL_PREFIX}}intellectual-property.html">{{FOOTER_LINK_IP}}</a>
+            <a class="link-magic" href="{{LEGAL_PREFIX}}cookies.html">{{FOOTER_LINK_COOKIES}}</a>
+            <a class="link-magic" href="{{LEGAL_PREFIX}}security.html">{{FOOTER_LINK_SECURITY}}</a>
+            <a class="link-magic" href="{{LEGAL_PREFIX}}accessibility.html">{{FOOTER_LINK_A11Y}}</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>
+          {{FOOTER_COPYRIGHT}}
+        </div>
+        <div class="footer-disclaimer">
+          {{FOOTER_DISCLAIMER}}
+        </div>
+      </div>
+
+      <div class="footer-translate-note">
+        {{FOOTER_BROWSER_TRANSLATE}}
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="{{ASSET_PREFIX}}assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+{
+  "lang": "es",
+  "dir": "ltr",
+  "meta": {
+    "title": "Ramses Martínez | Kingdom — Diseño textil, bordado industrial y sublimación",
+    "description": "Estudio de diseño textil y digitalización de bordado industrial de Ramses Martínez en Barquisimeto, Venezuela. Matrices DST/PES optimizadas, sublimación deportiva y arte streetwear.",
+    "ogTitle": "Ramses Martínez | Kingdom — Diseño Textil & Bordado",
+    "ogDesc": "Diseño textil, digitalización de bordado industrial y sublimación deportiva bajo pedido.",
+    "ogLocale": "es_LA",
+    "ogLocaleAlt": "en_US"
+  },
+  "nav": {
+    "skip": "Saltar al contenido principal",
+    "about": "Trayectoria",
+    "services": "Servicios",
+    "materials": "Especificaciones",
+    "portfolio": "Portafolio",
+    "contact": "Contacto",
+    "quoteCta": "Cotizar Proyecto",
+    "menu": "MENÚ",
+    "langSwitchText": "EN",
+    "langSwitchHref": "en/index.html",
+    "langSwitchAria": "Switch to English version"
+  },
+  "hero": {
+    "eyebrow": "Ramses Martínez // Estudio Textil & Digitalización",
+    "titleLine1": "Diseño Textil",
+    "titleLine2": "& Bordado Industrial",
+    "lead": "Desarrollo de piezas deportivas sublimadas, indumentaria personalizada y digitalización de matrices de bordado DST/PES configuradas según el tipo de tela y maquinaria.",
+    "ctaWhatsapp": "Hablar por WhatsApp →",
+    "ctaPortfolio": "Ver Trabajos",
+    "badges": [
+      "BARQUISIMETO, VZLA",
+      "FORMATOS DST / PES",
+      "SUBLIMACIÓN HD"
+    ],
+    "mosaicTags": {
+      "sports": "Kit Deportivo Sublimado",
+      "streetwear": "Streetwear & Gráfica",
+      "hoodies": "Indumentaria Personalizada"
+    }
+  },
+  "trust": [
+    "Diseño Propio",
+    "Matrices DST / PES",
+    "Sublimación Deportiva",
+    "Piezas Bajo Pedido",
+    "Atención Directa"
+  ],
+  "about": {
+    "eyebrow": "Trayectoria & Perfil",
+    "title": "Ramses Martínez × Kingdom",
+    "desc": "Trabajo en el sector textil desde niño y profesionalmente desde los 18 años. Kingdom reúne mi trabajo en digitalización de bordado industrial, ilustración gráfica y manufactura bajo pedido.",
+    "timeline": [
+      {
+        "period": "Origen",
+        "title": "Oficio & Taller Familiar",
+        "desc": "Crecí entre máquinas de confección, corte textil e hilos de bordar, aprendiendo los fundamentos prácticos del comportamiento de la tela."
+      },
+      {
+        "period": "Especialización",
+        "title": "Digitalización Industrial de Bordado",
+        "desc": "Formación técnica avanzada en ponchado y matrices DST/PES, calibrando densidades, refuerzos de puntada y compensación de estiramiento."
+      },
+      {
+        "period": "Evolución",
+        "title": "Kingdom — Diseño & Producción",
+        "desc": "Estudio independiente enfocado en uniformes deportivos sublimados, colecciones streetwear y servicios digitales para marcas y talleres."
+      }
+    ],
+    "toolsTitle": "Herramientas de Trabajo",
+    "tools": [
+      "Wilcom EmbroideryStudio",
+      "Adobe Illustrator",
+      "Adobe Photoshop",
+      "Blender 3D (Nivel Intermedio)",
+      "Silhouette Studio"
+    ]
+  },
+  "services": {
+    "eyebrow": "Capacidades de Trabajo",
+    "title": "Servicios Digitales y Físicos",
+    "desc": "Los servicios digitales están disponibles para clientes de cualquier país; las prendas físicas se elaboran bajo pedido con envíos según cotización.",
+    "items": [
+      {
+        "index": "01 // DIGITAL",
+        "title": "Matrices de Bordado DST / PES",
+        "body": "Digitalización técnica con compensación de estiramiento, densidad calibrada y secuencias limpias para optimizar el paso en máquina bordadora.",
+        "cta": "Solicitar matriz →"
+      },
+      {
+        "index": "02 // TÉCNICO",
+        "title": "Sublimación Deportiva Full Print",
+        "body": "Diseño de plantillas a escala y calibración de color para textiles deportivos de secado rápido (Dry-Fit, microfibras y win).",
+        "cta": "Cotizar uniformes →"
+      },
+      {
+        "index": "03 // DISEÑO",
+        "title": "Ilustración Vectorial & Streetwear",
+        "body": "Trazado de personajes, vectorización de logotipos y separación de color para serigrafía o impresión DTF sobre algodón y mezclas.",
+        "cta": "Desarrollar arte →"
+      }
+    ]
+  },
+  "materials": {
+    "eyebrow": "Guía de Compatibilidad",
+    "title": "Especificaciones Técnicas",
+    "desc": "Parámetros de trabajo según la fibra textil, la técnica de personalización y el soporte estructural requerido.",
+    "tableHeaders": [
+      "Técnica Textil",
+      "Textiles Compatibles",
+      "Parámetros Clave",
+      "Aplicación Típica"
+    ],
+    "rows": [
+      {
+        "tech": "Bordado Computarizado",
+        "fabrics": "Gabardina, Piqué, Drill, Algodón pesado",
+        "params": "Puntada ~0.40 mm, refuerzo tatami",
+        "app": "Gorras, chaquetas, uniformes, parches"
+      },
+      {
+        "tech": "Sublimación Térmica",
+        "fabrics": "Poliéster 100%, Dry-Fit, Microfibra",
+        "params": "Perfiles CMYK de saturación alta",
+        "app": "Jerseys deportivos, kits fútbol, banderas"
+      },
+      {
+        "tech": "Impresión DTF Textil",
+        "fabrics": "Algodón 100%, mezclas poliéster/algodón",
+        "params": "Poliamida termoadhesiva elástica",
+        "app": "Camisetas streetwear, hoodies, bolsos"
+      },
+      {
+        "tech": "Vectorización de Arte",
+        "fabrics": "Formatos vectoriales AI, EPS, SVG, CDR",
+        "params": "Trazados limpios y nodos optimizados",
+        "app": "Separación de color y matrices bordado"
+      }
+    ]
+  },
+  "portfolio": {
+    "eyebrow": "Trabajos Seleccionados",
+    "title": "Muestras de Diseño",
+    "desc": "Proyectos y mockups referenciales desarrollados por Ramses Martínez. Haz clic en cada pieza para inspeccionar los detalles.",
+    "filters": [
+      { "id": "all", "label": "Todos" },
+      { "id": "sublimacion", "label": "Sublimación Deportiva" },
+      { "id": "streetwear", "label": "Streetwear & Arte" },
+      { "id": "branding", "label": "Branding & Papelería" }
+    ],
+    "disclaimer": "Arte propio y mockups referenciales. Las piezas de fans se muestran con fines de portafolio sin afiliación con marcas ni titulares de licencias."
+  },
+  "contact": {
+    "eyebrow": "Contacto Directo",
+    "quoteTitle": "Solicita tu Presupuesto",
+    "quoteDesc": "Configura los parámetros de tu pedido para preparar un mensaje directo a WhatsApp con nuestro taller.",
+    "form": {
+      "serviceLabel": "Servicio Requerido",
+      "services": [
+        "Matrices de Bordado (DST/PES)",
+        "Sublimación Deportiva Full Print",
+        "Confección Textil / Uniformes",
+        "Ilustración Vectorial & Streetwear"
+      ],
+      "volumeLabel": "Volumen Estimado",
+      "volumes": [
+        "1 a 5 piezas / Matrices",
+        "6 a 24 unidades (Pequeño tiraje)",
+        "25 a 100 unidades (Tiraje medio)",
+        "Más de 100 unidades"
+      ],
+      "noteLabel": "Detalles adicionales (opcional)",
+      "notePlaceholder": "Prenda, fecha deseada o especificaciones",
+      "submitBtn": "Enviar Mensaje a WhatsApp (+58 424-109-2124)"
+    },
+    "blocks": {
+      "block1Title": "Pedidos y Cotizaciones",
+      "block1Desc": "Para pedidos locales, matrices técnicas y confección deportiva bajo pedido:",
+      "whatsappLabel": "WhatsApp Oficial",
+      "emailWorkLabel": "Correo de Taller",
+      "block2Title": "Colaboraciones & Proyectos Remotos",
+      "block2Desc": "Para reclutadores, agencias de diseño y encargos de digitalización internacional:",
+      "emailPersonalLabel": "Correo Personal",
+      "linkedinLabel": "Perfil LinkedIn",
+      "locationLabel": "Ubicación",
+      "locationVal": "Barquisimeto, Estado Lara, Venezuela",
+      "catalogLabel": "Catálogo PDF en Drive",
+      "catalogLink": "Ver Catálogo en Drive ↗"
+    }
+  },
+  "modal": {
+    "closeAria": "Cerrar modal",
+    "closeText": "CERRAR ✕",
+    "eyebrow": "DETALLE TÉCNICO DE LA PIEZA",
+    "techLabel": "Técnica:",
+    "garmentLabel": "Prenda / Soporte:",
+    "availLabel": "Disponibilidad:",
+    "noteLabel": "Nota:",
+    "cta": "Cotizar Trabajo Similar por WhatsApp"
+  },
+  "footer": {
+    "brandDesc": "Estudio de diseño textil, ilustración vectorial y digitalización de bordado industrial de Ramses Martínez.",
+    "legalTitle": "Enlaces Legales",
+    "links": {
+      "privacy": "Privacidad",
+      "terms": "Términos",
+      "ip": "Propiedad Intelectual",
+      "cookies": "Cookies",
+      "security": "Seguridad",
+      "a11y": "Accesibilidad"
+    },
+    "copyright": "Kingdom © 2026 — Ramses Martínez. Barquisimeto, Venezuela.",
+    "disclaimer": "Este sitio es informativo y no constituye una oferta contractual vinculante.",
+    "browserTranslate": "¿Otro idioma? Puedes usar la función de traducir de tu navegador web."
+  }
+}

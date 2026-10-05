@@ -1,3 +1,5 @@
+import { SITE_CONFIG } from "./site.config.js";
+
 (() => {
   "use strict";
 
@@ -58,10 +60,33 @@
   });
 
   /* --------------------------------------------------------------------------
-     Cotizador Directo a WhatsApp
+     Filtros del Portafolio
+     -------------------------------------------------------------------------- */
+  const filterButtons = qsa(".filter-btn");
+  const portfolioCards = qsa(".portfolio-card");
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const targetFilter = btn.dataset.filter || "all";
+
+      filterButtons.forEach(b => b.setAttribute("aria-pressed", String(b === btn)));
+
+      portfolioCards.forEach(card => {
+        const category = card.dataset.category || "";
+        if (targetFilter === "all" || category === targetFilter) {
+          card.classList.remove("is-hidden");
+        } else {
+          card.classList.add("is-hidden");
+        }
+      });
+    });
+  });
+
+  /* --------------------------------------------------------------------------
+     Cotizador Directo a WhatsApp (Fuente: site.config.js)
      -------------------------------------------------------------------------- */
   const quoteForm = qs("#quickQuoteForm");
-  const WHATSAPP_NUMBER = "584241092124";
+  const isEnglish = document.documentElement.lang === "en";
 
   if (quoteForm) {
     quoteForm.addEventListener("submit", e => {
@@ -69,30 +94,45 @@
       try {
         const service = qs("#quoteService")?.value;
         const volume = qs("#quoteVolume")?.value;
-        const note = qs("#quoteNote")?.value.trim() || "Sin observaciones adicionales";
+        const note = qs("#quoteNote")?.value.trim() || (isEnglish ? "No additional notes" : "Sin observaciones adicionales");
 
         if (!service || !volume) {
-          showToast("Por favor selecciona el servicio y volumen estimado.", "error");
+          showToast(
+            isEnglish ? "Please select the service and volume." : "Por favor selecciona el servicio y volumen estimado.",
+            "error"
+          );
           return;
         }
 
-        const msg = `Hola Ramses, deseo solicitar una cotización con Kingdom Wear:\n\n• Servicio: ${service}\n• Volumen: ${volume}\n• Detalle: ${note}\n\n¿Podrías indicarme disponibilidad y tiempos de confección?`;
-        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+        const msg = isEnglish
+          ? `Hello Ramses, I would like to request a quote with Kingdom:\n\n• Service: ${service}\n• Estimated Volume: ${volume}\n• Details: ${note}\n\nCould you please let me know availability and lead time?`
+          : `Hola Ramses, deseo solicitar una cotización con Kingdom:\n\n• Servicio: ${service}\n• Volumen: ${volume}\n• Detalle: ${note}\n\n¿Podrías indicarme disponibilidad y tiempos de confección?`;
+
+        const url = `https://wa.me/${SITE_CONFIG.contact.whatsappNumber}?text=${encodeURIComponent(msg)}`;
         const opened = window.open(url, "_blank", "noopener,noreferrer");
 
         if (opened) {
-          showToast("Se abrió WhatsApp con los datos de tu cotización.", "success");
+          showToast(
+            isEnglish ? "WhatsApp opened with your quote request." : "Se abrió WhatsApp con los datos de tu cotización.",
+            "success"
+          );
         } else {
-          showToast("El navegador bloqueó la ventana emergente. Usa el enlace directo a WhatsApp.", "error");
+          showToast(
+            isEnglish ? "Pop-up blocked. Please use the direct WhatsApp link." : "El navegador bloqueó la ventana emergente. Usa el enlace directo a WhatsApp.",
+            "error"
+          );
         }
       } catch {
-        showToast("Ocurrió un error al procesar la cotización. Contáctanos directamente vía WhatsApp.", "error");
+        showToast(
+          isEnglish ? "An error occurred. Please contact via WhatsApp directly." : "Ocurrió un error al procesar la cotización. Contáctanos directamente vía WhatsApp.",
+          "error"
+        );
       }
     });
   }
 
   /* --------------------------------------------------------------------------
-     Modal de Portafolio y Ficha Técnica
+     Modal Accesible con Trampa de Foco y Alt Dinámico
      -------------------------------------------------------------------------- */
   const modal = qs("#portfolioModal");
   const modalClose = qs("#modalCloseBtn");
@@ -101,26 +141,43 @@
   const modalTag = qs("#modalTag");
   const modalSpecs = qs("#modalSpecs");
   const modalDesc = qs("#modalDesc");
+  const mainContent = qs("#mainContent");
   let lastActiveTrigger = null;
+
+  function getFocusableElements(element) {
+    return qsa(
+      'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      element
+    );
+  }
 
   function openModal(card) {
     if (!modal) return;
     lastActiveTrigger = card;
+
     const title = card.dataset.title || "";
     const tag = card.dataset.tag || "";
     const specs = card.dataset.specs || "";
     const desc = card.dataset.desc || "";
     const img = card.dataset.img || "";
+    const cardImg = qs("img", card);
+    const altText = cardImg ? cardImg.getAttribute("alt") || title : title;
 
     if (modalTitle) modalTitle.textContent = title;
     if (modalTag) modalTag.textContent = tag;
     if (modalSpecs) modalSpecs.textContent = specs;
     if (modalDesc) modalDesc.textContent = desc;
-    if (modalImg) modalImg.src = img;
+    if (modalImg) {
+      modalImg.src = img;
+      modalImg.alt = altText;
+    }
 
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("nav-locked");
+
+    if (mainContent) mainContent.setAttribute("inert", "");
+
     modalClose?.focus();
   }
 
@@ -129,10 +186,13 @@
     modal.classList.remove("open");
     modal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("nav-locked");
+
+    if (mainContent) mainContent.removeAttribute("inert");
+
     lastActiveTrigger?.focus();
   }
 
-  qsa(".portfolio-card").forEach(card => {
+  portfolioCards.forEach(card => {
     card.addEventListener("click", () => openModal(card));
     card.addEventListener("keydown", e => {
       if (e.key === "Enter" || e.key === " ") {
@@ -148,8 +208,23 @@
   });
 
   document.addEventListener("keydown", e => {
-    if (e.key === "Escape" && modal?.classList.contains("open")) {
-      closeModal();
+    if (modal?.classList.contains("open")) {
+      if (e.key === "Escape") {
+        closeModal();
+      } else if (e.key === "Tab") {
+        const focusables = getFocusableElements(modal);
+        if (focusables.length === 0) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     }
   });
 

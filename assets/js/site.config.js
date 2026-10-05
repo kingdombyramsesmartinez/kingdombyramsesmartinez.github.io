@@ -1,22 +1,22 @@
 /**
- * KINGDOM WEAR — CONFIGURACIÓN CENTRAL DE MARCA Y CONTENIDO
- * Edita este archivo para modificar datos comerciales, canales de contacto y copys clave
- * sin tocar el marcado HTML ni la lógica de interacción.
+ * KINGDOM — CONFIGURACIÓN CENTRAL DE MARCA Y CONTENIDO (v4)
+ * Fuente única de verdad para datos comerciales, contacto y metadatos.
  */
 export const SITE_CONFIG = Object.freeze({
   brand: {
-    name: "Kingdom Wear",
-    shortName: "Kingdom",
-    tagline: "Manufactura Textil, Confección & Bordado Industrial",
-    atelier: "Barquisimeto, Estado Lara, Venezuela",
-    foundedYear: 2026
+    name: "Kingdom",
+    fullName: "Ramses Martínez — Kingdom",
+    owner: "Ramses Martínez",
+    tagline: "Diseño Textil, Bordado Industrial & Sublimación",
+    location: "Barquisimeto, Estado Lara, Venezuela",
+    originCountry: "Venezuela"
   },
+  siteUrl: "https://kingdombqto.github.io/KINGDOM",
   contact: {
     whatsappNumber: "584241092124",
-    phoneDisplay: "+58 424-109-2124",
-    phoneTel: "+584241092124",
-    email: "kingdombrandbqto@gmail.com",
-    defaultQuoteMessage: "Hola, deseo solicitar una cotización para un proyecto textil con Kingdom Wear.",
+    whatsappDisplay: "+58 424-109-2124",
+    emailWork: "kingdombrandbqto@gmail.com",
+    emailPersonal: "ramsesm818@gmail.com",
     social: {
       instagram: "https://instagram.com/kingdom_vzla",
       tiktok: "https://www.tiktok.com/@kingdom_vzla",
@@ -24,10 +24,14 @@ export const SITE_CONFIG = Object.freeze({
       driveCatalog: "https://drive.google.com/file/d/10KQF5rr5QT9E7Qtyob0UIiuXTiVKnLw6/view?usp=drive_link"
     }
   },
+  pricing: {
+    enabled: false
+  },
   palette: {
-    blackBase: "#070706",
-    whitePrimary: "#F7F7F4",
-    oliveAccent: "#7A8058",
-    beigeTint: "#E9E0D0"
+    ink: "#070706",
+    surface: "#0D0D0C",
+    surfaceAlt: "#121211",
+    paper: "#F7F7F4",
+    accent: "#FFC500"
   }
 });

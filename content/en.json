@@ -1,0 +1,217 @@
+{
+  "lang": "en",
+  "dir": "ltr",
+  "meta": {
+    "title": "Ramses Martínez | Kingdom — Textile Design, Industrial Embroidery & Sublimation",
+    "description": "Textile design studio & industrial embroidery digitizing by Ramses Martínez in Barquisimeto, Venezuela. Optimized DST/PES stitch files, athletic sublimation and streetwear graphics.",
+    "ogTitle": "Ramses Martínez | Kingdom — Textile Design & Embroidery",
+    "ogDesc": "Textile design, industrial embroidery digitizing and made-to-order athletic sublimation.",
+    "ogLocale": "en_US",
+    "ogLocaleAlt": "es_LA"
+  },
+  "nav": {
+    "skip": "Skip to main content",
+    "about": "Trajectory",
+    "services": "Services",
+    "materials": "Specs",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "quoteCta": "Request a Quote",
+    "menu": "MENU",
+    "langSwitchText": "ES",
+    "langSwitchHref": "../index.html",
+    "langSwitchAria": "Cambiar a versión en español"
+  },
+  "hero": {
+    "eyebrow": "Ramses Martínez // Textile Studio & Digitizing",
+    "titleLine1": "Textile Design",
+    "titleLine2": "& Industrial Embroidery",
+    "lead": "Developing sublimated sportswear, custom apparel and industrial embroidery files (DST/PES) calibrated for fabric elasticity and machine efficiency.",
+    "ctaWhatsapp": "Chat on WhatsApp →",
+    "ctaPortfolio": "View Work",
+    "badges": [
+      "BARQUISIMETO, VZLA",
+      "DST / PES FORMATS",
+      "HD SUBLIMATION"
+    ],
+    "mosaicTags": {
+      "sports": "Sublimated Sports Kit",
+      "streetwear": "Streetwear & Graphic Art",
+      "hoodies": "Custom Apparel Design"
+    }
+  },
+  "trust": [
+    "Original Design",
+    "DST / PES Punching",
+    "Sports Sublimation",
+    "Made to Order",
+    "Direct Communication"
+  ],
+  "about": {
+    "eyebrow": "Trajectory & Profile",
+    "title": "Ramses Martínez × Kingdom",
+    "desc": "Immersed in the textile trade since childhood and working professionally since age 18. Kingdom brings together my practice in embroidery digitizing, vector art and made-to-order manufacturing.",
+    "timeline": [
+      {
+        "period": "Origins",
+        "title": "Family Workshop Heritage",
+        "desc": "Growing up around sewing machines, pattern drafting and embroidery threads, understanding fabric behavior from hands-on craft."
+      },
+      {
+        "period": "Specialization",
+        "title": "Industrial Embroidery Digitizing",
+        "desc": "Advanced punching and DST/PES file preparation, calibrating stitch density, underlays, pull-compensation and sequence logic."
+      },
+      {
+        "period": "Evolution",
+        "title": "Kingdom — Design & Production",
+        "desc": "Independent design practice producing sublimated jerseys, streetwear graphics and digital file preparation for global apparel makers."
+      }
+    ],
+    "toolsTitle": "Primary Tools",
+    "tools": [
+      "Wilcom EmbroideryStudio",
+      "Adobe Illustrator",
+      "Adobe Photoshop",
+      "Blender 3D (Intermediate)",
+      "Silhouette Studio"
+    ]
+  },
+  "services": {
+    "eyebrow": "Core Capabilities",
+    "title": "Digital & Physical Solutions",
+    "desc": "Digital services are available worldwide; physical garments are made to order with delivery lead times based on project scope.",
+    "items": [
+      {
+        "index": "01 // DIGITAL",
+        "title": "Embroidery Digitizing DST / PES",
+        "body": "Technical punching with fabric pull-compensation, calibrated density and clean sequences designed to minimize thread breaks in production.",
+        "cta": "Order stitch file →"
+      },
+      {
+        "index": "02 // TECHNICAL",
+        "title": "Full Print Sports Sublimation",
+        "body": "Scaled pattern templates and color profile calibration for performance fabrics (Dry-Fit, microfibers and technical polyester).",
+        "cta": "Quote team kits →"
+      },
+      {
+        "index": "03 // DESIGN",
+        "title": "Vector Illustration & Streetwear",
+        "body": "Original character illustrations, logo vectorization and color separations for screen printing or DTF transfers on cotton and blends.",
+        "cta": "Develop graphics →"
+      }
+    ]
+  },
+  "materials": {
+    "eyebrow": "Compatibility Matrix",
+    "title": "Technical Specifications",
+    "desc": "Real-world parameters categorized by textile fiber, customization technique and structural support.",
+    "tableHeaders": [
+      "Textile Method",
+      "Compatible Fabrics",
+      "Key Parameters",
+      "Optimal Application"
+    ],
+    "rows": [
+      {
+        "tech": "Computerized Embroidery",
+        "fabrics": "Twill, Piqué, Drill, Heavyweight Cotton",
+        "params": "~0.40 mm stitch spacing, tatami underlay",
+        "app": "Caps, jackets, corporate uniforms, patches"
+      },
+      {
+        "tech": "Thermal Sublimation",
+        "fabrics": "100% Polyester, Dry-Fit, Microfiber",
+        "params": "High saturation CMYK profiles",
+        "app": "Athletic jerseys, soccer kits, flags"
+      },
+      {
+        "tech": "DTF Textile Printing",
+        "fabrics": "100% Cotton, Poly/Cotton blends",
+        "params": "Elastic thermal adhesive powder",
+        "app": "Streetwear tees, hoodies, tote bags"
+      },
+      {
+        "tech": "Vector Art Preparation",
+        "fabrics": "Vector file formats AI, EPS, SVG, CDR",
+        "params": "Clean outlines and optimized nodes",
+        "app": "Color separations and stitch files"
+      }
+    ]
+  },
+  "portfolio": {
+    "eyebrow": "Selected Projects",
+    "title": "Design Portfolio",
+    "desc": "Projects and reference mockups developed by Ramses Martínez. Click on any item to view its technical details.",
+    "filters": [
+      { "id": "all", "label": "All" },
+      { "id": "sublimacion", "label": "Sports Sublimation" },
+      { "id": "streetwear", "label": "Streetwear & Art" },
+      { "id": "branding", "label": "Branding & Print" }
+    ],
+    "disclaimer": "Original artwork and concept mockups. Fan artwork is showcased for portfolio demonstration only, with no affiliation to trademark holders."
+  },
+  "contact": {
+    "eyebrow": "Direct Inquiries",
+    "quoteTitle": "Request a Quote",
+    "quoteDesc": "Select your project specifications to prepare a direct inquiry message for WhatsApp.",
+    "form": {
+      "serviceLabel": "Requested Service",
+      "services": [
+        "Embroidery Digitizing (DST/PES)",
+        "Full Print Sports Sublimation",
+        "Garment Manufacturing / Uniforms",
+        "Vector Illustration & Streetwear"
+      ],
+      "volumeLabel": "Estimated Quantity",
+      "volumes": [
+        "1 to 5 pieces / Single File",
+        "6 to 24 units (Small run)",
+        "25 to 100 units (Medium run)",
+        "Over 100 units"
+      ],
+      "noteLabel": "Additional project details (optional)",
+      "notePlaceholder": "Garment type, target date or file specifications",
+      "submitBtn": "Send Inquiry via WhatsApp (+58 424-109-2124)"
+    },
+    "blocks": {
+      "block1Title": "Orders & Local Manufacturing",
+      "block1Desc": "For regional inquiries, embroidery stitch files and custom sportswear orders:",
+      "whatsappLabel": "Official WhatsApp",
+      "emailWorkLabel": "Studio Email",
+      "block2Title": "Collaborations & Remote Inquiries",
+      "block2Desc": "For international design agencies, recruiters and remote freelance engagements:",
+      "emailPersonalLabel": "Personal Email",
+      "linkedinLabel": "LinkedIn Profile",
+      "locationLabel": "Location",
+      "locationVal": "Barquisimeto, Lara State, Venezuela",
+      "catalogLabel": "PDF Catalog on Google Drive",
+      "catalogLink": "View Drive Catalog ↗"
+    }
+  },
+  "modal": {
+    "closeAria": "Close modal dialog",
+    "closeText": "CLOSE ✕",
+    "eyebrow": "TECHNICAL SPEC SHEET",
+    "techLabel": "Technique:",
+    "garmentLabel": "Garment / Medium:",
+    "availLabel": "Availability:",
+    "noteLabel": "Note:",
+    "cta": "Inquire About Similar Work via WhatsApp"
+  },
+  "footer": {
+    "brandDesc": "Textile design, vector illustration and industrial embroidery digitizing studio by Ramses Martínez.",
+    "legalTitle": "Legal & Policies",
+    "links": {
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "ip": "Intellectual Property",
+      "cookies": "Cookies",
+      "security": "Security",
+      "a11y": "Accessibility"
+    },
+    "copyright": "Kingdom © 2026 — Ramses Martínez. Barquisimeto, Venezuela.",
+    "disclaimer": "This website is for informational purposes and does not constitute a binding legal contract.",
+    "browserTranslate": "Looking for another language? You can use your web browser's built-in translation feature."
+  }
+}
