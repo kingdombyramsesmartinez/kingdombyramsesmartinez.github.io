@@ -1,35 +1,39 @@
-# INVENTARIO Y REPORTE DE ESTADO DEL SISTEMA (MASTER SPEC v2.0)
-## KINGDOM — Landing Page & Portafolio Industrial
+# INVENTARIO Y REPORTE DE AUDITORÍA — KINGDOM v4 Redesign
+## Portafolio & Identidad: Ramses Martínez × Kingdom
 
-**Fecha:** 2026-10-02  
-**Entorno:** Producción estática (GitHub Pages / Cloudflare Pages ready)
+**Fecha:** 2026-10-05  
+**Rama activa:** `v4-redesign`  
+**Publicación objetivo:** GitHub Pages (`https://kingdombqto.github.io/KINGDOM/`)  
+**Resultado de Auditoría Local (`npm run audit:local`):** `PASS` (9 páginas HTML auditadas, 0 frases prohibidas, 0 enlaces rotos, CSP estricta).
 
 ---
 
-## 1. ESTADO POR ÁREAS DE ESPECIFICACIÓN
+## 1. ESTADO POR ÁREAS DE LA DIRECTIVA v4
 
-| Área | Estado | Detalle |
+| Área | Estado | Detalle Técnico |
 |---|---|---|
-| **Veracidad de Contenido & Claims** | `PASS` | Métricas y claims delimitados en `MARKETING-CLAIMS-REGISTER.md` para evitar promesas no verificables. |
-| **Legal / Compliance Realista** | `PASS` | 6 páginas legales operativas en `/legal/` con descargos de marcas de terceros y límites de responsabilidad. |
-| **Seguridad Frontend** | `PASS` | Sin backend simulado, sin secretos ni API keys en el repositorio, `_headers` CSP riguroso, `security.txt` configurado. |
-| **Rendimiento & Core Web Vitals** | `PASS` | Imágenes en WebP optimizadas con width/height explícitos, preload de LCP, Canvas 2D local sin CDNs externos. |
-| **UX & Conversión** | `PASS` | CTA a WhatsApp directo con mensajes pre-codificados seguros, cotizador interactivo sin backend, feedback accesible. |
-| **Accesibilidad (a11y)** | `PASS` | Skip-link a main, roles ARIA en modales y menú móvil, `prefers-reduced-motion` respetado en audio y animaciones. |
-| **SEO Técnico** | `PASS` | H1 semántico único, meta description, Open Graph, Twitter Cards, robots.txt, sitemap.xml.template. |
-| **Estética Premium Cyber-Industrial** | `PASS` | HUD telemetry bar, canvas interactivo de hilo textil, paleta cyber-gold, consistencia de radios y cristales. |
-| **Editabilidad para Diseñador** | `PASS` | Sistema centralizado de tokens `:root` en `style.css` y manual `DESIGNER-CUSTOMIZATION.md`. |
-| **Compatibilidad GitHub / Cloudflare** | `PASS` | `.nojekyll` presente, `404.html` personalizado, script `audit:local` superado con 0 enlaces o assets rotos. |
+| **Veracidad & Claims** | `PASS` | Eliminados todos los claims no comprobables ("planta propia", "control en planta", etc.). Datos biográficos alineados con CV oficial (Lima 2019, Kingdom 2021). |
+| **Separación de Código** | `PASS` | Separación estricta de HTML, CSS y JS. Cero atributos `style=""` inline y cero scripts inline en templates ni páginas generadas. |
+| **Paleta & Tokens** | `PASS` | Amarillo eliminado por completo. Paleta activa: Base Negro/Gris/Blanco + Acentos Verde Oliva Táctico (`#7A8058`) y Beige Natural (`#E9E0D0`). |
+| **Tipografía** | `PASS` | `Graffiti City.otf` local para títulos H1/H2 y wordmark. `Montserrat Variable` (woff2) local para lectura. Cero peticiones de red o CDNs externas. |
+| **Evidencia de Bordado** | `PASS` | 6 capturas de Wilcom EmbroideryStudio convertidas a WebP y cargadas en portafolio bajo categoría "Bordado & Matrices". |
+| **Arquitectura Bilingüe** | `PASS` | Generador estático `tools/build-i18n.mjs` produce `/index.html` (ES) y `/en/index.html` (EN) desde fuentes JSON estructuradas. |
+| **Accesibilidad (a11y)** | `PASS` | WCAG 2.1 AA: Skip link, roles ARIA, `aria-pressed` en filtros, trampa de foco en modal, botones con altura ≥ 44px, `prefers-reduced-motion` respetado. |
+| **Seguridad & CSP** | `PASS` | Meta CSP estricta idéntica en las 9 páginas HTML. Sin `'unsafe-inline'` ni scripts externos. Archivo `_headers` preparado para Cloudflare Pages. |
+| **SEO Técnico** | `PASS` | OG Image de 1200×630 generada (`assets/brand/og-image.png`), `sitemap.xml` con alternancias bidireccionales, `robots.txt` y `site-manifest.json` validados. |
+| **CI / Automatización** | `PASS` | Workflow en `.github/workflows/audit.yml` configurado para auditar cada push a `main` y `v4-redesign`. |
 
 ---
 
-## 2. INVENTARIO DE ARCHIVOS PRINCIPALES
+## 2. INVENTARIO DE ARCHIVOS AUDITADOS
 
-- `index.html`: Landing page principal, portafolio, cotizador, visor 3D textil y enlaces de contacto.
-- `404.html`: Página personalizada de error 404 coherente con la identidad de marca.
-- `assets/css/style.css`: Hojas de estilo maestras con tokens `:root` y diseño responsivo.
-- `assets/js/app.js`: Lógica interactiva accesible (Canvas 2D, modales, cotizador a WhatsApp, menú móvil).
-- `legal/*.html`: 6 documentos legales normativos y de protección de propiedad intelectual.
-- `tools/audit-site.mjs`: Script de auditoría local de enlaces internos, assets y referencias.
-- `DESIGNER-CUSTOMIZATION.md`: Manual operativo para el diseñador gráfico.
-- `CHANGELOG.md`: Registro de versiones y refactorizaciones realizadas.
+- `index.html`: Versión en español compilada desde plantilla maestra.
+- `en/index.html`: Versión en inglés compilada desde plantilla maestra.
+- `templates/index.template.html`: Plantilla HTML maestra sin contenido hardcodeado.
+- `content/es.json` y `content/en.json`: Textos de marca, servicios y tablas.
+- `content/portfolio.json`: 12 piezas de portafolio con ficha técnica (6 bordados Wilcom, 2 sublimación deportiva, 3 streetwear, 1 branding).
+- `assets/css/style.css`: Hojas de estilo unificadas sin dependencias.
+- `assets/js/app.js`: Módulo de interactividad (modal accesible, filtros, navegación móvil, cotizador a WhatsApp).
+- `assets/js/site.config.js`: Fuente única de configuración de marca y contacto.
+- `legal/*.html`: Páginas informativas de términos, privacidad, propiedad intelectual y límites de servicio.
+- `tools/audit-site.mjs`: Script de verificación y auditoría automatizada.

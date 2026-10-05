@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-# Añade aquí el sitemap.xml definitivo cuando el dominio público esté confirmado.
+Sitemap: https://kingdombqto.github.io/KINGDOM/sitemap.xml

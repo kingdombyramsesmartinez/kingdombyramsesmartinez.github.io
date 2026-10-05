@@ -1,54 +1,52 @@
-# DESIGN TOKENS SYSTEM — KINGDOM v2.0
+# DESIGN TOKENS SYSTEM — KINGDOM v4 (Street-Editorial Industrial)
+
 ## Fuente Única de Verdad de Diseño
 
-Especificación técnica de variables CSS implementadas en `assets/css/style.css`:
+Especificación técnica de variables CSS implementadas en `assets/css/style.css` y sincronizadas en `assets/js/site.config.js`:
 
 ### 1. Paleta de Marca (`:root`)
+
+La dirección de color fue confirmada formalmente por Ramses Martínez: **se eliminó el amarillo corporativo** y se adoptó una base sobria con acentos tácticos textiles.
+
 | Token CSS | Valor Hex / RGBA | Función |
 |---|---|---|
-| `--brand-bg` | `#07070a` | Fondo principal oscuro |
-| `--brand-surface` | `#0e0f14` | Superficie de paneles y HUD |
-| `--brand-surface-2` | `#111218` | Capa intermedia de tarjetas |
-| `--brand-card` | `rgba(18, 20, 28, 0.70)` | Fondo translúcido de módulos |
-| `--brand-glass` | `rgba(14, 16, 24, 0.75)` | Cristal blur de modales y nav |
-| `--brand-gold` | `#ffc500` | Oro cibernético corporativo |
-| `--brand-gold-bright` | `#ffe066` | Acentos de alta luminancia |
-| `--brand-gold-glow` | `rgba(255, 197, 0, 0.35)` | Resplandor perimetral |
-| `--brand-red` | `#ff1e42` | Láser rojo de acento táctico |
-| `--brand-red-glow` | `rgba(255, 30, 66, 0.40)` | Resplandor de botones activos |
-| `--brand-wine` | `#6e0f1d` | Tono profundo de contraste |
-| `--brand-cyan` | `#00f0ff` | Cyan holográfico de telemetría |
-| `--brand-cyan-glow` | `rgba(0, 240, 255, 0.35)` | Brillo de micro-etiquetas |
-| `--brand-green` | `#00ff88` | Indicador de estado ONLINE |
+| `--ink` | `#070706` | Fondo negro profundo de contraste editorial |
+| `--surface` | `#0D0D0C` | Superficie primaria de tarjetas y paneles |
+| `--surface-alt` | `#121211` | Superficie secundaria para elevación sutil |
+| `--paper` | `#F7F7F4` | Blanco natural cálido para texto y contraste |
+| `--white-100` | `#FFFFFF` | Blanco puro para titulares principales |
+| `--gray-400` | `#9B9B97` | Texto secundario y etiquetas |
+| `--gray-500` | `#70706C` | Leyendas, bordes y notas al pie |
+| `--line-light` | `rgba(255, 255, 255, 0.11)` | Separadores y bordes sobrios |
+| `--line-subtle` | `rgba(255, 255, 255, 0.05)` | Retículas internas |
+| `--olive` | `#7A8058` | Verde oliva táctico (Acento de marca primario) |
+| `--olive-bright` | `#92976E` | Verde oliva iluminado para interacciones y hover |
+| `--beige` | `#E9E0D0` | Beige natural (Acento de marca secundario) |
+| `--accent` | `var(--olive)` | Token unificado de acento para CTAs y estados activos |
 
-### 2. Tipografía y Contenido
-| Token CSS | Valor | Función |
-|---|---|---|
-| `--text-primary` | `#f5f6fa` | Texto principal de alta legibilidad |
-| `--text-secondary` | `#c2c5d1` | Texto descriptivo y párrafos |
-| `--text-muted` | `#73778a` | Micro-etiquetas y telemetría |
-| `--font-display` | `'Arial Black', 'Arial Narrow', Arial, sans-serif` | Titulares condensados de alto impacto |
-| `--font-body` | `Inter, ui-sans-serif, system-ui, sans-serif` | Tipografía de lectura fluida |
-| `--font-mono` | `'SFMono-Regular', Consolas, monospace` | Datos técnicos, coordenadas y códigos |
+### 2. Tipografía y Jerarquía
 
-### 3. Geometría y Layout
-| Token CSS | Valor |
-|---|---|
-| `--container-max` | `1240px` |
-| `--page-padding-desktop` | `32px` |
-| `--page-padding-tablet` | `20px` |
-| `--page-padding-mobile` | `16px` |
-| `--section-space-desktop` | `130px` |
-| `--section-space-mobile` | `80px` |
-| `--content-readable` | `720px` |
-| `--content-narrow` | `540px` |
-
-### 4. Radios y Esquinas
 | Token CSS | Valor | Uso |
 |---|---|---|
-| `--radius-sm` | `6px` | Badges pequeños, tags técnicos |
-| `--radius-md` | `10px` | Selects, inputs, swatches |
-| `--radius-lg` | `16px` | Tarjetas de métricas y nav scrolled |
-| `--radius-xl` | `20px` | Contenedores de cotizador y perfil |
-| `--radius-2xl` | `24px` | Tarjeta de holograma y modales |
-| `--radius-pill` | `999px` | Botones de navegación y tags circulares |
+| `--font-graffiti` | `'Graffiti City', cursive, sans-serif` | Wordmark de marca y títulos H1/H2 cortos (alojada localmente en `assets/fonts/Graffiti City.otf`) |
+| `--font-sans` | `'Montserrat Variable', 'Montserrat', sans-serif` | Cuerpo de lectura, navegación, formularios y fichas técnicas |
+| `--font-mono` | `ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, monospace` | Indicadores de paso, metadatos y fichas técnicas |
+
+### 3. Geometría y Espaciado
+
+| Token CSS | Valor | Uso |
+|---|---|---|
+| `--max-w` | `1240px` | Ancho máximo del contenedor principal |
+| `--space-section` | `110px` | Separación vertical entre bloques de contenido |
+| `--radius-sm` | `4px` | Botones de filtro, badges e inputs |
+| `--radius-md` | `8px` | Tarjetas de portafolio y paneles técnicos |
+| `--radius-lg` | `14px` | Contenedores principales y modal |
+| `--radius-pill` | `9999px` | Botones de cierre y etiquetas redondeadas |
+
+### 4. Transiciones y Accesibilidad
+
+| Token CSS | Valor | Uso |
+|---|---|---|
+| `--ease-premium` | `cubic-bezier(0.16, 1, 0.3, 1)` | Curva de animación suave para modales y hover |
+| `min-height` táctil | `≥ 44px` | Botones y controles según directivas WCAG 2.1 AA |
+| `@media (prefers-reduced-motion)` | Reducción total de animaciones y transiciones instantáneas |

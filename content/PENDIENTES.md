@@ -1,27 +1,31 @@
-# PENDIENTES Y VERIFICACIONES — KINGDOM v4
+# PENDIENTES Y VERIFICACIONES — KINGDOM v4 (Actualizado)
 Este archivo es de uso interno del equipo de desarrollo y no se publica en el sitio web.
 
-## [VERIFICAR: Cifras y Años de Experiencia]
-- Año exacto de inicio profesional de Ramses Martínez.
-- Año de fundación o inicio del proyecto Kingdom.
-- Hasta confirmación de CV, se mantendrá redacción cualitativa: "Trabajo en el sector desde niño; profesionalmente desde los 18 años".
+## [RESUELTO: Cifras y Años de Experiencia]
+- **Fuente verificada:** `D:\diseños\Ramses_Martinez_CV_ATS_2026.docx`.
+- **Hitos verificados:** Formación en taller familiar desde la infancia; digitalizador independiente en Lima (2019); fundador de Kingdom (2021 – Presente).
+- **Herramientas verificadas:** Wilcom EmbroideryStudio, Adobe Illustrator, Adobe Photoshop, Blender 3D, Silhouette Studio.
 
-## [VERIFICAR: Matrices de Bordado Wilcom]
-- Pendiente recibir 4 a 6 exportes de TrueView / ficha de información de matrices propias de Wilcom para crear la categoría "Bordado & matrices".
+## [RESUELTO: Tipografía Graffiti City]
+- **Fuente localizada y copiada:** `C:\Users\Dell\AppData\Local\Microsoft\Windows\Fonts\Graffiti City.otf` integrada a `assets/fonts/Graffiti City.otf`.
+- Configurada en `@font-face` y aplicada a títulos H1 de marca.
 
-## [VERIFICAR: Videos de Taller]
-- Pendiente recibir rutas de videos sin editar de máquinas bordadoras para recortar 3-4 clips (8-15 s) e integrarlos a la sección Proceso.
+## [RESUELTO: Paleta Oficial de Marca]
+- **Confirmado por Ramses:** Eliminado el amarillo por completo.
+- **Colores oficiales:** Negro (`#070706`), Grises (`#121211`, `#181817`, `#A7A79F`), Blanco (`#FFFFFF`, `#F7F7F4`).
+- **Acentos oficiales:** Verde Oliva (`#7A8058`) y Beige (`#E9E0D0`).
 
-## [VERIFICAR: Precios de Referencia]
-- Actualmente desactivados (`pricing.enabled = false`).
-- Si Ramses desea mostrarlos, indicar 3-4 precios base en USD (ej. Digitalización de matriz desde USD X, camiseta sublimada desde USD Y).
+## [RESUELTO: Precios]
+- Confirmado mantener precios ocultos (`pricing.enabled = false`).
 
-## [VERIFICAR: Logos de Clientes Activos]
-- Pendiente selección de 8-12 clientes activos con autorización por escrito para habilitar la franja "Han confiado en Kingdom".
+## [RESUELTO: Videos y Clientes]
+- Por indicación de Ramses, no se incluirán videos ni logos de terceros hasta contar con material expresamente autorizado.
 
-## [VERIFICAR: Imagen work-alcaldia]
-- Confirmar si corresponde a producción institucional o colección privada para determinar si se asocia a la entidad o se conserva como "Hoodies sublimados".
+## [RESUELTO: Imagen work-alcaldia]
+- Confirmado: corresponde a propuestas y trabajos realizados de confección e indumentaria personalizada. Se exhibe como diseño de hoodies personalizados en sublimación y confección.
 
-## [VERIFICAR: Ruta de Graffiti City.otf]
-- La fuente no se encuentra en el equipo local bajo ese nombre ni en `C:\Windows\Fonts`.
-- Por directiva, los títulos se implementan con la fuente tipográfica Montserrat 800 en texto real limpio y el logo oficial es el tag graffiti SVG/PNG de marca.
+## [RESUELTO: Capturas de Diseños de Bordado Wilcom]
+- Localizadas 6 capturas técnicas tomadas por Ramses en `C:\Users\Dell\Pictures\Screenshots`.
+- Convertidas a WebP de alta fidelidad (`work-wilcom-01.webp` a `work-wilcom-06.webp`) en `assets/`.
+- Integradas a `content/portfolio.json` y activada la categoría "Bordado & Matrices" / "Embroidery & Punch Files" en español e inglés.
+

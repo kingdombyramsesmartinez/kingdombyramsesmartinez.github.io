@@ -32,6 +32,7 @@ export const SITE_CONFIG = Object.freeze({
     surface: "#0D0D0C",
     surfaceAlt: "#121211",
     paper: "#F7F7F4",
-    accent: "#FFC500"
+    olive: "#7A8058",
+    beige: "#E9E0D0"
   }
 });

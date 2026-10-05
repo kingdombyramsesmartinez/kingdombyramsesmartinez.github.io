@@ -1,105 +1,89 @@
 # KINGDOM — DESIGNER CUSTOMIZATION MANUAL
-## Guía de Personalización Visual y de Marca (Master Spec v2.0)
+## Guía de Personalización Visual y de Marca (v4 Redesign)
 
-Este documento permite a un diseñador gráfico modificar la identidad visual, colores, logos, imágenes, portafolio y textos de KINGDOM sin necesidad de reprogramar la arquitectura JavaScript o reconstruir la estructura HTML.
+Este documento permite a un diseñador modificar la identidad visual, colores, logos, piezas del portafolio y textos de **Kingdom** sin alterar la arquitectura base.
 
 ---
 
 ## 1. Dónde cambiar los colores y la atmósfera visual
 
-Todos los colores, brillos (glows), bordes y radios están centralizados en el bloque `:root` al inicio de:
-📁 `assets/css/style.css`
+Todos los colores y tokens visuales están definidos en dos puntos sincronizados:
 
+### A. Hoja de Estilos (`assets/css/style.css`):
 ```css
 :root {
-  /* Paleta de Marca Principal */
-  --brand-bg: #07070a;            /* Fondo oscuro principal */
-  --brand-surface: #0e0f14;       /* Superficie de paneles */
-  --brand-card: rgba(18, 20, 28, 0.70); /* Fondo de tarjetas */
-  --brand-gold: #ffc500;          /* Oro cibernético corporativo */
-  --brand-gold-bright: #ffe066;   /* Oro brillante / highlights */
-  --brand-red: #ff1e42;           /* Rojo láser de acentos */
-  --brand-cyan: #00f0ff;          /* Cyan holográfico */
-  --brand-green: #00ff88;         /* Verde de telemetría online */
-
-  /* Textos */
-  --text-primary: #f5f6fa;        /* Texto principal blanco */
-  --text-secondary: #c2c5d1;      /* Texto de apoyo plata/humo */
-  --text-muted: #73778a;          /* Texto secundario / telemetría */
-
-  /* Bordes y Cristales */
-  --border-soft: rgba(255, 255, 255, 0.08);
-  --border-glass: rgba(255, 255, 255, 0.15);
-  --border-brand: rgba(255, 197, 0, 0.40);
-
-  /* Radios de Esquinas */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-xl: 20px;
-  --radius-2xl: 24px;
+  --ink: #070706;                 /* Fondo negro profundo */
+  --surface: #0D0D0C;             /* Superficie de tarjetas */
+  --surface-alt: #121211;         /* Superficie secundaria */
+  --paper: #F7F7F4;               /* Blanco natural */
+  --olive: #7A8058;               /* Verde oliva táctico (Acento primario) */
+  --olive-bright: #92976E;        /* Verde oliva iluminado */
+  --beige: #E9E0D0;               /* Beige natural (Acento secundario) */
+  --accent: var(--olive);         /* Token de acento unificado */
 }
+```
+
+### B. Configuración de Marca (`assets/js/site.config.js`):
+Contiene la paleta exportada y los datos de contacto corporativos. Si se actualiza el número de WhatsApp o los correos, se hace directamente en este archivo.
+
+---
+
+## 2. Logo oficial y Favicon
+
+- **Logo oficial de marca:** `assets/brand/logo.svg` (Tag graffiti monocromático oficial).
+- **Favicon:** `assets/brand/favicon.svg` y `assets/favicon.png` (Tag graffiti vectorizado).
+- **Regla de identidad:** El logo oficial es exclusivamente el tag graffiti monocromático en blanco/negro. No existen variantes en amarillo ni isotipos separados.
+
+---
+
+## 3. Tipografías
+
+- **Títulos destacados (H1, H2 cortos y Wordmark):** `Graffiti City.otf` ubicada localmente en `assets/fonts/Graffiti City.otf`.
+- **Cuerpo de lectura y tablas:** `Montserrat Variable` alojada en `assets/fonts/` (formatos woff2 self-hosted).
+- **Prohibido:** Enlazar fuentes desde CDNs externas o Google Fonts para garantizar la privacidad y cumplir la política de seguridad estricta de `AGENTS.md`.
+
+---
+
+## 4. Dónde agregar o editar piezas del Portafolio
+
+Todas las piezas se administran centralizadamente en:
+📁 `content/portfolio.json`
+
+Cada entrada tiene la siguiente estructura:
+```json
+{
+  "id": "nueva-pieza",
+  "image": "assets/work-nombre.webp",
+  "altEs": "Descripción accesible de la imagen en español",
+  "altEn": "Accessible image description in English",
+  "titleEs": "Título de la pieza en español",
+  "titleEn": "Piece title in English",
+  "category": "bordado | sublimacion | streetwear | branding",
+  "techniqueEs": "Técnica textil utilizada",
+  "techniqueEn": "Textile technique in English",
+  "garmentEs": "Tipo de prenda o soporte",
+  "garmentEn": "Garment type or substrate",
+  "availabilityEs": "Bajo pedido / Por unidad",
+  "availabilityEn": "Made to order / Per unit",
+  "noteEs": "Diseño propio · Mockup referencial",
+  "noteEn": "Original design · Reference mockup",
+  "descEs": "Descripción técnica de la pieza",
+  "descEn": "Technical description of the piece"
+}
+```
+
+Tras editar `content/portfolio.json`, se ejecuta:
+```bash
+npm run build
+npm run audit:local
 ```
 
 ---
 
-## 2. Dónde cambiar el logo y el favicon
+## 5. Edición de Textos en Español e Inglés
 
-- **Logo principal de navegación y marca:**
-  - Archivo: `assets/logo-yellow.webp` (o sustituir en `index.html` por un SVG vectorial en `assets/brand/`).
-  - ViewBox recomendado: `0 0 500 337`.
-  - Área segura: 10% del alto alrededor del símbolo.
-- **Favicon del navegador:**
-  - Archivo: `assets/favicon.png` (256x256 px o SVG transparente).
-  - Apple touch icon: 180x180 px.
+Para modificar textos de navegación, biografía, servicios o tablas de materiales:
+- **Español:** `content/es.json`
+- **Inglés:** `content/en.json`
 
----
-
-## 3. Dónde cambiar las imágenes del Hero y Portafolio
-
-Todas las imágenes se ubican en la carpeta `assets/`:
-
-| Elemento | Archivo | Dimensiones recomendadas |
-|---|---|---|
-| Hero Banner principal | `assets/hero-banner.webp` | 1920x810 o 1600x900 px |
-| Tag central del holograma | `assets/streetwear-tag.webp` | 800x428 px |
-| Amigo Café FC (Sublimación) | `assets/work-amigoscafe.webp` | 900x1125 px (aspect-ratio 4:3) |
-| Alcaldía de Iribarren (Bordado) | `assets/work-alcaldia.webp` | 900x1125 px |
-| Chevrolet Camaro (Bordado) | `assets/work-camaro.webp` | 900x1125 px |
-| Dragon Ball Super (Vectorial) | `assets/work-dbs.webp` | 900x1125 px |
-| Katsuki Bakugo (Arte Textil) | `assets/work-bakugo.webp` | 900x1125 px |
-| Tarjetas Corporativas (Diseño) | `assets/work-tarjetas.webp` | 1200x892 px |
-
----
-
-## 4. Dónde cambiar los proyectos del Portafolio
-
-En `index.html`, dentro de la sección `<section class="portfolio" id="trabajos">`, cada proyecto se define con una tarjeta `<article class="p-card ...">`.
-
-Cada tarjeta incluye:
-1. `data-category`: categoría para los filtros (`bordado`, `sublimacion`, `vector`, `branding`).
-2. Imagen `<img>` con `src`, `alt`, `width` y `height`.
-3. Título del proyecto y badge técnico de especificación.
-4. Datos del modal de inspección:
-   - `data-stitches`: puntadas estimadas (ej. 42.500 puntadas o N/A).
-   - `data-colors`: número de colores/tintas.
-   - `data-machine`: tipo de maquinaria o técnica.
-
----
-
-## 5. Dónde cambiar los enlaces de contacto y redes sociales
-
-En `index.html`:
-- **WhatsApp:** Buscar los enlaces `https://wa.me/584126785058` y reemplazar el número o el texto codificado en `text=`.
-- **Email:** Enlace `mailto:kingdombrandbqto@gmail.com`.
-- **Teléfono directo:** Enlace `tel:+584126785058`.
-- **Instagram / TikTok / LinkedIn:** Enlaces en la sección `<section id="kingdom">` y en el footer.
-
----
-
-## 6. Dónde editar las cláusulas legales y claims comerciales
-
-- Los avisos de propiedad intelectual y no-patrocinio sobre marcas de terceros están en `legal/intellectual-property.html`.
-- Términos de servicio y entregas en `legal/terms.html`.
-- Política de privacidad en `legal/privacy.html`.
-- Registro de afirmaciones comerciales verificables en `MARKETING-CLAIMS-REGISTER.md`.
+Al guardar los cambios, compila con `npm run build` para actualizar automáticamente `index.html` y `en/index.html`.

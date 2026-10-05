@@ -1,36 +1,39 @@
-# INVENTARIO MAESTRO DE CONTENIDO Y RECURSOS — KINGDOM v2.0
+# INVENTARIO MAESTRO DE CONTENIDO Y RECURSOS — KINGDOM (v4 Redesign)
 
 ## 1. Identidad de Marca y Operador
-- **Marca Comercial:** KINGDOM
-- **Titular / Operador:** Ramses Martínez
-- **Especialidad:** Diseño Gráfico Textil & Digitalización de Bordado Industrial de Alta Precisión (DST/PES)
-- **Ubicación:** Barquisimeto, Estado Lara, Venezuela (UTC-4)
+- **Nombre de Marca:** Kingdom
+- **Titular y Diseñador:** Ramses Martínez
+- **Titular Público:** Ramses Martínez — Kingdom
+- **Ubicación:** Barquisimeto, Estado Lara, Venezuela
 - **Canales de Contacto Directo:**
-  - WhatsApp: `+58 424-109-2124` (o canal oficial configurado)
-  - Teléfono: `+58 424-109-2124`
-  - Email: `kingdombrandbqto@gmail.com`
-  - Instagram: `@kingdom_vzla`
-  - TikTok: `@kingdom_vzla`
-  - LinkedIn: `ramses-martinez-bqto`
-  - Catálogo PDF: Enlace directo en Google Drive
+  - WhatsApp: `+58 424-109-2124` (Solo WhatsApp; sin enlaces `tel:` ni llamadas)
+  - Correo Pedidos / Confección: `kingdombrandbqto@gmail.com`
+  - Correo Remoto / Reclutadores: `ramsesm818@gmail.com`
+  - Redes: Instagram `@kingdom_vzla`, TikTok `@kingdom_vzla`, LinkedIn `ramses-martinez-bqto`
+  - Catálogo: Enlace directo en Google Drive
 
-## 2. Inventario de Portafolio Técnico
+---
 
-| ID | Proyecto | Técnica | Especificaciones | Archivo Asset |
-|---|---|---|---|---|
-| `amigoscafe` | Amigo Café FC — Kit Deportivo | Sublimación Deportiva | 6 Tintas Especiales CMYK, Resolución Ultra HD | `assets/work-amigoscafe.webp` |
-| `alcaldia` | Alcaldía Bolivariana de Iribarren | Bordado Industrial | 42.500 Puntadas DST, Hilo Poliéster 40 | `assets/work-alcaldia.webp` |
-| `camaro` | Chevrolet Camaro — Parche Táctico | Bordado Industrial | 28.000 Puntadas DST, Refuerzo de Tatami | `assets/work-camaro.webp` |
-| `dbs` | Dragon Ball Super — Streetwear | Ilustración Vectorial | Trazos Vectoriales AI/SVG, Curvas Optimizadas | `assets/work-dbs.webp` |
-| `bakugo` | Katsuki Bakugo — Anime Textil | Ilustración Textil | Separación de Color y Tramas Especiales | `assets/work-bakugo.webp` |
-| `tarjetas` | Tarjetas & Papelería Corporativa | Branding & Print | Acabado Premium en Cartulina Especial | `assets/work-tarjetas.webp` |
+## 2. Inventario de Piezas de Portafolio (`content/portfolio.json`)
 
-## 3. Catálogo de Servicios y Capacidades
-1. **Digitalización de Bordado Industrial (Punching / Ponchado DST/PES):**
-   - Reducción de rotura de hilos, compensación de estiramiento por tipo de tela, densidad variable.
-2. **Arte para Sublimación Deportiva & Full Print:**
-   - Plantillas a escala real, preparación de perfiles de color CMYK, numeración y corte.
-3. **Ilustración Vectorial & Gráfica Streetwear:**
-   - Vectorización de logotipos, separación de color para serigrafía y DTF.
-4. **Consultoría y Auditoría Técnica de Planta:**
-   - Diagnóstico de calibración, reducción de merma y optimización de secuencias de bordado.
+| ID | Título de la Pieza | Categoría | Técnica | Prenda / Soporte | Disponibilidad | Asset |
+|---|---|---|---|---|---|---|
+| `amigoscafe` | Amigo Café FC — Kit Deportivo | Sublimación | Sublimación Deportiva Full Print | Jersey técnico Dry-Fit | Bajo pedido / Por unidad | `assets/work-amigoscafe.webp` |
+| `alcaldia` | Hoodies sublimados — diseño personalizado | Sublimación | Sublimación & Confección | Hoodie / Chaqueta deportiva | Bajo pedido / Por unidad | `assets/work-alcaldia.webp` |
+| `camaro` | Chevrolet Camaro — Streetwear Art | Streetwear | Ilustración Vectorial & Gráfica Textil | Camiseta urbana / Parche | Bajo pedido / Por unidad | `assets/work-camaro.webp` |
+| `dbs` | Dragon Ball Super — Streetwear Series | Streetwear | Ilustración Vectorial Textil | Camiseta oversize | Bajo pedido / Por unidad | `assets/work-dbs.webp` |
+| `bakugo` | Katsuki Bakugo — Anime Streetwear | Streetwear | Ilustración Textil Urbana | Camiseta streetwear | Bajo pedido / Por unidad | `assets/work-bakugo.webp` |
+| `tarjetas` | Identidad Visual & Papelería | Branding | Branding & Diseño Editorial | Tarjetas y papelería | Bajo pedido / Por proyecto | `assets/work-tarjetas.webp` |
+| `wilcom-01` | Matriz de Bordado Industrial — Wilcom | Bordado | Digitalización Wilcom (DST/PES) | Matriz técnica digital | Bajo pedido / Archivo digital | `assets/work-wilcom-01.webp` |
+| `wilcom-02` | Ponchado Vectorial de Alta Definición | Bordado | Digitalización Wilcom (DST/PES) | Matriz técnica digital | Bajo pedido / Archivo digital | `assets/work-wilcom-02.webp` |
+| `wilcom-03` | Detalle Estructural de Puntadas — Wilcom | Bordado | Digitalización Wilcom (DST/PES) | Matriz técnica digital | Bajo pedido / Archivo digital | `assets/work-wilcom-03.webp` |
+| `wilcom-04` | Logotipo Técnico para Bordado Computarizado | Bordado | Digitalización Wilcom (DST/PES) | Matriz técnica digital | Bajo pedido / Archivo digital | `assets/work-wilcom-04.webp` |
+| `wilcom-05` | Densidad y Compensación — Wilcom Studio | Bordado | Digitalización Wilcom (DST/PES) | Matriz técnica digital | Bajo pedido / Archivo digital | `assets/work-wilcom-05.webp` |
+| `wilcom-06` | Simulación Realista de Puntadas — Wilcom | Bordado | Digitalización Wilcom (DST/PES) | Matriz técnica digital | Bajo pedido / Archivo digital | `assets/work-wilcom-06.webp` |
+
+---
+
+## 3. Servicios Principales
+1. **Matrices de Bordado (DST / PES):** Ponchado técnico en Wilcom EmbroideryStudio con compensación de estiramiento y secuencias optimizadas. Disponible para cualquier país.
+2. **Sublimación Deportiva Full Print:** Diseño integral a escala de patrones deportivos para telas Dry-Fit y microfibras.
+3. **Ilustración Vectorial & Streetwear:** Ilustración textil, artes para DTF y serigrafía sobre prendas oscuras y claras.

@@ -53,19 +53,19 @@
     "desc": "Trabajo en el sector textil desde niño y profesionalmente desde los 18 años. Kingdom reúne mi trabajo en digitalización de bordado industrial, ilustración gráfica y manufactura bajo pedido.",
     "timeline": [
       {
-        "period": "Origen",
-        "title": "Oficio & Taller Familiar",
-        "desc": "Crecí entre máquinas de confección, corte textil e hilos de bordar, aprendiendo los fundamentos prácticos del comportamiento de la tela."
+        "period": "Trayectoria",
+        "title": "Oficio Textil Familiar",
+        "desc": "Crecí en el entorno de la confección y el bordado, aprendiendo el oficio y comportamiento de los textiles desde temprana edad."
       },
       {
-        "period": "Especialización",
-        "title": "Digitalización Industrial de Bordado",
-        "desc": "Formación técnica avanzada en ponchado y matrices DST/PES, calibrando densidades, refuerzos de puntada y compensación de estiramiento."
+        "period": "2019",
+        "title": "Digitalizador Independiente",
+        "desc": "Servicios de digitalización de bordado industrial y ponchado Wilcom para talleres y fabricantes en Lima, optimizando matrices DST/PES."
       },
       {
-        "period": "Evolución",
-        "title": "Kingdom — Diseño & Producción",
-        "desc": "Estudio independiente enfocado en uniformes deportivos sublimados, colecciones streetwear y servicios digitales para marcas y talleres."
+        "period": "2021 – Presente",
+        "title": "Fundación de Kingdom",
+        "desc": "Estudio propio en Barquisimeto: digitalización de bordado de alto volumen, arte vectorial para sublimación deportiva y colecciones streetwear bajo pedido."
       }
     ],
     "toolsTitle": "Herramientas de Trabajo",
@@ -145,6 +145,7 @@
     "desc": "Proyectos y mockups referenciales desarrollados por Ramses Martínez. Haz clic en cada pieza para inspeccionar los detalles.",
     "filters": [
       { "id": "all", "label": "Todos" },
+      { "id": "bordado", "label": "Bordado & Matrices" },
       { "id": "sublimacion", "label": "Sublimación Deportiva" },
       { "id": "streetwear", "label": "Streetwear & Arte" },
       { "id": "branding", "label": "Branding & Papelería" }

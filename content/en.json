@@ -53,19 +53,19 @@
     "desc": "Immersed in the textile trade since childhood and working professionally since age 18. Kingdom brings together my practice in embroidery digitizing, vector art and made-to-order manufacturing.",
     "timeline": [
       {
-        "period": "Origins",
-        "title": "Family Workshop Heritage",
-        "desc": "Growing up around sewing machines, pattern drafting and embroidery threads, understanding fabric behavior from hands-on craft."
+        "period": "Background",
+        "title": "Family Textile Roots",
+        "desc": "Immersed from an early age in garment assembly, fabric cutting and industrial embroidery, understanding materials hands-on."
       },
       {
-        "period": "Specialization",
-        "title": "Industrial Embroidery Digitizing",
-        "desc": "Advanced punching and DST/PES file preparation, calibrating stitch density, underlays, pull-compensation and sequence logic."
+        "period": "2019",
+        "title": "Freelance Embroidery Digitizer",
+        "desc": "Delivered on-demand Wilcom stitch programming for garment manufacturers in Lima, optimizing DST/PES matrices for production efficiency."
       },
       {
-        "period": "Evolution",
-        "title": "Kingdom — Design & Production",
-        "desc": "Independent design practice producing sublimated jerseys, streetwear graphics and digital file preparation for global apparel makers."
+        "period": "2021 – Present",
+        "title": "Kingdom Studio Founded",
+        "desc": "Independent design practice in Barquisimeto: high-volume embroidery digitizing, performance sublimation art and made-to-order streetwear."
       }
     ],
     "toolsTitle": "Primary Tools",
@@ -145,6 +145,7 @@
     "desc": "Projects and reference mockups developed by Ramses Martínez. Click on any item to view its technical details.",
     "filters": [
       { "id": "all", "label": "All" },
+      { "id": "bordado", "label": "Embroidery & Punch Files" },
       { "id": "sublimacion", "label": "Sports Sublimation" },
       { "id": "streetwear", "label": "Streetwear & Art" },
       { "id": "branding", "label": "Branding & Print" }

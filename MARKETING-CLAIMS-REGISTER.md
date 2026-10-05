@@ -1,15 +1,14 @@
-# REGISTRO DE AFIRMACIONES PUBLICITARIAS
+# REGISTRO DE AFIRMACIONES PUBLICITARIAS Y VERACIDAD (v4)
 
-Este archivo acompaña la landing. No debe publicarse.
+Este documento es de control interno y no forma parte del sitio público. Registra la auditoría de claims para evitar cualquier afirmación no comprobable según la Directiva v4.
 
-| Afirmación | Evidencia que debe existir | Responsable | Estado |
-|---|---|---|---|
-| Más de 10 años | CV, contratos, historial comercial o documentación equivalente | [ ] | PENDIENTE |
-| 100+ matrices/mes | Registros de producción de un periodo definido | [ ] | PENDIENTE |
-| 60+ full print/mes | Registros de producción de un periodo definido | [ ] | PENDIENTE |
-| Reducción de roturas | Comparativa de antes/después, condiciones y muestra | [ ] | PENDIENTE |
-| Cero arrugas | No usar como absoluto sin prueba extremadamente sólida | [ ] | PENDIENTE |
-| Cero desperdicio | No usar como absoluto; definir métrica real | [ ] | PENDIENTE |
-| Alta precisión / alta definición | Especificación o criterio técnico definido | [ ] | PENDIENTE |
-
-Para publicidad dirigida a mercados con normas de protección al consumidor, conserva la evidencia antes de publicar la afirmación.
+| Afirmación Antigua / Riesgosa | Acción Ejecutada en v4 | Estado Actual |
+|---|---|---|
+| "Más de 10 años de experiencia" | Sustituido por trayectoria real documentada en CV: "Trabajo en el sector textil desde niño y profesionalmente desde los 18 años". | `VERIFICADO / APROBADO` |
+| "100+ matrices/mes" / "60+ full print/mes" | Eliminadas todas las cifras no auditadas comercialmente. Se describe el catálogo y capacidad bajo pedido. | `ELIMINADO DEL SITIO` |
+| "Control de calidad en planta" / "En nuestra planta" | Eliminada toda alusión a planta propia. Se describe como estudio/taller de diseño y producción bajo pedido. | `ELIMINADO DEL SITIO` |
+| "Reducción de roturas" / "Cero roturas" | Prohibido en auditoría. Se describe el método técnico: "compensación de estiramiento y secuencias limpias". | `ELIMINADO DEL SITIO` |
+| "Cero arrugas" / "Cero desperdicio" | Eliminado de todo el texto público. Prohibido por script de auditoría. | `ELIMINADO DEL SITIO` |
+| "Máxima definición" / "Alta precisión" | Eliminados superlativos absolutos. Reemplazados por terminología técnica: "compensación de tiro", "densidad calibrada". | `ELIMINADO DEL SITIO` |
+| "Portafolio fotográfico real" | Modificado a "Diseño Propio · Mockup referencial" en prendas conceptuales y "Matriz original desarrollada en Wilcom" en bordados. | `VERIFICADO / APROBADO` |
+| "Piezas con personajes / marcas de terceros" (DBS, Bakugo, Chevrolet) | Desplazadas de primer plano y acompañadas con descargo explícito: "Arte de fans / personalizado. Sin afiliación con los titulares de las marcas y personajes." | `DOCUMENTADO Y REGULADO` |

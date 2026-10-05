@@ -1,24 +1,40 @@
-# ESTADO DE DESPLIEGUE Y COMPATIBILIDAD — KINGDOM v2.0
+# ESTADO DE DESPLIEGUE Y COMPATIBILIDAD — KINGDOM v4 Redesign
 
-**Fecha de Evaluación:** 2026-10-02  
-**Estado Global:** `PASS` (Totalmente compatible para GitHub Pages y Cloudflare Pages)
+**Fecha:** 2026-10-05  
+**Rama activa:** `v4-redesign`  
+**Destino de Publicación Actual:** GitHub Pages (`https://kingdombqto.github.io/KINGDOM/`)  
+**Destino de Producción Recomendado / Alterno:** Cloudflare Pages (cuando se asocie dominio propio)  
 
 ---
 
-## 1. Validación de Plataforma
+## 1. Comportamiento de Seguridad y CSP por Plataforma
 
-| Plataforma | Soporte | Requisitos Verificados |
+| Plataforma | Comportamiento de Cabeceras HTTP | Estrategia de Seguridad Implementada |
 |---|---|---|
-| **GitHub Pages** | `PASS` | Archivo `.nojekyll` activo, `404.html` personalizado, rutas relativas locales validadas con `npm run audit:local`. |
-| **Cloudflare Pages** | `PASS` | Archivo `_headers` con políticas de seguridad y cache configuradas, soporte Brotli/Gzip automático. |
+| **GitHub Pages** | **No procesa `_headers` ni cabeceras HTTP personalizadas.** | Se implementó una etiqueta estricta `<meta http-equiv="Content-Security-Policy">` directamente en el `<head>` de cada una de las 9 páginas HTML generadas. |
+| **Cloudflare Pages** | **Aplica `_headers` a nivel de servidor perimetral.** | Se mantiene el archivo `_headers` en la raíz con CSP rigurosa, `Permissions-Policy`, `X-Frame-Options: DENY`, y directivas de caché estática para assets. |
 
-## 2. Archivos Críticos de Despliegue
-- `.nojekyll`: Presente (impide procesamiento de Jekyll para respetar archivos que inicien con punto o carpetas especiales).
-- `404.html`: Presente y con diseño integrado a la identidad cibernética de KINGDOM.
-- `robots.txt`: Presente y validado para indexación de motores de búsqueda.
-- `sitemap.xml.template`: Presente para generación dinámica al asociar dominio propio.
-- `site-manifest.json`: Presente para compatibilidad con iconos y presentación PWA.
+---
 
-## 3. Resultado de Auditoría de Enlaces
-- `npm run audit:local`: **0 errores** detectados en 8 páginas HTML analizadas.
-- Todos los archivos CSS, JS, imágenes e hipervínculos internos resuelven correctamente.
+## 2. Archivos Críticos de Despliegue en Raíz
+
+- `.nojekyll`: Presente en raíz para evitar que el motor de Jekyll de GitHub Pages ignore archivos estáticos o fuentes.
+- `index.html`: Versión en español compilada.
+- `en/index.html`: Versión en inglés compilada.
+- `404.html`: Página personalizada de error 404 compatible con la identidad de marca y bilingüe.
+- `sitemap.xml`: Mapa del sitio XML con alternate tags `xhtml:link` bidireccionales.
+- `robots.txt`: Reglas de rastreo con referencia a `sitemap.xml`.
+- `site-manifest.json`: Web App Manifest con iconos de marca y tema oscuro.
+- `.github/workflows/audit.yml`: Pipeline de CI para validar compilación y auditoría antes de cualquier merge a producción.
+
+---
+
+## 3. Comandos de Verificación Previos a Despliegue
+
+```bash
+# Compilar páginas estáticas bilingües
+npm run build
+
+# Ejecutar auditoría automatizada
+npm run audit:local
+```
