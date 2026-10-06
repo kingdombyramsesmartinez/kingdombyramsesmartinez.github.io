@@ -23,15 +23,15 @@
     "langSwitchAria": "Cambiar a versión en español"
   },
   "hero": {
-    "eyebrow": "Ramses Martínez // Textile Studio & Digitizing",
+    "eyebrow": "<span translate=\"no\">Ramses Martínez</span> // Textile Studio & Digitizing",
     "titleLine1": "Textile Design",
     "titleLine2": "& Industrial Embroidery",
-    "lead": "Developing sublimated sportswear, custom apparel and industrial embroidery files (DST/PES) calibrated for fabric elasticity and machine efficiency.",
+    "lead": "Developing sublimated sportswear, custom apparel and industrial embroidery files (<span translate=\"no\">DST</span>/<span translate=\"no\">PES</span>) calibrated for fabric elasticity and machine efficiency.",
     "ctaWhatsapp": "Chat on WhatsApp →",
     "ctaPortfolio": "View Work",
     "badges": [
       "BARQUISIMETO, VZLA",
-      "DST / PES FORMATS",
+      "<span translate=\"no\">DST</span> / <span translate=\"no\">PES</span> FORMATS",
       "HD SUBLIMATION"
     ],
     "mosaicTags": {
@@ -42,15 +42,15 @@
   },
   "trust": [
     "Original Design",
-    "DST / PES Punching",
+    "<span translate=\"no\">DST</span> / <span translate=\"no\">PES</span> Punching",
     "Sports Sublimation",
     "Made to Order",
     "Direct Communication"
   ],
   "about": {
     "eyebrow": "Trajectory & Profile",
-    "title": "Ramses Martínez × Kingdom",
-    "desc": "Immersed in the textile trade since childhood and working professionally since age 18. Kingdom brings together my practice in embroidery digitizing, vector art and made-to-order manufacturing.",
+    "title": "<span translate=\"no\">Ramses Martínez</span> × <span translate=\"no\">Kingdom</span>",
+    "desc": "Immersed in the textile trade since childhood and working professionally since age 18. <span translate=\"no\">Kingdom</span> brings together my practice in embroidery digitizing, vector art and made-to-order manufacturing.",
     "timeline": [
       {
         "period": "Background",
@@ -60,11 +60,11 @@
       {
         "period": "2019",
         "title": "Freelance Embroidery Digitizer",
-        "desc": "Delivered on-demand Wilcom stitch programming for garment manufacturers in Lima, optimizing DST/PES matrices for production efficiency."
+        "desc": "Delivered on-demand <span translate=\"no\">Wilcom</span> stitch programming for garment manufacturers in Lima, optimizing <span translate=\"no\">DST</span>/<span translate=\"no\">PES</span> matrices for production efficiency."
       },
       {
         "period": "2021 – Present",
-        "title": "Kingdom Studio Founded",
+        "title": "<span translate=\"no\">Kingdom</span> Studio Founded",
         "desc": "Independent design practice in Barquisimeto: high-volume embroidery digitizing, performance sublimation art and made-to-order streetwear."
       }
     ],
@@ -203,7 +203,7 @@
     "cta": "Inquire About Similar Work via WhatsApp"
   },
   "footer": {
-    "brandDesc": "Textile design, vector illustration and industrial embroidery digitizing studio by Ramses Martínez.",
+    "brandDesc": "Textile design, vector illustration and industrial embroidery digitizing studio by <span translate=\"no\">Ramses Martínez</span>.",
     "legalTitle": "Legal & Policies",
     "links": {
       "privacy": "Privacy",
@@ -213,8 +213,8 @@
       "security": "Security",
       "a11y": "Accessibility"
     },
-    "copyright": "Kingdom © 2026 — Ramses Martínez. Barquisimeto, Venezuela.",
+    "copyright": "<span translate=\"no\">Kingdom</span> © 2026 — <span translate=\"no\">Ramses Martínez</span>. Barquisimeto, Venezuela.",
     "disclaimer": "This website is for informational purposes and does not constitute a binding legal contract.",
-    "browserTranslate": "Looking for another language? You can use your web browser's built-in translation feature."
+    "browserTranslate": "Prefer another language? You can use your web browser's built-in translation tool (Chrome, Edge, Safari, or Firefox)."
   }
 }

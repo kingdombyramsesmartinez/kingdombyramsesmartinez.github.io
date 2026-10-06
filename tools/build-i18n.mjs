@@ -91,7 +91,7 @@ function renderIndex(data, isEn) {
   out = out.replaceAll("{{ABOUT_TIMELINE_HTML}}", timelineHtml);
 
   const toolsHtml = data.about.tools.map(tool => `
-            <span class="tool-badge">
+            <span class="tool-badge" translate="no">
               ${tool}
             </span>`).join("");
   out = out.replaceAll("{{ABOUT_TOOLS_HTML}}", toolsHtml);

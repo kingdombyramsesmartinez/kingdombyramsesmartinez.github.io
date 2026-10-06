@@ -26,12 +26,12 @@
     "eyebrow": "Ramses Martínez // Estudio Textil & Digitalización",
     "titleLine1": "Diseño Textil",
     "titleLine2": "& Bordado Industrial",
-    "lead": "Desarrollo de piezas deportivas sublimadas, indumentaria personalizada y digitalización de matrices de bordado DST/PES configuradas según el tipo de tela y maquinaria.",
+    "lead": "Desarrollo de piezas deportivas sublimadas, indumentaria personalizada y digitalización de matrices de bordado <span translate=\"no\">DST</span>/<span translate=\"no\">PES</span> configuradas según el tipo de tela y maquinaria.",
     "ctaWhatsapp": "Hablar por WhatsApp →",
     "ctaPortfolio": "Ver Trabajos",
     "badges": [
       "BARQUISIMETO, VZLA",
-      "FORMATOS DST / PES",
+      "FORMATOS <span translate=\"no\">DST</span> / <span translate=\"no\">PES</span>",
       "SUBLIMACIÓN HD"
     ],
     "mosaicTags": {
@@ -42,15 +42,15 @@
   },
   "trust": [
     "Diseño Propio",
-    "Matrices DST / PES",
+    "Matrices <span translate=\"no\">DST</span> / <span translate=\"no\">PES</span>",
     "Sublimación Deportiva",
     "Piezas Bajo Pedido",
     "Atención Directa"
   ],
   "about": {
     "eyebrow": "Trayectoria & Perfil",
-    "title": "Ramses Martínez × Kingdom",
-    "desc": "Trabajo en el sector textil desde niño y profesionalmente desde los 18 años. Kingdom reúne mi trabajo en digitalización de bordado industrial, ilustración gráfica y manufactura bajo pedido.",
+    "title": "<span translate=\"no\">Ramses Martínez</span> × <span translate=\"no\">Kingdom</span>",
+    "desc": "Trabajo en el sector textil desde niño y profesionalmente desde los 18 años. <span translate=\"no\">Kingdom</span> reúne mi trabajo en digitalización de bordado industrial, ilustración gráfica y manufactura bajo pedido.",
     "timeline": [
       {
         "period": "Trayectoria",
@@ -60,11 +60,11 @@
       {
         "period": "2019",
         "title": "Digitalizador Independiente",
-        "desc": "Servicios de digitalización de bordado industrial y ponchado Wilcom para talleres y fabricantes en Lima, optimizando matrices DST/PES."
+        "desc": "Servicios de digitalización de bordado industrial y ponchado <span translate=\"no\">Wilcom</span> para talleres y fabricantes en Lima, optimizando matrices <span translate=\"no\">DST</span>/<span translate=\"no\">PES</span>."
       },
       {
         "period": "2021 – Presente",
-        "title": "Fundación de Kingdom",
+        "title": "Fundación de <span translate=\"no\">Kingdom</span>",
         "desc": "Estudio propio en Barquisimeto: digitalización de bordado de alto volumen, arte vectorial para sublimación deportiva y colecciones streetwear bajo pedido."
       }
     ],
@@ -203,7 +203,7 @@
     "cta": "Cotizar Trabajo Similar por WhatsApp"
   },
   "footer": {
-    "brandDesc": "Estudio de diseño textil, ilustración vectorial y digitalización de bordado industrial de Ramses Martínez.",
+    "brandDesc": "Estudio de diseño textil, ilustración vectorial y digitalización de bordado industrial de <span translate=\"no\">Ramses Martínez</span>.",
     "legalTitle": "Enlaces Legales",
     "links": {
       "privacy": "Privacidad",
@@ -213,8 +213,8 @@
       "security": "Seguridad",
       "a11y": "Accesibilidad"
     },
-    "copyright": "Kingdom © 2026 — Ramses Martínez. Barquisimeto, Venezuela.",
+    "copyright": "<span translate=\"no\">Kingdom</span> © 2026 — <span translate=\"no\">Ramses Martínez</span>. Barquisimeto, Venezuela.",
     "disclaimer": "Este sitio es informativo y no constituye una oferta contractual vinculante.",
-    "browserTranslate": "¿Otro idioma? Puedes usar la función de traducir de tu navegador web."
+    "browserTranslate": "¿Prefieres otro idioma? Puedes utilizar la herramienta de traducción integrada de tu navegador (Chrome, Edge, Safari o Firefox)."
   }
 }
