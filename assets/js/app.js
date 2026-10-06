@@ -140,7 +140,9 @@ import { SITE_CONFIG } from "./site.config.js";
   const modalTitle = qs("#modalTitle");
   const modalTag = qs("#modalTag");
   const modalSpecs = qs("#modalSpecs");
+  const modalPrice = qs("#modalPrice");
   const modalDesc = qs("#modalDesc");
+  const modalWaBtn = qs("#modalWaBtn");
   const mainContent = qs("#mainContent");
   let lastActiveTrigger = null;
 
@@ -158,6 +160,7 @@ import { SITE_CONFIG } from "./site.config.js";
     const title = card.dataset.title || "";
     const tag = card.dataset.tag || "";
     const specs = card.dataset.specs || "";
+    const price = card.dataset.price || "";
     const desc = card.dataset.desc || "";
     const img = card.dataset.img || "";
     const cardImg = qs("img", card);
@@ -166,10 +169,19 @@ import { SITE_CONFIG } from "./site.config.js";
     if (modalTitle) modalTitle.textContent = title;
     if (modalTag) modalTag.textContent = tag;
     if (modalSpecs) modalSpecs.textContent = specs;
+    if (modalPrice) modalPrice.textContent = price;
     if (modalDesc) modalDesc.textContent = desc;
     if (modalImg) {
       modalImg.src = img;
       modalImg.alt = altText;
+    }
+
+    if (modalWaBtn) {
+      const isEnglish = document.documentElement.lang === "en";
+      const waMsg = isEnglish
+        ? `Hello Ramses, I would like to inquire about the piece "${title}" from your portfolio (Ref: ${specs}).`
+        : `Hola Ramses, deseo consultar información y presupuesto sobre la pieza "${title}" de tu portafolio (Ref: ${specs}).`;
+      modalWaBtn.href = `https://wa.me/${SITE_CONFIG.contact.whatsappNumber}?text=${encodeURIComponent(waMsg)}`;
     }
 
     modal.classList.add("open");

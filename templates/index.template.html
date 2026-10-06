@@ -163,24 +163,17 @@
       </div>
     </section>
 
-    <!-- Sección Portafolio con Filtros -->
-    <section id="portafolio" class="section-bg-subtle">
-      <div class="container">
+    <!-- Sección Portafolio (Acceso a Galería Completa) -->
+    <section id="portafolio" class="section-bg-subtle portfolio-teaser-section">
+      <div class="container portfolio-teaser-container">
         <div class="section-eyebrow">{{PORTFOLIO_EYEBROW}}</div>
         <h2 class="section-title">{{PORTFOLIO_TITLE}}</h2>
-        <p class="section-desc">{{PORTFOLIO_DESC}}</p>
-
-        <div class="portfolio-filters" role="group" aria-label="Filtros por categoría">
-          {{PORTFOLIO_FILTERS_HTML}}
+        <p class="section-desc portfolio-teaser-desc">{{PORTFOLIO_DESC}}</p>
+        <div class="portfolio-teaser-cta-wrap">
+          <a class="btn-premium btn-portfolio-hub" href="{{PORTFOLIO_PAGE_HREF}}">
+            {{PORTFOLIO_CTA_EXPLORE}}
+          </a>
         </div>
-
-        <div class="portfolio-grid">
-          {{PORTFOLIO_CARDS_HTML}}
-        </div>
-
-        <p class="portfolio-disclaimer">
-          {{PORTFOLIO_DISCLAIMER}}
-        </p>
       </div>
     </section>
 

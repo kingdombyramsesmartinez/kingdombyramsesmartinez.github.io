@@ -140,17 +140,18 @@
     ]
   },
   "portfolio": {
-    "eyebrow": "Selected Projects",
-    "title": "Design Portfolio",
-    "desc": "Projects and reference mockups developed by Ramses Martínez. Click on any item to view its technical details.",
+    "eyebrow": "Works & Presentations",
+    "title": "Textile Design Portfolio",
+    "desc": "Full showcase of design presentations, custom athletic apparel, and textile artwork engineered by Ramses Martínez.",
+    "ctaExplore": "Explore Full Portfolio (55 Presentations) →",
+    "ctaBack": "← Back to Home",
     "filters": [
       { "id": "all", "label": "All" },
-      { "id": "bordado", "label": "Embroidery & Punch Files" },
       { "id": "sublimacion", "label": "Sports Sublimation" },
       { "id": "streetwear", "label": "Streetwear & Art" },
-      { "id": "branding", "label": "Branding & Print" }
+      { "id": "branding", "label": "Branding & Corporate" }
     ],
-    "disclaimer": "Original artwork and concept mockups. Fan artwork is showcased for portfolio demonstration only, with no affiliation to trademark holders."
+    "disclaimer": "Digital presentations and concept artwork created by Ramses Martínez for Kingdom. Fan artwork is presented for artistic portfolio demonstration only without brand affiliation."
   },
   "contact": {
     "eyebrow": "Direct Inquiries",
@@ -196,6 +197,7 @@
     "eyebrow": "TECHNICAL SPEC SHEET",
     "techLabel": "Technique:",
     "garmentLabel": "Garment / Medium:",
+    "priceLabel": "Price / Reference:",
     "availLabel": "Availability:",
     "noteLabel": "Note:",
     "cta": "Inquire About Similar Work via WhatsApp"

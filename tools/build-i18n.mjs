@@ -6,20 +6,24 @@ import { SITE_CONFIG } from "../assets/js/site.config.js";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 
-const templatePath = path.join(root, "templates", "index.template.html");
-const template = fs.readFileSync(templatePath, "utf8");
+const indexTemplatePath = path.join(root, "templates", "index.template.html");
+const indexTemplate = fs.readFileSync(indexTemplatePath, "utf8");
+
+const portfolioTemplatePath = path.join(root, "templates", "portfolio.template.html");
+const portfolioTemplate = fs.readFileSync(portfolioTemplatePath, "utf8");
 
 const esData = JSON.parse(fs.readFileSync(path.join(root, "content", "es.json"), "utf8"));
 const enData = JSON.parse(fs.readFileSync(path.join(root, "content", "en.json"), "utf8"));
 const portfolioData = JSON.parse(fs.readFileSync(path.join(root, "content", "portfolio.json"), "utf8"));
 
-function renderPage(data, isEn) {
+function renderIndex(data, isEn) {
   const assetPrefix = isEn ? "../" : "";
   const legalPrefix = isEn ? "../legal/" : "legal/";
   const siteUrl = SITE_CONFIG.siteUrl;
   const canonicalUrl = isEn ? `${siteUrl}/en/` : `${siteUrl}/`;
+  const portfolioPageHref = isEn ? "portfolio.html" : "portfolio.html";
 
-  let out = template;
+  let out = indexTemplate;
 
   // Language & Metadata
   out = out.replaceAll("{{LANG}}", data.lang);
@@ -56,9 +60,7 @@ function renderPage(data, isEn) {
   out = out.replaceAll("{{HERO_LEAD}}", data.hero.lead);
   out = out.replaceAll("{{HERO_CTA_WA}}", data.hero.ctaWhatsapp);
   out = out.replaceAll("{{HERO_CTA_PORTFOLIO}}", data.hero.ctaPortfolio);
-  out = out.replaceAll("{{HERO_TAG_SPORTS}}", data.hero.mosaicTags.sports);
-  out = out.replaceAll("{{HERO_TAG_STREETWEAR}}", data.hero.mosaicTags.streetwear);
-  out = out.replaceAll("{{HERO_TAG_HOODIES}}", data.hero.mosaicTags.hoodies);
+  out = out.replaceAll("{{PORTFOLIO_PAGE_HREF}}", portfolioPageHref);
 
   const heroWaMsg = encodeURIComponent(
     isEn
@@ -127,50 +129,11 @@ function renderPage(data, isEn) {
               </tr>`).join("");
   out = out.replaceAll("{{MATERIALS_ROWS_HTML}}", matRowsHtml);
 
-  // Portfolio with filters
+  // Portfolio Teaser
   out = out.replaceAll("{{PORTFOLIO_EYEBROW}}", data.portfolio.eyebrow);
   out = out.replaceAll("{{PORTFOLIO_TITLE}}", data.portfolio.title);
   out = out.replaceAll("{{PORTFOLIO_DESC}}", data.portfolio.desc);
-  out = out.replaceAll("{{PORTFOLIO_DISCLAIMER}}", data.portfolio.disclaimer);
-
-  const filtersHtml = data.portfolio.filters.map((f, i) => `
-          <button class="filter-btn" type="button" data-filter="${f.id}" aria-pressed="${i === 0 ? "true" : "false"}">
-            ${f.label}
-          </button>`).join("");
-  out = out.replaceAll("{{PORTFOLIO_FILTERS_HTML}}", filtersHtml);
-
-  const cardsHtml = portfolioData.map(p => {
-    const title = isEn ? p.titleEn : p.titleEs;
-    const tag = isEn ? p.techniqueEn : p.techniqueEs;
-    const garment = isEn ? p.garmentEn : p.garmentEs;
-    const avail = isEn ? p.availabilityEn : p.availabilityEs;
-    const note = isEn ? p.noteEn : p.noteEs;
-    const desc = isEn ? p.descEn : p.descEs;
-    const alt = isEn ? p.altEn : p.altEs;
-    const specs = `${garment} · ${avail}`;
-
-    const hasThirdPartyNotice = note && (note.includes("afiliación") || note.includes("affiliation"));
-    const noticeBadgeHtml = hasThirdPartyNotice
-      ? `<span class="portfolio-notice-badge">${isEn ? "Fan Art / Concept" : "Arte de Fans / Referencial"}</span>`
-      : "";
-
-    return `
-          <article class="portfolio-card" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="${p.category}"
-                   data-title="${title}"
-                   data-tag="${tag}"
-                   data-specs="${specs}"
-                   data-desc="${desc} (${note})"
-                   data-img="${assetPrefix}${p.image}">
-            <img src="${assetPrefix}${p.image}" alt="${alt}" width="900" height="1125" loading="lazy" decoding="async"/>
-            <div class="portfolio-info">
-              <span class="portfolio-tag">${tag}</span>
-              <h3 class="portfolio-name">${title}</h3>
-              ${noticeBadgeHtml}
-            </div>
-          </article>`;
-  }).join("");
-  out = out.replaceAll("{{PORTFOLIO_CARDS_HTML}}", cardsHtml);
+  out = out.replaceAll("{{PORTFOLIO_CTA_EXPLORE}}", data.portfolio.ctaExplore);
 
   // Contact & Form
   out = out.replaceAll("{{CONTACT_EYEBROW}}", data.contact.eyebrow);
@@ -217,6 +180,7 @@ function renderPage(data, isEn) {
   out = out.replaceAll("{{MODAL_EYEBROW}}", data.modal.eyebrow);
   out = out.replaceAll("{{MODAL_TECH_LABEL}}", data.modal.techLabel);
   out = out.replaceAll("{{MODAL_GARMENT_LABEL}}", data.modal.garmentLabel);
+  out = out.replaceAll("{{MODAL_PRICE_LABEL}}", data.modal.priceLabel);
   out = out.replaceAll("{{MODAL_CTA}}", data.modal.cta);
 
   const modalWaMsg = encodeURIComponent(
@@ -242,14 +206,130 @@ function renderPage(data, isEn) {
   return out;
 }
 
-// 1. Build ES -> /index.html
-const esHtml = renderPage(esData, false);
+function renderPortfolioPage(data, isEn) {
+  const assetPrefix = isEn ? "../" : "";
+  const legalPrefix = isEn ? "../legal/" : "legal/";
+  const siteUrl = SITE_CONFIG.siteUrl;
+  const canonicalUrl = isEn ? `${siteUrl}/en/portfolio.html` : `${siteUrl}/portfolio.html`;
+  const homeHref = isEn ? "index.html" : "index.html";
+  const portfolioLangHref = isEn ? "../portfolio.html" : "en/portfolio.html";
+
+  let out = portfolioTemplate;
+
+  // Language & Metadata
+  out = out.replaceAll("{{LANG}}", data.lang);
+  out = out.replaceAll("{{DIR}}", data.dir);
+  out = out.replaceAll("{{PORTFOLIO_PAGE_TITLE}}", `${data.portfolio.title} — Kingdom`);
+  out = out.replaceAll("{{PORTFOLIO_PAGE_DESC}}", data.portfolio.desc);
+  out = out.replaceAll("{{PORTFOLIO_CANONICAL_URL}}", canonicalUrl);
+  out = out.replaceAll("{{SITE_URL}}", siteUrl);
+  out = out.replaceAll("{{ASSET_PREFIX}}", assetPrefix);
+  out = out.replaceAll("{{LEGAL_PREFIX}}", legalPrefix);
+  out = out.replaceAll("{{HOME_PAGE_HREF}}", homeHref);
+  out = out.replaceAll("{{PORTFOLIO_LANG_HREF}}", portfolioLangHref);
+
+  // Nav
+  out = out.replaceAll("{{NAV_SKIP}}", data.nav.skip);
+  out = out.replaceAll("{{NAV_ABOUT}}", data.nav.about);
+  out = out.replaceAll("{{NAV_SERVICES}}", data.nav.services);
+  out = out.replaceAll("{{NAV_MATERIALS}}", data.nav.materials);
+  out = out.replaceAll("{{NAV_CONTACT}}", data.nav.contact);
+  out = out.replaceAll("{{NAV_MENU}}", data.nav.menu);
+  out = out.replaceAll("{{NAV_LANG_TEXT}}", data.nav.langSwitchText);
+  out = out.replaceAll("{{NAV_LANG_TARGET}}", isEn ? "es" : "en");
+  out = out.replaceAll("{{NAV_LANG_ARIA}}", data.nav.langSwitchAria);
+  out = out.replaceAll("{{PORTFOLIO_CTA_BACK}}", data.portfolio.ctaBack);
+
+  // Portfolio Section Headers
+  out = out.replaceAll("{{PORTFOLIO_EYEBROW}}", data.portfolio.eyebrow);
+  out = out.replaceAll("{{PORTFOLIO_TITLE}}", data.portfolio.title);
+  out = out.replaceAll("{{PORTFOLIO_DESC}}", data.portfolio.desc);
+  out = out.replaceAll("{{PORTFOLIO_DISCLAIMER}}", data.portfolio.disclaimer);
+
+  // Filters
+  const filtersHtml = data.portfolio.filters.map((f, i) => `
+          <button class="filter-btn" type="button" data-filter="${f.id}" aria-pressed="${i === 0 ? "true" : "false"}">
+            ${f.label}
+          </button>`).join("");
+  out = out.replaceAll("{{PORTFOLIO_FILTERS_HTML}}", filtersHtml);
+
+  // Cards (Clean view: info is hidden inside data attributes until clicked to open modal)
+  const cardsHtml = portfolioData.map(p => {
+    const title = isEn ? p.titleEn : p.titleEs;
+    const tag = isEn ? p.techniqueEn : p.techniqueEs;
+    const garment = isEn ? p.garmentEn : p.garmentEs;
+    const avail = isEn ? p.availabilityEn : p.availabilityEs;
+    const price = isEn ? p.priceEn : p.priceEs;
+    const note = isEn ? p.noteEn : p.noteEs;
+    const desc = isEn ? p.descEn : p.descEs;
+    const alt = isEn ? p.altEn : p.altEs;
+    const specs = `${garment} · ${avail}`;
+    const clickHint = isEn ? "Click to view details" : "Clic para ver detalle";
+
+    return `
+          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
+                   data-category="${p.category}"
+                   data-title="${title}"
+                   data-tag="${tag}"
+                   data-specs="${specs}"
+                   data-price="${price}"
+                   data-desc="${desc} (${note})"
+                   data-img="${assetPrefix}${p.image}">
+            <img src="${assetPrefix}${p.image}" alt="${alt}" width="1080" height="1350" loading="lazy" decoding="async"/>
+            <div class="portfolio-card-hint">${clickHint}</div>
+          </article>`;
+  }).join("");
+  out = out.replaceAll("{{PORTFOLIO_CARDS_HTML}}", cardsHtml);
+
+  // Modal
+  out = out.replaceAll("{{MODAL_CLOSE_ARIA}}", data.modal.closeAria);
+  out = out.replaceAll("{{MODAL_CLOSE_TEXT}}", data.modal.closeText);
+  out = out.replaceAll("{{MODAL_EYEBROW}}", data.modal.eyebrow);
+  out = out.replaceAll("{{MODAL_TECH_LABEL}}", data.modal.techLabel);
+  out = out.replaceAll("{{MODAL_GARMENT_LABEL}}", data.modal.garmentLabel);
+  out = out.replaceAll("{{MODAL_PRICE_LABEL}}", data.modal.priceLabel);
+  out = out.replaceAll("{{MODAL_CTA}}", data.modal.cta);
+  out = out.replaceAll("{{WHATSAPP_NUMBER}}", SITE_CONFIG.contact.whatsappNumber);
+
+  const modalWaMsg = encodeURIComponent(
+    isEn
+      ? "Hello Ramses, I saw this work in your portfolio and would like to quote something similar."
+      : "Hola Ramses, vi este trabajo en tu portafolio y deseo cotizar algo similar."
+  );
+  out = out.replaceAll("{{MODAL_WA_MSG}}", modalWaMsg);
+
+  // Footer
+  out = out.replaceAll("{{FOOTER_BRAND_DESC}}", data.footer.brandDesc);
+  out = out.replaceAll("{{FOOTER_LEGAL_TITLE}}", data.footer.legalTitle);
+  out = out.replaceAll("{{FOOTER_LINK_PRIVACY}}", data.footer.links.privacy);
+  out = out.replaceAll("{{FOOTER_LINK_TERMS}}", data.footer.links.terms);
+  out = out.replaceAll("{{FOOTER_LINK_IP}}", data.footer.links.ip);
+  out = out.replaceAll("{{FOOTER_LINK_COOKIES}}", data.footer.links.cookies);
+  out = out.replaceAll("{{FOOTER_LINK_SECURITY}}", data.footer.links.security);
+  out = out.replaceAll("{{FOOTER_LINK_A11Y}}", data.footer.links.a11y);
+  out = out.replaceAll("{{FOOTER_COPYRIGHT}}", data.footer.copyright);
+  out = out.replaceAll("{{FOOTER_DISCLAIMER}}", data.footer.disclaimer);
+  out = out.replaceAll("{{FOOTER_BROWSER_TRANSLATE}}", data.footer.browserTranslate);
+
+  return out;
+}
+
+// 1. Build Index ES & EN
+const esHtml = renderIndex(esData, false);
 fs.writeFileSync(path.join(root, "index.html"), esHtml, "utf8");
 console.log("Generated: index.html (ES)");
 
-// 2. Build EN -> /en/index.html
 const enDir = path.join(root, "en");
 if (!fs.existsSync(enDir)) fs.mkdirSync(enDir, { recursive: true });
-const enHtml = renderPage(enData, true);
+const enHtml = renderIndex(enData, true);
 fs.writeFileSync(path.join(enDir, "index.html"), enHtml, "utf8");
 console.log("Generated: en/index.html (EN)");
+
+// 2. Build Portfolio ES & EN
+const esPortfolioHtml = renderPortfolioPage(esData, false);
+fs.writeFileSync(path.join(root, "portfolio.html"), esPortfolioHtml, "utf8");
+console.log("Generated: portfolio.html (ES)");
+
+const enPortfolioHtml = renderPortfolioPage(enData, true);
+fs.writeFileSync(path.join(enDir, "portfolio.html"), enPortfolioHtml, "utf8");
+console.log("Generated: en/portfolio.html (EN)");

@@ -140,17 +140,18 @@
     ]
   },
   "portfolio": {
-    "eyebrow": "Trabajos Seleccionados",
-    "title": "Muestras de Diseño",
-    "desc": "Proyectos y mockups referenciales desarrollados por Ramses Martínez. Haz clic en cada pieza para inspeccionar los detalles.",
+    "eyebrow": "Trabajos & Presentaciones",
+    "title": "Portafolio de Diseño Textil",
+    "desc": "Galería completa de presentaciones de diseño, indumentaria personalizada y digitalización textil realizadas por Ramses Martínez.",
+    "ctaExplore": "Explorar Portafolio Completo (55 Presentaciones) →",
+    "ctaBack": "← Volver al Inicio",
     "filters": [
       { "id": "all", "label": "Todos" },
-      { "id": "bordado", "label": "Bordado & Matrices" },
       { "id": "sublimacion", "label": "Sublimación Deportiva" },
-      { "id": "streetwear", "label": "Streetwear & Arte" },
-      { "id": "branding", "label": "Branding & Papelería" }
+      { "id": "streetwear", "label": "Streetwear & Gráfica" },
+      { "id": "branding", "label": "Branding & Corporativo" }
     ],
-    "disclaimer": "Arte propio y mockups referenciales. Las piezas de fans se muestran con fines de portafolio sin afiliación con marcas ni titulares de licencias."
+    "disclaimer": "Presentaciones digitales y propuestas gráficas de Ramses Martínez para Kingdom. Las piezas con ilustraciones de fans se muestran como demostración artística sin afiliación de marca."
   },
   "contact": {
     "eyebrow": "Contacto Directo",
@@ -196,6 +197,7 @@
     "eyebrow": "DETALLE TÉCNICO DE LA PIEZA",
     "techLabel": "Técnica:",
     "garmentLabel": "Prenda / Soporte:",
+    "priceLabel": "Precio / Referencia:",
     "availLabel": "Disponibilidad:",
     "noteLabel": "Nota:",
     "cta": "Cotizar Trabajo Similar por WhatsApp"
