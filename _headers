@@ -1,3 +1,19 @@
+# ==============================================================================
+# KINGDOM — CABECERAS HTTP DE PRODUCCIÓN (CLOUDFLARE PAGES)
+# ==============================================================================
+# NOTA IMPORTANTE DE DESPLIEGUE:
+# Este archivo está preparado para una futura migración a Cloudflare Pages o hosting
+# con soporte de cabeceras perimetrales.
+# En GitHub Pages (publicación actual: https://kingdombqto.github.io/KINGDOM/), este
+# archivo NO SE APLICA ni procesa por el servidor. Por lo tanto, cabeceras como:
+# - Strict-Transport-Security (HSTS)
+# - X-Frame-Options
+# - Permissions-Policy
+# - frame-ancestors
+# NO están activas en el entorno actual de GitHub Pages.
+# La protección en GitHub Pages se confía a la etiqueta <meta http-equiv="Content-Security-Policy">.
+# ==============================================================================
+
 /*
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY

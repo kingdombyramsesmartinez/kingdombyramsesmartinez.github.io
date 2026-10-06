@@ -90,9 +90,38 @@ for (const file of pages) {
       fail.push(`${relFile} -> img missing alt attribute: ${m[0].slice(0, 50)}...`);
     }
   }
+
+  // 7. Validar etiqueta <meta Content-Security-Policy> estricta e idéntica
+  let cspContent = null;
+  const cspHeaderIdx = text.indexOf('Content-Security-Policy');
+  if (cspHeaderIdx !== -1) {
+    const after = text.substring(cspHeaderIdx);
+    const contentMarker = 'content="';
+    const contentIdx = after.indexOf(contentMarker);
+    if (contentIdx !== -1) {
+      const start = contentIdx + contentMarker.length;
+      const end = after.indexOf('"', start);
+      if (end !== -1) {
+        cspContent = after.substring(start, end).trim();
+      }
+    }
+  }
+
+  if (!cspContent) {
+    fail.push(`${relFile} -> missing <meta http-equiv="Content-Security-Policy">`);
+  } else {
+    // Validar que no tenga directivas ignoradas en meta (como frame-ancestors)
+    if (cspContent.includes("frame-ancestors")) {
+      fail.push(`${relFile} -> meta CSP contains 'frame-ancestors' which is ignored in <meta> tags by browsers`);
+    }
+    const expectedCsp = "default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self'; style-src 'self'; style-src-attr 'none'; script-src-attr 'none'; img-src 'self' data: blob:; font-src 'self'; media-src 'self'; connect-src 'self'; worker-src 'self' blob:; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests;";
+    if (cspContent !== expectedCsp) {
+      fail.push(`${relFile} -> meta CSP differs from canonical specification.\n  Got:      "${cspContent}"\n  Expected: "${expectedCsp}"`);
+    }
+  }
 }
 
-// 7. Auditoría de Hojas de Estilo CSS (legal.css, 404.css, style.css)
+// 8. Auditoría de Hojas de Estilo CSS (legal.css, 404.css, style.css)
 const cssFiles = [
   path.join(root, "assets", "css", "style.css"),
   path.join(root, "assets", "css", "legal.css"),

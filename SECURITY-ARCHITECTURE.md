@@ -1,45 +1,48 @@
-# KINGDOM — ARQUITECTURA DE SEGURIDAD
+# KINGDOM — ARQUITECTURA DE SEGURIDAD (v4 Redesign)
 
-## Modelo
-Landing estática, sin base de datos, sin autenticación y sin backend propio para la captura de leads en esta fase.
+## Modelo y Superficie de Ataque
+Landing page y portafolio estático (HTML, CSS y JavaScript vainilla), sin base de datos, sin autenticación de usuarios, sin panel administrativo y sin endpoints de backend para captura de datos en esta fase.
 
-## Consecuencias positivas
-- Menor superficie de ataque.
-- Sin credenciales de usuarios que proteger.
-- Sin API pública propia.
-- Sin base de datos expuesta.
-- Sin panel de administración dentro del sitio público.
+## Consecuencias Positivas del Modelo Estático
+- Mínima superficie de ataque.
+- Sin credenciales ni contraseñas de usuarios almacenadas.
+- Sin API pública vulnerable a fallos de inyección o deserialización.
+- Sin base de datos susceptible a SQLi.
+- Sin almacenamiento ni procesamiento de sesiones.
 
-## Controles incluidos
-- CSP estricta.
-- HSTS.
-- X-Frame-Options / frame-ancestors.
-- X-Content-Type-Options.
-- Referrer-Policy.
-- Permissions-Policy mínima.
-- COOP.
-- Sin `eval`, `innerHTML` ni `document.write` en el código.
-- Sin CDN de JavaScript en producción.
-- Accesibilidad y reduced motion.
+---
 
-## Controles que dependen del proveedor
-- MFA.
-- Protección de cuenta del registrador.
-- Bloqueo/transfer lock del dominio.
-- Protección del repositorio Git.
-- Branch protection.
-- Secret scanning.
-- Backups.
-- Rate limiting de infraestructura si posteriormente aparece un backend.
-- WAF/CDN y protección de bots, si el tráfico lo justifica.
+## Estado Real de Controles por Hosting
 
-## No introducir todavía
-- Base de datos solo para “guardar consultas”.
-- WordPress/plugin stack innecesario.
-- Formularios conectados directamente a APIs con secretos en el navegador.
-- API keys privadas dentro de JavaScript.
-- Google Analytics/Meta Pixel sin revisar privacidad/consentimiento.
-- Iframes o widgets de terceros por defecto.
+### 1. Entorno Actual de Publicación: GitHub Pages (`https://kingdombqto.github.io/KINGDOM/`)
+GitHub Pages sirve archivos estáticos pero **no admite configuración de cabeceras HTTP personalizadas**.
+- **Archivo `_headers`:** Se mantiene en la raíz del repositorio pero **está inactivo en GitHub Pages**. Se conserva como artefacto de configuración para una futura migración a Cloudflare Pages.
+- **Controles NO activos hoy en GitHub Pages:**
+  - `Strict-Transport-Security` (HSTS personalizado).
+  - `X-Frame-Options` (DENY/SAMEORIGIN como cabecera HTTP).
+  - `frame-ancestors` (la directiva CSP `frame-ancestors` es formalmente ignorada por los navegadores si se entrega en una etiqueta `<meta>`).
+  - `Permissions-Policy`.
+  - `Cross-Origin-Opener-Policy` (COOP) y `Cross-Origin-Resource-Policy` (CORP).
 
-## Si se agrega backend
-Separar: frontend público → API → servicio de datos. Añadir autenticación administrativa, validación estricta, rate limiting, CSRF cuando aplique, logging sin secretos, gestión de errores sin stack traces públicos, backups cifrados y pruebas de seguridad automatizadas.
+### 2. Controles Activos y Efectivos vía `<meta>` CSP
+La etiqueta `<meta http-equiv="Content-Security-Policy">` presente en todas las páginas HTML garantiza:
+- `script-src 'self'`: Bloqueo de scripts remotos, inyecciones de CDNs no autorizadas y runtime externo.
+- Ausencia de `'unsafe-inline'` y `'unsafe-eval'`: Bloqueo de inyección XSS clásica y de evaluación dinámica de código.
+- `style-src 'self'` y `style-src-attr 'none'`: Bloqueo de CSS externo e inline.
+- `object-src 'none'` y `frame-src 'none'`: Bloqueo de plugins e incrustaciones no autorizadas.
+- `base-uri 'self'` y `form-action 'self'`: Mitigación de secuestro de base y formularios maliciosos.
+- `upgrade-insecure-requests`: Solicitud forzada sobre canal HTTPS.
+
+### 3. Buenas Prácticas de Código Aplicadas
+- Sin uso de `eval()`, `new Function()`, `innerHTML` inseguro ni `document.write`.
+- Enlaces salientes (`target="_blank"`) forzados con `rel="noopener noreferrer"`.
+- Respeto a `prefers-reduced-motion` y accesibilidad para evitar ataques de fatiga visual o inaccesibilidad.
+
+---
+
+## Controles que Dependen de Plataforma / Futuro Hosting (Cloudflare Pages)
+Al migrar a un proveedor con soporte perimetral de cabeceras (`_headers` en Cloudflare Pages):
+- Activación de cabecera HSTS estricta (`max-age=31536000`).
+- Activación de `X-Frame-Options: DENY` y `frame-ancestors 'none'` para blindaje total contra Clickjacking.
+- Activación de `Permissions-Policy` para desactivar cámaras, micrófonos y geolocalización a nivel de protocolo.
+- Configuración de WAF y mitigación perimetral de DDoS si se asocia dominio propio.

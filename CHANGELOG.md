@@ -1,5 +1,19 @@
 # CHANGELOG — KINGDOM (v4 Redesign)
 
+## [4.3.0] - 2026-10-06
+
+### Fase 4 — Seguridad y Hosting (GitHub Pages vs Cloudflare Pages)
+- **Documentación de `_headers`:** Documentado formalmente en el propio archivo `_headers` que está inactivo en GitHub Pages (`https://kingdombqto.github.io/KINGDOM/`), conservándose como base de configuración para una futura migración a Cloudflare Pages o infraestructura con cabeceras perimetrales.
+- **Sinceración de Documentación de Seguridad:**
+  - Actualizados `SECURITY-STATUS.md`, `SECURITY-ARCHITECTURE.md`, `DEPLOYMENT-STATUS.md` y `legal/security.html`.
+  - Se eliminaron afirmaciones falsas sobre protecciones que no operan en GitHub Pages (HSTS personalizado, `X-Frame-Options`, `Permissions-Policy`, `frame-ancestors`).
+  - Se detalló explícitamente el alcance real de la protección provista por la etiqueta `<meta http-equiv="Content-Security-Policy">` (mitigación de XSS, bloqueo de scripts/estilos externos y restricción estricta de conexiones y recursos al propio origen).
+- **Homogeneización de CSP en todas las Páginas:**
+  - Se incorporó la etiqueta `<meta http-equiv="Content-Security-Policy">` idéntica y estricta en las 6 páginas legales (`legal/*.html`), logrando coherencia absoluta en todas las páginas HTML del sitio.
+  - Se verificó la exclusión de directivas que los navegadores ignoran en `<meta>` (como `frame-ancestors`).
+- **Validación Automatizada (`tools/audit-site.mjs`):** El script de auditoría ahora valida que cada página HTML posea obligatoriamente la etiqueta `<meta Content-Security-Policy>` canónica y falla automáticamente si se introducen directivas no soportadas en `<meta>`.
+- **Cero Servicios Externos:** Cero dependencias añadidas ni librerías de terceros.
+
 ## [4.2.0] - 2026-10-06
 
 ### Fase 3 — Rediseño del Hero y Confinamiento de Marcas de Terceros

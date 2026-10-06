@@ -1,3 +1,5 @@
 Contact: mailto:kingdombrandbqto@gmail.com
 Expires: 2027-10-02T00:00:00Z
 Preferred-Languages: es, en
+Canonical: https://kingdombqto.github.io/KINGDOM/.well-known/security.txt
+Policy: https://kingdombqto.github.io/KINGDOM/legal/security.html
