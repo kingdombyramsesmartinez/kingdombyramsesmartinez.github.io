@@ -76,12 +76,14 @@
   <main id="mainContent">
     <!-- Hero Section Street-Editorial -->
     <section class="hero-section" id="top">
-      <div class="container hero-grid">
+      <div class="container hero-fullwidth">
+        <div class="hero-watermark" aria-hidden="true">
+          <img src="{{ASSET_PREFIX}}assets/brand/kingdom-logo-white.png" alt="" width="1024" height="691" decoding="async"/>
+        </div>
         <div class="hero-content">
           <div class="section-eyebrow">{{HERO_EYEBROW}}</div>
-          <h1>
-            {{HERO_TITLE_LINE1}} <br/>
-            <span class="highlight">{{HERO_TITLE_LINE2}}</span>
+          <h1 class="hero-title-full">
+            {{HERO_TITLE_LINE1}} <span class="highlight">{{HERO_TITLE_LINE2}}</span>
           </h1>
           <p class="hero-lead">
             {{HERO_LEAD}}
@@ -94,28 +96,6 @@
           </div>
           <div class="hero-badges">
             {{HERO_BADGES_HTML}}
-          </div>
-        </div>
-
-        <div class="hero-mosaic" aria-label="Muestra de piezas textiles">
-          <div class="hero-mosaic-item tall">
-            <img src="{{ASSET_PREFIX}}assets/work-amigoscafe.webp" alt="Jersey sublimado deportivo Kit Amigo Café" width="900" height="1125" fetchpriority="high"/>
-            <div class="hero-mosaic-tag">
-              <span>{{HERO_TAG_SPORTS}}</span>
-              <span class="status-indicator-active">●</span>
-            </div>
-          </div>
-          <div class="hero-mosaic-item">
-            <img src="{{ASSET_PREFIX}}assets/work-dbs.webp" alt="Camiseta streetwear Dragon Ball Super" width="900" height="1125" loading="lazy" decoding="async"/>
-            <div class="hero-mosaic-tag">
-              <span>{{HERO_TAG_STREETWEAR}}</span>
-            </div>
-          </div>
-          <div class="hero-mosaic-item">
-            <img src="{{ASSET_PREFIX}}assets/work-alcaldia.webp" alt="Hoodies confeccionados diseño personalizado" width="900" height="1125" loading="lazy" decoding="async"/>
-            <div class="hero-mosaic-tag">
-              <span>{{HERO_TAG_HOODIES}}</span>
-            </div>
           </div>
         </div>
       </div>

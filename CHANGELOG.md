@@ -1,5 +1,12 @@
 # CHANGELOG — KINGDOM (v4 Redesign)
 
+## [4.2.0] - 2026-10-06
+
+### Fase 3 — Rediseño del Hero y Confinamiento de Marcas de Terceros
+- **Hero de Impacto Total:** Eliminado el mosaico de imágenes del Hero. Implementado titular de extremo a extremo (`hero-title-full` con tipografía `Graffiti City`) con el tag oficial de Kingdom ubicado de fondo en marca de agua con 50% de opacidad (`.hero-watermark`).
+- **Descargo Visible en Tarjetas:** Agregada etiqueta visible `.portfolio-notice-badge` ("Arte de Fans / Referencial" / "Fan Art / Concept") directamente en las tarjetas del portafolio que exhiben piezas inspiradas en marcas o personajes de terceros, además del descargo detallado en el modal técnico.
+- **Actualización de Registros y Documentación Legal:** Sincronizado `MARKETING-CLAIMS-REGISTER.md` y actualizada la sección 2 de `legal/intellectual-property.html` para documentar la eliminación de imágenes de terceros del primer plano inicial y su estricto confinamiento regulado dentro de la galería de portafolio.
+
 ## [4.1.0] - 2026-10-06
 
 ### Fase 2 — Coherencia de Marca y Limpieza de Estilos

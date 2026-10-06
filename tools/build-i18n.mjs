@@ -149,6 +149,11 @@ function renderPage(data, isEn) {
     const alt = isEn ? p.altEn : p.altEs;
     const specs = `${garment} · ${avail}`;
 
+    const hasThirdPartyNotice = note && (note.includes("afiliación") || note.includes("affiliation"));
+    const noticeBadgeHtml = hasThirdPartyNotice
+      ? `<span class="portfolio-notice-badge">${isEn ? "Fan Art / Concept" : "Arte de Fans / Referencial"}</span>`
+      : "";
+
     return `
           <article class="portfolio-card" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="${p.category}"
@@ -161,6 +166,7 @@ function renderPage(data, isEn) {
             <div class="portfolio-info">
               <span class="portfolio-tag">${tag}</span>
               <h3 class="portfolio-name">${title}</h3>
+              ${noticeBadgeHtml}
             </div>
           </article>`;
   }).join("");

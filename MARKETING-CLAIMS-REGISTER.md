@@ -11,4 +11,5 @@ Este documento es de control interno y no forma parte del sitio público. Regist
 | "Cero arrugas" / "Cero desperdicio" | Eliminado de todo el texto público. Prohibido por script de auditoría. | `ELIMINADO DEL SITIO` |
 | "Máxima definición" / "Alta precisión" | Eliminados superlativos absolutos. Reemplazados por terminología técnica: "compensación de tiro", "densidad calibrada". | `ELIMINADO DEL SITIO` |
 | "Portafolio fotográfico real" | Modificado a "Diseño Propio · Mockup referencial" en prendas conceptuales y "Matriz original desarrollada en Wilcom" en bordados. | `VERIFICADO / APROBADO` |
-| "Piezas con personajes / marcas de terceros" (DBS, Bakugo, Chevrolet) | Desplazadas de primer plano y acompañadas con descargo explícito: "Arte de fans / personalizado. Sin afiliación con los titulares de las marcas y personajes." | `DOCUMENTADO Y REGULADO` |
+| "Piezas con personajes / marcas de terceros" (DBS, Bakugo, Chevrolet) | Completamente eliminadas del Hero y del primer plano inicial. Confinadas exclusivamente a la galería de portafolio con badge visible en la tarjeta ("Arte de Fans / Referencial") y descargo legal explícito tanto en tarjeta como en modal: "Arte de fans / personalizado. Sin afiliación con los titulares de las marcas y personajes." | `DOCUMENTADO Y REGULADO EN PORTAFOLIO` |
+
