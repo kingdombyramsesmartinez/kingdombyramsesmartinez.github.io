@@ -57,9 +57,9 @@
   --shadow-soft: 0 12px 32px rgba(0, 0, 0, 0.25);
   --shadow-deep: 0 24px 60px rgba(0, 0, 0, 0.45);
 
-  /* Layout y Dimensiones Maestras */
-  --container-max: 1280px;
-  --gutter: clamp(16px, 4vw, 48px);
+  /* Layout y Dimensiones Maestras (Centrado y Aire Lateral) */
+  --container-max: 1140px;
+  --gutter: clamp(24px, 6vw, 64px);
   --section-space: clamp(64px, 7vw, 110px);
 
   /* Radios de Esquinas */
@@ -431,6 +431,10 @@ section {
   position: relative;
   z-index: 2;
   max-width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-title-full {
@@ -443,6 +447,7 @@ section {
   margin-bottom: 28px;
   text-shadow: 0 4px 24px rgba(7, 7, 6, 0.85);
   word-break: break-word;
+  text-align: center;
 }
 
 .hero-title-full span.highlight {
@@ -456,19 +461,24 @@ section {
   line-height: 1.65;
   margin-bottom: 40px;
   max-width: 820px;
+  margin-inline: auto;
   text-shadow: 0 2px 16px rgba(7, 7, 6, 0.9);
+  text-align: center;
 }
 
 .hero-actions {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 18px;
   flex-wrap: wrap;
   margin-bottom: 48px;
+  width: 100%;
 }
 
 .hero-badges {
   display: flex;
+  justify-content: center;
   gap: 28px;
   flex-wrap: wrap;
   border-top: 1px solid var(--line-light);
@@ -477,6 +487,8 @@ section {
   font-size: 13px;
   font-family: var(--font-mono);
   letter-spacing: 0.05em;
+  width: 100%;
+  max-width: 880px;
 }
 
 /* --------------------------------------------------------------------------
