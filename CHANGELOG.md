@@ -1,5 +1,33 @@
 # CHANGELOG — KINGDOM (v4 Redesign)
 
+## [4.6.0] - 2026-10-06
+
+### Fase 7 — Cierre, Consolidación SEO y Verificación Integral
+- **Actualización y Validación de Indexación:**
+  - `sitemap.xml`: Añadidas entradas de `portfolio.html` y `en/portfolio.html` con declaraciones recíprocas de alternancia multilingüe `hreflang` (es, en, x-default).
+  - `robots.txt`: Verificada declaración de rastreo sin restricciones y ruta canónica a sitemap.
+  - `site-manifest.json`: Comprobada coherencia de iconos locales (`assets/brand/icon-192.png`, `assets/brand/icon-512.png`, `assets/brand/favicon.svg`).
+- **Verificación de Activos y Referencias:**
+  - Auditados tamaños de todas las imágenes en `assets/` (todas las 55 piezas WebP se mantienen por debajo de los límites de compresión web).
+  - Confirmada la ausencia total de referencias residuales a tipografías obsoletas en el código fuente y plantillas.
+- **Sinceración de Auditoría:**
+  - `AUDIT-REPORT.md` actualizado con el inventario de 11 páginas HTML y 3 archivos CSS auditados, detallando explícitamente aspectos que escapan a la verificación del entorno local (cabeceras HTTP en GitHub Pages, depuradores externos de redes sociales y app nativa de WhatsApp).
+
+## [4.5.0] - 2026-10-06
+
+### Fase 6 — Traducción para Cualquier Visitante y Accesibilidad WCAG AA
+- **Traducción Nativa de Navegadores:**
+  - Incorporado atributo `translate="no"` y elementos `<span translate="no">` sobre términos de marca ("Kingdom", "Ramses Martínez"), formatos técnicos ("DST", "PES"), suites de ponchado ("Wilcom") y direcciones de correo electrónico en todas las plantillas y archivos de contenido (`content/es.json`, `content/en.json`, `404.html`, etc.).
+  - Actualizado el aviso de traducción en el pie de página para instruir claramente a los visitantes sobre el uso de la herramienta de traducción nativa de su navegador (Chrome, Edge, Safari, Firefox), preservando el principio de cero widgets de terceros y CSP estricta.
+- **Accesibilidad y Foco Visible:**
+  - Estandarizado `:focus-visible` con contorno táctico verde oliva (`#7A8058`, 3px offset) en `legal.css` y `404.css` para navegación consistente por teclado.
+  - Añadida consulta `@media (prefers-reduced-motion: reduce)` en `legal.css` y `404.css` para anular transiciones cuando el usuario lo configure en su sistema operativo.
+- **Imágenes e Inclusividad:**
+  - Añadido `aria-hidden="true"` explícito directo a la imagen del logotipo decorativo en marca de agua del hero.
+  - Validados atributos `alt` descriptivos bilingües en las 55 piezas del portafolio.
+- **Verificación de Contraste WCAG AA:**
+  - Confirmados ratios de contraste superiores a 4.5:1 en todos los textos sobre fondo `--ink` (`#070706`) para verde oliva (`#7A8058` a 4.85:1; `#92976E` a 6.60:1), beige (`#E9E0D0` a 15.39:1) y escala de grises.
+
 ## [4.4.0] - 2026-10-06
 
 ### Fase 5 — Implementación de Fuente Aerosoldier Drip y Optimización Tipográfica

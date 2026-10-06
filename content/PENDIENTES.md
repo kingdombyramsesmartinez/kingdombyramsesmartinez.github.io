@@ -6,9 +6,9 @@ Este archivo es de uso interno del equipo de desarrollo y no se publica en el si
 - **Hitos verificados:** Formación en taller familiar desde la infancia; digitalizador independiente en Lima (2019); fundador de Kingdom (2021 – Presente).
 - **Herramientas verificadas:** Wilcom EmbroideryStudio, Adobe Illustrator, Adobe Photoshop, Blender 3D, Silhouette Studio.
 
-## [RESUELTO: Tipografía Graffiti City]
-- **Fuente localizada y copiada:** `C:\Users\Dell\AppData\Local\Microsoft\Windows\Fonts\Graffiti City.otf` integrada a `assets/fonts/Graffiti City.otf`.
-- Configurada en `@font-face` y aplicada a títulos H1 de marca.
+## [RESUELTO: Tipografía de Títulos]
+- **Fuente activa oficial:** `Aerosoldier Drip` (`assets/fonts/aerosoldier-drip.otf` y versión optimizada `aerosoldier-drip.woff2`).
+- Configurada en `@font-face` con `font-display: swap` y aplicada a títulos H1 y titulares de impacto. Licencia documentada en `FONTS-LICENSES.md`.
 
 ## [RESUELTO: Paleta Oficial de Marca]
 - **Confirmado por Ramses:** Eliminado el amarillo por completo.
