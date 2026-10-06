@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@fontsource-variable/montserrat": "^5.3.0",
-    "sharp": "^0.35.5"
+    "sharp": "^0.35.5",
+    "ttf2woff2": "^8.0.1"
   }
 }

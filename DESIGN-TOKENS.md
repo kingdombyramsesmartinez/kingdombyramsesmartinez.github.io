@@ -28,7 +28,7 @@ La dirección de color fue confirmada formalmente por Ramses Martínez: **se eli
 
 | Token CSS | Valor | Uso |
 |---|---|---|
-| `--font-graffiti` | `'Graffiti City', cursive, sans-serif` | Wordmark de marca y títulos H1/H2 cortos (alojada localmente en `assets/fonts/Graffiti City.otf`) |
+| `--font-graffiti` | `'Aerosoldier Drip', 'Montserrat', sans-serif` | Wordmark de marca y títulos H1/H2 cortos (alojada localmente en `assets/fonts/aerosoldier-drip.woff2` y `.otf`) |
 | `--font-sans` | `'Montserrat Variable', 'Montserrat', sans-serif` | Cuerpo de lectura, navegación, formularios y fichas técnicas |
 | `--font-mono` | `ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, monospace` | Indicadores de paso, metadatos y fichas técnicas |
 

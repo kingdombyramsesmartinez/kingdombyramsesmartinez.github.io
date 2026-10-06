@@ -1,5 +1,25 @@
 # CHANGELOG — KINGDOM (v4 Redesign)
 
+## [4.4.0] - 2026-10-06
+
+### Fase 5 — Implementación de Fuente Aerosoldier Drip y Optimización Tipográfica
+- **Renombrado y Compresión Web:**
+  - Archivo maestro normalizado sin espacios ni caracteres especiales: `assets/fonts/aerosoldier-drip.otf`.
+  - Generada versión optimizada WOFF2: `assets/fonts/aerosoldier-drip.woff2` (reducción de 214 KB a ~65 KB).
+- **Cobertura de Glifos y Textos Reales:**
+  - Verificada la presencia completa de glifos en la tabla `cmap` (á, é, í, ó, ú, ü, ñ, ¿, ¡, &, ×) y comprobada la correspondencia del 100% de los caracteres utilizados en `es.json` y `en.json`.
+- **Estructura CSS y Carga:**
+  - `@font-face` y variable `--font-graffiti` configuradas con `font-display: swap` y fallback robusto a Montserrat.
+  - Implementado `<link rel="preload">` para `aerosoldier-drip.woff2` en las plantillas maestras (`index.template.html` y `portfolio.template.html`).
+- **Jerarquía Visual y Control de Desbordamiento:**
+  - Aplicada exclusivamente a H1 del hero (`.hero-title-full`), H2 cortos de sección (`.section-title`) y título del portafolio (`.portfolio-page-title`).
+  - H3 de tarjetas y fichas técnicas preservados en `Montserrat` para legibilidad.
+  - Ajustados `line-height: 1.08` a `1.15`, `padding-bottom: 8px-12px` y `overflow: visible` para garantizar que los chorreados característicos del estilo graffiti no se corten en resoluciones de 360px, 768px ni 1440px.
+- **Documentación y Limpieza:**
+  - Creado `FONTS-LICENSES.md` con el estado y permisos de cada fuente.
+  - Actualizados `DESIGN-TOKENS.md` y `DESIGNER-CUSTOMIZATION.md`.
+  - Eliminado el archivo `Graffiti City.otf` al no tener ya referencias en el proyecto.
+
 ## [4.3.0] - 2026-10-06
 
 ### Fase 4 — Seguridad y Hosting (GitHub Pages vs Cloudflare Pages)
