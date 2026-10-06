@@ -19,8 +19,8 @@ walk(root);
 const fail = [];
 const idsByFile = new Map();
 
-// Frases Prohibidas según directiva v4 Sección 3.2
-const PROHIBITED_PHRASES = [
+// Frases Prohibidas en páginas comerciales / marketing según directiva v4 Sección 3.2
+const PROHIBITED_MARKETING_PHRASES = [
   "máxima definición",
   "maxima definicion",
   "garantizar",
@@ -39,44 +39,96 @@ const PROHIBITED_PHRASES = [
   "a nivel nacional e internacional"
 ];
 
+// Términos estrictamente prohibidos en TODO el sitio (branding antiguo y colores viejos)
+const STRICT_FORBIDDEN_ALL = [
+  "Kingdom Wear",
+  "kingdom wear",
+  "#ffc500"
+];
+
 for (const file of pages) {
   const text = fs.readFileSync(file, "utf8");
+  const relFile = path.relative(root, file);
   idsByFile.set(file, new Set([...text.matchAll(/\bid=["']([^"']+)["']/g)].map(m => m[1])));
 
-  // 1. Prohibir frases no verificables en páginas públicas de presentación/portafolio
+  // 1. Prohibir términos antiguos ("Kingdom Wear", "#ffc500") en cualquier HTML
+  for (const term of STRICT_FORBIDDEN_ALL) {
+    if (text.toLowerCase().includes(term.toLowerCase())) {
+      fail.push(`${relFile} -> contains strictly prohibited term: "${term}"`);
+    }
+  }
+
+  // 2. Prohibir claims no auditados en páginas públicas de marketing (index.html, 404.html)
   const isMarketingPage = file.endsWith("index.html") || file.endsWith("404.html");
   if (isMarketingPage) {
-    for (const phrase of PROHIBITED_PHRASES) {
+    for (const phrase of PROHIBITED_MARKETING_PHRASES) {
       if (text.toLowerCase().includes(phrase.toLowerCase())) {
-        fail.push(`${path.relative(root, file)} -> contains prohibited phrase: "${phrase}"`);
+        fail.push(`${relFile} -> contains prohibited marketing phrase: "${phrase}"`);
       }
     }
   }
 
-  // 2. Prohibir enlaces tel:
+  // 3. Prohibir enlaces tel:
   if (/\bhref=["']tel:[^"']*["']/i.test(text)) {
-    fail.push(`${path.relative(root, file)} -> contains forbidden 'tel:' link`);
+    fail.push(`${relFile} -> contains forbidden 'tel:' link`);
   }
 
-  // 3. Prohibir estilos en línea
+  // 4. Prohibir estilos en línea
   if (/\bstyle\s*=/i.test(text)) {
-    fail.push(`${path.relative(root, file)} -> contains forbidden inline style`);
+    fail.push(`${relFile} -> contains forbidden inline style`);
   }
 
-  // 4. Prohibir scripts en línea
+  // 5. Prohibir scripts en línea
   if (/<script(?![^>]*src=)[^>]*>/i.test(text)) {
-    fail.push(`${path.relative(root, file)} -> contains forbidden inline script`);
+    fail.push(`${relFile} -> contains forbidden inline script`);
   }
 
-  // 5. Validar que las imágenes tengan alt
+  // 6. Validar que las imágenes tengan alt
   for (const m of text.matchAll(/<img\b([^>]*)>/gi)) {
     const imgTag = m[1];
     if (!/\balt\s*=/i.test(imgTag)) {
-      fail.push(`${path.relative(root, file)} -> img missing alt attribute: ${m[0].slice(0, 50)}...`);
+      fail.push(`${relFile} -> img missing alt attribute: ${m[0].slice(0, 50)}...`);
     }
   }
 }
 
+// 7. Auditoría de Hojas de Estilo CSS (legal.css, 404.css, style.css)
+const cssFiles = [
+  path.join(root, "assets", "css", "style.css"),
+  path.join(root, "assets", "css", "legal.css"),
+  path.join(root, "assets", "css", "404.css")
+];
+
+for (const cssFile of cssFiles) {
+  if (!fs.existsSync(cssFile)) {
+    fail.push(`Missing CSS file: ${path.relative(root, cssFile)}`);
+    continue;
+  }
+  const cssText = fs.readFileSync(cssFile, "utf8");
+  const relCss = path.relative(root, cssFile);
+
+  // Comprobar términos prohibidos en CSS
+  if (/#ffc500/i.test(cssText)) {
+    fail.push(`${relCss} -> contains prohibited yellow color: "#ffc500"`);
+  }
+  if (/Kingdom Wear/i.test(cssText)) {
+    fail.push(`${relCss} -> contains prohibited term: "Kingdom Wear"`);
+  }
+
+  // Comprobar variables CSS var(--xxx) sin definir
+  const definedVars = new Set();
+  for (const m of cssText.matchAll(/--([a-zA-Z0-9_-]+)\s*:/g)) {
+    definedVars.add(m[1]);
+  }
+  for (const m of cssText.matchAll(/var\(\s*--([a-zA-Z0-9_-]+)/g)) {
+    const varName = m[1];
+    if (!definedVars.has(varName)) {
+      fail.push(`${relCss} -> uses undefined CSS variable: var(--${varName})`);
+    }
+  }
+}
+
+// 8. Auditoría de Enlaces y Assets
 for (const file of pages) {
   const text = fs.readFileSync(file, "utf8");
   const relDir = path.dirname(file);
@@ -112,4 +164,4 @@ if (fail.length) {
   for (const item of fail) console.error(`- ${item}`);
   process.exit(1);
 }
-console.log(`PASS: ${pages.length} HTML pages audited; 0 prohibited phrases, 0 broken references, strict CSP compliance.`);
+console.log(`PASS: ${pages.length} HTML pages and ${cssFiles.length} CSS files audited; 0 prohibited phrases, 0 undefined CSS variables, 0 broken references, strict CSP compliance.`);

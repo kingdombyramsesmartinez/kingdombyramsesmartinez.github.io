@@ -339,7 +339,7 @@ header.site-header {
   border: 1px solid var(--line-light);
   border-radius: var(--radius-sm);
   padding: 8px 12px;
-  color: var(--white-95);
+  color: var(--paper);
   cursor: pointer;
   font-size: 12px;
   letter-spacing: 0.05em;
@@ -854,7 +854,7 @@ footer.site-footer {
   padding-block: 64px 40px;
   font-size: 13.5px;
   color: var(--gray-500);
-  background: var(--black-950);
+  background: var(--ink);
 }
 
 .footer-top {
@@ -889,7 +889,7 @@ footer.site-footer {
 .toast {
   padding: 14px 20px;
   border-radius: var(--radius-md);
-  background: var(--black-900);
+  background: var(--surface);
   border: 1px solid var(--line-light);
   box-shadow: var(--shadow-deep);
   font-size: 13.5px;
@@ -943,7 +943,7 @@ footer.site-footer {
     right: 0;
     bottom: 0;
     width: min(85%, 320px);
-    background: var(--black-900);
+    background: var(--surface-alt);
     border-left: 1px solid var(--line-light);
     flex-direction: column;
     align-items: flex-start;

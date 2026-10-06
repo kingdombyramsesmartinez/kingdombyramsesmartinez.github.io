@@ -1,5 +1,13 @@
 # CHANGELOG — KINGDOM (v4 Redesign)
 
+## [4.1.0] - 2026-10-06
+
+### Fase 2 — Coherencia de Marca y Limpieza de Estilos
+- **Alineación de `legal.css`:** Eliminado el color amarillo (`#ffc500`), retirada la variable no estandarizada `--gold` y la referencia a fuente `Inter` no autohospedada. Incorporada la paleta oficial de `DESIGN-TOKENS.md` (fondo negro, acentos verde oliva `#7A8058`, beige `#E9E0D0`) y tipografía `Montserrat` autohospedada.
+- **Limpieza de 404:** Actualizado `404.html` para erradicar cualquier mención residual a "Kingdom Wear", estandarizando el nombre a "Kingdom" en `title`, `description` y `alt`. Reescrito `assets/css/404.css` para utilizar tokens CSS semánticos (`--ink`, `--surface`, `--paper`, `--olive`, etc.) y estilo street-editorial plano coherente.
+- **Corrección de Variables en `style.css`:** Sustituidas las variables CSS sin declarar (`--white-95` reemplazada por `var(--paper)`; `--black-950` por `var(--ink)`; `--black-900` por `var(--surface)` y `var(--surface-alt)`).
+- **Ampliación de Auditoría Automatizada (`tools/audit-site.mjs`):** El script ahora audita todas las páginas HTML y todas las hojas de estilo CSS (`style.css`, `legal.css`, `404.css`), verificando la ausencia de `#ffc500`, "Kingdom Wear" y variables CSS `var(--xxx)` sin definir.
+
 ## [4.0.0] - 2026-10-05
 
 ### Rediseño Integral v4 — Street-Editorial Industrial & Veracidad de Marca
