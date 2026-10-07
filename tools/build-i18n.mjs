@@ -182,6 +182,8 @@ function renderIndex(data, isEn) {
   out = out.replaceAll("{{EMAIL_WORK}}", SITE_CONFIG.contact.emailWork);
   out = out.replaceAll("{{EMAIL_PERSONAL}}", SITE_CONFIG.contact.emailPersonal);
   out = out.replaceAll("{{LINKEDIN_URL}}", SITE_CONFIG.contact.social.linkedin);
+  out = out.replaceAll("{{INSTAGRAM_URL}}", SITE_CONFIG.contact.social.instagram);
+  out = out.replaceAll("{{TIKTOK_URL}}", SITE_CONFIG.contact.social.tiktok);
   out = out.replaceAll("{{DRIVE_CATALOG_URL}}", SITE_CONFIG.contact.social.driveCatalog);
 
   // Modal
