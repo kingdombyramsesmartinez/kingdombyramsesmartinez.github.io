@@ -14,25 +14,28 @@ Este documento recopila el inventario de fuentes tipográficas autohospedadas (s
 
 ---
 
-## 2. Sefa
+## 2. Sedgwick Ave Display
 - **Uso en el sitio:** Títulos principales (H1 del hero, H2 cortos de sección, acentos de marca y encabezados de portafolio).
 - **Ubicación:**
-  - `assets/fonts/sefa.woff2` (compresión web optimizada WOFF2, ~12 KB).
-  - `assets/fonts/sefa.ttf` (archivo TrueType local de respaldo).
-  - `assets/fonts/SEFA-LICENSE.txt` (licencia de distribución del autor).
+  - `assets/fonts/sedgwick-ave-display.woff2` (compresión web optimizada WOFF2, ~55 KB).
+  - `assets/fonts/sedgwick-ave-display.ttf` (archivo TrueType local de respaldo).
+  - `assets/fonts/SEDGWICK-OFL.txt` (licencia completa SIL Open Font License v1.1).
 - **Formatos:** WOFF2 (primario con preload) y TTF (fallback local con `font-display: swap`).
-- **Diseñador / Fundición:** ArtiXLabs / Lukman Dsgn (`https://www.creativefabrica.com/designer/artixlabs/`, PayPal: `https://www.paypal.com/paypalme/lkmdsgn`).
-- **Origen del archivo:** Instalación local en sistema `C:\Users\Dell\AppData\Local\Microsoft\Windows\Fonts\Sefa (TTF).ttf` y paquete de distribución `C:\Users\Dell\Downloads\sefa`.
-- **Licencia:** **Free Font License** (100% Free for personal and commercial use).
-- **Permisos:** Uso personal y comercial en logotipos, productos digitales, impresos y modificaciones outline autorizadas.
-- **Cobertura de glifos:** Verificada con soporte para `á, é, í, ó, ú, ü, ñ, Ñ, &, ×, 0-9`. Glifos `¿` y `¡` no incluidos nativamente por el autor (gestionados con fallback seguro en el stack tipográfico).
+- **Diseñador / Fundición:** The Sedgwick Ave Project Authors (Pedro Leal, Kevin Burke; Google Fonts).
+- **Origen del archivo:** Paquete oficial `Sedgwick_Ave_Display.zip` descargado en `C:\Users\Dell\Downloads\`.
+- **Licencia:** **SIL Open Font License (OFL) Version 1.1**.
+- **Permisos:** 100% libre para uso personal y comercial, embedding web, empaquetado y modificación.
+- **Cobertura de glifos:** Verificada con cobertura del 100% de los glifos requeridos: `á, é, í, ó, ú, ü, ñ, Ñ, ¿, ¡, &, ×, 0-9` (0 glifos faltantes en tabla `cmap`).
 
 ---
 
 ## 3. Fuentes Históricas / Retiradas
+- **Sefa:**
+  - **Estado:** Retirada y eliminada de `assets/fonts/`.
+  - **Motivo de retiro:** Sustitución por Sedgwick Ave Display para contar con licencia estándar SIL Open Font License (OFL v1.1) y soporte nativo completo para caracteres de apertura en español (`¿`, `¡`).
 - **Aerosoldier Drip:**
-  - **Estado:** Retirada y eliminada completamente de `assets/fonts/` (`aerosoldier-drip.otf` y `aerosoldier-drip.woff2`).
-  - **Motivo de retiro:** Reemplazada por motivo de licencia para garantizar cumplimiento estricto y uso comercial 100% libre mediante la tipografía Sefa.
+  - **Estado:** Retirada y eliminada completamente de `assets/fonts/`.
+  - **Motivo de retiro:** Reemplazada por motivo de licencia para garantizar cumplimiento comercial 100% libre.
 - **Graffiti City.otf:**
   - **Estado:** Retirada y eliminada de `assets/fonts/`.
   - **Motivo de retiro:** Sustitución estética y optimización de bundle estático.

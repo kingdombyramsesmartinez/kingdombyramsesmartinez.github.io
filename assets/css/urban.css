@@ -6,12 +6,12 @@
    Dónde editar: colores y rutas en :root; intensidad de la luz en body::after.
    ========================================================================== */
 @font-face {
-  font-family: 'Sefa';
+  font-family: 'Sedgwick Ave Display';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../fonts/sefa.woff2') format('woff2'),
-       url('../fonts/sefa.ttf') format('truetype');
+  src: url('../fonts/sedgwick-ave-display.woff2') format('woff2'),
+       url('../fonts/sedgwick-ave-display.ttf') format('truetype');
 }
 
 :root {
@@ -20,7 +20,7 @@
   --u-olive-light: #92976E;
   --u-beige: #E9E0D0;
   --u-gray: #9B9B97;
-  --u-title: 'Sefa', 'Montserrat', system-ui, sans-serif;
+  --u-title: 'Sedgwick Ave Display', 'Montserrat', system-ui, sans-serif;
   --u-mono: ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
   --u-brick: url('../brand/brick-wall.webp');
   --u-grain: url('../brand/glass-grain.webp');

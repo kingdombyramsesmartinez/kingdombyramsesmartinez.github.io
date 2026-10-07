@@ -38,7 +38,7 @@ Contiene la paleta exportada y los datos de contacto corporativos. Si se actuali
 
 ## 3. Tipografías
 
-- **Títulos destacados (H1, H2 cortos y Wordmark):** `Sefa` ubicada localmente en `assets/fonts/sefa.woff2` y `assets/fonts/sefa.ttf` (reemplazó a Aerosoldier Drip por motivo de licencia comercial libre).
+- **Títulos destacados (H1, H2 cortos y Wordmark):** `Sedgwick Ave Display` ubicada localmente en `assets/fonts/sedgwick-ave-display.woff2` y `assets/fonts/sedgwick-ave-display.ttf` (licencia SIL Open Font License v1.1).
 - **Cuerpo de lectura y tablas:** `Montserrat Variable` alojada en `assets/fonts/` (formatos woff2 self-hosted).
 - **Prohibido:** Enlazar fuentes desde CDNs externas o Google Fonts para garantizar la privacidad y cumplir la política de seguridad estricta de `AGENTS.md`.
 

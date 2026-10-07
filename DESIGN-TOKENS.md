@@ -28,7 +28,7 @@ La dirección de color fue confirmada formalmente por Ramses Martínez: **se eli
 
 | Token CSS | Valor | Uso |
 |---|---|---|
-| `--font-graffiti` | `'Sefa', 'Montserrat', sans-serif` | Wordmark de marca y títulos H1/H2 cortos (alojada localmente en `assets/fonts/sefa.woff2` y `.ttf`) |
+| `--font-graffiti` | `'Sedgwick Ave Display', 'Montserrat', sans-serif` | Wordmark de marca y títulos H1/H2 cortos (alojada localmente en `assets/fonts/sedgwick-ave-display.woff2` y `.ttf`) |
 | `--font-sans` | `'Montserrat Variable', 'Montserrat', sans-serif` | Cuerpo de lectura, navegación, formularios y fichas técnicas |
 | `--font-mono` | `ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, monospace` | Indicadores de paso, metadatos y fichas técnicas |
 

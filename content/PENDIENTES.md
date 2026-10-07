@@ -7,7 +7,7 @@ Este archivo es de uso interno del equipo de desarrollo y no se publica en el si
 - **Herramientas verificadas:** Wilcom EmbroideryStudio, Adobe Illustrator, Adobe Photoshop, Blender 3D, Silhouette Studio.
 
 ## [RESUELTO: Tipografía de Títulos]
-- **Fuente activa oficial:** `Sefa` (`assets/fonts/sefa.ttf` y versión optimizada `sefa.woff2`). Reemplazó a la tipografía anterior por motivo de licencia para garantizar cumplimiento comercial 100% libre.
+- **Fuente activa oficial:** `Sedgwick Ave Display` (`assets/fonts/sedgwick-ave-display.ttf` y versión optimizada `sedgwick-ave-display.woff2`). Licencia SIL Open Font License (OFL v1.1) con soporte latino completo nativo (incluyendo ¿ y ¡).
 - Configurada en `@font-face` con `font-display: swap` y aplicada a títulos H1 y titulares de impacto. Licencia documentada en `FONTS-LICENSES.md`.
 
 ## [RESUELTO: Paleta Oficial de Marca]
