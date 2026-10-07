@@ -35,3 +35,7 @@ Este archivo es de uso interno del equipo de desarrollo y no se publica en el si
 ## [PENDIENTE: Confirmación de Ortografía por Ramses]
 - **`Jswim Academi`:** Pendiente confirmar si el nombre oficial es *"Jswim Academi"* (con 'i' latina), *"Jswim Academy"*, o *"J Swim Academy"*. Mientras tanto, se mantiene sin alterar.
 
+## [PENDIENTE: Textos Legales en Inglés]
+- Las páginas de marco legal (`legal/accessibility.html`, `legal/cookies.html`, `legal/intellectual-property.html`, `legal/privacy.html`, `legal/security.html`, `legal/terms.html`) se encuentran redactadas únicamente en español.
+- Pendiente proveer los textos legales redactados o traducidos oficialmente al inglés antes de crear la ruta `legal/en/`, a fin de evitar invención de cláusulas jurídicas o términos contractuales no autorizados.
+

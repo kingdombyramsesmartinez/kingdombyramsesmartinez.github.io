@@ -3,7 +3,7 @@
 (() => {
   "use strict";
 
-  const SITE_CONFIG = { contact: { whatsappNumber: document.body.dataset.wa || "584241092124" } };
+  const SITE_CONFIG = { contact: { whatsappNumber: document.body.dataset.wa || "" } };
 
   // Anti-clickjacking de respaldo (no ocultar la página en localhost ni en previewers)
   if (window.top !== window.self) {
@@ -77,6 +77,7 @@
      -------------------------------------------------------------------------- */
   const filterButtons = qsa(".filter-btn");
   const portfolioCards = qsa(".portfolio-card");
+  const liveStatus = qs("#filterLiveStatus");
 
   filterButtons.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -84,14 +85,24 @@
 
       filterButtons.forEach(b => b.setAttribute("aria-pressed", String(b === btn)));
 
+      let visibleCount = 0;
       portfolioCards.forEach(card => {
         const category = card.dataset.category || "";
         if (targetFilter === "all" || category === targetFilter) {
           card.classList.remove("is-hidden");
+          visibleCount++;
         } else {
           card.classList.add("is-hidden");
         }
       });
+
+      if (liveStatus) {
+        const isEnglish = document.documentElement.lang === "en";
+        const label = isEnglish
+          ? (visibleCount === 1 ? "1 piece" : `${visibleCount} pieces`)
+          : (visibleCount === 1 ? "1 pieza" : `${visibleCount} piezas`);
+        liveStatus.textContent = label;
+      }
     });
   });
 
@@ -472,10 +483,10 @@
       "contactPoint": [
         {
           "@type": "ContactPoint",
-          "telephone": "+584241092124",
+          "telephone": `+${SITE_CONFIG.contact.whatsappNumber}`,
           "contactType": "customer service",
           "availableLanguage": ["Spanish", "English"],
-          "url": "https://wa.me/584241092124"
+          "url": `https://wa.me/${SITE_CONFIG.contact.whatsappNumber}`
         }
       ],
       "address": {

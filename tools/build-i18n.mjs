@@ -265,6 +265,7 @@ function renderPortfolioPage(data, isEn) {
   // Portfolio Section Headers
   out = out.replaceAll("{{PORTFOLIO_EYEBROW}}", data.portfolio.eyebrow);
   out = out.replaceAll("{{PORTFOLIO_TITLE}}", data.portfolio.title);
+  out = out.replaceAll("{{PORTFOLIO_SECTION_HEADING}}", isEn ? "Catalog Pieces" : "Piezas del Catálogo");
   out = out.replaceAll("{{PORTFOLIO_DESC}}", data.portfolio.desc);
   out = out.replaceAll("{{PORTFOLIO_DISCLAIMER}}", data.portfolio.disclaimer);
 

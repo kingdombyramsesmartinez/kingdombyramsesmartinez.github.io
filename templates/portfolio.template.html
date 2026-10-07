@@ -103,9 +103,12 @@
     <div class="urban-divider urban-divider--tape" aria-hidden="true"></div>
     <section class="portfolio-gallery-section">
       <div class="container">
+        <h2 class="visually-hidden">{{PORTFOLIO_SECTION_HEADING}}</h2>
         <div class="portfolio-filters" role="group" aria-label="Filtros por categoría">
           {{PORTFOLIO_FILTERS_HTML}}
         </div>
+
+        <div id="filterLiveStatus" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
 
         <div class="portfolio-grid">
           {{PORTFOLIO_CARDS_HTML}}
