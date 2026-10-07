@@ -29,7 +29,9 @@ Este archivo es de uso interno del equipo de desarrollo y no se publica en el si
 - Convertidas a WebP de alta fidelidad (`work-wilcom-01.webp` a `work-wilcom-06.webp`) en `assets/`.
 - Integradas a `content/portfolio.json` y activada la categoría "Bordado & Matrices" / "Embroidery & Punch Files" en español e inglés.
 
+## [RESUELTO: Ortografía Guerreras SC]
+- **Confirmado por Ramses:** El nombre correcto oficial es **`Guerreras SC`** (corregido en `content/overrides.json` y `content/portfolio.json`).
+
 ## [PENDIENTE: Confirmación de Ortografía por Ramses]
-- **`Gerreras SC`:** Pendiente confirmar si el nombre oficial del equipo/cliente es *"Gerreras SC"* (con una sola 'u') o *"Guerreras SC"*. Mientras tanto, se mantiene sin alterar.
 - **`Jswim Academi`:** Pendiente confirmar si el nombre oficial es *"Jswim Academi"* (con 'i' latina), *"Jswim Academy"*, o *"J Swim Academy"*. Mientras tanto, se mantiene sin alterar.
 
