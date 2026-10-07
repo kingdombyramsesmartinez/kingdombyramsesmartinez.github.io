@@ -2,8 +2,9 @@
 
 Este documento detalla los pasos exactos y limpios para cuando se compre y configure el dominio comercial definitivo:
 
-**Dominio Canónico Objetivo:** `https://www.kingdombyramsesmartinez.com`  
-**Dominio Apex:** `https://kingdombyramsesmartinez.com`
+**Estado Actual:** Publicado en `https://kingdombyramsesmartinez.github.io` (rama `main`, sin dominio propio).  
+**Dominio Canónico Objetivo (Futuro, No Contratado):** `https://www.kingdombyramsesmartinez.com`  
+**Dominio Apex (Futuro, No Contratado):** `https://kingdombyramsesmartinez.com`
 
 ---
 

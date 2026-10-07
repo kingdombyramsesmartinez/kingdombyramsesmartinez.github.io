@@ -6,9 +6,10 @@
 - Activa MFA/2FA en la cuenta de GitHub y protege la rama que publica el sitio.
 
 ## 2. GitHub Pages
-- Publica desde la rama/carpeta que ya utiliza tu repositorio.
-- Fuerza HTTPS en la configuración de Pages cuando GitHub lo ofrezca para el dominio configurado.
-- Usa un dominio propio solo después de validar DNS y correo.
+- Publica desde la rama `main` (raíz).
+- El sitio activo oficial es `https://kingdombyramsesmartinez.github.io` (sin dominio propio actualmente).
+- Fuerza HTTPS en la configuración de Pages.
+- El uso de un dominio propio (`www.kingdombyramsesmartinez.com`) queda documentado para el futuro en caso de contratarse, previa validación de DNS.
 - `404.html` se utiliza como página de error personalizada por GitHub Pages.
 
 ## 3. Cabeceras de seguridad

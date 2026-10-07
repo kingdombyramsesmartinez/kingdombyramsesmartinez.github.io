@@ -1,7 +1,7 @@
 # ESTADO DE SEGURIDAD FRONTEND & ARQUITECTURA — KINGDOM (v4 Redesign)
 
-**Fecha de Evaluación:** 2026-10-06  
-**Entorno de Publicación:** GitHub Pages con Dominio Personalizado (`https://www.kingdombyramsesmartinez.com`)  
+**Fecha de Evaluación:** 2026-10-07  
+**Entorno de Publicación:** GitHub Pages (`https://kingdombyramsesmartinez.github.io`)  
 **Estado Global:** `PASS` (Cero vulnerabilidades, sin backend, estricto cumplimiento con `AGENTS.md`)
 
 ---
@@ -73,3 +73,4 @@ upgrade-insecure-requests;
 ## 4. Contacto y Divulgación de Seguridad
 - Canal de reporte documentado en `SECURITY.md` y `legal/security.html`: **`kingdombrandbqto@gmail.com`**.
 - Archivo `/.well-known/security.txt` publicado y enlazado.
+- **Mantenimiento Preventivo RFC 9116:** Recordatorio de renovar la directiva `Expires` de `security.txt` antes de su vencimiento el **`2027-10-02`** (plazo máximo de validez anual).

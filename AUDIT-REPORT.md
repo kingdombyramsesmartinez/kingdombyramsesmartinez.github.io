@@ -1,10 +1,10 @@
 # INVENTARIO Y REPORTE DE AUDITORÍA — KINGDOM v4 Redesign
 ## Portafolio & Identidad: Ramses Martínez × Kingdom
 
-**Fecha:** 2026-10-06  
-**Rama activa:** `v4-redesign`  
+**Fecha:** 2026-10-07  
+**Rama activa:** `main`  
 **Publicación objetivo:** GitHub Pages User Site (`https://kingdombyramsesmartinez.github.io/`)  
-**Resultado de Auditoría Local (`npm run audit:local`):** `PASS` (11 páginas HTML y 3 CSS auditados, 0 frases prohibidas, 0 variables CSS indefinidas, 0 enlaces rotos, CSP estricta idéntica).
+**Resultado de Auditoría Local (`npm run audit:local`):** `PASS` (11 páginas HTML y 4 CSS auditados, 0 frases prohibidas, 0 variables CSS indefinidas, 0 enlaces rotos, CSP estricta idéntica).
 
 ---
 
@@ -16,7 +16,7 @@
 | **Separación de Código** | `PASS` | Separación estricta de HTML, CSS y JS. Cero atributos `style=""` inline y cero scripts inline en templates ni páginas generadas. |
 | **Paleta & Tokens** | `PASS` | Amarillo (`#ffc500`) eliminado por completo. Paleta activa: Base Negro/Gris/Blanco + Acentos Verde Oliva Táctico (`#7A8058`, `#92976E`) y Beige Natural (`#E9E0D0`). |
 | **Tipografía** | `PASS` | `Sedgwick Ave Display` (`.woff2` / `.ttf`) local para títulos H1/H2 y acentos de marca (SIL Open Font License v1.1). `Montserrat Variable` (`.woff2`) local para lectura y cuerpo. Cero peticiones de red o CDNs externas. |
-| **Portafolio Dedicado** | `PASS` | Portafolio extraído a su propia página (`portfolio.html` y `en/portfolio.html`) con 55 piezas WebP optimizadas, filtros por técnica y modal con ficha técnica. |
+| **Portafolio Dedicado** | `PASS` | Portafolio extraído a su propia página (`portfolio.html` y `en/portfolio.html`) con 41 fichas técnicas (61 imágenes de presentación WebP optimizadas), filtros por técnica y modal con ficha técnica. |
 | **Arquitectura Bilingüe** | `PASS` | Generador estático `tools/build-i18n.mjs` produce `/index.html` (ES), `/en/index.html` (EN), `portfolio.html` (ES) y `en/portfolio.html` (EN) desde fuentes JSON estructuradas. |
 | **Traducción y Accesibilidad** | `PASS` | WCAG 2.1 AA verificado: atributos `translate="no"` en marcas/términos, `:focus-visible` destacado, `prefers-reduced-motion` respetado, todas las imágenes informativas con `alt` útil en ES y EN, imágenes decorativas con `aria-hidden="true"`. |
 | **Seguridad & CSP** | `PASS` | Meta CSP estricta idéntica en las 11 páginas HTML. Sin `'unsafe-inline'` ni scripts externos. Archivo `_headers` documentado como inactivo en GitHub Pages y reservado para Cloudflare Pages. |
@@ -29,13 +29,13 @@
 
 - `index.html`: Landing en español compilada desde plantilla maestra.
 - `en/index.html`: Landing en inglés compilada desde plantilla maestra.
-- `portfolio.html`: Galería técnica completa en español (55 piezas de presentación).
-- `en/portfolio.html`: Galería técnica completa en inglés (55 piezas de presentación).
+- `portfolio.html`: Galería técnica completa en español (41 fichas técnicas / 61 imágenes de presentación).
+- `en/portfolio.html`: Galería técnica completa en inglés (41 fichas técnicas / 61 imágenes de presentación).
 - `404.html`: Página de error estática personalizada con navegación de retorno.
 - `templates/index.template.html`: Plantilla HTML maestra del home sin contenido hardcodeado.
 - `templates/portfolio.template.html`: Plantilla HTML maestra del portafolio.
 - `content/es.json` y `content/en.json`: Textos de marca, servicios, fichas técnicas y aviso de traducción del navegador.
-- `content/portfolio.json`: 55 piezas de portafolio con datos técnicos, categorías y textos alternativos bilingües.
+- `content/portfolio.json`: 41 fichas de portafolio (61 imágenes) con datos técnicos, categorías y textos alternativos bilingües.
 - `assets/css/style.css`: Hoja de estilos principal unificada con tokens de diseño v4 y tipografía local.
 - `assets/css/legal.css`: Hoja de estilos de las páginas legales con foco visible y soporte de movimiento reducido.
 - `assets/css/404.css`: Hoja de estilos de la página 404.

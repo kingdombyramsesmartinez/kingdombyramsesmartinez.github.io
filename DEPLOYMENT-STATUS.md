@@ -1,9 +1,9 @@
 # ESTADO DE DESPLIEGUE Y COMPATIBILIDAD — KINGDOM v4 Redesign
 
-**Fecha:** 2026-10-06  
-**Rama activa:** `v4-redesign`  
-**Destino de Publicación:** GitHub Pages con Dominio Personalizado (`https://www.kingdombyramsesmartinez.com`)  
-**Destino Futuro / Alterno:** Cloudflare Pages (cuando se decida asociar dominio propio)
+**Fecha:** 2026-10-07  
+**Rama activa:** `main`  
+**Destino de Publicación:** GitHub Pages (`https://kingdombyramsesmartinez.github.io`)  
+**Destino Futuro / Alterno:** Cloudflare Pages o dominio propio (`www.kingdombyramsesmartinez.com`, futuro, no contratado)
 
 ---
 
@@ -21,9 +21,9 @@
 - `.nojekyll`: Presente en la raíz para evitar que el motor Jekyll de GitHub Pages ignore archivos estáticos, carpetas ocultas o fuentes.
 - `_headers`: Archivo de cabeceras HTTP preservado para Cloudflare Pages (**documentado como no activo en GitHub Pages**).
 - `index.html`: Landing page principal en español.
-- `portfolio.html`: Galería dedicada del portafolio en español.
+- `portfolio.html`: Galería dedicada del portafolio en español (41 fichas técnicas / 61 imágenes de presentación).
 - `en/index.html`: Landing page en inglés.
-- `en/portfolio.html`: Galería dedicada del portafolio en inglés.
+- `en/portfolio.html`: Galería dedicada del portafolio en inglés (41 fichas técnicas / 61 imágenes de presentación).
 - `404.html`: Página personalizada de error 404 estática y bilingüe.
 - `sitemap.xml`: Mapa del sitio XML con alternate tags `xhtml:link` bidireccionales.
 - `robots.txt`: Reglas de rastreo con referencia a `sitemap.xml`.

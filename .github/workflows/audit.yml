@@ -2,9 +2,9 @@ name: Audit & Verify (v4)
 
 on:
   push:
-    branches: [ main, v4-redesign ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, v4-redesign ]
+    branches: [ main ]
 
 permissions:
   contents: read

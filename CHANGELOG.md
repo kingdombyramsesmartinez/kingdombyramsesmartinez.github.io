@@ -9,7 +9,7 @@
   - Divisores temáticos urbanos: cinta adhesiva industrial a rayas (`.urban-divider--tape`) y chorreado/drip de pintura aerosol (`.urban-divider--drip` vía `assets/brand/drip-divider.svg`).
   - Títulos principales en `Sedgwick Ave Display` (`.woff2` local; SIL Open Font License v1.1) con sombra urbana de contraste.
 - **Portafolio Enriquecido & Estructura Preservada:**
-  - Se mantiene la estructura multi-página con la galería completa de 55 presentaciones en `portfolio.html` y `en/portfolio.html`, y el hub/teaser en `index.html`.
+  - Se mantiene la estructura multi-página con la galería completa de 41 fichas (61 imágenes de presentación) en `portfolio.html` y `en/portfolio.html`, y el hub/teaser en `index.html`.
   - Incorporados soportes para campos opcionales por pieza: `ribbon` (etiqueta sobre la tarjeta), `status` (aviso destacado tipo propuesta/acuerdo), `fabric` (tela ofrecida), `priceFinal` (precio final en ficha) y `story` (anécdota/proceso de la pieza).
   - Escapado de caracteres (`esc()`) en atributos del generador estático `tools/build-i18n.mjs`.
   - Agregada guía para el creador en `content/GUIA-PORTAFOLIO.md`.
@@ -26,7 +26,7 @@
   - `robots.txt`: Verificada declaración de rastreo sin restricciones y ruta canónica a sitemap.
   - `site-manifest.json`: Comprobada coherencia de iconos locales (`assets/brand/icon-192.png`, `assets/brand/icon-512.png`, `assets/brand/favicon.svg`).
 - **Verificación de Activos y Referencias:**
-  - Auditados tamaños de todas las imágenes en `assets/` (todas las 55 piezas WebP se mantienen por debajo de los límites de compresión web).
+  - Auditados tamaños de todas las imágenes en `assets/` (todas las 61 imágenes WebP de presentación se mantienen por debajo de los límites de compresión web).
   - Confirmada la ausencia total de referencias residuales a tipografías obsoletas en el código fuente y plantillas.
 - **Sinceración de Auditoría:**
   - `AUDIT-REPORT.md` actualizado con el inventario de 11 páginas HTML y 3 archivos CSS auditados, detallando explícitamente aspectos que escapan a la verificación del entorno local (cabeceras HTTP en GitHub Pages, depuradores externos de redes sociales y app nativa de WhatsApp).
@@ -42,7 +42,7 @@
   - Añadida consulta `@media (prefers-reduced-motion: reduce)` en `legal.css` y `404.css` para anular transiciones cuando el usuario lo configure en su sistema operativo.
 - **Imágenes e Inclusividad:**
   - Añadido `aria-hidden="true"` explícito directo a la imagen del logotipo decorativo en marca de agua del hero.
-  - Validados atributos `alt` descriptivos bilingües en las 55 piezas del portafolio.
+  - Validados atributos `alt` descriptivos bilingües en las 41 fichas (61 imágenes) del portafolio.
 - **Verificación de Contraste WCAG AA:**
   - Confirmados ratios de contraste superiores a 4.5:1 en todos los textos sobre fondo `--ink` (`#070706`) para verde oliva (`#7A8058` a 4.85:1; `#92976E` a 6.60:1), beige (`#E9E0D0` a 15.39:1) y escala de grises.
 
