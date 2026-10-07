@@ -26,18 +26,34 @@
   <link rel="apple-touch-icon" sizes="180x180" href="{{ASSET_PREFIX}}assets/brand/apple-touch-icon.png"/>
   <link rel="manifest" href="{{ASSET_PREFIX}}site-manifest.json"/>
 
+  <!-- Open Graph / Twitter Cards -->
+  <meta property="og:title" content="{{PORTFOLIO_PAGE_TITLE}}"/>
+  <meta property="og:description" content="{{PORTFOLIO_PAGE_DESC}}"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="{{PORTFOLIO_CANONICAL_URL}}"/>
+  <meta property="og:site_name" content="KINGDOM"/>
+  <meta property="og:locale" content="{{OG_LOCALE}}"/>
+  <meta property="og:locale:alternate" content="{{OG_LOCALE_ALT}}"/>
+  <meta property="og:image" content="{{SITE_URL}}/assets/brand/og-image.png"/>
+  <meta property="og:image:alt" content="KINGDOM — Portafolio de Diseño Textil &amp; Bordado Industrial"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="{{PORTFOLIO_PAGE_TITLE}}"/>
+  <meta name="twitter:description" content="{{PORTFOLIO_PAGE_DESC}}"/>
+  <meta name="twitter:image" content="{{SITE_URL}}/assets/brand/og-image.png"/>
+
   <!-- Preload Fuentes Principales WOFF2 -->
   <link rel="preload" as="font" type="font/woff2" href="{{ASSET_PREFIX}}assets/fonts/montserrat-latin-wght-normal.woff2" crossorigin/>
   <link rel="preload" as="font" type="font/woff2" href="{{ASSET_PREFIX}}assets/fonts/aerosoldier-drip.woff2" crossorigin/>
   <link rel="stylesheet" href="{{ASSET_PREFIX}}assets/css/style.css"/>
+  <link rel="stylesheet" href="{{ASSET_PREFIX}}assets/css/urban.css"/>
 </head>
-<body>
+<body data-wa="{{WHATSAPP_NUMBER}}">
   <a class="skip-link" href="#mainContent">{{NAV_SKIP}}</a>
 
   <!-- Header Sticky Street-Editorial -->
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
-      <a class="brand-link" href="{{HOME_PAGE_HREF}}" aria-label="Kingdom — Ramses Martínez" translate="no">
+      <a class="brand-link" href="{{HOME_PAGE_HREF}}" aria-label="KINGDOM — Kingdom by Ramses Martínez" translate="no">
         <img src="{{ASSET_PREFIX}}assets/brand/logo.svg" alt="Kingdom Tag Logo" width="1024" height="691"/>
       </a>
 
@@ -62,6 +78,20 @@
     <!-- Hero Header Portafolio -->
     <section class="portfolio-page-header">
       <div class="container text-center">
+        <nav aria-label="{{BREADCRUMB_ARIA_LABEL}}" class="breadcrumbs-wrap">
+          <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a href="{{HOME_PAGE_HREF}}" itemprop="item"><span itemprop="name">{{BREADCRUMB_HOME}}</span></a>
+              <meta itemprop="position" content="1"/>
+            </li>
+            <li aria-hidden="true" class="breadcrumb-separator">/</li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <span aria-current="page" itemprop="name">{{PORTFOLIO_TITLE}}</span>
+              <link itemprop="item" href="{{PORTFOLIO_CANONICAL_URL}}"/>
+              <meta itemprop="position" content="2"/>
+            </li>
+          </ol>
+        </nav>
         <div class="section-eyebrow">{{PORTFOLIO_EYEBROW}}</div>
         <h1 class="portfolio-page-title">{{PORTFOLIO_TITLE}}</h1>
         <p class="section-desc portfolio-header-desc">
@@ -71,6 +101,7 @@
     </section>
 
     <!-- Galería con Filtros -->
+    <div class="urban-divider urban-divider--tape" aria-hidden="true"></div>
     <section class="portfolio-gallery-section">
       <div class="container">
         <div class="portfolio-filters" role="group" aria-label="Filtros por categoría">
@@ -92,32 +123,45 @@
     </section>
   </main>
 
-  <!-- Modal Accesible de Ficha Técnica e Inspección -->
+  <!-- Modal: Ficha de producto (galería + información) -->
   <div class="modal-backdrop" id="portfolioModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle">
-    <div class="modal-sheet glass">
-      <button class="modal-close-btn" id="modalCloseBtn" type="button" aria-label="{{MODAL_CLOSE_ARIA}}">{{MODAL_CLOSE_TEXT}}</button>
-      <div class="modal-label">{{MODAL_EYEBROW}}</div>
-      <h3 id="modalTitle" class="modal-heading"></h3>
-      <div class="modal-body-grid">
-        <div class="modal-img-wrap">
-          <img id="modalImg" src="{{ASSET_PREFIX}}assets/artwork/art-amigos-cafe.webp" alt="Muestra de producción ampliada" width="1080" height="1350" loading="lazy"/>
-        </div>
-        <div>
-          <div class="modal-info-panel">
-            <div class="modal-info-row">
-              <strong class="text-muted-gray">{{MODAL_TECH_LABEL}}</strong> <span id="modalTag" class="text-white"></span>
-            </div>
-            <div class="modal-info-row">
-              <strong class="text-muted-gray">{{MODAL_GARMENT_LABEL}}</strong> <span id="modalSpecs" class="text-white"></span>
-            </div>
-            <div class="modal-info-row">
-              <strong class="text-muted-gray">{{MODAL_PRICE_LABEL}}</strong> <span id="modalPrice" class="text-white"></span>
-            </div>
+    <div class="modal-sheet pm-sheet glass">
+      <button class="pm-close" id="modalCloseBtn" type="button" aria-label="{{MODAL_CLOSE_ARIA}}">✕</button>
+      <div class="pm-grid">
+        <div class="pm-gallery">
+          <div class="modal-img-wrap pm-stage">
+            <span id="modalCarouselCounter" class="modal-carousel-counter" hidden>1 / 1</span>
+            <img id="modalImg" src="{{ASSET_PREFIX}}assets/artwork/alcaldia de san felipe-chaqueta sublimada.webp" alt="" width="1080" height="1350"/>
           </div>
-          <p id="modalDesc" class="modal-description"></p>
-          <a id="modalWaBtn" class="btn-premium" href="https://wa.me/{{WHATSAPP_NUMBER}}?text={{MODAL_WA_MSG}}" target="_blank" rel="noopener noreferrer">
-            {{MODAL_CTA}}
+          <div id="modalCarouselNav" class="pm-thumbs-row" hidden>
+            <button type="button" class="modal-carousel-btn" id="modalPrevBtn" aria-label="{{MODAL_PREV}}">‹</button>
+            <div id="modalCarouselDots" class="pm-thumbs"></div>
+            <button type="button" class="modal-carousel-btn" id="modalNextBtn" aria-label="{{MODAL_NEXT}}">›</button>
+          </div>
+        </div>
+        <div class="pm-info">
+          <p id="modalTag" class="pm-eyebrow"></p>
+          <h3 id="modalTitle" class="pm-title"></h3>
+          <p id="modalStatus" class="modal-status" hidden></p>
+          <p id="modalDesc" class="pm-desc"></p>
+          <p id="modalStory" class="pm-desc pm-story" hidden></p>
+          <div class="pm-price" id="modalPriceRow" hidden>
+            <span id="modalPrice" class="pm-price-value"></span>
+            <span class="pm-price-label">{{MODAL_PRICE_REF}}</span>
+          </div>
+          <ul class="pm-features">
+            <li><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span>{{MODAL_FEAT_1}}</span></li>
+            <li><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg><span>{{MODAL_FEAT_2}}</span></li>
+            <li><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 3l-5 3 2 4 2-1v12h10V9l2 1 2-4-5-3c-1 2-2.5 3-4 3S9 5 8 3z"/></svg><span>{{MODAL_FEAT_3}}</span></li>
+            <li><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 100 18c1.5 0 2-1 2-2s-1-1.5-1-2.5S14 15 15 15h2a4 4 0 004-4c0-4.5-4-8-9-8z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/></svg><span>{{MODAL_FEAT_4}}</span></li>
+          </ul>
+          <dl class="pm-specs">
+            <div id="modalFabricRow" hidden><dt>{{MODAL_FABRIC_LABEL}}</dt><dd id="modalFabric"></dd></div>
+          </dl>
+          <a id="modalWaBtn" class="pm-cta" href="https://wa.me/{{WHATSAPP_NUMBER}}?text={{MODAL_WA_MSG}}" target="_blank" rel="noopener noreferrer">
+            <span>{{MODAL_CTA}}</span> <span aria-hidden="true">→</span>
           </a>
+          <p class="pm-note">{{MODAL_NOTE}}</p>
         </div>
       </div>
     </div>
@@ -157,8 +201,6 @@
       <p class="footer-translate-note">{{FOOTER_BROWSER_TRANSLATE}}</p>
     </div>
   </footer>
-
-  <script src="{{ASSET_PREFIX}}assets/js/site.config.js" type="module"></script>
-  <script src="{{ASSET_PREFIX}}assets/js/app.js" type="module"></script>
+  <script src="{{ASSET_PREFIX}}assets/js/app.js" defer></script>
 </body>
 </html>

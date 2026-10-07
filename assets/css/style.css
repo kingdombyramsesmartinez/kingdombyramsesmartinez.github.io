@@ -209,7 +209,8 @@ button, input, select, textarea {
 }
 
 .btn-premium:hover {
-  background: #E5B200;
+  background: var(--accent-olive-light);
+  border-color: var(--accent-olive-light);
   transform: translateY(-1px);
 }
 
@@ -418,7 +419,7 @@ section {
   width: min(850px, 90vw);
   max-width: 100%;
   pointer-events: none;
-  opacity: 0.50;
+  opacity: 0.20;
   z-index: 1;
   user-select: none;
 }

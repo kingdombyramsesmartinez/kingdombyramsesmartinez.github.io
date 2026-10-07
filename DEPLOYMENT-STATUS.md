@@ -2,7 +2,7 @@
 
 **Fecha:** 2026-10-06  
 **Rama activa:** `v4-redesign`  
-**Destino de Publicación Actual:** GitHub Pages (`https://kingdombqto.github.io/KINGDOM/`)  
+**Destino de Publicación:** GitHub Pages con Dominio Personalizado (`https://www.kingdombyramsesmartinez.com`)  
 **Destino Futuro / Alterno:** Cloudflare Pages (cuando se decida asociar dominio propio)
 
 ---

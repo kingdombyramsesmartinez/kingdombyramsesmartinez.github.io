@@ -2,10 +2,10 @@
   "lang": "es",
   "dir": "ltr",
   "meta": {
-    "title": "Ramses Martínez | Kingdom — Diseño textil, bordado industrial y sublimación",
-    "description": "Estudio de diseño textil y digitalización de bordado industrial de Ramses Martínez en Barquisimeto, Venezuela. Matrices DST/PES optimizadas, sublimación deportiva y arte streetwear.",
-    "ogTitle": "Ramses Martínez | Kingdom — Diseño Textil & Bordado",
-    "ogDesc": "Diseño textil, digitalización de bordado industrial y sublimación deportiva bajo pedido.",
+    "title": "KINGDOM | Diseño Textil, Bordado Industrial & Sublimación — Kingdom by Ramses Martínez",
+    "description": "Sitio oficial de KINGDOM (Kingdom by Ramses Martínez). Estudio de diseño textil, matrices de bordado industrial DST/PES, sublimación deportiva y streetwear en Barquisimeto, Venezuela.",
+    "ogTitle": "KINGDOM — Diseño Textil & Bordado Industrial | Kingdom by Ramses Martínez",
+    "ogDesc": "Presencia digital oficial de KINGDOM: matrices DST/PES, diseño de indumentaria deportiva sublimada y streetwear.",
     "ogLocale": "es_LA",
     "ogLocaleAlt": "en_US"
   },
@@ -23,9 +23,10 @@
     "langSwitchAria": "Switch to English version"
   },
   "hero": {
-    "eyebrow": "Ramses Martínez // Estudio Textil & Digitalización",
+    "eyebrow": "KINGDOM // Kingdom by Ramses Martínez",
     "titleLine1": "Diseño Textil",
-    "titleLine2": "& Bordado Industrial",
+    "titleLine2": "&",
+    "titleLine3": "Bordado Industrial",
     "lead": "Desarrollo de piezas deportivas sublimadas, indumentaria personalizada y digitalización de matrices de bordado <span translate=\"no\">DST</span>/<span translate=\"no\">PES</span> configuradas según el tipo de tela y maquinaria.",
     "ctaWhatsapp": "Hablar por WhatsApp →",
     "ctaPortfolio": "Ver Trabajos",
@@ -49,8 +50,8 @@
   ],
   "about": {
     "eyebrow": "Trayectoria & Perfil",
-    "title": "<span translate=\"no\">Ramses Martínez</span> × <span translate=\"no\">Kingdom</span>",
-    "desc": "Trabajo en el sector textil desde niño y profesionalmente desde los 18 años. <span translate=\"no\">Kingdom</span> reúne mi trabajo en digitalización de bordado industrial, ilustración gráfica y manufactura bajo pedido.",
+    "title": "<span translate=\"no\">KINGDOM</span> by <span translate=\"no\">Ramses Martínez</span>",
+    "desc": "Con formación en el oficio textil desde temprana edad y actividad profesional continua desde los 18 años, <span translate=\"no\">KINGDOM</span> es la marca y estudio fundado por <span translate=\"no\">Ramses Martínez</span> que integra digitalización de bordado industrial, ilustración gráfica deportiva y manufactura personalizada bajo pedido.",
     "timeline": [
       {
         "period": "Trayectoria",
@@ -142,14 +143,26 @@
   "portfolio": {
     "eyebrow": "Trabajos & Presentaciones",
     "title": "Portafolio de Diseño Textil",
-    "desc": "Galería completa de presentaciones de diseño, indumentaria personalizada y digitalización textil realizadas por Ramses Martínez.",
+    "desc": "Galería completa de presentaciones de diseño, indumentaria personalizada y digitalización de matrices textiles desarrolladas por KINGDOM (Kingdom by Ramses Martínez).",
     "ctaExplore": "Explorar Portafolio Completo (55 Presentaciones) →",
     "ctaBack": "← Volver al Inicio",
     "filters": [
-      { "id": "all", "label": "Todos" },
-      { "id": "sublimacion", "label": "Sublimación Deportiva" },
-      { "id": "streetwear", "label": "Streetwear & Gráfica" },
-      { "id": "branding", "label": "Branding & Corporativo" }
+      {
+        "id": "all",
+        "label": "Todos"
+      },
+      {
+        "id": "sublimacion",
+        "label": "Sublimación Deportiva"
+      },
+      {
+        "id": "streetwear",
+        "label": "Streetwear & Gráfica"
+      },
+      {
+        "id": "branding",
+        "label": "Branding & Corporativo"
+      }
     ],
     "disclaimer": "Presentaciones digitales y propuestas gráficas de Ramses Martínez para Kingdom. Las piezas con ilustraciones de fans se muestran como demostración artística sin afiliación de marca."
   },
@@ -197,13 +210,14 @@
     "eyebrow": "DETALLE TÉCNICO DE LA PIEZA",
     "techLabel": "Técnica:",
     "garmentLabel": "Prenda / Soporte:",
-    "priceLabel": "Precio / Referencia:",
+    "priceLabel": "Precio final:",
+    "fabricLabel": "Material óptimo:",
     "availLabel": "Disponibilidad:",
     "noteLabel": "Nota:",
-    "cta": "Cotizar Trabajo Similar por WhatsApp"
+    "cta": "Contactar"
   },
   "footer": {
-    "brandDesc": "Estudio de diseño textil, ilustración vectorial y digitalización de bordado industrial de <span translate=\"no\">Ramses Martínez</span>.",
+    "brandDesc": "KINGDOM — Estudio de diseño textil, ilustración vectorial y digitalización de bordado industrial fundado por <span translate=\"no\">Ramses Martínez</span>.",
     "legalTitle": "Enlaces Legales",
     "links": {
       "privacy": "Privacidad",
@@ -213,7 +227,7 @@
       "security": "Seguridad",
       "a11y": "Accesibilidad"
     },
-    "copyright": "<span translate=\"no\">Kingdom</span> © 2026 — <span translate=\"no\">Ramses Martínez</span>. Barquisimeto, Venezuela.",
+    "copyright": "<span translate=\"no\">KINGDOM</span> © 2026 — <span translate=\"no\">Kingdom by Ramses Martínez</span>. Barquisimeto, Venezuela.",
     "disclaimer": "Este sitio es informativo y no constituye una oferta contractual vinculante.",
     "browserTranslate": "¿Prefieres otro idioma? Puedes utilizar la herramienta de traducción integrada de tu navegador (Chrome, Edge, Safari o Firefox)."
   }

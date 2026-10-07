@@ -2,64 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://kingdombqto.github.io/KINGDOM/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://kingdombqto.github.io/KINGDOM/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://kingdombqto.github.io/KINGDOM/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://kingdombqto.github.io/KINGDOM/"/>
+    <loc>https://kingdombyramsesmartinez.github.io/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kingdombyramsesmartinez.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kingdombyramsesmartinez.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kingdombyramsesmartinez.github.io/"/>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://kingdombqto.github.io/KINGDOM/en/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://kingdombqto.github.io/KINGDOM/en/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://kingdombqto.github.io/KINGDOM/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://kingdombqto.github.io/KINGDOM/"/>
+    <loc>https://kingdombyramsesmartinez.github.io/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kingdombyramsesmartinez.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kingdombyramsesmartinez.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kingdombyramsesmartinez.github.io/"/>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://kingdombqto.github.io/KINGDOM/portfolio.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://kingdombqto.github.io/KINGDOM/portfolio.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://kingdombqto.github.io/KINGDOM/en/portfolio.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://kingdombqto.github.io/KINGDOM/portfolio.html"/>
+    <loc>https://kingdombyramsesmartinez.github.io/portfolio.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kingdombyramsesmartinez.github.io/portfolio.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kingdombyramsesmartinez.github.io/en/portfolio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kingdombyramsesmartinez.github.io/portfolio.html"/>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://kingdombqto.github.io/KINGDOM/en/portfolio.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://kingdombqto.github.io/KINGDOM/en/portfolio.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://kingdombqto.github.io/KINGDOM/portfolio.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://kingdombqto.github.io/KINGDOM/portfolio.html"/>
+    <loc>https://kingdombyramsesmartinez.github.io/en/portfolio.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kingdombyramsesmartinez.github.io/en/portfolio.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kingdombyramsesmartinez.github.io/portfolio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kingdombyramsesmartinez.github.io/portfolio.html"/>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kingdombqto.github.io/KINGDOM/legal/privacy.html</loc>
+    <loc>https://kingdombyramsesmartinez.github.io/legal/privacy.html</loc>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://kingdombqto.github.io/KINGDOM/legal/terms.html</loc>
+    <loc>https://kingdombyramsesmartinez.github.io/legal/terms.html</loc>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://kingdombqto.github.io/KINGDOM/legal/intellectual-property.html</loc>
+    <loc>https://kingdombyramsesmartinez.github.io/legal/intellectual-property.html</loc>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://kingdombqto.github.io/KINGDOM/legal/cookies.html</loc>
+    <loc>https://kingdombyramsesmartinez.github.io/legal/cookies.html</loc>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://kingdombqto.github.io/KINGDOM/legal/security.html</loc>
+    <loc>https://kingdombyramsesmartinez.github.io/legal/security.html</loc>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://kingdombqto.github.io/KINGDOM/legal/accessibility.html</loc>
+    <loc>https://kingdombyramsesmartinez.github.io/legal/accessibility.html</loc>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>

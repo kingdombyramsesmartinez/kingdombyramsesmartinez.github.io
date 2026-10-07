@@ -3,7 +3,7 @@
 
 **Fecha:** 2026-10-06  
 **Rama activa:** `v4-redesign`  
-**Publicación objetivo:** GitHub Pages (`https://kingdombqto.github.io/KINGDOM/`)  
+**Publicación objetivo:** GitHub Pages User Site (`https://kingdombyramsesmartinez.github.io/`)  
 **Resultado de Auditoría Local (`npm run audit:local`):** `PASS` (11 páginas HTML y 3 CSS auditados, 0 frases prohibidas, 0 variables CSS indefinidas, 0 enlaces rotos, CSP estricta idéntica).
 
 ---
@@ -52,7 +52,7 @@
 1. **Cabeceras HTTP en Producción:**
    - En este entorno local y en GitHub Pages no se pueden inspeccionar cabeceras HTTP de respuesta perimetrales como `Strict-Transport-Security` (HSTS), `X-Frame-Options` o `Permissions-Policy`, ya que GitHub Pages no admite configuración de cabeceras de servidor personalizadas.
 2. **Entorno en Tiempo Real de Redes Sociales:**
-   - La previsualización de Open Graph y Twitter Cards no puede ser validada en vivo con los depuradores de Facebook o Twitter/X hasta que los cambios sean publicados y accesibles públicamente en `https://kingdombqto.github.io/KINGDOM/`.
+   - La previsualización de Open Graph y Twitter Cards no puede ser validada en vivo con los depuradores de Facebook o Twitter/X hasta que los cambios sean publicados y accesibles públicamente en `https://kingdombyramsesmartinez.github.io/`.
 3. **Flujo Real de Apertura en App Nativa de WhatsApp Móvil:**
    - Se probó la generación y codificación correcta de URLs `https://wa.me/...` con parámetros encodeados, pero la invocación directa de la aplicación móvil de WhatsApp requiere un dispositivo físico.
 4. **Traducción Automática en Motores Reales de Navegadores:**

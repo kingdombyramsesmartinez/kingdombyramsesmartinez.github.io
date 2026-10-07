@@ -4,7 +4,7 @@
 # NOTA IMPORTANTE DE DESPLIEGUE:
 # Este archivo está preparado para una futura migración a Cloudflare Pages o hosting
 # con soporte de cabeceras perimetrales.
-# En GitHub Pages (publicación actual: https://kingdombqto.github.io/KINGDOM/), este
+# En GitHub Pages (publicación: https://www.kingdombyramsesmartinez.com), este
 # archivo NO SE APLICA ni procesa por el servidor. Por lo tanto, cabeceras como:
 # - Strict-Transport-Security (HSTS)
 # - X-Frame-Options

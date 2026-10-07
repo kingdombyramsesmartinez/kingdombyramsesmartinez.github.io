@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kingdombqto.github.io/KINGDOM/sitemap.xml
+Sitemap: https://kingdombyramsesmartinez.github.io/sitemap.xml

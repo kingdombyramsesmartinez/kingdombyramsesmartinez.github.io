@@ -2,10 +2,10 @@
   "lang": "en",
   "dir": "ltr",
   "meta": {
-    "title": "Ramses Martínez | Kingdom — Textile Design, Industrial Embroidery & Sublimation",
-    "description": "Textile design studio & industrial embroidery digitizing by Ramses Martínez in Barquisimeto, Venezuela. Optimized DST/PES stitch files, athletic sublimation and streetwear graphics.",
-    "ogTitle": "Ramses Martínez | Kingdom — Textile Design & Embroidery",
-    "ogDesc": "Textile design, industrial embroidery digitizing and made-to-order athletic sublimation.",
+    "title": "KINGDOM | Textile Design, Industrial Embroidery & Sublimation — Kingdom by Ramses Martínez",
+    "description": "Official website of KINGDOM (Kingdom by Ramses Martínez). Textile design studio, industrial DST/PES embroidery digitizing, sports sublimation and custom apparel in Barquisimeto, Venezuela.",
+    "ogTitle": "KINGDOM — Textile Design & Industrial Embroidery | Kingdom by Ramses Martínez",
+    "ogDesc": "Official digital home of KINGDOM: DST/PES embroidery files, made-to-order sublimated sports apparel and streetwear.",
     "ogLocale": "en_US",
     "ogLocaleAlt": "es_LA"
   },
@@ -23,9 +23,10 @@
     "langSwitchAria": "Cambiar a versión en español"
   },
   "hero": {
-    "eyebrow": "<span translate=\"no\">Ramses Martínez</span> // Textile Studio & Digitizing",
+    "eyebrow": "<span translate=\"no\">KINGDOM</span> // Kingdom by Ramses Martínez",
     "titleLine1": "Textile Design",
-    "titleLine2": "& Industrial Embroidery",
+    "titleLine2": "&",
+    "titleLine3": "Industrial Embroidery",
     "lead": "Developing sublimated sportswear, custom apparel and industrial embroidery files (<span translate=\"no\">DST</span>/<span translate=\"no\">PES</span>) calibrated for fabric elasticity and machine efficiency.",
     "ctaWhatsapp": "Chat on WhatsApp →",
     "ctaPortfolio": "View Work",
@@ -49,8 +50,8 @@
   ],
   "about": {
     "eyebrow": "Trajectory & Profile",
-    "title": "<span translate=\"no\">Ramses Martínez</span> × <span translate=\"no\">Kingdom</span>",
-    "desc": "Immersed in the textile trade since childhood and working professionally since age 18. <span translate=\"no\">Kingdom</span> brings together my practice in embroidery digitizing, vector art and made-to-order manufacturing.",
+    "title": "<span translate=\"no\">KINGDOM</span> by <span translate=\"no\">Ramses Martínez</span>",
+    "desc": "Immersed in the textile trade from an early age and working professionally since age 18, <span translate=\"no\">KINGDOM</span> is the studio and brand founded by <span translate=\"no\">Ramses Martínez</span>, uniting industrial embroidery digitizing, athletic vector illustration, and custom made-to-order production.",
     "timeline": [
       {
         "period": "Background",
@@ -142,14 +143,26 @@
   "portfolio": {
     "eyebrow": "Works & Presentations",
     "title": "Textile Design Portfolio",
-    "desc": "Full showcase of design presentations, custom athletic apparel, and textile artwork engineered by Ramses Martínez.",
+    "desc": "Full showcase of design presentations, custom athletic apparel, and textile artwork engineered by KINGDOM (Kingdom by Ramses Martínez).",
     "ctaExplore": "Explore Full Portfolio (55 Presentations) →",
     "ctaBack": "← Back to Home",
     "filters": [
-      { "id": "all", "label": "All" },
-      { "id": "sublimacion", "label": "Sports Sublimation" },
-      { "id": "streetwear", "label": "Streetwear & Art" },
-      { "id": "branding", "label": "Branding & Corporate" }
+      {
+        "id": "all",
+        "label": "All"
+      },
+      {
+        "id": "sublimacion",
+        "label": "Sports Sublimation"
+      },
+      {
+        "id": "streetwear",
+        "label": "Streetwear & Art"
+      },
+      {
+        "id": "branding",
+        "label": "Branding & Corporate"
+      }
     ],
     "disclaimer": "Digital presentations and concept artwork created by Ramses Martínez for Kingdom. Fan artwork is presented for artistic portfolio demonstration only without brand affiliation."
   },
@@ -197,13 +210,14 @@
     "eyebrow": "TECHNICAL SPEC SHEET",
     "techLabel": "Technique:",
     "garmentLabel": "Garment / Medium:",
-    "priceLabel": "Price / Reference:",
+    "priceLabel": "Final price:",
+    "fabricLabel": "Optimal material:",
     "availLabel": "Availability:",
     "noteLabel": "Note:",
-    "cta": "Inquire About Similar Work via WhatsApp"
+    "cta": "Contact"
   },
   "footer": {
-    "brandDesc": "Textile design, vector illustration and industrial embroidery digitizing studio by <span translate=\"no\">Ramses Martínez</span>.",
+    "brandDesc": "KINGDOM — Textile design studio, vector artwork and industrial embroidery digitizing founded by <span translate=\"no\">Ramses Martínez</span>.",
     "legalTitle": "Legal & Policies",
     "links": {
       "privacy": "Privacy",
@@ -213,7 +227,7 @@
       "security": "Security",
       "a11y": "Accessibility"
     },
-    "copyright": "<span translate=\"no\">Kingdom</span> © 2026 — <span translate=\"no\">Ramses Martínez</span>. Barquisimeto, Venezuela.",
+    "copyright": "<span translate=\"no\">KINGDOM</span> © 2026 — <span translate=\"no\">Kingdom by Ramses Martínez</span>. Barquisimeto, Venezuela.",
     "disclaimer": "This website is for informational purposes and does not constitute a binding legal contract.",
     "browserTranslate": "Prefer another language? You can use your web browser's built-in translation tool (Chrome, Edge, Safari, or Firefox)."
   }

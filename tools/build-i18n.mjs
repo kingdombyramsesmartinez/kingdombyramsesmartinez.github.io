@@ -16,6 +16,12 @@ const esData = JSON.parse(fs.readFileSync(path.join(root, "content", "es.json"),
 const enData = JSON.parse(fs.readFileSync(path.join(root, "content", "en.json"), "utf8"));
 const portfolioData = JSON.parse(fs.readFileSync(path.join(root, "content", "portfolio.json"), "utf8"));
 
+// Escapa texto para atributos HTML (los campos del portafolio los escribe el dueño)
+const esc = (v) => String(v ?? "")
+  .replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+
+
+
 function renderIndex(data, isEn) {
   const assetPrefix = isEn ? "../" : "";
   const legalPrefix = isEn ? "../legal/" : "legal/";
@@ -57,6 +63,7 @@ function renderIndex(data, isEn) {
   out = out.replaceAll("{{HERO_EYEBROW}}", data.hero.eyebrow);
   out = out.replaceAll("{{HERO_TITLE_LINE1}}", data.hero.titleLine1);
   out = out.replaceAll("{{HERO_TITLE_LINE2}}", data.hero.titleLine2);
+  out = out.replaceAll("{{HERO_TITLE_LINE3}}", data.hero.titleLine3);
   out = out.replaceAll("{{HERO_LEAD}}", data.hero.lead);
   out = out.replaceAll("{{HERO_CTA_WA}}", data.hero.ctaWhatsapp);
   out = out.replaceAll("{{HERO_CTA_PORTFOLIO}}", data.hero.ctaPortfolio);
@@ -182,6 +189,14 @@ function renderIndex(data, isEn) {
   out = out.replaceAll("{{MODAL_GARMENT_LABEL}}", data.modal.garmentLabel);
   out = out.replaceAll("{{MODAL_PRICE_LABEL}}", data.modal.priceLabel);
   out = out.replaceAll("{{MODAL_CTA}}", data.modal.cta);
+  out = out.replaceAll("{{MODAL_PRICE_REF}}", isEn ? "Reference price" : "Precio de referencia");
+  out = out.replaceAll("{{MODAL_FEAT_1}}", isEn ? "High quality" : "Alta calidad");
+  out = out.replaceAll("{{MODAL_FEAT_2}}", isEn ? "Customizable" : "Personalizable");
+  out = out.replaceAll("{{MODAL_FEAT_3}}", isEn ? "Size range" : "Variedad de tallas");
+  out = out.replaceAll("{{MODAL_FEAT_4}}", isEn ? "Several colors" : "Varios colores");
+  out = out.replaceAll("{{MODAL_NOTE}}", isEn ? "Ask about prices, lead times and customization." : "Consulta por precios, tiempos de entrega y personalización.");
+  out = out.replaceAll("{{MODAL_PREV}}", isEn ? "Previous image" : "Imagen anterior");
+  out = out.replaceAll("{{MODAL_NEXT}}", isEn ? "Next image" : "Siguiente imagen");
 
   const modalWaMsg = encodeURIComponent(
     isEn
@@ -219,14 +234,18 @@ function renderPortfolioPage(data, isEn) {
   // Language & Metadata
   out = out.replaceAll("{{LANG}}", data.lang);
   out = out.replaceAll("{{DIR}}", data.dir);
-  out = out.replaceAll("{{PORTFOLIO_PAGE_TITLE}}", `${data.portfolio.title} — Kingdom`);
+  out = out.replaceAll("{{PORTFOLIO_PAGE_TITLE}}", `${data.portfolio.title} | KINGDOM — Kingdom by Ramses Martínez`);
   out = out.replaceAll("{{PORTFOLIO_PAGE_DESC}}", data.portfolio.desc);
   out = out.replaceAll("{{PORTFOLIO_CANONICAL_URL}}", canonicalUrl);
   out = out.replaceAll("{{SITE_URL}}", siteUrl);
+  out = out.replaceAll("{{OG_LOCALE}}", data.meta.ogLocale);
+  out = out.replaceAll("{{OG_LOCALE_ALT}}", data.meta.ogLocaleAlt);
   out = out.replaceAll("{{ASSET_PREFIX}}", assetPrefix);
   out = out.replaceAll("{{LEGAL_PREFIX}}", legalPrefix);
   out = out.replaceAll("{{HOME_PAGE_HREF}}", homeHref);
   out = out.replaceAll("{{PORTFOLIO_LANG_HREF}}", portfolioLangHref);
+  out = out.replaceAll("{{BREADCRUMB_ARIA_LABEL}}", isEn ? "Breadcrumb navigation" : "Migas de pan");
+  out = out.replaceAll("{{BREADCRUMB_HOME}}", isEn ? "Home" : "Inicio");
 
   // Nav
   out = out.replaceAll("{{NAV_SKIP}}", data.nav.skip);
@@ -259,24 +278,60 @@ function renderPortfolioPage(data, isEn) {
     const tag = isEn ? p.techniqueEn : p.techniqueEs;
     const garment = isEn ? p.garmentEn : p.garmentEs;
     const avail = isEn ? p.availabilityEn : p.availabilityEs;
-    const price = isEn ? p.priceEn : p.priceEs;
+    const price = p.priceFinal || (isEn ? p.priceEn : p.priceEs) || "";
     const note = isEn ? p.noteEn : p.noteEs;
     const desc = isEn ? p.descEn : p.descEs;
     const alt = isEn ? p.altEn : p.altEs;
     const specs = `${garment} · ${avail}`;
+    const ribbon = isEn ? p.ribbonEn : p.ribbonEs;
+    const status = isEn ? p.statusEn : p.statusEs;
+    const fabric = isEn ? p.fabricEn : p.fabricEs;
+    const story = isEn ? p.storyEn : p.storyEs;
     const clickHint = isEn ? "Click to view details" : "Clic para ver detalle";
+
+    const ribbonHtml = ribbon ? `<div class="portfolio-ribbon">${esc(ribbon)}</div>` : "";
+
+    // Soporte para variantes/carrusel de propuestas internas
+    const proposalsList = (p.proposals || []).map(prop => ({
+      image: `${assetPrefix}${prop.image}`,
+      alt: isEn ? (prop.altEn || alt) : (prop.altEs || alt),
+      title: isEn ? (prop.titleEn || title) : (prop.titleEs || title),
+      specs: prop.specsEn || prop.specsEs ? (isEn ? prop.specsEn : prop.specsEs) : specs,
+      tag: isEn ? (prop.techniqueEn || tag) : (prop.techniqueEs || tag),
+      fabric: isEn ? (prop.fabricEn || fabric) : (prop.fabricEs || fabric),
+      price: prop.priceFinal || (isEn ? prop.priceEn : prop.priceEs) || price,
+      desc: isEn ? (prop.descEn || desc) : (prop.descEs || desc),
+      story: isEn ? (prop.storyEn || story) : (prop.storyEs || story),
+      status: isEn ? (prop.statusEn || status) : (prop.statusEs || status)
+    }));
+
+    const proposalsJsonAttr = proposalsList.length > 0 ? ` data-proposals="${esc(JSON.stringify(proposalsList))}"` : "";
 
     return `
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="${p.category}"
-                   data-title="${title}"
-                   data-tag="${tag}"
-                   data-specs="${specs}"
-                   data-price="${price}"
-                   data-desc="${desc} (${note})"
-                   data-img="${assetPrefix}${p.image}">
-            <img src="${assetPrefix}${p.image}" alt="${alt}" width="1080" height="1350" loading="lazy" decoding="async"/>
-            <div class="portfolio-card-hint">${clickHint}</div>
+                   data-title="${esc(title)}"
+                   data-tag="${esc(tag)}"
+                   data-specs="${esc(specs)}"
+                   data-price="${esc(price)}"
+                   data-desc="${esc(desc)}${note ? ` (${esc(note)})` : ""}"
+                   data-status="${esc(status)}"
+                   data-fabric="${esc(fabric)}"
+                   data-story="${esc(story)}"
+                   data-img="${assetPrefix}${p.image}"${proposalsJsonAttr}>
+            <div class="pc-media">
+              ${ribbonHtml}
+              <img src="${assetPrefix}${p.image}" alt="${esc(alt)}" width="1080" height="1350" loading="lazy" decoding="async"/>
+            </div>
+            <div class="pc-body">
+              <h3 class="pc-title">${esc(title)}</h3>
+              <p class="pc-desc">${esc(desc)}</p>
+              <div class="pc-foot">
+                <span class="pc-action-hint">${clickHint}</span>
+                <span class="pc-arrow" aria-hidden="true">→</span>
+              </div>
+              <span class="visually-hidden">${clickHint}</span>
+            </div>
           </article>`;
   }).join("");
   out = out.replaceAll("{{PORTFOLIO_CARDS_HTML}}", cardsHtml);
@@ -287,8 +342,17 @@ function renderPortfolioPage(data, isEn) {
   out = out.replaceAll("{{MODAL_EYEBROW}}", data.modal.eyebrow);
   out = out.replaceAll("{{MODAL_TECH_LABEL}}", data.modal.techLabel);
   out = out.replaceAll("{{MODAL_GARMENT_LABEL}}", data.modal.garmentLabel);
+  out = out.replaceAll("{{MODAL_FABRIC_LABEL}}", data.modal.fabricLabel);
   out = out.replaceAll("{{MODAL_PRICE_LABEL}}", data.modal.priceLabel);
   out = out.replaceAll("{{MODAL_CTA}}", data.modal.cta);
+  out = out.replaceAll("{{MODAL_PRICE_REF}}", isEn ? "Reference price" : "Precio de referencia");
+  out = out.replaceAll("{{MODAL_FEAT_1}}", isEn ? "High quality" : "Alta calidad");
+  out = out.replaceAll("{{MODAL_FEAT_2}}", isEn ? "Customizable" : "Personalizable");
+  out = out.replaceAll("{{MODAL_FEAT_3}}", isEn ? "Size range" : "Variedad de tallas");
+  out = out.replaceAll("{{MODAL_FEAT_4}}", isEn ? "Several colors" : "Varios colores");
+  out = out.replaceAll("{{MODAL_NOTE}}", isEn ? "Ask about prices, lead times and customization." : "Consulta por precios, tiempos de entrega y personalización.");
+  out = out.replaceAll("{{MODAL_PREV}}", isEn ? "Previous image" : "Imagen anterior");
+  out = out.replaceAll("{{MODAL_NEXT}}", isEn ? "Next image" : "Siguiente imagen");
   out = out.replaceAll("{{WHATSAPP_NUMBER}}", SITE_CONFIG.contact.whatsappNumber);
 
   const modalWaMsg = encodeURIComponent(

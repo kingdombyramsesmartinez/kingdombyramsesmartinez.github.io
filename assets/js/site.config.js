@@ -4,14 +4,15 @@
  */
 export const SITE_CONFIG = Object.freeze({
   brand: {
-    name: "Kingdom",
-    fullName: "Ramses Martínez — Kingdom",
+    name: "KINGDOM",
+    alternateName: "Kingdom by Ramses Martínez",
+    fullName: "KINGDOM by Ramses Martínez",
     owner: "Ramses Martínez",
     tagline: "Diseño Textil, Bordado Industrial & Sublimación",
     location: "Barquisimeto, Estado Lara, Venezuela",
     originCountry: "Venezuela"
   },
-  siteUrl: "https://kingdombqto.github.io/KINGDOM",
+  siteUrl: "https://kingdombyramsesmartinez.github.io",
   contact: {
     whatsappNumber: "584241092124",
     whatsappDisplay: "+58 424-109-2124",

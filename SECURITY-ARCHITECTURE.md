@@ -14,7 +14,7 @@ Landing page y portafolio estático (HTML, CSS y JavaScript vainilla), sin base 
 
 ## Estado Real de Controles por Hosting
 
-### 1. Entorno Actual de Publicación: GitHub Pages (`https://kingdombqto.github.io/KINGDOM/`)
+### 1. Entorno de Publicación: GitHub Pages User Site (`https://kingdombyramsesmartinez.github.io/`)
 GitHub Pages sirve archivos estáticos pero **no admite configuración de cabeceras HTTP personalizadas**.
 - **Archivo `_headers`:** Se mantiene en la raíz del repositorio pero **está inactivo en GitHub Pages**. Se conserva como artefacto de configuración para una futura migración a Cloudflare Pages.
 - **Controles NO activos hoy en GitHub Pages:**

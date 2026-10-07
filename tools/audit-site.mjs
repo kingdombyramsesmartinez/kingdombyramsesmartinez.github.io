@@ -121,9 +121,10 @@ for (const file of pages) {
   }
 }
 
-// 8. Auditoría de Hojas de Estilo CSS (legal.css, 404.css, style.css)
+// 8. Auditoría de Hojas de Estilo CSS (legal.css, 404.css, style.css, urban.css)
 const cssFiles = [
   path.join(root, "assets", "css", "style.css"),
+  path.join(root, "assets", "css", "urban.css"),
   path.join(root, "assets", "css", "legal.css"),
   path.join(root, "assets", "css", "404.css")
 ];

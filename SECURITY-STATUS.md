@@ -1,7 +1,7 @@
 # ESTADO DE SEGURIDAD FRONTEND & ARQUITECTURA — KINGDOM (v4 Redesign)
 
 **Fecha de Evaluación:** 2026-10-06  
-**Entorno de Publicación Actual:** GitHub Pages (`https://kingdombqto.github.io/KINGDOM/`)  
+**Entorno de Publicación:** GitHub Pages con Dominio Personalizado (`https://www.kingdombyramsesmartinez.com`)  
 **Estado Global:** `PASS` (Cero vulnerabilidades, sin backend, estricto cumplimiento con `AGENTS.md`)
 
 ---
