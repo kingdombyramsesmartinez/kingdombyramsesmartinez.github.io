@@ -125,7 +125,7 @@ header.site-header {
 .hero-content h1, .hero-title-full, .section-title, .quote-title, .atelier-title, .error-code, .legal-shell h1, .portfolio-page-title {
   font-family: var(--u-title);
   font-weight: 400;
-  letter-spacing: 0.06em;
+  letter-spacing: 1px;
   line-height: 1.14;
   padding-bottom: 0.14em;
   text-transform: none;
@@ -395,7 +395,7 @@ header.site-header {
   font-weight: 400;
   font-size: clamp(32px, 4.4vw, 52px);
   line-height: 1.08;
-  letter-spacing: 0.06em;
+  letter-spacing: 1px;
   color: #FFFFFF;
   text-shadow: 2px 3px 0 rgba(7, 7, 6, 0.85);
 }
@@ -487,7 +487,7 @@ header.site-header {
   color: #070706;
   font-family: var(--u-title);
   font-size: 24px;
-  letter-spacing: 0.06em;
+  letter-spacing: 1px;
   transition: background-color 180ms ease, transform 180ms ease;
 }
 .pm-cta:hover { background: var(--u-olive-light); transform: translateY(-1px); }

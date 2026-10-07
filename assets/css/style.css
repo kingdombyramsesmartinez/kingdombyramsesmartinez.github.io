@@ -381,7 +381,7 @@ section {
   font-size: clamp(32px, 5.2vw, 56px);
   font-weight: 400;
   line-height: 1.15;
-  letter-spacing: 0.01em;
+  letter-spacing: 1px;
   color: var(--white-100);
   margin-bottom: 24px;
   padding-bottom: 8px;
@@ -447,7 +447,7 @@ section {
   font-size: clamp(48px, 9.5vw, 124px);
   font-weight: 400;
   line-height: 1.08;
-  letter-spacing: 0.02em;
+  letter-spacing: 1px;
   color: var(--white-100);
   margin-bottom: 28px;
   padding-bottom: 12px;
@@ -1261,6 +1261,7 @@ footer.site-footer {
   font-size: clamp(38px, 6.5vw, 76px);
   font-weight: 400;
   line-height: 1.05;
+  letter-spacing: 1px;
   color: var(--white-100);
   margin-bottom: 18px;
   text-align: center;
