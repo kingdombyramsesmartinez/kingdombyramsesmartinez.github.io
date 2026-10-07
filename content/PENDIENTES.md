@@ -16,7 +16,7 @@ Este archivo es de uso interno del equipo de desarrollo y no se publica en el si
 - **Acentos oficiales:** Verde Oliva (`#7A8058`) y Beige (`#E9E0D0`).
 
 ## [RESUELTO: Precios]
-- Confirmado mantener precios ocultos (`pricing.enabled = false`).
+- Precios visibles en la ficha técnica de producto al abrir el modal (`pricing.enabled = true` en `site.config.js`). Si se cambia a `false`, el compilador omite el atributo `data-price` y oculta automáticamente la fila de precio.
 
 ## [RESUELTO: Videos y Clientes]
 - Por indicación de Ramses, no se incluirán videos ni logos de terceros hasta contar con material expresamente autorizado.
@@ -28,4 +28,8 @@ Este archivo es de uso interno del equipo de desarrollo y no se publica en el si
 - Localizadas 6 capturas técnicas tomadas por Ramses en `C:\Users\Dell\Pictures\Screenshots`.
 - Convertidas a WebP de alta fidelidad (`work-wilcom-01.webp` a `work-wilcom-06.webp`) en `assets/`.
 - Integradas a `content/portfolio.json` y activada la categoría "Bordado & Matrices" / "Embroidery & Punch Files" en español e inglés.
+
+## [PENDIENTE: Confirmación de Ortografía por Ramses]
+- **`Gerreras SC`:** Pendiente confirmar si el nombre oficial del equipo/cliente es *"Gerreras SC"* (con una sola 'u') o *"Guerreras SC"*. Mientras tanto, se mantiene sin alterar.
+- **`Jswim Academi`:** Pendiente confirmar si el nombre oficial es *"Jswim Academi"* (con 'i' latina), *"Jswim Academy"*, o *"J Swim Academy"*. Mientras tanto, se mantiene sin alterar.
 

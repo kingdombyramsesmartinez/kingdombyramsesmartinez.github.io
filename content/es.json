@@ -144,7 +144,7 @@
     "eyebrow": "Trabajos & Presentaciones",
     "title": "Portafolio de Diseño Textil",
     "desc": "Galería completa de presentaciones de diseño, indumentaria personalizada y digitalización de matrices textiles desarrolladas por KINGDOM (Kingdom by Ramses Martínez).",
-    "ctaExplore": "Explorar Portafolio Completo (55 Presentaciones) →",
+    "ctaExplore": "Explorar Portafolio Completo ({{PORTFOLIO_COUNT}} Presentaciones) →",
     "ctaBack": "← Volver al Inicio",
     "filters": [
       {

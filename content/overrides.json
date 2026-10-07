@@ -1,0 +1,128 @@
+{
+  "alcaldia-de-san-felipe": {
+    "titleEs": "Alcaldía De San Felipe",
+    "titleEn": "Alcaldía De San Felipe",
+    "statusEs": "Propuesta técnica para Alcaldía De San Felipe: Chaqueta Sublimada.",
+    "statusEn": "Technical design proposal for Alcaldía De San Felipe: Chaqueta Sublimada.",
+    "altEs": "Presentación textil y propuesta gráfica para Alcaldía De San Felipe",
+    "altEn": "Textile design presentation and concept artwork for Alcaldía De San Felipe",
+    "proposals": [
+      {
+        "titleEs": "Alcaldía De San Felipe — Franela Manga Corta Sublimada",
+        "titleEn": "Alcaldía De San Felipe — Franela Manga Corta Sublimada",
+        "altEs": "Variante de propuesta — Alcaldía De San Felipe (Franela Manga Corta Sublimada)",
+        "altEn": "Proposal variant — Alcaldía De San Felipe (Franela Manga Corta Sublimada)"
+      }
+    ]
+  },
+  "fitness-24-7": {
+    "titleEs": "Fitness 24/7",
+    "titleEn": "Fitness 24/7",
+    "statusEs": "Fitness 24/7: Chaqueta Sublimada.",
+    "statusEn": "Fitness 24/7: Sublimated Jacket.",
+    "proposals": [
+      {
+        "titleEs": "Fitness 24/7 — Franela Manga Corta Sublimada",
+        "titleEn": "Fitness 24/7 — Sublimated Short Sleeve Shirt",
+        "altEs": "Variante de propuesta — Fitness 24/7 (Franela Manga Corta Sublimada)",
+        "altEn": "Proposal variant — Fitness 24/7 (Sublimated Short Sleeve Shirt)",
+        "statusEs": "Variante: Franela Manga Corta Sublimada",
+        "statusEn": "Variant: Sublimated Short Sleeve Shirt"
+      }
+    ]
+  },
+  "gigantes-bc": {
+    "titleEs": "Gigantes BC",
+    "titleEn": "Gigantes BC",
+    "garmentEs": "Camisa de Béisbol Sublimada",
+    "garmentEn": "Sublimated Baseball Jersey",
+    "statusEs": "Propuesta técnica para Gigantes BC: Camisa de Béisbol Sublimada.",
+    "statusEn": "Technical design proposal for Gigantes BC: Sublimated Baseball Jersey."
+  },
+  "impa": {
+    "titleEs": "IMPA",
+    "titleEn": "IMPA",
+    "garmentEs": "Chaqueta Bordada",
+    "garmentEn": "Embroidered Jacket",
+    "statusEs": "Propuesta técnica para IMPA: Chaqueta Bordada.",
+    "statusEn": "Technical design proposal for IMPA: Embroidered Jacket."
+  },
+  "bakugo-mha": {
+    "variant": "Con DTF 2",
+    "variantEn": "DTF Edition 2"
+  },
+  "tanjiro-edition": {
+    "variant": "Con DTF 2",
+    "variantEn": "DTF Edition 2"
+  },
+  "dbs-edition": {
+    "variant": "Front and Back",
+    "variantEn": "Front and Back",
+    "proposals": [
+      {
+        "variant": "Front and Back",
+        "variantEn": "Front and Back",
+        "titleEs": "DBS Edition — Franela Con DTF (Front and Back)",
+        "titleEn": "DBS Edition — DTF T-Shirt (Front and Back)",
+        "statusEs": "Variante: Franela Con DTF (Front and Back)",
+        "statusEn": "Variant: DTF T-Shirt (Front and Back)"
+      }
+    ]
+  },
+  "deku-edition": {
+    "variant": "Front and Back",
+    "variantEn": "Front and Back",
+    "proposals": [
+      {
+        "variant": "Front and Back",
+        "variantEn": "Front and Back",
+        "titleEs": "Deku Edition — Franela Con DTF (Front and Back)",
+        "titleEn": "Deku Edition — DTF T-Shirt (Front and Back)",
+        "statusEs": "Variante: Franela Con DTF (Front and Back)",
+        "statusEn": "Variant: DTF T-Shirt (Front and Back)"
+      }
+    ]
+  },
+  "naruto-edition": {
+    "variant": "Front and Back",
+    "variantEn": "Front and Back",
+    "proposals": [
+      {
+        "variant": "Front and Back",
+        "variantEn": "Front and Back",
+        "titleEs": "Naruto Edition — Franela Con DTF (Front and Back)",
+        "titleEn": "Naruto Edition — DTF T-Shirt (Front and Back)",
+        "statusEs": "Variante: Franela Con DTF (Front and Back)",
+        "statusEn": "Variant: DTF T-Shirt (Front and Back)"
+      }
+    ]
+  },
+  "ramones-edition": {
+    "variant": "Front",
+    "variantEn": "Front"
+  },
+  "michelle-collection": {
+    "variant": "Blanca",
+    "variantEn": "White",
+    "statusEs": "Propuesta técnica para Michelle Collection: Camisa Corporativa Blanca.",
+    "statusEn": "Technical design proposal for Michelle Collection: White Corporate Shirt."
+  },
+  "paramedicos-acosta-ortiz": {
+    "variant": "Blanca",
+    "variantEn": "White",
+    "statusEs": "Dotación oficial fabricada para Paramédicos Acosta Ortiz (Camisa Blanca).",
+    "statusEn": "Official institutional uniform manufactured for Acosta Ortiz Paramedics (White Shirt)."
+  },
+  "oasis-sport": {
+    "variant": "Blanca",
+    "variantEn": "White",
+    "statusEs": "Propuesta técnica para Oasis Sport: Franela con DTF Blanca.",
+    "statusEn": "Technical design proposal for Oasis Sport: White DTF T-Shirt."
+  },
+  "zoto": {
+    "variant": "Blanca",
+    "variantEn": "White",
+    "statusEs": "Propuesta técnica para Zoto: Camisa Corporativa Blanca.",
+    "statusEn": "Technical design proposal for Zoto: White Corporate Shirt."
+  }
+}

@@ -6,6 +6,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 const artworkDir = path.join(root, "assets", "artwork");
 const portfolioJsonPath = path.join(root, "content", "portfolio.json");
+const overridesJsonPath = path.join(root, "content", "overrides.json");
+
+const overrides = fs.existsSync(overridesJsonPath)
+  ? JSON.parse(fs.readFileSync(overridesJsonPath, "utf8"))
+  : {};
 
 // Leer todos los archivos .webp actuales de assets/artwork
 const files = fs.readdirSync(artworkDir).filter(f => f.endsWith(".webp"));
@@ -231,28 +236,42 @@ for (const [clientKey, fileList] of groups.entries()) {
   }
 
   if (hasProposals) {
-    cardObj.proposals = proposals.map(p => ({
-      image: p.imagePath,
-      altEs: `Variante de propuesta — ${p.clientDisplay} (${p.variantDisplay})`,
-      altEn: `Proposal variant — ${p.clientDisplay} (${p.variantDisplay})`,
-      titleEs: `${p.clientDisplay} — ${p.variantDisplay}`,
-      titleEn: `${p.clientDisplay} — ${p.variantDisplay}`,
-      techniqueEs: p.techniqueEs,
-      techniqueEn: p.techniqueEn,
-      specsEs: `${p.garmentEs} · Bajo pedido`,
-      specsEn: `${p.garmentEn} · Made to order`,
-      fabricEs: p.category === "streetwear" ? "Algodón peinado pesado 240g" : (p.category === "branding" ? "Taslán / Gabardina microfibra institucional" : "Microfibra Dry-Fit antibacteriana 140g"),
-      fabricEn: p.category === "streetwear" ? "Heavy combed cotton 240g" : (p.category === "branding" ? "Taslan / Microfiber twill" : "Antibacterial Dry-Fit microfiber 140g"),
-      priceFinal: p.priceRef,
-      priceEs: p.priceRef,
-      priceEn: p.priceRef,
-      statusEs: `Variante: ${p.variantDisplay}`,
-      statusEn: `Variant: ${p.variantDisplay}`,
-      descEs: `Alternativa complementaria de diseño y confección para ${p.clientDisplay}.`,
-      descEn: `Complementary design and manufacturing alternative for ${p.clientDisplay}.`,
-      storyEs: `Diseño desarrollado para diversificar la indumentaria manteniendo la línea gráfica institucional.`,
-      storyEn: `Design developed to diversify apparel while preserving brand identity.`
-    }));
+    cardObj.proposals = proposals.map((p, pIdx) => {
+      const propObj = {
+        image: p.imagePath,
+        altEs: `Variante de propuesta — ${p.clientDisplay} (${p.variantDisplay})`,
+        altEn: `Proposal variant — ${p.clientDisplay} (${p.variantDisplay})`,
+        titleEs: `${p.clientDisplay} — ${p.variantDisplay}`,
+        titleEn: `${p.clientDisplay} — ${p.variantDisplay}`,
+        techniqueEs: p.techniqueEs,
+        techniqueEn: p.techniqueEn,
+        specsEs: `${p.garmentEs} · Bajo pedido`,
+        specsEn: `${p.garmentEn} · Made to order`,
+        fabricEs: p.category === "streetwear" ? "Algodón peinado pesado 240g" : (p.category === "branding" ? "Taslán / Gabardina microfibra institucional" : "Microfibra Dry-Fit antibacteriana 140g"),
+        fabricEn: p.category === "streetwear" ? "Heavy combed cotton 240g" : (p.category === "branding" ? "Taslan / Microfiber twill" : "Antibacterial Dry-Fit microfiber 140g"),
+        priceFinal: p.priceRef,
+        priceEs: p.priceRef,
+        priceEn: p.priceRef,
+        statusEs: `Variante: ${p.variantDisplay}`,
+        statusEn: `Variant: ${p.variantDisplay}`,
+        descEs: `Alternativa complementaria de diseño y confección para ${p.clientDisplay}.`,
+        descEn: `Complementary design and manufacturing alternative for ${p.clientDisplay}.`,
+        storyEs: `Diseño desarrollado para diversificar la indumentaria manteniendo la línea gráfica institucional.`,
+        storyEn: `Design developed to diversify apparel while preserving brand identity.`
+      };
+
+      if (overrides[idSlug]?.proposals?.[pIdx]) {
+        Object.assign(propObj, overrides[idSlug].proposals[pIdx]);
+      }
+      return propObj;
+    });
+  }
+
+  // Aplicar overrides configurados por id
+  if (overrides[idSlug]) {
+    const itemOverride = { ...overrides[idSlug] };
+    delete itemOverride.proposals; // Ya procesados individualmente
+    Object.assign(cardObj, itemOverride);
   }
 
   portfolioOutput.push(cardObj);

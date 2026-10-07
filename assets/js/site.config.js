@@ -26,7 +26,7 @@ export const SITE_CONFIG = Object.freeze({
     }
   },
   pricing: {
-    enabled: false
+    enabled: true
   },
   palette: {
     ink: "#070706",

@@ -144,7 +144,7 @@
     "eyebrow": "Works & Presentations",
     "title": "Textile Design Portfolio",
     "desc": "Full showcase of design presentations, custom athletic apparel, and textile artwork engineered by KINGDOM (Kingdom by Ramses Martínez).",
-    "ctaExplore": "Explore Full Portfolio (55 Presentations) →",
+    "ctaExplore": "Explore Full Portfolio ({{PORTFOLIO_COUNT}} Presentations) →",
     "ctaBack": "← Back to Home",
     "filters": [
       {

@@ -137,10 +137,13 @@ function renderIndex(data, isEn) {
   out = out.replaceAll("{{MATERIALS_ROWS_HTML}}", matRowsHtml);
 
   // Portfolio Teaser
+  const portfolioCount = portfolioData.length;
+  const ctaExploreText = (data.portfolio.ctaExplore || "")
+    .replaceAll("{{PORTFOLIO_COUNT}}", portfolioCount);
   out = out.replaceAll("{{PORTFOLIO_EYEBROW}}", data.portfolio.eyebrow);
   out = out.replaceAll("{{PORTFOLIO_TITLE}}", data.portfolio.title);
   out = out.replaceAll("{{PORTFOLIO_DESC}}", data.portfolio.desc);
-  out = out.replaceAll("{{PORTFOLIO_CTA_EXPLORE}}", data.portfolio.ctaExplore);
+  out = out.replaceAll("{{PORTFOLIO_CTA_EXPLORE}}", ctaExploreText);
 
   // Contact & Form
   out = out.replaceAll("{{CONTACT_EYEBROW}}", data.contact.eyebrow);
@@ -299,7 +302,7 @@ function renderPortfolioPage(data, isEn) {
       specs: prop.specsEn || prop.specsEs ? (isEn ? prop.specsEn : prop.specsEs) : specs,
       tag: isEn ? (prop.techniqueEn || tag) : (prop.techniqueEs || tag),
       fabric: isEn ? (prop.fabricEn || fabric) : (prop.fabricEs || fabric),
-      price: prop.priceFinal || (isEn ? prop.priceEn : prop.priceEs) || price,
+      price: SITE_CONFIG.pricing?.enabled ? (prop.priceFinal || (isEn ? prop.priceEn : prop.priceEs) || price) : "",
       desc: isEn ? (prop.descEn || desc) : (prop.descEs || desc),
       story: isEn ? (prop.storyEn || story) : (prop.storyEs || story),
       status: isEn ? (prop.statusEn || status) : (prop.statusEs || status)
@@ -307,13 +310,14 @@ function renderPortfolioPage(data, isEn) {
 
     const proposalsJsonAttr = proposalsList.length > 0 ? ` data-proposals="${esc(JSON.stringify(proposalsList))}"` : "";
 
+    const priceAttr = SITE_CONFIG.pricing?.enabled ? ` data-price="${esc(price)}"` : "";
+
     return `
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="${p.category}"
                    data-title="${esc(title)}"
                    data-tag="${esc(tag)}"
-                   data-specs="${esc(specs)}"
-                   data-price="${esc(price)}"
+                   data-specs="${esc(specs)}"${priceAttr}
                    data-desc="${esc(desc)}${note ? ` (${esc(note)})` : ""}"
                    data-status="${esc(status)}"
                    data-fabric="${esc(fabric)}"
