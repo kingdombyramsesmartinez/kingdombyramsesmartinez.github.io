@@ -325,7 +325,10 @@ function renderPortfolioPage(data, isEn) {
                    data-img="${assetPrefix}${p.image}"${proposalsJsonAttr}>
             <div class="pc-media">
               ${ribbonHtml}
-              <img src="${assetPrefix}${p.image}" alt="${esc(alt)}" width="1080" height="1350" loading="lazy" decoding="async"/>
+              <img src="${assetPrefix}${p.image.replace("assets/artwork/", "assets/artwork/thumbs/")}"
+                   srcset="${assetPrefix}${p.image.replace("assets/artwork/", "assets/artwork/thumbs/")} 480w, ${assetPrefix}${p.image} 1080w"
+                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
+                   alt="${esc(alt)}" width="1080" height="1350" loading="lazy" decoding="async"/>
             </div>
             <div class="pc-body">
               <h3 class="pc-title">${esc(title)}</h3>

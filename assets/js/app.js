@@ -323,7 +323,9 @@
           dot.className = `modal-carousel-dot pm-thumb${idx === 0 ? " active" : ""}`;
           dot.setAttribute("aria-label", `${document.documentElement.lang === "en" ? "View image" : "Ver imagen"} ${idx + 1}`);
           const thumb = document.createElement("img");
-          thumb.src = item.image;
+          thumb.src = item.image.includes("/artwork/") && !item.image.includes("/artwork/thumbs/")
+            ? item.image.replace("/artwork/", "/artwork/thumbs/")
+            : item.image;
           thumb.alt = "";
           thumb.loading = "lazy";
           dot.appendChild(thumb);

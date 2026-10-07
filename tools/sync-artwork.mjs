@@ -1,12 +1,18 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import sharp from "sharp";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 const artworkDir = path.join(root, "assets", "artwork");
+const thumbsDir = path.join(artworkDir, "thumbs");
 const portfolioJsonPath = path.join(root, "content", "portfolio.json");
 const overridesJsonPath = path.join(root, "content", "overrides.json");
+
+if (!fs.existsSync(thumbsDir)) {
+  fs.mkdirSync(thumbsDir, { recursive: true });
+}
 
 const overrides = fs.existsSync(overridesJsonPath)
   ? JSON.parse(fs.readFileSync(overridesJsonPath, "utf8"))
@@ -285,3 +291,17 @@ console.log(`¡Éxito! Generadas ${portfolioOutput.length} tarjetas de cliente a
 const counts = { sublimacion: 0, streetwear: 0, branding: 0 };
 for (const it of portfolioOutput) counts[it.category] = (counts[it.category] || 0) + 1;
 console.log("Tarjetas por categoría:", counts);
+
+// Generar miniaturas WebP en assets/artwork/thumbs/ (ancho 480px, relación 4:5 -> 480x600, calidad 75)
+console.log("Generando miniaturas WebP de 480px de ancho en assets/artwork/thumbs/...");
+let thumbsCreated = 0;
+for (const file of files) {
+  const srcPath = path.join(artworkDir, file);
+  const destPath = path.join(thumbsDir, file);
+  await sharp(srcPath)
+    .resize(480, 600, { fit: "cover" })
+    .webp({ quality: 75 })
+    .toFile(destPath);
+  thumbsCreated++;
+}
+console.log(`Miniaturas listas: ${thumbsCreated} imágenes generadas en ${thumbsDir}.`);
