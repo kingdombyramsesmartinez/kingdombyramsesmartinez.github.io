@@ -30,8 +30,8 @@ Contiene la paleta exportada y los datos de contacto corporativos. Si se actuali
 
 ## 2. Logo oficial y Favicon
 
-- **Logo oficial de marca:** `assets/brand/logo.svg` (Tag graffiti monocromático oficial).
-- **Favicon:** `assets/brand/favicon.svg` y `assets/favicon.png` (Tag graffiti vectorizado).
+- **Logo oficial de marca:** `assets/brand/logo.png` (Tag graffiti monocromático oficial optimizado, 1024x691).
+- **Favicon:** `assets/brand/favicon-32.png`, `assets/brand/favicon-16.png` y `assets/brand/apple-touch-icon.png`.
 - **Regla de identidad:** El logo oficial es exclusivamente el tag graffiti monocromático en blanco/negro. No existen variantes en amarillo ni isotipos separados.
 
 ---
