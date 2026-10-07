@@ -1,6 +1,5 @@
 node_modules/
 _staging/
-package-lock.json
 *.bak
 .DS_Store
 Thumbs.db
