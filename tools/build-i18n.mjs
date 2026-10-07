@@ -327,7 +327,7 @@ function renderPortfolioPage(data, isEn) {
             <div class="pc-media">
               ${ribbonHtml}
               <img src="${assetPrefix}${p.image.replace("assets/artwork/", "assets/artwork/thumbs/")}"
-                   srcset="${assetPrefix}${p.image.replace("assets/artwork/", "assets/artwork/thumbs/")} 480w, ${assetPrefix}${p.image} 1080w"
+                   srcset="${encodeURI(`${assetPrefix}${p.image.replace("assets/artwork/", "assets/artwork/thumbs/")}`)} 480w, ${encodeURI(`${assetPrefix}${p.image}`)} 1080w"
                    sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
                    alt="${esc(alt)}" width="1080" height="1350" loading="lazy" decoding="async"/>
             </div>
