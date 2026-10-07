@@ -7,7 +7,7 @@
   - Textura ambiental de pared de ladrillo desgastada (`assets/brand/brick-wall.webp`, 8.7 KB) y viñeta de luz ambiental cálida/oliva.
   - Efecto de vidrio áspero táctil (`assets/brand/glass-grain.webp`, 10 KB) con iluminación de borde y reflejo sutil. `backdrop-filter` real optimizado para desktop.
   - Divisores temáticos urbanos: cinta adhesiva industrial a rayas (`.urban-divider--tape`) y chorreado/drip de pintura aerosol (`.urban-divider--drip` vía `assets/brand/drip-divider.svg`).
-  - Títulos principales en `Aerosoldier Drip` (`.woff2` local) con sombra urbana de contraste.
+  - Títulos principales en `Sefa` (`.woff2` local; sustituyó a Aerosoldier Drip por motivo de licencia comercial libre) con sombra urbana de contraste.
 - **Portafolio Enriquecido & Estructura Preservada:**
   - Se mantiene la estructura multi-página con la galería completa de 55 presentaciones en `portfolio.html` y `en/portfolio.html`, y el hub/teaser en `index.html`.
   - Incorporados soportes para campos opcionales por pieza: `ribbon` (etiqueta sobre la tarjeta), `status` (aviso destacado tipo propuesta/acuerdo), `fabric` (tela ofrecida), `priceFinal` (precio final en ficha) y `story` (anécdota/proceso de la pieza).
@@ -15,7 +15,7 @@
   - Agregada guía para el creador en `content/GUIA-PORTAFOLIO.md`.
 - **Seguridad & Resiliencia:**
   - Protección anti-clickjacking por script de respaldo en `assets/js/app.js` (`if (window.top !== window.self) ...`).
-  - Preload de fuente `Aerosoldier Drip` en `404.html` y páginas de `legal/`.
+  - Preload de fuente `Sefa` en `404.html` y páginas de `legal/`.
   - Suite de auditoría `tools/audit-site.mjs` ampliada para auditar `urban.css`. Cero vulnerabilidades y 100% PASS.
 
 ## [4.6.0] - 2026-10-06

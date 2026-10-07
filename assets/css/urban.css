@@ -6,11 +6,12 @@
    Dónde editar: colores y rutas en :root; intensidad de la luz en body::after.
    ========================================================================== */
 @font-face {
-  font-family: 'Aerosoldier Drip';
+  font-family: 'Sefa';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../fonts/aerosoldier-drip.woff2') format('woff2');
+  src: url('../fonts/sefa.woff2') format('woff2'),
+       url('../fonts/sefa.ttf') format('truetype');
 }
 
 :root {
@@ -19,7 +20,7 @@
   --u-olive-light: #92976E;
   --u-beige: #E9E0D0;
   --u-gray: #9B9B97;
-  --u-title: 'Aerosoldier Drip', 'Montserrat', system-ui, sans-serif;
+  --u-title: 'Sefa', 'Montserrat', system-ui, sans-serif;
   --u-mono: ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
   --u-brick: url('../brand/brick-wall.webp');
   --u-grain: url('../brand/glass-grain.webp');

@@ -7,7 +7,7 @@ Este archivo es de uso interno del equipo de desarrollo y no se publica en el si
 - **Herramientas verificadas:** Wilcom EmbroideryStudio, Adobe Illustrator, Adobe Photoshop, Blender 3D, Silhouette Studio.
 
 ## [RESUELTO: Tipografía de Títulos]
-- **Fuente activa oficial:** `Aerosoldier Drip` (`assets/fonts/aerosoldier-drip.otf` y versión optimizada `aerosoldier-drip.woff2`).
+- **Fuente activa oficial:** `Sefa` (`assets/fonts/sefa.ttf` y versión optimizada `sefa.woff2`). Reemplazó a la tipografía anterior por motivo de licencia para garantizar cumplimiento comercial 100% libre.
 - Configurada en `@font-face` con `font-display: swap` y aplicada a títulos H1 y titulares de impacto. Licencia documentada en `FONTS-LICENSES.md`.
 
 ## [RESUELTO: Paleta Oficial de Marca]

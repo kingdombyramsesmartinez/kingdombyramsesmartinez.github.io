@@ -9,7 +9,7 @@
 ## 1. Verificación de Seguridad en Repositorio
 
 - **Secretos y Credenciales:** `PASS`. Ninguna API key privada, token de acceso, credencial ni URL privada de administración expuesta en el código fuente.
-- **Sin CDNs ni Runtime JS de Terceros:** `PASS`. Todas las fuentes (`Montserrat Variable`, `Aerosoldier Drip`), scripts y estilos se sirven exclusivamente desde rutas locales (`assets/`).
+- **Sin CDNs ni Runtime JS de Terceros:** `PASS`. Todas las fuentes (`Montserrat Variable`, `Sefa`), scripts y estilos se sirven exclusivamente desde rutas locales (`assets/`).
 - **Cero Estilos y Scripts Inline:** `PASS`. Sin etiquetas `<script>` o `<style>` embebidas ni atributos `style=""` en las plantillas o archivos HTML generados.
 - **Tratamiento de Enlaces Salientes:** `PASS`. Todos los enlaces externos con `target="_blank"` cuentan rigurosamente con `rel="noopener noreferrer"`.
 - **Sin Manipulación Insegura del DOM:** `PASS`. No se usa `eval()`, ni `new Function()`, ni inyecciones arbitrarias de datos no verificados.
