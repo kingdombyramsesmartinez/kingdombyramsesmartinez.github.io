@@ -830,12 +830,14 @@ section {
   padding: 24px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 220ms ease;
+  visibility: hidden;
+  transition: opacity 220ms ease, visibility 220ms;
 }
 
 .modal-backdrop.open {
   opacity: 1;
   pointer-events: auto;
+  visibility: visible;
 }
 
 .modal-sheet {
