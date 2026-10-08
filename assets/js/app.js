@@ -599,3 +599,17 @@
   }
 
 })();
+
+
+/* --- Google Analytics 4 (GA4) --- */
+(function initGA() {
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-YQCLS51XJE';
+  document.head.appendChild(script);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ window.dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-YQCLS51XJE');
+})();
