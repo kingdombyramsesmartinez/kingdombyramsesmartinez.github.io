@@ -65,6 +65,13 @@
   burger?.addEventListener("click", toggleNav);
   qsa(".nav-link", navMenu).forEach(link => link.addEventListener("click", closeNav));
 
+  // Retraer el menú automáticamente si el usuario hace scroll
+  window.addEventListener("scroll", () => {
+    if (navMenu?.classList.contains("open")) {
+      closeNav();
+    }
+  }, { passive: true });
+
   document.addEventListener("keydown", e => {
     if (e.key === "Escape" && navMenu?.classList.contains("open")) {
       closeNav();
