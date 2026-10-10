@@ -114,7 +114,7 @@ for (const file of pages) {
     if (cspContent.includes("frame-ancestors")) {
       fail.push(`${relFile} -> meta CSP contains 'frame-ancestors' which is ignored in <meta> tags by browsers`);
     }
-    const expectedCsp = "default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self'; style-src 'self'; style-src-attr 'none'; script-src-attr 'none'; img-src 'self' data: blob:; font-src 'self'; media-src 'self'; connect-src 'self'; worker-src 'self' blob:; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests;";
+    const expectedCsp = "default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; style-src-attr 'none'; script-src-attr 'none'; img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self'; media-src 'self'; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com; worker-src 'self' blob:; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests;";
     if (cspContent !== expectedCsp) {
       fail.push(`${relFile} -> meta CSP differs from canonical specification.\n  Got:      "${cspContent}"\n  Expected: "${expectedCsp}"`);
     }
