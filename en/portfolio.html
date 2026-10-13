@@ -12,7 +12,7 @@
   <meta content="dark" name="color-scheme"/>
 
   <!-- CSP equivalente para GitHub Pages -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; style-src-attr 'none'; script-src-attr 'none'; img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self'; media-src 'self'; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com; worker-src 'self' blob:; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests;"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self' https://*.googletagmanager.com; style-src 'self'; style-src-attr 'none'; script-src-attr 'none'; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com; font-src 'self'; media-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://stats.g.doubleclick.net; worker-src 'self' blob:; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests;"/>
 
   <!-- Alternates Multilenguaje SEO -->
   <link rel="canonical" href="https://kingdombyramsesmartinez.github.io/en/portfolio.html"/>
@@ -46,9 +46,8 @@
   <link rel="preload" as="font" type="font/woff2" href="../assets/fonts/sedgwick-ave-display.woff2" crossorigin/>
   <link rel="stylesheet" href="../assets/css/style.css?v=2"/>
   <link rel="stylesheet" href="../assets/css/urban.css"/>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YQCLS51XJE"></script>
-  <script src="../assets/js/analytics.js"></script>
+  <!-- Google Analytics & Consent -->
+  <script src="../assets/js/analytics.js" defer></script>
 </head>
 <body data-wa="584241092124">
   <a class="skip-link" href="#mainContent">Skip to main content</a>
@@ -56,20 +55,20 @@
   <!-- Header Sticky Street-Editorial -->
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
-      <a class="brand-link" href="index.html" aria-label="KINGDOM — Kingdom by Ramses Martínez" translate="no">
+      <a class="brand-link" href="./" aria-label="KINGDOM — Kingdom by Ramses Martínez" translate="no">
         <img src="../assets/brand/logo.png" alt="Kingdom Tag Logo" width="1024" height="691"/>
       </a>
 
       <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
-        <a class="nav-link link-magic" href="index.html#trayectoria">Trajectory</a>
-        <a class="nav-link link-magic" href="index.html#servicios">Services</a>
-        <a class="nav-link link-magic" href="index.html#materiales">Specs</a>
-        <a class="nav-link link-magic" href="index.html#contacto">Contact</a>
+        <a class="nav-link link-magic" href="./#trayectoria">Trajectory</a>
+        <a class="nav-link link-magic" href="./#servicios">Services</a>
+        <a class="nav-link link-magic" href="./#materiales">Specs</a>
+        <a class="nav-link link-magic" href="./#contacto">Contact</a>
         <a class="nav-link link-magic" href="../portfolio.html" hreflang="es" aria-label="Cambiar a versión en español"><b>ES</b></a>
       </nav>
 
       <div class="header-cta-group">
-        <a class="btn-secondary" href="index.html">← Back to Home</a>
+        <a class="btn-secondary" href="./">← Back to Home</a>
         <button class="burger-btn" id="burgerBtn" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú">
           MENU
         </button>
@@ -84,7 +83,7 @@
         <nav aria-label="Breadcrumb navigation" class="breadcrumbs-wrap">
           <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
             <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-              <a href="index.html" itemprop="item"><span itemprop="name">Home</span></a>
+              <a href="./" itemprop="item"><span itemprop="name">Home</span></a>
               <meta itemprop="position" content="1"/>
             </li>
             <li aria-hidden="true" class="breadcrumb-separator">/</li>
@@ -122,6 +121,9 @@
           <button class="filter-btn" type="button" data-filter="branding" aria-pressed="false">
             Branding & Corporate
           </button>
+          <button class="filter-btn" type="button" data-filter="fanart" aria-pressed="false">
+            Fan Art & Graphic Explorations
+          </button>
         </div>
 
         <div id="filterLiveStatus" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
@@ -148,33 +150,6 @@
             <div class="pc-body">
               <h3 class="pc-title">Academia De Cuatro</h3>
               <p class="pc-desc">High-resolution design concept and presentation artwork for Academia De Cuatro (Franela Sublimada).</p>
-              <div class="pc-foot">
-                <span class="pc-action-hint">Click to view details</span>
-                <span class="pc-arrow" aria-hidden="true">→</span>
-              </div>
-              <span class="visually-hidden">Click to view details</span>
-            </div>
-          </article>
-          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="sublimacion"
-                   data-title="Alcaldía De San Felipe"
-                   data-tag="Full Print Sublimation, Zipper &amp; Mesh Lining"
-                   data-specs="Novak Lined Sublimated Jacket · Made to order / Bulk or single" data-price="USD 35.00 / Unidad"
-                   data-desc="High-resolution design concept and presentation artwork for Alcaldia De San Felipe (Chaqueta Sublimada). (Original design · Concept mockup.)"
-                   data-status="Technical design proposal for Alcaldía De San Felipe: Chaqueta Sublimada."
-                   data-fabric="Fluid-repellent Novak fabric with mesh lining"
-                   data-story="Artwork tailored to the visual identity and textile requirements of Alcaldia De San Felipe."
-                   data-img="../assets/artwork/alcaldia de san felipe-chaqueta sublimada.webp" data-proposals="[{&quot;image&quot;:&quot;../assets/artwork/alcaldia de san felipe-franela manga corta sublimada.webp&quot;,&quot;alt&quot;:&quot;Proposal variant — Alcaldía De San Felipe (Franela Manga Corta Sublimada)&quot;,&quot;title&quot;:&quot;Alcaldía De San Felipe — Franela Manga Corta Sublimada&quot;,&quot;specs&quot;:&quot;Dry-Fit Sublimated T-Shirt · Made to order&quot;,&quot;tag&quot;:&quot;Full Color Dry-Fit Sports Sublimation&quot;,&quot;fabric&quot;:&quot;Antibacterial Dry-Fit microfiber 140g&quot;,&quot;price&quot;:&quot;USD 15.00 / Unidad&quot;,&quot;desc&quot;:&quot;Complementary design and manufacturing alternative for Alcaldia De San Felipe.&quot;,&quot;story&quot;:&quot;Design developed to diversify apparel while preserving brand identity.&quot;,&quot;status&quot;:&quot;Variant: Franela Manga Corta Sublimada&quot;}]">
-            <div class="pc-media">
-              <div class="portfolio-ribbon">2 proposals</div>
-              <img src="../assets/artwork/thumbs/alcaldia de san felipe-chaqueta sublimada.webp"
-                   srcset="../assets/artwork/thumbs/alcaldia%20de%20san%20felipe-chaqueta%20sublimada.webp 480w, ../assets/artwork/alcaldia%20de%20san%20felipe-chaqueta%20sublimada.webp 1080w"
-                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
-                   alt="Textile design presentation and concept artwork for Alcaldía De San Felipe" width="1080" height="1350" loading="lazy" decoding="async"/>
-            </div>
-            <div class="pc-body">
-              <h3 class="pc-title">Alcaldía De San Felipe</h3>
-              <p class="pc-desc">High-resolution design concept and presentation artwork for Alcaldia De San Felipe (Chaqueta Sublimada).</p>
               <div class="pc-foot">
                 <span class="pc-action-hint">Click to view details</span>
                 <span class="pc-arrow" aria-hidden="true">→</span>
@@ -237,17 +212,17 @@
             </div>
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="streetwear"
+                   data-category="fanart"
                    data-title="Avengers Doomsday"
                    data-tag="Premium 4-Position DTF Print"
-                   data-specs="100% Cotton T-Shirt Full DTF · Made to order / Bulk or single" data-price="USD 20.00 / Unidad"
+                   data-specs="100% Cotton T-Shirt Full DTF · Artistic exhibition piece" data-artistic="true"
                    data-desc="High-resolution design concept and presentation artwork for Avengers Doomsday (Franela Con Dtf). (Original design · Concept mockup.)"
                    data-status="Technical design proposal for Avengers Doomsday: Franela Con Dtf."
                    data-fabric="20/1 Combed Cotton (200g)"
                    data-story="Artwork tailored to the visual identity and textile requirements of Avengers Doomsday."
                    data-img="../assets/artwork/Avengers Doomsday- franela con dtf.webp">
             <div class="pc-media">
-              
+              <div class="portfolio-ribbon">Fan Art</div>
               <img src="../assets/artwork/thumbs/Avengers Doomsday- franela con dtf.webp"
                    srcset="../assets/artwork/thumbs/Avengers%20Doomsday-%20franela%20con%20dtf.webp 480w, ../assets/artwork/Avengers%20Doomsday-%20franela%20con%20dtf.webp 1080w"
                    sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
@@ -264,17 +239,17 @@
             </div>
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="streetwear"
+                   data-category="fanart"
                    data-title="Bakugo MHA"
                    data-tag="Premium 4-Position DTF Print"
-                   data-specs="100% Cotton T-Shirt Full DTF · Made to order / Bulk or single" data-price="USD 20.00 / Unidad"
+                   data-specs="100% Cotton T-Shirt Full DTF · Artistic exhibition piece" data-artistic="true"
                    data-desc="High-resolution design concept and presentation artwork for Bakugo MHA (Franela Con Dtf 2). (Original design · Concept mockup.)"
                    data-status="Technical design proposal for Bakugo MHA: Franela Con Dtf 2."
                    data-fabric="20/1 Combed Cotton (200g)"
                    data-story="Artwork tailored to the visual identity and textile requirements of Bakugo MHA."
                    data-img="../assets/artwork/Bakugo MHA-franela con dtf 2.webp" data-proposals="[{&quot;image&quot;:&quot;../assets/artwork/Bakugo MHA-franela con dtf.webp&quot;,&quot;alt&quot;:&quot;Proposal variant — Bakugo MHA (Franela Con Dtf)&quot;,&quot;title&quot;:&quot;Bakugo MHA — Franela Con Dtf&quot;,&quot;specs&quot;:&quot;100% Cotton T-Shirt Full DTF · Made to order&quot;,&quot;tag&quot;:&quot;Premium 4-Position DTF Print&quot;,&quot;fabric&quot;:&quot;20/1 Combed Cotton (200g)&quot;,&quot;price&quot;:&quot;USD 20.00 / Unidad&quot;,&quot;desc&quot;:&quot;Complementary design and manufacturing alternative for Bakugo MHA.&quot;,&quot;story&quot;:&quot;Design developed to diversify apparel while preserving brand identity.&quot;,&quot;status&quot;:&quot;Variant: Franela Con Dtf&quot;}]">
             <div class="pc-media">
-              <div class="portfolio-ribbon">2 proposals</div>
+              <div class="portfolio-ribbon">Fan Art</div>
               <img src="../assets/artwork/thumbs/Bakugo MHA-franela con dtf 2.webp"
                    srcset="../assets/artwork/thumbs/Bakugo%20MHA-franela%20con%20dtf%202.webp 480w, ../assets/artwork/Bakugo%20MHA-franela%20con%20dtf%202.webp 1080w"
                    sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
@@ -321,14 +296,14 @@
                    data-category="streetwear"
                    data-title="Camaro Edition"
                    data-tag="Premium 4-Position DTF Print"
-                   data-specs="100% Cotton T-Shirt Full DTF · Made to order / Bulk or single" data-price="USD 20.00 / Unidad"
+                   data-specs="100% Cotton T-Shirt Full DTF · Automotive graphic study" data-artistic="true"
                    data-desc="High-resolution design concept and presentation artwork for Camaro Edition (Franela Con Dtf Negra). (Original design · Concept mockup.)"
                    data-status="Technical design proposal for Camaro Edition: Franela Con Dtf Negra."
                    data-fabric="20/1 Combed Cotton (200g)"
                    data-story="Artwork tailored to the visual identity and textile requirements of Camaro Edition."
                    data-img="../assets/artwork/Camaro Edition-franela con dtf negra.webp" data-proposals="[{&quot;image&quot;:&quot;../assets/artwork/Camaro Edition-franela con dtf.webp&quot;,&quot;alt&quot;:&quot;Proposal variant — Camaro Edition (Franela Con Dtf)&quot;,&quot;title&quot;:&quot;Camaro Edition — Franela Con Dtf&quot;,&quot;specs&quot;:&quot;100% Cotton T-Shirt Full DTF · Made to order&quot;,&quot;tag&quot;:&quot;Premium 4-Position DTF Print&quot;,&quot;fabric&quot;:&quot;20/1 Combed Cotton (200g)&quot;,&quot;price&quot;:&quot;USD 20.00 / Unidad&quot;,&quot;desc&quot;:&quot;Complementary design and manufacturing alternative for Camaro Edition.&quot;,&quot;story&quot;:&quot;Design developed to diversify apparel while preserving brand identity.&quot;,&quot;status&quot;:&quot;Variant: Franela Con Dtf&quot;}]">
             <div class="pc-media">
-              <div class="portfolio-ribbon">2 proposals</div>
+              <div class="portfolio-ribbon">Graphic Study</div>
               <img src="../assets/artwork/thumbs/Camaro Edition-franela con dtf negra.webp"
                    srcset="../assets/artwork/thumbs/Camaro%20Edition-franela%20con%20dtf%20negra.webp 480w, ../assets/artwork/Camaro%20Edition-franela%20con%20dtf%20negra.webp 1080w"
                    sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
@@ -348,14 +323,14 @@
                    data-category="streetwear"
                    data-title="Corvette Edition"
                    data-tag="Premium 4-Position DTF Print"
-                   data-specs="100% Cotton T-Shirt Full DTF · Made to order / Bulk or single" data-price="USD 20.00 / Unidad"
+                   data-specs="100% Cotton T-Shirt Full DTF · Automotive graphic study" data-artistic="true"
                    data-desc="High-resolution design concept and presentation artwork for Corvette Edition (Franela Con Dtf). (Original design · Concept mockup.)"
                    data-status="Technical design proposal for Corvette Edition: Franela Con Dtf."
                    data-fabric="20/1 Combed Cotton (200g)"
                    data-story="Artwork tailored to the visual identity and textile requirements of Corvette Edition."
                    data-img="../assets/artwork/Corvette Edition-franela con dtf.webp">
             <div class="pc-media">
-              
+              <div class="portfolio-ribbon">Graphic Study</div>
               <img src="../assets/artwork/thumbs/Corvette Edition-franela con dtf.webp"
                    srcset="../assets/artwork/thumbs/Corvette%20Edition-franela%20con%20dtf.webp 480w, ../assets/artwork/Corvette%20Edition-franela%20con%20dtf.webp 1080w"
                    sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
@@ -375,14 +350,14 @@
                    data-category="sublimacion"
                    data-title="CR7 Edition"
                    data-tag="Full Color Dry-Fit Sports Sublimation"
-                   data-specs="Dry-Fit Sublimated T-Shirt · Made to order / Bulk or single" data-price="USD 15.00 / Unidad"
+                   data-specs="Dry-Fit Sublimated T-Shirt · Artistic tribute" data-artistic="true"
                    data-desc="High-resolution design concept and presentation artwork for CR7 Edition (Franela Manga Corta Sublimada). (Original design · Concept mockup.)"
                    data-status="Technical design proposal for CR7 Edition: Franela Manga Corta Sublimada."
                    data-fabric="Antibacterial Dry-Fit microfiber 140g"
                    data-story="Artwork tailored to the visual identity and textile requirements of CR7 Edition."
                    data-img="../assets/artwork/CR7 Edition-franela manga corta sublimada.webp">
             <div class="pc-media">
-              
+              <div class="portfolio-ribbon">Artistic Tribute</div>
               <img src="../assets/artwork/thumbs/CR7 Edition-franela manga corta sublimada.webp"
                    srcset="../assets/artwork/thumbs/CR7%20Edition-franela%20manga%20corta%20sublimada.webp 480w, ../assets/artwork/CR7%20Edition-franela%20manga%20corta%20sublimada.webp 1080w"
                    sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
@@ -399,17 +374,17 @@
             </div>
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="streetwear"
+                   data-category="fanart"
                    data-title="DBS Edition"
                    data-tag="Premium 4-Position DTF Print"
-                   data-specs="100% Cotton T-Shirt Full DTF · Made to order / Bulk or single" data-price="USD 20.00 / Unidad"
+                   data-specs="100% Cotton T-Shirt Full DTF · Artistic exhibition piece" data-artistic="true"
                    data-desc="High-resolution design concept and presentation artwork for DBS Edition (Franela Con Dtf Back). (Original design · Concept mockup.)"
                    data-status="Technical design proposal for DBS Edition: Franela Con Dtf Back."
                    data-fabric="20/1 Combed Cotton (200g)"
                    data-story="Artwork tailored to the visual identity and textile requirements of DBS Edition."
                    data-img="../assets/artwork/DBS Edition-franela con dtf back.webp" data-proposals="[{&quot;image&quot;:&quot;../assets/artwork/DBS Edition-franela con dtf front and back.webp&quot;,&quot;alt&quot;:&quot;Proposal variant — DBS Edition (Franela Con Dtf Front And Back)&quot;,&quot;title&quot;:&quot;DBS Edition — DTF T-Shirt (Front and Back)&quot;,&quot;specs&quot;:&quot;100% Cotton T-Shirt Full DTF · Made to order&quot;,&quot;tag&quot;:&quot;Premium 4-Position DTF Print&quot;,&quot;fabric&quot;:&quot;20/1 Combed Cotton (200g)&quot;,&quot;price&quot;:&quot;USD 20.00 / Unidad&quot;,&quot;desc&quot;:&quot;Complementary design and manufacturing alternative for DBS Edition.&quot;,&quot;story&quot;:&quot;Design developed to diversify apparel while preserving brand identity.&quot;,&quot;status&quot;:&quot;Variant: DTF T-Shirt (Front and Back)&quot;}]">
             <div class="pc-media">
-              <div class="portfolio-ribbon">2 proposals</div>
+              <div class="portfolio-ribbon">Fan Art</div>
               <img src="../assets/artwork/thumbs/DBS Edition-franela con dtf back.webp"
                    srcset="../assets/artwork/thumbs/DBS%20Edition-franela%20con%20dtf%20back.webp 480w, ../assets/artwork/DBS%20Edition-franela%20con%20dtf%20back.webp 1080w"
                    sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
@@ -426,17 +401,17 @@
             </div>
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="streetwear"
+                   data-category="fanart"
                    data-title="Deku Edition"
                    data-tag="Premium 4-Position DTF Print"
-                   data-specs="100% Cotton T-Shirt Full DTF · Made to order / Bulk or single" data-price="USD 20.00 / Unidad"
+                   data-specs="100% Cotton T-Shirt Full DTF · Artistic exhibition piece" data-artistic="true"
                    data-desc="High-resolution design concept and presentation artwork for Deku Edition (Franela Con Dtf Back). (Original design · Concept mockup.)"
                    data-status="Technical design proposal for Deku Edition: Franela Con Dtf Back."
                    data-fabric="20/1 Combed Cotton (200g)"
                    data-story="Artwork tailored to the visual identity and textile requirements of Deku Edition."
                    data-img="../assets/artwork/Deku Edition-franela con dtf back.webp" data-proposals="[{&quot;image&quot;:&quot;../assets/artwork/Deku Edition-franela con dtf front and back.webp&quot;,&quot;alt&quot;:&quot;Proposal variant — Deku Edition (Franela Con Dtf Front And Back)&quot;,&quot;title&quot;:&quot;Deku Edition — DTF T-Shirt (Front and Back)&quot;,&quot;specs&quot;:&quot;100% Cotton T-Shirt Full DTF · Made to order&quot;,&quot;tag&quot;:&quot;Premium 4-Position DTF Print&quot;,&quot;fabric&quot;:&quot;20/1 Combed Cotton (200g)&quot;,&quot;price&quot;:&quot;USD 20.00 / Unidad&quot;,&quot;desc&quot;:&quot;Complementary design and manufacturing alternative for Deku Edition.&quot;,&quot;story&quot;:&quot;Design developed to diversify apparel while preserving brand identity.&quot;,&quot;status&quot;:&quot;Variant: DTF T-Shirt (Front and Back)&quot;}]">
             <div class="pc-media">
-              <div class="portfolio-ribbon">2 proposals</div>
+              <div class="portfolio-ribbon">Fan Art</div>
               <img src="../assets/artwork/thumbs/Deku Edition-franela con dtf back.webp"
                    srcset="../assets/artwork/thumbs/Deku%20Edition-franela%20con%20dtf%20back.webp 480w, ../assets/artwork/Deku%20Edition-franela%20con%20dtf%20back.webp 1080w"
                    sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
@@ -510,14 +485,14 @@
                    data-category="streetwear"
                    data-title="Ford Ka Edition"
                    data-tag="Premium 4-Position DTF Print"
-                   data-specs="100% Cotton T-Shirt Full DTF · Made to order / Bulk or single" data-price="USD 20.00 / Unidad"
+                   data-specs="100% Cotton T-Shirt Full DTF · Automotive graphic study" data-artistic="true"
                    data-desc="High-resolution design concept and presentation artwork for Ford Ka Edition (Franela Con Dtf). (Original design · Concept mockup.)"
                    data-status="Technical design proposal for Ford Ka Edition: Franela Con Dtf."
                    data-fabric="20/1 Combed Cotton (200g)"
                    data-story="Artwork tailored to the visual identity and textile requirements of Ford Ka Edition."
                    data-img="../assets/artwork/Ford Ka Edition-franela con dtf.webp">
             <div class="pc-media">
-              
+              <div class="portfolio-ribbon">Graphic Study</div>
               <img src="../assets/artwork/thumbs/Ford Ka Edition-franela con dtf.webp"
                    srcset="../assets/artwork/thumbs/Ford%20Ka%20Edition-franela%20con%20dtf.webp 480w, ../assets/artwork/Ford%20Ka%20Edition-franela%20con%20dtf.webp 1080w"
                    sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
@@ -726,14 +701,14 @@
                    data-category="sublimacion"
                    data-title="Messi Edition"
                    data-tag="Full Color Dry-Fit Sports Sublimation"
-                   data-specs="Dry-Fit Sublimated T-Shirt · Made to order / Bulk or single" data-price="USD 15.00 / Unidad"
+                   data-specs="Dry-Fit Sublimated T-Shirt · Artistic tribute" data-artistic="true"
                    data-desc="High-resolution design concept and presentation artwork for Messi Edition (Franela Manga Corta Sublimada). (Original design · Concept mockup.)"
                    data-status="Technical design proposal for Messi Edition: Franela Manga Corta Sublimada."
                    data-fabric="Antibacterial Dry-Fit microfiber 140g"
                    data-story="Artwork tailored to the visual identity and textile requirements of Messi Edition."
                    data-img="../assets/artwork/Messi Edition-franela manga corta sublimada.webp">
             <div class="pc-media">
-              
+              <div class="portfolio-ribbon">Artistic Tribute</div>
               <img src="../assets/artwork/thumbs/Messi Edition-franela manga corta sublimada.webp"
                    srcset="../assets/artwork/thumbs/Messi%20Edition-franela%20manga%20corta%20sublimada.webp 480w, ../assets/artwork/Messi%20Edition-franela%20manga%20corta%20sublimada.webp 1080w"
                    sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
@@ -777,17 +752,17 @@
             </div>
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="streetwear"
+                   data-category="fanart"
                    data-title="Naruto Edition"
                    data-tag="Premium 4-Position DTF Print"
-                   data-specs="100% Cotton T-Shirt Full DTF · Made to order / Bulk or single" data-price="USD 20.00 / Unidad"
+                   data-specs="100% Cotton T-Shirt Full DTF · Artistic exhibition piece" data-artistic="true"
                    data-desc="High-resolution design concept and presentation artwork for Naruto Edition (Franela Con Dtf Front And Back). (Original design · Concept mockup.)"
                    data-status="Technical design proposal for Naruto Edition: Franela Con Dtf Front And Back."
                    data-fabric="20/1 Combed Cotton (200g)"
                    data-story="Artwork tailored to the visual identity and textile requirements of Naruto Edition."
                    data-img="../assets/artwork/Naruto Edition-franela con dtf front and back.webp" data-proposals="[{&quot;image&quot;:&quot;../assets/artwork/Naruto Edition-franela con dtf.webp&quot;,&quot;alt&quot;:&quot;Proposal variant — Naruto Edition (Franela Con Dtf)&quot;,&quot;title&quot;:&quot;Naruto Edition — DTF T-Shirt (Front and Back)&quot;,&quot;specs&quot;:&quot;100% Cotton T-Shirt Full DTF · Made to order&quot;,&quot;tag&quot;:&quot;Premium 4-Position DTF Print&quot;,&quot;fabric&quot;:&quot;20/1 Combed Cotton (200g)&quot;,&quot;price&quot;:&quot;USD 20.00 / Unidad&quot;,&quot;desc&quot;:&quot;Complementary design and manufacturing alternative for Naruto Edition.&quot;,&quot;story&quot;:&quot;Design developed to diversify apparel while preserving brand identity.&quot;,&quot;status&quot;:&quot;Variant: DTF T-Shirt (Front and Back)&quot;}]">
             <div class="pc-media">
-              <div class="portfolio-ribbon">2 proposals</div>
+              <div class="portfolio-ribbon">Fan Art</div>
               <img src="../assets/artwork/thumbs/Naruto Edition-franela con dtf front and back.webp"
                    srcset="../assets/artwork/thumbs/Naruto%20Edition-franela%20con%20dtf%20front%20and%20back.webp 480w, ../assets/artwork/Naruto%20Edition-franela%20con%20dtf%20front%20and%20back.webp 1080w"
                    sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
@@ -942,14 +917,14 @@
                    data-category="streetwear"
                    data-title="Ramones Edition"
                    data-tag="Premium 4-Position DTF Print"
-                   data-specs="100% Cotton T-Shirt Full DTF · Made to order / Bulk or single" data-price="USD 20.00 / Unidad"
+                   data-specs="100% Cotton T-Shirt Full DTF · Artistic tribute" data-artistic="true"
                    data-desc="High-resolution design concept and presentation artwork for Ramones Edition (Franela Con Dtf Front). (Original design · Concept mockup.)"
                    data-status="Technical design proposal for Ramones Edition: Franela Con Dtf Front."
                    data-fabric="20/1 Combed Cotton (200g)"
                    data-story="Artwork tailored to the visual identity and textile requirements of Ramones Edition."
                    data-img="../assets/artwork/Ramones Edition-franela con dtf front.webp" data-proposals="[{&quot;image&quot;:&quot;../assets/artwork/Ramones Edition-franela con dtf.webp&quot;,&quot;alt&quot;:&quot;Proposal variant — Ramones Edition (Franela Con Dtf)&quot;,&quot;title&quot;:&quot;Ramones Edition — Franela Con Dtf&quot;,&quot;specs&quot;:&quot;100% Cotton T-Shirt Full DTF · Made to order&quot;,&quot;tag&quot;:&quot;Premium 4-Position DTF Print&quot;,&quot;fabric&quot;:&quot;20/1 Combed Cotton (200g)&quot;,&quot;price&quot;:&quot;USD 20.00 / Unidad&quot;,&quot;desc&quot;:&quot;Complementary design and manufacturing alternative for Ramones Edition.&quot;,&quot;story&quot;:&quot;Design developed to diversify apparel while preserving brand identity.&quot;,&quot;status&quot;:&quot;Variant: Franela Con Dtf&quot;}]">
             <div class="pc-media">
-              <div class="portfolio-ribbon">2 proposals</div>
+              <div class="portfolio-ribbon">Artistic Tribute</div>
               <img src="../assets/artwork/thumbs/Ramones Edition-franela con dtf front.webp"
                    srcset="../assets/artwork/thumbs/Ramones%20Edition-franela%20con%20dtf%20front.webp 480w, ../assets/artwork/Ramones%20Edition-franela%20con%20dtf%20front.webp 1080w"
                    sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
@@ -1023,14 +998,14 @@
                    data-category="streetwear"
                    data-title="Spark Edition"
                    data-tag="Premium 4-Position DTF Print"
-                   data-specs="100% Cotton T-Shirt Full DTF · Made to order / Bulk or single" data-price="USD 20.00 / Unidad"
+                   data-specs="100% Cotton T-Shirt Full DTF · Automotive graphic study" data-artistic="true"
                    data-desc="High-resolution design concept and presentation artwork for Spark Edition (Franela Con Dtf). (Original design · Concept mockup.)"
                    data-status="Technical design proposal for Spark Edition: Franela Con Dtf."
                    data-fabric="20/1 Combed Cotton (200g)"
                    data-story="Artwork tailored to the visual identity and textile requirements of Spark Edition."
                    data-img="../assets/artwork/Spark Edition-franela con dtf.webp">
             <div class="pc-media">
-              
+              <div class="portfolio-ribbon">Graphic Study</div>
               <img src="../assets/artwork/thumbs/Spark Edition-franela con dtf.webp"
                    srcset="../assets/artwork/thumbs/Spark%20Edition-franela%20con%20dtf.webp 480w, ../assets/artwork/Spark%20Edition-franela%20con%20dtf.webp 1080w"
                    sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
@@ -1050,14 +1025,14 @@
                    data-category="streetwear"
                    data-title="Tahoe Edition"
                    data-tag="Premium 4-Position DTF Print"
-                   data-specs="100% Cotton T-Shirt Full DTF · Made to order / Bulk or single" data-price="USD 20.00 / Unidad"
+                   data-specs="100% Cotton T-Shirt Full DTF · Automotive graphic study" data-artistic="true"
                    data-desc="High-resolution design concept and presentation artwork for Tahoe Edition (Franela Con Dtf). (Original design · Concept mockup.)"
                    data-status="Technical design proposal for Tahoe Edition: Franela Con Dtf."
                    data-fabric="20/1 Combed Cotton (200g)"
                    data-story="Artwork tailored to the visual identity and textile requirements of Tahoe Edition."
                    data-img="../assets/artwork/Tahoe Edition-franela con dtf.webp">
             <div class="pc-media">
-              
+              <div class="portfolio-ribbon">Graphic Study</div>
               <img src="../assets/artwork/thumbs/Tahoe Edition-franela con dtf.webp"
                    srcset="../assets/artwork/thumbs/Tahoe%20Edition-franela%20con%20dtf.webp 480w, ../assets/artwork/Tahoe%20Edition-franela%20con%20dtf.webp 1080w"
                    sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
@@ -1074,17 +1049,17 @@
             </div>
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="streetwear"
+                   data-category="fanart"
                    data-title="Tanjiro Edition"
                    data-tag="Premium 4-Position DTF Print"
-                   data-specs="100% Cotton T-Shirt Full DTF · Made to order / Bulk or single" data-price="USD 20.00 / Unidad"
+                   data-specs="100% Cotton T-Shirt Full DTF · Artistic exhibition piece" data-artistic="true"
                    data-desc="High-resolution design concept and presentation artwork for Tanjiro Edition (Franela Con Dtf 2). (Original design · Concept mockup.)"
                    data-status="Technical design proposal for Tanjiro Edition: Franela Con Dtf 2."
                    data-fabric="20/1 Combed Cotton (200g)"
                    data-story="Artwork tailored to the visual identity and textile requirements of Tanjiro Edition."
                    data-img="../assets/artwork/Tanjiro Edition-franela con dtf 2.webp" data-proposals="[{&quot;image&quot;:&quot;../assets/artwork/Tanjiro Edition-franela con dtf.webp&quot;,&quot;alt&quot;:&quot;Proposal variant — Tanjiro Edition (Franela Con Dtf)&quot;,&quot;title&quot;:&quot;Tanjiro Edition — Franela Con Dtf&quot;,&quot;specs&quot;:&quot;100% Cotton T-Shirt Full DTF · Made to order&quot;,&quot;tag&quot;:&quot;Premium 4-Position DTF Print&quot;,&quot;fabric&quot;:&quot;20/1 Combed Cotton (200g)&quot;,&quot;price&quot;:&quot;USD 20.00 / Unidad&quot;,&quot;desc&quot;:&quot;Complementary design and manufacturing alternative for Tanjiro Edition.&quot;,&quot;story&quot;:&quot;Design developed to diversify apparel while preserving brand identity.&quot;,&quot;status&quot;:&quot;Variant: Franela Con Dtf&quot;}]">
             <div class="pc-media">
-              <div class="portfolio-ribbon">2 proposals</div>
+              <div class="portfolio-ribbon">Fan Art</div>
               <img src="../assets/artwork/thumbs/Tanjiro Edition-franela con dtf 2.webp"
                    srcset="../assets/artwork/thumbs/Tanjiro%20Edition-franela%20con%20dtf%202.webp 480w, ../assets/artwork/Tanjiro%20Edition-franela%20con%20dtf%202.webp 1080w"
                    sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
@@ -1093,33 +1068,6 @@
             <div class="pc-body">
               <h3 class="pc-title">Tanjiro Edition</h3>
               <p class="pc-desc">High-resolution design concept and presentation artwork for Tanjiro Edition (Franela Con Dtf 2).</p>
-              <div class="pc-foot">
-                <span class="pc-action-hint">Click to view details</span>
-                <span class="pc-arrow" aria-hidden="true">→</span>
-              </div>
-              <span class="visually-hidden">Click to view details</span>
-            </div>
-          </article>
-          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="sublimacion"
-                   data-title="TSJ"
-                   data-tag="Full Print Sublimation, Zipper &amp; Mesh Lining"
-                   data-specs="Novak Lined Sublimated Jacket · Made to order / Bulk or single" data-price="USD 35.00 / Unidad"
-                   data-desc="High-resolution design concept and presentation artwork for TSJ (Chaqueta Sublimada). (Original design · Concept mockup.)"
-                   data-status="Technical design proposal for TSJ: Chaqueta Sublimada."
-                   data-fabric="Fluid-repellent Novak fabric with mesh lining"
-                   data-story="Artwork tailored to the visual identity and textile requirements of TSJ."
-                   data-img="../assets/artwork/TSJ tricolor-chaqueta sublimada.webp" data-proposals="[{&quot;image&quot;:&quot;../assets/artwork/TSJ-chaqueta sublimada.webp&quot;,&quot;alt&quot;:&quot;Proposal variant — TSJ (Chaqueta Sublimada)&quot;,&quot;title&quot;:&quot;TSJ — Chaqueta Sublimada&quot;,&quot;specs&quot;:&quot;Novak Lined Sublimated Jacket · Made to order&quot;,&quot;tag&quot;:&quot;Full Print Sublimation, Zipper &amp; Mesh Lining&quot;,&quot;fabric&quot;:&quot;Fluid-repellent Novak fabric with mesh lining&quot;,&quot;price&quot;:&quot;USD 35.00 / Unidad&quot;,&quot;desc&quot;:&quot;Complementary design and manufacturing alternative for TSJ.&quot;,&quot;story&quot;:&quot;Design developed to diversify apparel while preserving brand identity.&quot;,&quot;status&quot;:&quot;Variant: Chaqueta Sublimada&quot;}]">
-            <div class="pc-media">
-              <div class="portfolio-ribbon">2 proposals</div>
-              <img src="../assets/artwork/thumbs/TSJ tricolor-chaqueta sublimada.webp"
-                   srcset="../assets/artwork/thumbs/TSJ%20tricolor-chaqueta%20sublimada.webp 480w, ../assets/artwork/TSJ%20tricolor-chaqueta%20sublimada.webp 1080w"
-                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
-                   alt="Textile design presentation and concept artwork for TSJ" width="1080" height="1350" loading="lazy" decoding="async"/>
-            </div>
-            <div class="pc-body">
-              <h3 class="pc-title">TSJ</h3>
-              <p class="pc-desc">High-resolution design concept and presentation artwork for TSJ (Chaqueta Sublimada).</p>
               <div class="pc-foot">
                 <span class="pc-action-hint">Click to view details</span>
                 <span class="pc-arrow" aria-hidden="true">→</span>
@@ -1158,14 +1106,14 @@
                    data-category="streetwear"
                    data-title="Wrangler Edition"
                    data-tag="Premium 4-Position DTF Print"
-                   data-specs="100% Cotton T-Shirt Full DTF · Made to order / Bulk or single" data-price="USD 20.00 / Unidad"
+                   data-specs="100% Cotton T-Shirt Full DTF · Automotive graphic study" data-artistic="true"
                    data-desc="High-resolution design concept and presentation artwork for Wrangler Edition (Franela Con Dtf). (Original design · Concept mockup.)"
                    data-status="Technical design proposal for Wrangler Edition: Franela Con Dtf."
                    data-fabric="20/1 Combed Cotton (200g)"
                    data-story="Artwork tailored to the visual identity and textile requirements of Wrangler Edition."
                    data-img="../assets/artwork/Wrangler Edition-franela con dtf.webp">
             <div class="pc-media">
-              
+              <div class="portfolio-ribbon">Graphic Study</div>
               <img src="../assets/artwork/thumbs/Wrangler Edition-franela con dtf.webp"
                    srcset="../assets/artwork/thumbs/Wrangler%20Edition-franela%20con%20dtf.webp 480w, ../assets/artwork/Wrangler%20Edition-franela%20con%20dtf.webp 1080w"
                    sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
@@ -1238,11 +1186,11 @@
         </div>
 
         <p class="portfolio-disclaimer">
-          Digital presentations and concept artwork created by Ramses Martínez for Kingdom. Fan artwork is presented for artistic portfolio demonstration only without brand affiliation.
+          Unofficial graphic study presented as part of Ramses Martínez's artistic and technical explorations. It is not an official product and is not offered for sale or reproduction commissions through Kingdom. No affiliation, sponsorship, authorization, or license from the respective rights holders is implied. Third-party rights remain with their respective holders.
         </p>
 
         <div class="portfolio-back-wrap text-center">
-          <a class="btn-secondary" href="index.html">← Back to Home</a>
+          <a class="btn-secondary" href="./">← Back to Home</a>
         </div>
       </div>
     </section>
@@ -1256,7 +1204,7 @@
         <div class="pm-gallery">
           <div class="modal-img-wrap pm-stage">
             <span id="modalCarouselCounter" class="modal-carousel-counter" hidden>1 / 1</span>
-            <img id="modalImg" src="../assets/artwork/alcaldia de san felipe-chaqueta sublimada.webp" alt="" width="1080" height="1350"/>
+            <img id="modalImg" src="../assets/artwork/academia de cuatro-franela sublimada.webp" alt="" width="1080" height="1350"/>
           </div>
           <div id="modalCarouselNav" class="pm-thumbs-row" hidden>
             <button type="button" class="modal-carousel-btn" id="modalPrevBtn" aria-label="Previous image">‹</button>
@@ -1274,7 +1222,7 @@
             <span id="modalPrice" class="pm-price-value"></span>
             <span class="pm-price-label">Reference price</span>
           </div>
-          <ul class="pm-features">
+          <ul class="pm-features" id="modalFeatures">
             <li><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span>High quality</span></li>
             <li><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg><span>Customizable</span></li>
             <li><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 3l-5 3 2 4 2-1v12h10V9l2 1 2-4-5-3c-1 2-2.5 3-4 3S9 5 8 3z"/></svg><span>Size range</span></li>
@@ -1283,10 +1231,11 @@
           <dl class="pm-specs">
             <div id="modalFabricRow" hidden><dt>Optimal material:</dt><dd id="modalFabric"></dd></div>
           </dl>
+          <div id="modalArtNotice" class="modal-art-notice" hidden></div>
           <a id="modalWaBtn" class="pm-cta" href="https://wa.me/584241092124?text=Hello%20Ramses%2C%20I%20saw%20this%20work%20in%20your%20portfolio%20and%20would%20like%20to%20quote%20something%20similar." target="_blank" rel="noopener noreferrer">
             <span>Contact</span> <span aria-hidden="true">→</span>
           </a>
-          <p class="pm-note">Ask about prices, lead times and customization.</p>
+          <p class="pm-note" id="modalNote">Ask about prices, lead times and customization.</p>
         </div>
       </div>
     </div>
@@ -1309,12 +1258,13 @@
         <div>
           <div class="footer-nav-title">Legal & Policies</div>
           <nav class="footer-legal-links" aria-label="Enlaces legales">
-            <a class="link-magic" href="../legal/privacy.html">Privacy</a>
-            <a class="link-magic" href="../legal/terms.html">Terms</a>
-            <a class="link-magic" href="../legal/intellectual-property.html">Intellectual Property</a>
-            <a class="link-magic" href="../legal/cookies.html">Cookies</a>
-            <a class="link-magic" href="../legal/security.html">Security</a>
-            <a class="link-magic" href="../legal/accessibility.html">Accessibility</a>
+            <a class="link-magic" href="legal/privacy.html">Privacy</a>
+            <a class="link-magic" href="legal/terms.html">Terms</a>
+            <a class="link-magic" href="legal/intellectual-property.html">Intellectual Property</a>
+            <a class="link-magic" href="legal/cookies.html">Cookies</a>
+            <a class="link-magic" href="#cookie-settings" data-open-cookies>Cookie Settings</a>
+            <a class="link-magic" href="legal/security.html">Security</a>
+            <a class="link-magic" href="legal/accessibility.html">Accessibility</a>
           </nav>
         </div>
       </div>

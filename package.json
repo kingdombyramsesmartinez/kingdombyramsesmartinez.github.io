@@ -4,11 +4,17 @@
   "version": "1.1.0",
   "type": "module",
   "scripts": {
+    "check:js": "node tools/check-js-syntax.mjs",
+    "test": "node --test tools/test-audit.mjs",
+    "test:e2e": "playwright test",
+    "test:all": "npm test && npm run test:e2e",
     "build": "node tools/build-i18n.mjs",
     "audit:local": "node tools/audit-site.mjs"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
     "@fontsource-variable/montserrat": "^5.3.0",
+    "@playwright/test": "^1.64.0",
     "sharp": "^0.35.5",
     "ttf2woff2": "^8.0.1"
   }

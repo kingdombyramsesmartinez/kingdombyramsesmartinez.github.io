@@ -236,7 +236,6 @@
     if (modalDesc) modalDesc.textContent = item.desc;
     setOptional(modalStatus, modalStatus, item.status);
     setOptional(modalFabricRow, modalFabric, item.fabric);
-    renderPrice(modalPriceRow, modalPrice, item.price);
     setOptional(modalStory, modalStory, item.story);
 
     if (modalImg) {
@@ -254,12 +253,35 @@
       });
     }
 
-    if (modalWaBtn) {
-      const isEnglish = document.documentElement.lang === "en";
-      const waMsg = isEnglish
-        ? `Hello Ramses, I would like to inquire about "${item.title}" from your portfolio (Ref: ${item.specs}).`
-        : `Hola Ramses, deseo consultar información y presupuesto sobre "${item.title}" de tu portafolio (Ref: ${item.specs}).`;
-      modalWaBtn.href = `https://wa.me/${SITE_CONFIG.contact.whatsappNumber}?text=${encodeURIComponent(waMsg)}`;
+    const isEnglish = document.documentElement.lang === "en";
+    const modalFeatures = qs("#modalFeatures");
+    const modalArtNotice = qs("#modalArtNotice");
+    const modalNote = qs("#modalNote");
+
+    if (item.isArtistic) {
+      if (modalPriceRow) modalPriceRow.hidden = true;
+      if (modalFeatures) modalFeatures.hidden = true;
+      if (modalWaBtn) modalWaBtn.hidden = true;
+      if (modalNote) modalNote.hidden = true;
+      if (modalArtNotice) {
+        modalArtNotice.hidden = false;
+        modalArtNotice.textContent = isEnglish
+          ? "Unofficial graphic study presented as part of Ramses Martínez's artistic and technical explorations. It is not an official product and is not offered for sale or reproduction commissions through Kingdom. No affiliation, sponsorship, authorization, or license from the respective rights holders is implied. Third-party rights remain with their respective holders."
+          : "Muestra gráfica no oficial presentada como parte de las exploraciones artísticas y técnicas de Ramses Martínez. No es un producto oficial ni se ofrece a la venta o para encargos de reproducción a través de Kingdom. No implica afiliación, patrocinio, autorización ni licencia de los titulares correspondientes. Los derechos de terceros permanecen en sus respectivos titulares.";
+      }
+    } else {
+      if (modalFeatures) modalFeatures.hidden = false;
+      if (modalWaBtn) modalWaBtn.hidden = false;
+      if (modalNote) modalNote.hidden = false;
+      if (modalArtNotice) modalArtNotice.hidden = true;
+      renderPrice(modalPriceRow, modalPrice, item.price);
+
+      if (modalWaBtn) {
+        const waMsg = isEnglish
+          ? `Hello Ramses, I would like to inquire about "${item.title}" from your portfolio (Ref: ${item.specs}).`
+          : `Hola Ramses, deseo consultar información y presupuesto sobre "${item.title}" de tu portafolio (Ref: ${item.specs}).`;
+        modalWaBtn.href = `https://wa.me/${SITE_CONFIG.contact.whatsappNumber}?text=${encodeURIComponent(waMsg)}`;
+      }
     }
   }
 
@@ -286,6 +308,8 @@
     const price = card.dataset.price || "";
     const story = card.dataset.story || "";
 
+    const isArtistic = card.dataset.artistic === "true";
+
     // Parsear propuestas si existen para activar carrusel
     let proposals = [];
     if (card.dataset.proposals) {
@@ -308,9 +332,10 @@
           status,
           fabric,
           price,
-          story
+          story,
+          isArtistic
         },
-        ...proposals
+        ...proposals.map(p => ({ ...p, isArtistic }))
       ];
     } else {
       activeProposals = [
@@ -324,7 +349,8 @@
           status,
           fabric,
           price,
-          story
+          story,
+          isArtistic
         }
       ];
     }
@@ -607,18 +633,4 @@
     // Fail-safe silencioso
   }
 
-})();
-
-
-/* --- Google Analytics 4 (GA4) --- */
-(function initGA() {
-  const script = document.createElement('script');
-  script.async = true;
-  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-YQCLS51XJE';
-  document.head.appendChild(script);
-
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){ window.dataLayer.push(arguments); }
-  gtag('js', new Date());
-  gtag('config', 'G-YQCLS51XJE');
 })();

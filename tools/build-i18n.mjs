@@ -24,7 +24,7 @@ const esc = (v) => String(v ?? "")
 
 function renderIndex(data, isEn) {
   const assetPrefix = isEn ? "../" : "";
-  const legalPrefix = isEn ? "../legal/" : "legal/";
+  const legalPrefix = "legal/";
   const siteUrl = SITE_CONFIG.siteUrl;
   const canonicalUrl = isEn ? `${siteUrl}/en/` : `${siteUrl}/`;
   const portfolioPageHref = isEn ? "portfolio.html" : "portfolio.html";
@@ -126,6 +126,7 @@ function renderIndex(data, isEn) {
 
   const matHeadersHtml = data.materials.tableHeaders.map(h => `<th>${h}</th>`).join("");
   out = out.replaceAll("{{MATERIALS_HEADERS_HTML}}", matHeadersHtml);
+  out = out.replaceAll("{{TECH_TABLE_WRAP_LABEL}}", isEn ? "Technical Specifications Table" : "Tabla de Especificaciones Técnicas");
 
   const matRowsHtml = data.materials.rows.map(r => `
               <tr>
@@ -217,6 +218,7 @@ function renderIndex(data, isEn) {
   out = out.replaceAll("{{FOOTER_LINK_TERMS}}", data.footer.links.terms);
   out = out.replaceAll("{{FOOTER_LINK_IP}}", data.footer.links.ip);
   out = out.replaceAll("{{FOOTER_LINK_COOKIES}}", data.footer.links.cookies);
+  out = out.replaceAll("{{FOOTER_LINK_COOKIE_PREFS}}", isEn ? "Cookie Settings" : "Preferencias de Cookies");
   out = out.replaceAll("{{FOOTER_LINK_SECURITY}}", data.footer.links.security);
   out = out.replaceAll("{{FOOTER_LINK_A11Y}}", data.footer.links.a11y);
   out = out.replaceAll("{{FOOTER_COPYRIGHT}}", data.footer.copyright);
@@ -228,10 +230,10 @@ function renderIndex(data, isEn) {
 
 function renderPortfolioPage(data, isEn) {
   const assetPrefix = isEn ? "../" : "";
-  const legalPrefix = isEn ? "../legal/" : "legal/";
+  const legalPrefix = "legal/";
   const siteUrl = SITE_CONFIG.siteUrl;
   const canonicalUrl = isEn ? `${siteUrl}/en/portfolio.html` : `${siteUrl}/portfolio.html`;
-  const homeHref = isEn ? "index.html" : "index.html";
+  const homeHref = isEn ? "./" : "/";
   const portfolioLangHref = isEn ? "../portfolio.html" : "en/portfolio.html";
 
   let out = portfolioTemplate;
@@ -313,14 +315,16 @@ function renderPortfolioPage(data, isEn) {
 
     const proposalsJsonAttr = proposalsList.length > 0 ? ` data-proposals="${esc(JSON.stringify(proposalsList))}"` : "";
 
-    const priceAttr = SITE_CONFIG.pricing?.enabled ? ` data-price="${esc(price)}"` : "";
+    const isArtistic = p.isArtistic || p.category === "fanart";
+    const artisticAttr = isArtistic ? ' data-artistic="true"' : "";
+    const priceAttr = (!isArtistic && SITE_CONFIG.pricing?.enabled) ? ` data-price="${esc(price)}"` : "";
 
     return `
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="${p.category}"
                    data-title="${esc(title)}"
                    data-tag="${esc(tag)}"
-                   data-specs="${esc(specs)}"${priceAttr}
+                   data-specs="${esc(specs)}"${priceAttr}${artisticAttr}
                    data-desc="${esc(desc)}${note ? ` (${esc(note)})` : ""}"
                    data-status="${esc(status)}"
                    data-fabric="${esc(fabric)}"
@@ -379,6 +383,7 @@ function renderPortfolioPage(data, isEn) {
   out = out.replaceAll("{{FOOTER_LINK_TERMS}}", data.footer.links.terms);
   out = out.replaceAll("{{FOOTER_LINK_IP}}", data.footer.links.ip);
   out = out.replaceAll("{{FOOTER_LINK_COOKIES}}", data.footer.links.cookies);
+  out = out.replaceAll("{{FOOTER_LINK_COOKIE_PREFS}}", isEn ? "Cookie Settings" : "Preferencias de Cookies");
   out = out.replaceAll("{{FOOTER_LINK_SECURITY}}", data.footer.links.security);
   out = out.replaceAll("{{FOOTER_LINK_A11Y}}", data.footer.links.a11y);
   out = out.replaceAll("{{FOOTER_COPYRIGHT}}", data.footer.copyright);

@@ -19,7 +19,7 @@
     "quoteCta": "Cotizar Proyecto",
     "menu": "MENÚ",
     "langSwitchText": "EN",
-    "langSwitchHref": "en/index.html",
+    "langSwitchHref": "en/",
     "langSwitchAria": "Switch to English version"
   },
   "hero": {
@@ -162,9 +162,13 @@
       {
         "id": "branding",
         "label": "Branding & Corporativo"
+      },
+      {
+        "id": "fanart",
+        "label": "Fan Art y Exploraciones Gráficas"
       }
     ],
-    "disclaimer": "Presentaciones digitales y propuestas gráficas de Ramses Martínez para Kingdom. Las piezas con ilustraciones de fans se muestran como demostración artística sin afiliación de marca."
+    "disclaimer": "Muestra gráfica no oficial presentada como parte de las exploraciones artísticas y técnicas de Ramses Martínez. No es un producto oficial ni se ofrece a la venta o para encargos de reproducción a través de Kingdom. No implica afiliación, patrocinio, autorización ni licencia de los titulares correspondientes. Los derechos de terceros permanecen en sus respectivos titulares."
   },
   "contact": {
     "eyebrow": "Contacto Directo",

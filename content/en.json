@@ -162,9 +162,13 @@
       {
         "id": "branding",
         "label": "Branding & Corporate"
+      },
+      {
+        "id": "fanart",
+        "label": "Fan Art & Graphic Explorations"
       }
     ],
-    "disclaimer": "Digital presentations and concept artwork created by Ramses Martínez for Kingdom. Fan artwork is presented for artistic portfolio demonstration only without brand affiliation."
+    "disclaimer": "Unofficial graphic study presented as part of Ramses Martínez's artistic and technical explorations. It is not an official product and is not offered for sale or reproduction commissions through Kingdom. No affiliation, sponsorship, authorization, or license from the respective rights holders is implied. Third-party rights remain with their respective holders."
   },
   "contact": {
     "eyebrow": "Direct Inquiries",

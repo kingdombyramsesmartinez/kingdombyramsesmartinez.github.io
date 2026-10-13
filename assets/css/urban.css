@@ -699,3 +699,135 @@ header.site-header {
 @media (prefers-reduced-motion: reduce) {
   .urban-divider--tape { transform: none; }
 }
+
+/* ---------- Banner de Consentimiento de Cookies (Fase 2) ---------- */
+.cookie-consent-banner {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  max-width: 440px;
+  width: calc(100% - 40px);
+  z-index: 10000;
+  background:
+    var(--u-grain) 0 0 / 128px 128px,
+    linear-gradient(145deg, rgba(233, 224, 208, 0.08), rgba(7, 7, 6, 0.40)),
+    rgba(13, 13, 12, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 3px solid var(--u-olive);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 18px 20px;
+  color: #F7F7F4;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cookie-consent-hiding {
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+}
+
+.cookie-consent-title {
+  font-family: var(--u-title);
+  font-size: 17px;
+  letter-spacing: 0.04em;
+  color: var(--u-beige);
+  margin-bottom: 6px;
+}
+
+.cookie-consent-text {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #D9D9D3;
+  margin: 0 0 14px 0;
+}
+
+.cookie-consent-link {
+  color: var(--u-olive-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+}
+
+.cookie-consent-link:hover {
+  color: var(--u-beige);
+}
+
+.cookie-consent-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cookie-btn {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cookie-btn-reject {
+  background: transparent;
+  color: #A7A79F;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.cookie-btn-reject:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #F7F7F4;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.cookie-btn-accept {
+  background: var(--u-olive);
+  color: #070706;
+  font-weight: 600;
+  border: 1px solid rgba(146, 151, 110, 0.5);
+}
+
+.cookie-btn-accept:hover {
+  background: var(--u-olive-light);
+  color: #070706;
+}
+
+@media (max-width: 480px) {
+  .cookie-consent-banner {
+    bottom: 12px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+    padding: 14px 16px;
+  }
+  .cookie-consent-actions {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+  .cookie-btn {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+/* ---------- Aviso de Exhibición Artística en Modal ---------- */
+.modal-art-notice {
+  background: rgba(122, 128, 88, 0.12);
+  border: 1px solid rgba(146, 151, 110, 0.35);
+  border-left: 3px solid var(--u-olive-light);
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--u-beige);
+  margin: 14px 0;
+  font-family: 'Montserrat', system-ui, sans-serif;
+}

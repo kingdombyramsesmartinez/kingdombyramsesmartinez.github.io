@@ -12,7 +12,7 @@
   <meta content="dark" name="color-scheme"/>
 
   <!-- CSP equivalente para GitHub Pages -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; style-src-attr 'none'; script-src-attr 'none'; img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self'; media-src 'self'; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com; worker-src 'self' blob:; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests;"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self' https://*.googletagmanager.com; style-src 'self'; style-src-attr 'none'; script-src-attr 'none'; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com; font-src 'self'; media-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://stats.g.doubleclick.net; worker-src 'self' blob:; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests;"/>
 
   <!-- Alternates Multilenguaje SEO -->
   <link rel="canonical" href="https://kingdombyramsesmartinez.github.io/"/>
@@ -46,9 +46,8 @@
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/sedgwick-ave-display.woff2" crossorigin/>
   <link rel="stylesheet" href="assets/css/style.css?v=2"/>
   <link rel="stylesheet" href="assets/css/urban.css"/>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YQCLS51XJE"></script>
-  <script src="assets/js/analytics.js"></script>
+  <!-- Google Analytics & Consent -->
+  <script src="assets/js/analytics.js" defer></script>
 </head>
 <body data-wa="584241092124">
   <a class="skip-link" href="#mainContent">Saltar al contenido principal</a>
@@ -66,7 +65,7 @@
         <a class="nav-link link-magic" href="#materiales">Especificaciones</a>
         <a class="nav-link link-magic" href="#portafolio">Portafolio</a>
         <a class="nav-link link-magic" href="#contacto">Contacto</a>
-        <a class="nav-link link-magic" href="en/index.html" hreflang="en" aria-label="Switch to English version"><b>EN</b></a>
+        <a class="nav-link link-magic" href="en/" hreflang="en" aria-label="Switch to English version"><b>EN</b></a>
       </nav>
 
       <div class="header-cta-group">
@@ -217,7 +216,7 @@
         <h2 class="section-title">Especificaciones Técnicas</h2>
         <p class="section-desc">Parámetros de trabajo según la fibra textil, la técnica de personalización y el soporte estructural requerido.</p>
 
-        <div class="tech-table-wrap glass">
+        <div class="tech-table-wrap glass" tabindex="0" role="region" aria-label="Tabla de Especificaciones Técnicas">
           <table class="tech-table">
             <thead>
               <tr>
@@ -265,7 +264,7 @@
         <p class="section-desc portfolio-teaser-desc">Galería completa de presentaciones de diseño, indumentaria personalizada y digitalización de matrices textiles desarrolladas por KINGDOM (Kingdom by Ramses Martínez).</p>
         <div class="portfolio-teaser-cta-wrap">
           <a class="btn-premium btn-portfolio-hub" href="portfolio.html">
-            Explorar Portafolio Completo (41 Presentaciones) →
+            Explorar Portafolio Completo (39 Presentaciones) →
           </a>
         </div>
       </div>
@@ -381,7 +380,7 @@
             <span id="modalPrice" class="pm-price-value"></span>
             <span class="pm-price-label">Precio de referencia</span>
           </div>
-          <ul class="pm-features">
+          <ul class="pm-features" id="modalFeatures">
             <li><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span>Alta calidad</span></li>
             <li><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg><span>Personalizable</span></li>
             <li><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 3l-5 3 2 4 2-1v12h10V9l2 1 2-4-5-3c-1 2-2.5 3-4 3S9 5 8 3z"/></svg><span>Variedad de tallas</span></li>
@@ -390,10 +389,11 @@
           <dl class="pm-specs">
             <div id="modalFabricRow" hidden><dt>{{MODAL_FABRIC_LABEL}}</dt><dd id="modalFabric"></dd></div>
           </dl>
+          <div id="modalArtNotice" class="modal-art-notice" hidden></div>
           <a id="modalWaBtn" class="pm-cta" href="https://wa.me/584241092124?text=Hola%20Ramses%2C%20vi%20este%20trabajo%20en%20tu%20portafolio%20y%20deseo%20cotizar%20algo%20similar." target="_blank" rel="noopener noreferrer">
             <span>Contactar</span> <span aria-hidden="true">→</span>
           </a>
-          <p class="pm-note">Consulta por precios, tiempos de entrega y personalización.</p>
+          <p class="pm-note" id="modalNote">Consulta por precios, tiempos de entrega y personalización.</p>
         </div>
       </div>
     </div>
@@ -420,6 +420,7 @@
             <a class="link-magic" href="legal/terms.html">Términos</a>
             <a class="link-magic" href="legal/intellectual-property.html">Propiedad Intelectual</a>
             <a class="link-magic" href="legal/cookies.html">Cookies</a>
+            <a class="link-magic" href="#cookie-settings" data-open-cookies>Preferencias de Cookies</a>
             <a class="link-magic" href="legal/security.html">Seguridad</a>
             <a class="link-magic" href="legal/accessibility.html">Accesibilidad</a>
           </div>

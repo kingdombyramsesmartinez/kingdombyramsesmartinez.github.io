@@ -2,8 +2,8 @@ import sharp from 'sharp';
 import fs from 'fs';
 import path from 'path';
 
-const srcDir = 'C:/Users/Dell/Pictures/Screenshots';
-const outDir = 'c:/Users/Dell/Desktop/kingdom-portafolio/assets';
+const srcDir = process.env.WILCOM_SRC || path.join(process.cwd(), 'raw-screenshots');
+const outDir = process.env.WILCOM_OUT || path.join(process.cwd(), 'assets');
 
 const files = [
   { name: 'Captura de pantalla 2026-10-05 175308.png', out: 'work-wilcom-01.webp' },

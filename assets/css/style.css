@@ -831,13 +831,14 @@ section {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  transition: opacity 220ms ease, visibility 220ms;
+  transition: opacity 220ms ease, visibility 0s 220ms;
 }
 
 .modal-backdrop.open {
   opacity: 1;
   pointer-events: auto;
   visibility: visible;
+  transition: opacity 220ms ease, visibility 0s 0s;
 }
 
 .modal-sheet {
@@ -1065,6 +1066,7 @@ footer.site-footer {
 .quote-submit-btn {
   width: 100%;
   margin-top: 10px;
+  font-size: 15px;
 }
 
 .atelier-column {

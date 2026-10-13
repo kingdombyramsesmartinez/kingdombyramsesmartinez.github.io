@@ -3,3 +3,4 @@ _staging/
 *.bak
 .DS_Store
 Thumbs.db
+test-results/

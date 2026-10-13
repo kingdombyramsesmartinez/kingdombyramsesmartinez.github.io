@@ -12,7 +12,7 @@
   <meta content="dark" name="color-scheme"/>
 
   <!-- CSP equivalente para GitHub Pages -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; style-src-attr 'none'; script-src-attr 'none'; img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self'; media-src 'self'; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com; worker-src 'self' blob:; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests;"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self' https://*.googletagmanager.com; style-src 'self'; style-src-attr 'none'; script-src-attr 'none'; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com; font-src 'self'; media-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://stats.g.doubleclick.net; worker-src 'self' blob:; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests;"/>
 
   <!-- Alternates Multilenguaje SEO -->
   <link rel="canonical" href="https://kingdombyramsesmartinez.github.io/portfolio.html"/>
@@ -46,9 +46,8 @@
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/sedgwick-ave-display.woff2" crossorigin/>
   <link rel="stylesheet" href="assets/css/style.css?v=2"/>
   <link rel="stylesheet" href="assets/css/urban.css"/>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YQCLS51XJE"></script>
-  <script src="assets/js/analytics.js"></script>
+  <!-- Google Analytics & Consent -->
+  <script src="assets/js/analytics.js" defer></script>
 </head>
 <body data-wa="584241092124">
   <a class="skip-link" href="#mainContent">Saltar al contenido principal</a>
@@ -56,20 +55,20 @@
   <!-- Header Sticky Street-Editorial -->
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
-      <a class="brand-link" href="index.html" aria-label="KINGDOM — Kingdom by Ramses Martínez" translate="no">
+      <a class="brand-link" href="/" aria-label="KINGDOM — Kingdom by Ramses Martínez" translate="no">
         <img src="assets/brand/logo.png" alt="Kingdom Tag Logo" width="1024" height="691"/>
       </a>
 
       <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
-        <a class="nav-link link-magic" href="index.html#trayectoria">Trayectoria</a>
-        <a class="nav-link link-magic" href="index.html#servicios">Servicios</a>
-        <a class="nav-link link-magic" href="index.html#materiales">Especificaciones</a>
-        <a class="nav-link link-magic" href="index.html#contacto">Contacto</a>
+        <a class="nav-link link-magic" href="/#trayectoria">Trayectoria</a>
+        <a class="nav-link link-magic" href="/#servicios">Servicios</a>
+        <a class="nav-link link-magic" href="/#materiales">Especificaciones</a>
+        <a class="nav-link link-magic" href="/#contacto">Contacto</a>
         <a class="nav-link link-magic" href="en/portfolio.html" hreflang="en" aria-label="Switch to English version"><b>EN</b></a>
       </nav>
 
       <div class="header-cta-group">
-        <a class="btn-secondary" href="index.html">← Volver al Inicio</a>
+        <a class="btn-secondary" href="/">← Volver al Inicio</a>
         <button class="burger-btn" id="burgerBtn" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú">
           MENÚ
         </button>
@@ -84,7 +83,7 @@
         <nav aria-label="Migas de pan" class="breadcrumbs-wrap">
           <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
             <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-              <a href="index.html" itemprop="item"><span itemprop="name">Inicio</span></a>
+              <a href="/" itemprop="item"><span itemprop="name">Inicio</span></a>
               <meta itemprop="position" content="1"/>
             </li>
             <li aria-hidden="true" class="breadcrumb-separator">/</li>
@@ -122,6 +121,9 @@
           <button class="filter-btn" type="button" data-filter="branding" aria-pressed="false">
             Branding & Corporativo
           </button>
+          <button class="filter-btn" type="button" data-filter="fanart" aria-pressed="false">
+            Fan Art y Exploraciones Gráficas
+          </button>
         </div>
 
         <div id="filterLiveStatus" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
@@ -148,33 +150,6 @@
             <div class="pc-body">
               <h3 class="pc-title">Academia De Cuatro</h3>
               <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Academia De Cuatro (Franela Sublimada).</p>
-              <div class="pc-foot">
-                <span class="pc-action-hint">Clic para ver detalle</span>
-                <span class="pc-arrow" aria-hidden="true">→</span>
-              </div>
-              <span class="visually-hidden">Clic para ver detalle</span>
-            </div>
-          </article>
-          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="sublimacion"
-                   data-title="Alcaldía De San Felipe"
-                   data-tag="Sublimación Full Print, Cierre &amp; Forro de Malla"
-                   data-specs="Chaqueta Novak Forrada Sublimada · Bajo pedido / Por lote o unidad" data-price="USD 35.00 / Unidad"
-                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Alcaldia De San Felipe (Chaqueta Sublimada). (Diseño propio · Mockup referencial.)"
-                   data-status="Propuesta técnica para Alcaldía De San Felipe: Chaqueta Sublimada."
-                   data-fabric="Tela Novak repelente de fluidos con forro de malla"
-                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Alcaldia De San Felipe."
-                   data-img="assets/artwork/alcaldia de san felipe-chaqueta sublimada.webp" data-proposals="[{&quot;image&quot;:&quot;assets/artwork/alcaldia de san felipe-franela manga corta sublimada.webp&quot;,&quot;alt&quot;:&quot;Variante de propuesta — Alcaldía De San Felipe (Franela Manga Corta Sublimada)&quot;,&quot;title&quot;:&quot;Alcaldía De San Felipe — Franela Manga Corta Sublimada&quot;,&quot;specs&quot;:&quot;Franela Dry-Fit Sublimada · Bajo pedido&quot;,&quot;tag&quot;:&quot;Sublimación Deportiva Dry-Fit Full Color&quot;,&quot;fabric&quot;:&quot;Microfibra Dry-Fit antibacteriana 140g&quot;,&quot;price&quot;:&quot;USD 15.00 / Unidad&quot;,&quot;desc&quot;:&quot;Alternativa complementaria de diseño y confección para Alcaldia De San Felipe.&quot;,&quot;story&quot;:&quot;Diseño desarrollado para diversificar la indumentaria manteniendo la línea gráfica institucional.&quot;,&quot;status&quot;:&quot;Variante: Franela Manga Corta Sublimada&quot;}]">
-            <div class="pc-media">
-              <div class="portfolio-ribbon">2 propuestas</div>
-              <img src="assets/artwork/thumbs/alcaldia de san felipe-chaqueta sublimada.webp"
-                   srcset="assets/artwork/thumbs/alcaldia%20de%20san%20felipe-chaqueta%20sublimada.webp 480w, assets/artwork/alcaldia%20de%20san%20felipe-chaqueta%20sublimada.webp 1080w"
-                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
-                   alt="Presentación textil y propuesta gráfica para Alcaldía De San Felipe" width="1080" height="1350" loading="lazy" decoding="async"/>
-            </div>
-            <div class="pc-body">
-              <h3 class="pc-title">Alcaldía De San Felipe</h3>
-              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Alcaldia De San Felipe (Chaqueta Sublimada).</p>
               <div class="pc-foot">
                 <span class="pc-action-hint">Clic para ver detalle</span>
                 <span class="pc-arrow" aria-hidden="true">→</span>
@@ -237,10 +212,10 @@
             </div>
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="streetwear"
+                   data-category="fanart"
                    data-title="Avengers Doomsday"
                    data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-price="USD 20.00 / Unidad"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
                    data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Avengers Doomsday (Franela Con Dtf). (Diseño propio · Mockup referencial.)"
                    data-status="Propuesta técnica para Avengers Doomsday: Franela Con Dtf."
                    data-fabric="Algodón 20/1 (200g)"
@@ -264,10 +239,10 @@
             </div>
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="streetwear"
+                   data-category="fanart"
                    data-title="Bakugo MHA"
                    data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-price="USD 20.00 / Unidad"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
                    data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Bakugo MHA (Franela Con Dtf 2). (Diseño propio · Mockup referencial.)"
                    data-status="Propuesta técnica para Bakugo MHA: Franela Con Dtf 2."
                    data-fabric="Algodón 20/1 (200g)"
@@ -321,7 +296,7 @@
                    data-category="streetwear"
                    data-title="Camaro Edition"
                    data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-price="USD 20.00 / Unidad"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
                    data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Camaro Edition (Franela Con Dtf Negra). (Diseño propio · Mockup referencial.)"
                    data-status="Propuesta técnica para Camaro Edition: Franela Con Dtf Negra."
                    data-fabric="Algodón 20/1 (200g)"
@@ -348,7 +323,7 @@
                    data-category="streetwear"
                    data-title="Corvette Edition"
                    data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-price="USD 20.00 / Unidad"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
                    data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Corvette Edition (Franela Con Dtf). (Diseño propio · Mockup referencial.)"
                    data-status="Propuesta técnica para Corvette Edition: Franela Con Dtf."
                    data-fabric="Algodón 20/1 (200g)"
@@ -375,7 +350,7 @@
                    data-category="sublimacion"
                    data-title="CR7 Edition"
                    data-tag="Sublimación Deportiva Dry-Fit Full Color"
-                   data-specs="Franela Dry-Fit Sublimada · Bajo pedido / Por lote o unidad" data-price="USD 15.00 / Unidad"
+                   data-specs="Franela Dry-Fit Sublimada · Bajo pedido / Por lote o unidad" data-artistic="true"
                    data-desc="Propuesta de diseño y presentación gráfica de alta resolución para CR7 Edition (Franela Manga Corta Sublimada). (Diseño propio · Mockup referencial.)"
                    data-status="Propuesta técnica para CR7 Edition: Franela Manga Corta Sublimada."
                    data-fabric="Microfibra Dry-Fit antibacteriana 140g"
@@ -399,10 +374,10 @@
             </div>
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="streetwear"
+                   data-category="fanart"
                    data-title="DBS Edition"
                    data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-price="USD 20.00 / Unidad"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
                    data-desc="Propuesta de diseño y presentación gráfica de alta resolución para DBS Edition (Franela Con Dtf Back). (Diseño propio · Mockup referencial.)"
                    data-status="Propuesta técnica para DBS Edition: Franela Con Dtf Back."
                    data-fabric="Algodón 20/1 (200g)"
@@ -426,10 +401,10 @@
             </div>
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="streetwear"
+                   data-category="fanart"
                    data-title="Deku Edition"
                    data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-price="USD 20.00 / Unidad"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
                    data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Deku Edition (Franela Con Dtf Back). (Diseño propio · Mockup referencial.)"
                    data-status="Propuesta técnica para Deku Edition: Franela Con Dtf Back."
                    data-fabric="Algodón 20/1 (200g)"
@@ -510,7 +485,7 @@
                    data-category="streetwear"
                    data-title="Ford Ka Edition"
                    data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-price="USD 20.00 / Unidad"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
                    data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Ford Ka Edition (Franela Con Dtf). (Diseño propio · Mockup referencial.)"
                    data-status="Propuesta técnica para Ford Ka Edition: Franela Con Dtf."
                    data-fabric="Algodón 20/1 (200g)"
@@ -726,7 +701,7 @@
                    data-category="sublimacion"
                    data-title="Messi Edition"
                    data-tag="Sublimación Deportiva Dry-Fit Full Color"
-                   data-specs="Franela Dry-Fit Sublimada · Bajo pedido / Por lote o unidad" data-price="USD 15.00 / Unidad"
+                   data-specs="Franela Dry-Fit Sublimada · Bajo pedido / Por lote o unidad" data-artistic="true"
                    data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Messi Edition (Franela Manga Corta Sublimada). (Diseño propio · Mockup referencial.)"
                    data-status="Propuesta técnica para Messi Edition: Franela Manga Corta Sublimada."
                    data-fabric="Microfibra Dry-Fit antibacteriana 140g"
@@ -777,10 +752,10 @@
             </div>
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="streetwear"
+                   data-category="fanart"
                    data-title="Naruto Edition"
                    data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-price="USD 20.00 / Unidad"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
                    data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Naruto Edition (Franela Con Dtf Front And Back). (Diseño propio · Mockup referencial.)"
                    data-status="Propuesta técnica para Naruto Edition: Franela Con Dtf Front And Back."
                    data-fabric="Algodón 20/1 (200g)"
@@ -942,7 +917,7 @@
                    data-category="streetwear"
                    data-title="Ramones Edition"
                    data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-price="USD 20.00 / Unidad"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
                    data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Ramones Edition (Franela Con Dtf Front). (Diseño propio · Mockup referencial.)"
                    data-status="Propuesta técnica para Ramones Edition: Franela Con Dtf Front."
                    data-fabric="Algodón 20/1 (200g)"
@@ -1023,7 +998,7 @@
                    data-category="streetwear"
                    data-title="Spark Edition"
                    data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-price="USD 20.00 / Unidad"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
                    data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Spark Edition (Franela Con Dtf). (Diseño propio · Mockup referencial.)"
                    data-status="Propuesta técnica para Spark Edition: Franela Con Dtf."
                    data-fabric="Algodón 20/1 (200g)"
@@ -1050,7 +1025,7 @@
                    data-category="streetwear"
                    data-title="Tahoe Edition"
                    data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-price="USD 20.00 / Unidad"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
                    data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Tahoe Edition (Franela Con Dtf). (Diseño propio · Mockup referencial.)"
                    data-status="Propuesta técnica para Tahoe Edition: Franela Con Dtf."
                    data-fabric="Algodón 20/1 (200g)"
@@ -1074,10 +1049,10 @@
             </div>
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="streetwear"
+                   data-category="fanart"
                    data-title="Tanjiro Edition"
                    data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-price="USD 20.00 / Unidad"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
                    data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Tanjiro Edition (Franela Con Dtf 2). (Diseño propio · Mockup referencial.)"
                    data-status="Propuesta técnica para Tanjiro Edition: Franela Con Dtf 2."
                    data-fabric="Algodón 20/1 (200g)"
@@ -1093,33 +1068,6 @@
             <div class="pc-body">
               <h3 class="pc-title">Tanjiro Edition</h3>
               <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Tanjiro Edition (Franela Con Dtf 2).</p>
-              <div class="pc-foot">
-                <span class="pc-action-hint">Clic para ver detalle</span>
-                <span class="pc-arrow" aria-hidden="true">→</span>
-              </div>
-              <span class="visually-hidden">Clic para ver detalle</span>
-            </div>
-          </article>
-          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="sublimacion"
-                   data-title="TSJ"
-                   data-tag="Sublimación Full Print, Cierre &amp; Forro de Malla"
-                   data-specs="Chaqueta Novak Forrada Sublimada · Bajo pedido / Por lote o unidad" data-price="USD 35.00 / Unidad"
-                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para TSJ (Chaqueta Sublimada). (Diseño propio · Mockup referencial.)"
-                   data-status="Propuesta técnica para TSJ: Chaqueta Sublimada."
-                   data-fabric="Tela Novak repelente de fluidos con forro de malla"
-                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de TSJ."
-                   data-img="assets/artwork/TSJ tricolor-chaqueta sublimada.webp" data-proposals="[{&quot;image&quot;:&quot;assets/artwork/TSJ-chaqueta sublimada.webp&quot;,&quot;alt&quot;:&quot;Variante de propuesta — TSJ (Chaqueta Sublimada)&quot;,&quot;title&quot;:&quot;TSJ — Chaqueta Sublimada&quot;,&quot;specs&quot;:&quot;Chaqueta Novak Forrada Sublimada · Bajo pedido&quot;,&quot;tag&quot;:&quot;Sublimación Full Print, Cierre &amp; Forro de Malla&quot;,&quot;fabric&quot;:&quot;Tela Novak repelente de fluidos con forro de malla&quot;,&quot;price&quot;:&quot;USD 35.00 / Unidad&quot;,&quot;desc&quot;:&quot;Alternativa complementaria de diseño y confección para TSJ.&quot;,&quot;story&quot;:&quot;Diseño desarrollado para diversificar la indumentaria manteniendo la línea gráfica institucional.&quot;,&quot;status&quot;:&quot;Variante: Chaqueta Sublimada&quot;}]">
-            <div class="pc-media">
-              <div class="portfolio-ribbon">2 propuestas</div>
-              <img src="assets/artwork/thumbs/TSJ tricolor-chaqueta sublimada.webp"
-                   srcset="assets/artwork/thumbs/TSJ%20tricolor-chaqueta%20sublimada.webp 480w, assets/artwork/TSJ%20tricolor-chaqueta%20sublimada.webp 1080w"
-                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
-                   alt="Presentación textil y propuesta gráfica para TSJ" width="1080" height="1350" loading="lazy" decoding="async"/>
-            </div>
-            <div class="pc-body">
-              <h3 class="pc-title">TSJ</h3>
-              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para TSJ (Chaqueta Sublimada).</p>
               <div class="pc-foot">
                 <span class="pc-action-hint">Clic para ver detalle</span>
                 <span class="pc-arrow" aria-hidden="true">→</span>
@@ -1158,7 +1106,7 @@
                    data-category="streetwear"
                    data-title="Wrangler Edition"
                    data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-price="USD 20.00 / Unidad"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
                    data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Wrangler Edition (Franela Con Dtf). (Diseño propio · Mockup referencial.)"
                    data-status="Propuesta técnica para Wrangler Edition: Franela Con Dtf."
                    data-fabric="Algodón 20/1 (200g)"
@@ -1238,11 +1186,11 @@
         </div>
 
         <p class="portfolio-disclaimer">
-          Presentaciones digitales y propuestas gráficas de Ramses Martínez para Kingdom. Las piezas con ilustraciones de fans se muestran como demostración artística sin afiliación de marca.
+          Muestra gráfica no oficial presentada como parte de las exploraciones artísticas y técnicas de Ramses Martínez. No es un producto oficial ni se ofrece a la venta o para encargos de reproducción a través de Kingdom. No implica afiliación, patrocinio, autorización ni licencia de los titulares correspondientes. Los derechos de terceros permanecen en sus respectivos titulares.
         </p>
 
         <div class="portfolio-back-wrap text-center">
-          <a class="btn-secondary" href="index.html">← Volver al Inicio</a>
+          <a class="btn-secondary" href="/">← Volver al Inicio</a>
         </div>
       </div>
     </section>
@@ -1256,7 +1204,7 @@
         <div class="pm-gallery">
           <div class="modal-img-wrap pm-stage">
             <span id="modalCarouselCounter" class="modal-carousel-counter" hidden>1 / 1</span>
-            <img id="modalImg" src="assets/artwork/alcaldia de san felipe-chaqueta sublimada.webp" alt="" width="1080" height="1350"/>
+            <img id="modalImg" src="assets/artwork/academia de cuatro-franela sublimada.webp" alt="" width="1080" height="1350"/>
           </div>
           <div id="modalCarouselNav" class="pm-thumbs-row" hidden>
             <button type="button" class="modal-carousel-btn" id="modalPrevBtn" aria-label="Imagen anterior">‹</button>
@@ -1274,7 +1222,7 @@
             <span id="modalPrice" class="pm-price-value"></span>
             <span class="pm-price-label">Precio de referencia</span>
           </div>
-          <ul class="pm-features">
+          <ul class="pm-features" id="modalFeatures">
             <li><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span>Alta calidad</span></li>
             <li><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg><span>Personalizable</span></li>
             <li><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 3l-5 3 2 4 2-1v12h10V9l2 1 2-4-5-3c-1 2-2.5 3-4 3S9 5 8 3z"/></svg><span>Variedad de tallas</span></li>
@@ -1283,10 +1231,11 @@
           <dl class="pm-specs">
             <div id="modalFabricRow" hidden><dt>Material óptimo:</dt><dd id="modalFabric"></dd></div>
           </dl>
+          <div id="modalArtNotice" class="modal-art-notice" hidden></div>
           <a id="modalWaBtn" class="pm-cta" href="https://wa.me/584241092124?text=Hola%20Ramses%2C%20vi%20este%20trabajo%20en%20tu%20portafolio%20y%20deseo%20cotizar%20algo%20similar." target="_blank" rel="noopener noreferrer">
             <span>Contactar</span> <span aria-hidden="true">→</span>
           </a>
-          <p class="pm-note">Consulta por precios, tiempos de entrega y personalización.</p>
+          <p class="pm-note" id="modalNote">Consulta por precios, tiempos de entrega y personalización.</p>
         </div>
       </div>
     </div>
@@ -1313,6 +1262,7 @@
             <a class="link-magic" href="legal/terms.html">Términos</a>
             <a class="link-magic" href="legal/intellectual-property.html">Propiedad Intelectual</a>
             <a class="link-magic" href="legal/cookies.html">Cookies</a>
+            <a class="link-magic" href="#cookie-settings" data-open-cookies>Preferencias de Cookies</a>
             <a class="link-magic" href="legal/security.html">Seguridad</a>
             <a class="link-magic" href="legal/accessibility.html">Accesibilidad</a>
           </nav>

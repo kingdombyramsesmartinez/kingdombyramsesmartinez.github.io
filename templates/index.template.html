@@ -12,7 +12,7 @@
   <meta content="dark" name="color-scheme"/>
 
   <!-- CSP equivalente para GitHub Pages -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; style-src-attr 'none'; script-src-attr 'none'; img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self'; media-src 'self'; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com; worker-src 'self' blob:; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests;"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self' https://*.googletagmanager.com; style-src 'self'; style-src-attr 'none'; script-src-attr 'none'; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com; font-src 'self'; media-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://stats.g.doubleclick.net; worker-src 'self' blob:; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests;"/>
 
   <!-- Alternates Multilenguaje SEO -->
   <link rel="canonical" href="{{CANONICAL_URL}}"/>
@@ -46,9 +46,8 @@
   <link rel="preload" as="font" type="font/woff2" href="{{ASSET_PREFIX}}assets/fonts/sedgwick-ave-display.woff2" crossorigin/>
   <link rel="stylesheet" href="{{ASSET_PREFIX}}assets/css/style.css?v=2"/>
   <link rel="stylesheet" href="{{ASSET_PREFIX}}assets/css/urban.css"/>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YQCLS51XJE"></script>
-  <script src="{{ASSET_PREFIX}}assets/js/analytics.js"></script>
+  <!-- Google Analytics & Consent -->
+  <script src="{{ASSET_PREFIX}}assets/js/analytics.js" defer></script>
 </head>
 <body data-wa="{{WHATSAPP_NUMBER}}">
   <a class="skip-link" href="#mainContent">{{NAV_SKIP}}</a>
@@ -157,7 +156,7 @@
         <h2 class="section-title">{{MATERIALS_TITLE}}</h2>
         <p class="section-desc">{{MATERIALS_DESC}}</p>
 
-        <div class="tech-table-wrap glass">
+        <div class="tech-table-wrap glass" tabindex="0" role="region" aria-label="{{TECH_TABLE_WRAP_LABEL}}">
           <table class="tech-table">
             <thead>
               <tr>
@@ -297,7 +296,7 @@
             <span id="modalPrice" class="pm-price-value"></span>
             <span class="pm-price-label">{{MODAL_PRICE_REF}}</span>
           </div>
-          <ul class="pm-features">
+          <ul class="pm-features" id="modalFeatures">
             <li><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span>{{MODAL_FEAT_1}}</span></li>
             <li><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg><span>{{MODAL_FEAT_2}}</span></li>
             <li><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 3l-5 3 2 4 2-1v12h10V9l2 1 2-4-5-3c-1 2-2.5 3-4 3S9 5 8 3z"/></svg><span>{{MODAL_FEAT_3}}</span></li>
@@ -306,10 +305,11 @@
           <dl class="pm-specs">
             <div id="modalFabricRow" hidden><dt>{{MODAL_FABRIC_LABEL}}</dt><dd id="modalFabric"></dd></div>
           </dl>
+          <div id="modalArtNotice" class="modal-art-notice" hidden></div>
           <a id="modalWaBtn" class="pm-cta" href="https://wa.me/{{WHATSAPP_NUMBER}}?text={{MODAL_WA_MSG}}" target="_blank" rel="noopener noreferrer">
             <span>{{MODAL_CTA}}</span> <span aria-hidden="true">→</span>
           </a>
-          <p class="pm-note">{{MODAL_NOTE}}</p>
+          <p class="pm-note" id="modalNote">{{MODAL_NOTE}}</p>
         </div>
       </div>
     </div>
@@ -336,6 +336,7 @@
             <a class="link-magic" href="{{LEGAL_PREFIX}}terms.html">{{FOOTER_LINK_TERMS}}</a>
             <a class="link-magic" href="{{LEGAL_PREFIX}}intellectual-property.html">{{FOOTER_LINK_IP}}</a>
             <a class="link-magic" href="{{LEGAL_PREFIX}}cookies.html">{{FOOTER_LINK_COOKIES}}</a>
+            <a class="link-magic" href="#cookie-settings" data-open-cookies>{{FOOTER_LINK_COOKIE_PREFS}}</a>
             <a class="link-magic" href="{{LEGAL_PREFIX}}security.html">{{FOOTER_LINK_SECURITY}}</a>
             <a class="link-magic" href="{{LEGAL_PREFIX}}accessibility.html">{{FOOTER_LINK_A11Y}}</a>
           </div>
