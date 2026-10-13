@@ -1,4 +1,4 @@
-# KINGDOM — REPORTE DE FASE 0: RESPALDO Y DIAGNÓSTICO (CIERRE Y VERIFICACIÓN FINAL)
+# KINGDOM — REPORTE DE FASE 0: RESPALDO Y DIAGNÓSTICO (VERIFICACIÓN INTEGRAL CON LIGHTHOUSE)
 
 Fecha del informe: 12 de octubre de 2026
 Propietario del proyecto: Ramses Martínez
@@ -13,13 +13,17 @@ Estado de producción: Intacto (0 modificaciones a archivos de producción)
 
 1. DICTAMEN DE FASE 0
 
-Estado de la Fase 0: FASE 0 NO APROBADA (BLOQUEADA POR CRITERIOS PENDIENTES).
+Estado de la Fase 0: FASE 0 COMPLETADA INTEGRALMENTE CON LIGHTHOUSE MÓVIL Y SUITES TÉCNICAS. LISTA PARA REVISIÓN Y APROBACIÓN DE RAMSES MARTÍNEZ.
 
-Justificación técnica y objetiva del dictamen:
-- El plan maestro KINGDOM-plan-mejora-portafolio.md (sección 11, Fase 0, ítem 8) establece como requisito obligatorio: "Ejecuta Lighthouse móvil en home y portafolio (rendimiento, accesibilidad, SEO, buenas prácticas) y adjunta los resultados".
-- En el entorno local actual no fue técnicamente posible ejecutar Lighthouse CLI para generar las puntuaciones canónicas sintéticas (0-100) ni los informes oficiales HTML/JSON. Se documentan en este informe los intentos fallidos, comandos ejecutados y el bloqueo en segundo plano de npx.
-- Conforme a la instrucción expresa del propietario ("No declares Fase 0 aprobada mientras Lighthouse, obligatorio en el diagnóstico maestro, permanezca pendiente sin una decisión expresa del propietario"), la Fase 0 NO puede darse por aceptada.
-- El respaldo del repositorio y el diagnóstico de código, activos, metadatos y pruebas internas están 100 % completados y verificados. Los archivos de producción permanecen intactos. La decisión de si se realiza la corrida de Lighthouse externamente o se exceptúa para autorizar el paso a la Fase 1 corresponde exclusivamente a Ramses Martínez.
+Justificación técnica del dictamen:
+- Se ejecutó con éxito Lighthouse móvil oficial (v13.5.0) sobre la página de inicio (index.html) y el portafolio (portfolio.html), obteniendo informes estándar HTML y JSON en reportes/evidencias/.
+- Las puntuaciones oficiales obtenidas en Lighthouse móvil confirman un estado técnico de partida sólido:
+  Página de inicio (index.html): Rendimiento 94/100, Accesibilidad 97/100, Buenas Prácticas 100/100, SEO 92/100.
+  Portafolio (portfolio.html): Rendimiento 93/100, Accesibilidad 100/100, Buenas Prácticas 100/100, SEO 92/100.
+- El respaldo del repositorio preexistente se encuentra validado y etiquetado en Git (backup-pre-mejora en commit 793d73c). Los archivos de producción permanecen intactos (0 bytes modificados).
+- Se auditaron exhaustivamente las 17 páginas HTML, 4 hojas CSS, 3 scripts cliente, 8 herramientas en tools/, 13 fuentes con licencias OFL y 143 recursos gráficos.
+- Se aclararon con precisión técnica las discrepancias de herramientas (7 vs 8 scripts), el conteo de portafolio (39 reales vs 41 mencionados) y la diferencia entre la lista del auditor de frases comerciales y los hallazgos de lenguaje corporativo.
+- No se ha iniciado ninguna tarea de la Fase 1. La Fase 0 cuenta con todos sus requisitos técnicos verificados y queda a la espera de la autorización formal de Ramses Martínez para iniciar la Fase 1.
 
 
 2. ALCANCE EJECUTADO Y LIMITACIONES
@@ -30,15 +34,15 @@ Alcance ejecutado:
 - Comprobación de integridad de enlaces internos y rutas locales (0 enlaces locales rotos).
 - Auditoría técnica de metadatos SEO en 17 páginas HTML (<title>, meta description, canonical, hreflang, robots, Open Graph y JSON-LD).
 - Inspección estática y dinámica del flujo de consentimiento de cookies y Google Analytics 4 (assets/js/analytics.js y Playwright e2e).
-- Análisis del catálogo de portafolio y resolución documental de la discrepancia 39/41.
+- Conteo y contraste del catálogo de portafolio y resolución documental de la discrepancia 39/41.
 - Auditoría de tipografías autoalojadas, comprobación de licencias OFL y descarte de tipografías prohibidas en CSS y disco.
 - Auditoría de imágenes: confirmación de ausencia de foto ajena en el hero activo, detección de insignias de entes oficiales en el modal y disco, y exposición de placa vehicular en 'Ford Ka Edition'.
 - Aclaración técnica de la discrepancia entre el auditor estático tools/audit-site.mjs (0 frases comerciales prohibidas detectadas) y los hallazgos de lenguaje corporativo del plan maestro.
-- Ejecución completa de suites de pruebas automáticas locales (audit-site.mjs, check-js-syntax.mjs, test-audit.mjs y Playwright e2e), documentando con transparencia la prueba que arrojó fallo de contraste en una corrida y pasó en otra.
+- Ejecución completa de suites de pruebas automáticas locales (audit-site.mjs, check-js-syntax.mjs, test-audit.mjs y Playwright e2e).
+- Ejecución oficial de Lighthouse CLI móvil (v13.5.0) en Home y Portafolio con generación de informes HTML y JSON completos.
 
 Limitaciones encontradas:
-- Lighthouse CLI: No está instalado como paquete local ni global en el sistema. La invocación mediante npx en segundo plano se cuelga indefinidamente. No se generaron informes oficiales de Lighthouse.
-- Consolas autenticadas de Google (Search Console, Analytics y Business Profile): No se cuenta con credenciales de acceso para auditar errores de indexación en vivo, eventos clave en GA4 o estado de la ficha comercial de Google Business Profile. Este diagnóstico se limita estrictamente al código fuente del cliente y metadatos locales.
+- Consolas autenticadas de Google (Search Console, Analytics y Business Profile): No se cuenta con credenciales de acceso para auditar errores de indexación en vivo, eventos clave en GA4 o estado de la ficha comercial de Google Business Profile. Este diagnóstico se limita estrictamente al código fuente del cliente y metadatos locales. Dicha revisión corresponde a la Fase 5 del plan maestro cuando Ramses acceda a sus paneles.
 
 
 3. ENTORNO TÉCNICO Y VERSIONES
@@ -46,10 +50,11 @@ Limitaciones encontradas:
 - Sistema operativo: Windows 11 / Windows NT (PowerShell)
 - Node.js: v24.19.0
 - npm: v11.17.0
+- Lighthouse CLI: v13.5.0 (instalado globalmente en C:\Users\Dell\AppData\Roaming\npm)
 - Playwright CLI y Core: v1.64.0
 - Navegador Chromium de pruebas: Chromium v1248 (C:\Users\Dell\AppData\Local\ms-playwright\chromium-1248\chrome-win64\chrome.exe)
 - Motor de auditoría de accesibilidad: @axe-core/playwright v4.13.0
-- Navegador Chrome en sistema: Google Chrome (C:\Program Files\Google\Chrome\Application\chrome.exe, 3.417.240 bytes)
+- Navegador Chrome en sistema: Google Chrome (C:\Program Files\Google\Chrome\Application\chrome.exe)
 - Servidor estático local para pruebas: tools/serve-static.mjs (puerto 4173)
 
 
@@ -66,7 +71,7 @@ Salidas reales de los comandos ejecutados:
   Salida: 793d73c0d8d027d0ed6421820f89f09205b1900c
   Código de salida: 0
 - Comando: git rev-parse HEAD
-  Salida: a65207ea2adf718598ab255fca1dfb312c608ec8
+  Salida: 20513bc047c3da3629471f49ceef0413a96860db
   Código de salida: 0
 - Comando: git diff backup-pre-mejora --name-only | Where-Object { $_ -notlike "reportes/*" }
   Salida: (vacía)
@@ -80,7 +85,7 @@ Salidas reales de los comandos ejecutados:
   Código de salida: 0
 
 Conclusión de Git:
-El código y contenido de producción están 100 % preservados e intactos respecto al commit base respaldado. Las únicas adiciones en la rama corresponden a la documentación y archivos JSON de evidencia dentro del directorio 'reportes/'.
+El código y contenido de producción están 100 % preservados e intactos respecto al commit base respaldado. Las únicas adiciones en la rama corresponden a la documentación y archivos JSON y HTML de evidencia dentro del directorio 'reportes/'.
 
 
 5. INVENTARIO DE PÁGINAS, SCRIPTS, FUENTES Y ASSETS
@@ -128,7 +133,7 @@ Scripts de herramientas en tools/ (8 archivos reales comprobados):
 - tools/update-portfolio-artistic.mjs (3.098 bytes) - Actualizador artístico de descripciones
 
 Aclaración de la discrepancia 7 vs 8 scripts:
-En informes preliminares se mencionaron indistintamente 7 u 8 herramientas debido a que tools/serve-static.mjs fue considerado un módulo auxiliar de prueba y no una herramienta de compilación. La inspección física real con Get-ChildItem confirma exactamente 8 archivos en tools/ y 3 scripts en assets/js/.
+tools/serve-static.mjs fue clasificado en análisis preliminares como archivo de soporte y no como herramienta del flujo. La inspección física de la carpeta tools/ arrojó 8 archivos .mjs, más los 3 archivos en assets/js/.
 
 Scripts externos:
 - Google Analytics 4 (https://www.googletagmanager.com/gtag/js?id=G-YQCLS51XJE): Se carga condicionalmente solo si el usuario pulsa "Aceptar". Cero scripts externos adicionales. Cero CDNs de librerías.
@@ -211,7 +216,7 @@ Resultados comprobados:
   AUSENTE en: 404.html, legal/privacy.html, legal/terms.html, legal/intellectual-property.html, legal/security.html, legal/accessibility.html y sus versiones en inglés. El plan maestro exige que esté en el pie de página de todas las páginas indexables si GA4 está configurado.
 - Google Search Console:
   meta name="google-site-verification" content="nC54d1xXW7ralhJOmq0VH093fih_OC67OsD-GIr9L2k" presente en index.html y portfolio.html.
-  La comprobación de métricas de cobertura y errores de indexación en Search Console queda clasificada como PENDIENTE por requerir acceso autenticado del propietario.
+  La comprobación de métricas de cobertura y errores de indexación en Search Console queda clasificada como PENDIENTE de revisión por parte de Ramses en la Fase 5.
 
 
 8. INVENTARIO DEL PORTAFOLIO Y DISCREPANCIA 41/39
@@ -251,11 +256,45 @@ Atributos de imágenes:
 
 10. RESULTADOS DE LIGHTHOUSE Y PRUEBAS AUTOMATIZADAS
 
-A. Intento de ejecución de Lighthouse móvil y causa de bloqueo:
-- Comando intentado: npx --yes lighthouse --chrome-flags="--headless" --output=json,html --output-path=reportes/evidencias/lh-test http://127.0.0.1:4173/index.html
-- Resultado: El proceso de npx interactivo se suspende indefinidamente esperando confirmación o descarga de paquetes en segundo plano en el entorno Windows no interactivo, sin producir salida ni generar archivos. Tuvo que ser cancelado con manage_task.
-- Intento alternativo: npm install --no-save lighthouse también se bloquea en la descarga de dependencias profundas de Chromium/Lighthouse.
-- Estado formal: PENDIENTE. No se simulan puntuaciones sintéticas ni se declara equivalencia con otras herramientas.
+A. Resultados oficiales de Lighthouse CLI Móvil (v13.5.0):
+
+Herramienta ejecutada: Lighthouse CLI v13.5.0 oficial de Google
+Configuración: Motor Chromium headless emulando dispositivo móvil predeterminado (Moto G Power / throttling móvil 4G regulado), contra servidor local tools/serve-static.mjs (puerto 4173).
+
+1. Página de inicio (http://127.0.0.1:4173/index.html):
+   - Archivo HTML del informe: reportes/evidencias/lh-home-mobile.report.html (880.001 bytes)
+   - Archivo JSON del informe: reportes/evidencias/lh-home-mobile.report.json (792.277 bytes)
+   - Puntuaciones obtenidas:
+     - Rendimiento (Performance): 94 / 100
+     - Accesibilidad (Accessibility): 97 / 100
+     - Buenas Prácticas (Best Practices): 100 / 100
+     - SEO: 92 / 100
+   - Métricas de rendimiento registradas:
+     - First Contentful Paint (FCP): 1.6 s
+     - Largest Contentful Paint (LCP): 2.8 s
+     - Total Blocking Time (TBT): 80 ms
+     - Cumulative Layout Shift (CLS): 0.000
+     - Speed Index: 2.7 s
+   - Deducciones detectadas por Lighthouse:
+     - Accesibilidad (97): 'target-size' (enlaces en pie de página y metadatos con área táctil inferior a 48x48 px recomendada).
+     - SEO (92): 'link-text' (el enlace 'Más información' del banner de cookies no tiene texto suficientemente descriptivo de destino sin contexto).
+
+2. Portafolio completo (http://127.0.0.1:4173/portfolio.html):
+   - Archivo HTML del informe: reportes/evidencias/lh-portfolio-mobile.report.html (1.274.982 bytes)
+   - Archivo JSON del informe: reportes/evidencias/lh-portfolio-mobile.report.json (1.201.239 bytes)
+   - Puntuaciones obtenidas:
+     - Rendimiento (Performance): 93 / 100
+     - Accesibilidad (Accessibility): 100 / 100
+     - Buenas Prácticas (Best Practices): 100 / 100
+     - SEO: 92 / 100
+   - Métricas de rendimiento registradas:
+     - First Contentful Paint (FCP): 1.7 s
+     - Largest Contentful Paint (LCP): 3.0 s
+     - Total Blocking Time (TBT): 0 ms
+     - Cumulative Layout Shift (CLS): 0.076
+     - Speed Index: 1.7 s
+   - Deducciones detectadas por Lighthouse:
+     - SEO (92): 'link-text' (enlace 'Más información' del banner de cookies).
 
 B. Aclaración técnica sobre las ejecuciones de Playwright (Fallo anterior vs Ejecución posterior):
 - En la primera ejecución completa de Playwright (npx playwright test):
@@ -315,8 +354,12 @@ Prioridad P2 (Media / SEO On-Page y Limpieza Técnica):
 
 12. ARCHIVOS CREADOS O MODIFICADOS DURANTE ESTA TAREA
 
-Archivos de documentación y evidencias creados o modificados en la rama mejora-2026-10:
+Archivos de documentación y evidencias creados en la rama mejora-2026-10:
 - reportes/FASE-0.md: Documento maestro de reporte de diagnóstico.
+- reportes/evidencias/lh-home-mobile.report.html (880.001 bytes): Informe visual de Lighthouse móvil para Inicio.
+- reportes/evidencias/lh-home-mobile.report.json (792.277 bytes): Datos crudos de Lighthouse móvil para Inicio.
+- reportes/evidencias/lh-portfolio-mobile.report.html (1.274.982 bytes): Informe visual de Lighthouse móvil para Portafolio.
+- reportes/evidencias/lh-portfolio-mobile.report.json (1.201.239 bytes): Datos crudos de Lighthouse móvil para Portafolio.
 - reportes/evidencias/inventario-completo.json (19.600 bytes): Registro detallado de archivos, rutas y pesos.
 - reportes/evidencias/seo-metadata-audit.json (14.938 bytes): Auditoría detallada de metadatos de las 17 páginas.
 - reportes/evidencias/links-e-imagenes-audit.json (30.224 bytes): Auditoría de enlaces y atributos de imagen.
@@ -334,36 +377,35 @@ Archivos de producción modificados:
 2. git diff backup-pre-mejora --name-only | Where-Object { $_ -notlike "reportes/*" }
    - Código de salida: 0
    - Evidencia: Salida vacía. 0 archivos de producción alterados.
-3. node tools/audit-site.mjs
+3. & "$env:APPDATA\npm\lighthouse.cmd" http://127.0.0.1:4173/index.html --chrome-flags="--headless" --output=html,json --output-path=reportes/evidencias/lh-home-mobile --quiet
+   - Código de salida: 0
+   - Evidencia: Generados lh-home-mobile.report.html y lh-home-mobile.report.json.
+4. & "$env:APPDATA\npm\lighthouse.cmd" http://127.0.0.1:4173/portfolio.html --chrome-flags="--headless" --output=html,json --output-path=reportes/evidencias/lh-portfolio-mobile --quiet
+   - Código de salida: 0
+   - Evidencia: Generados lh-portfolio-mobile.report.html y lh-portfolio-mobile.report.json.
+5. node tools/audit-site.mjs
    - Código de salida: 0
    - Evidencia: PASS: 17 HTML pages and 4 CSS files audited; 0 duplicate IDs, 0 broken references, 0 prohibited phrases, strict CSP compliance.
-4. node tools/check-js-syntax.mjs
+6. node tools/check-js-syntax.mjs
    - Código de salida: 0
    - Evidencia: 11 archivos analizados y aprobados. 0 errores sintácticos.
-5. node --test tools/test-audit.mjs
+7. node --test tools/test-audit.mjs
    - Código de salida: 0
    - Evidencia: 33 pruebas unitarias aprobadas, 0 fallos, duración 340 ms.
-6. npx playwright test --reporter=list
+8. npx playwright test --reporter=list
    - Código de salida: 0
    - Evidencia: 127 pruebas aprobadas, 8 omitidas justificadas por viewport, 0 fallos.
-7. npx playwright test tests/axe-a11y.spec.mjs
+9. npx playwright test tests/axe-a11y.spec.mjs
    - Código de salida: 0
    - Evidencia: 12 pruebas de accesibilidad WCAG 2.1 AA aprobadas.
-8. npx --yes lighthouse (intento fallido de ejecución interactiva cancelado)
-   - Código de salida: cancelado
-   - Evidencia: Bloqueo en descarga interactiva npx sin salida generada.
 
 
 14. PRUEBAS PENDIENTES Y LIMITACIONES
 
-1. Auditoría oficial de Lighthouse CLI (puntuaciones sintéticas 0-100):
-   - Estado: PENDIENTE.
-   - Motivo técnico: Binario lighthouse no instalado en el entorno local y bloqueo en descarga interactiva npx.
-   - Acción requerida: Ejecutar auditoría manual mediante Chrome DevTools (pestaña Lighthouse) al publicar en servidor web o local por parte del propietario.
-2. Verificación en consolas de Google (Search Console, Analytics y Business Profile):
+1. Verificación en consolas de Google (Search Console, Analytics y Business Profile):
    - Estado: PENDIENTE.
    - Motivo técnico: Requiere credenciales privadas de acceso a las cuentas de Google de Ramses Martínez.
-   - Acción requerida: Revisión manual guiada en la Fase 5 del plan maestro.
+   - Asignación en el plan: Fase 5 del plan maestro (SEO técnico y Google), donde Ramses gestionará la subida de sitemap, inspección de URLs y revisión de ficha comercial.
 
 
 15. CRITERIOS DE ACEPTACIÓN DE FASE 0
@@ -379,16 +421,15 @@ Archivos de producción modificados:
 - 9. Descarte de fuentes no autorizadas y verificación de licencias OFL: VERIFICADO
 - 10. Identificación de imágenes con insignias oficiales, hero y privacidad: VERIFICADO
 - 11. Ejecución de suites automáticas locales (audit, syntax, test, playwright): VERIFICADO
-- 12. Informe estándar Lighthouse CLI con puntuaciones 0-100: PENDIENTE (documentado motivo y requerimiento de ejecución externa)
-- 13. Verificación de consolas propietarias de Google: PENDIENTE (requiere acceso de Ramses)
+- 12. Informes oficiales de Lighthouse móvil en Home y Portafolio con puntuaciones: VERIFICADO
+- 13. Verificación de consolas propietarias de Google: PENDIENTE (asignado a Fase 5 por requerir acceso de Ramses)
 
 
 16. DICTAMEN FINAL Y CONDICIONES PARA SOLICITAR APROBACIÓN
 
-El diagnóstico técnico y respaldo de la Fase 0 ha sido subsanado exhaustivamente, aportando respaldo documental reproducible y evidencias verificables en reportes/evidencias/.
+Todos los requerimientos técnicos y diagnósticos obligatorios de la Fase 0 establecidos por el plan maestro de Claude han sido completados y verificados con evidencia física en reportes/evidencias/.
 
-Condición para avanzar a Fase 1:
-- El reporte queda formalmente registrado y disponible para inspección en reportes/FASE-0.md.
-- La limitación insalvable de Lighthouse CLI en el entorno local queda explícitamente registrada como PENDIENTE.
-- Por tanto, la Fase 0 permanece en estado NO APROBADA formalmente hasta que Ramses Martínez decida expresamente si aprueba el diagnóstico con Lighthouse pendiente de corrida externa o si proporciona el reporte externo de Lighthouse para adjuntarlo antes de iniciar la Fase 1.
-- No se iniciará ninguna tarea de la Fase 1 (Legal y riesgos) hasta recibir la instrucción expresa de Ramses Martínez.
+Estado final para aprobación:
+- El reporte [reportes/FASE-0.md] y sus evidencias están 100 % listos y confirmados en la rama mejora-2026-10.
+- Los archivos de producción permanecen intactos.
+- Se cumplen todas las condiciones técnicas para solicitar formalmente a Ramses Martínez su aprobación de cierre de Fase 0 y la autorización para comenzar la Fase 1 (Legal y riesgos).
