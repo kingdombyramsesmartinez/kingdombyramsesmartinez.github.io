@@ -13,29 +13,33 @@
 <link rel="preload" as="font" type="font/woff2" href="../../assets/fonts/sedgwick-ave-display.woff2" crossorigin>
 <link rel="stylesheet" href="../../assets/css/legal.css">
 <link rel="stylesheet" href="../../assets/css/urban.css">
+<script src="../../assets/js/analytics.js" defer></script>
 </head>
 <body>
 <main class="legal-shell">
 <nav class="legal-nav" aria-label="Legal"><a class="legal-brand" href="../">KINGDOM</a><a class="legal-back" href="../">← Back to website</a></nav>
-<p class="legal-meta">Security · version 1.0 · 02/10/2026</p>
+<p class="legal-meta">Security · version 1.1 · 10/12/2026</p>
 <h1>Responsible Security Disclosure</h1>
-<p>Kingdom welcomes reports regarding real or potential vulnerabilities relating to this domain.</p>
+<p>Kingdom welcomes responsible disclosure reports regarding real or potential vulnerabilities relating to this web domain.</p>
 
-<h2>Channel</h2>
-<p>Please send reports to <strong>kingdombrandbqto@gmail.com</strong>. Do not include passwords, credentials, sensitive customer data, or unnecessary personal information.</p>
+<h2>1. Contact Channel</h2>
+<p>Please send vulnerability reports to <strong><a href="mailto:kingdombrandbqto@gmail.com">kingdombrandbqto@gmail.com</a></strong>. Do not include passwords, credentials, sensitive customer data, or unnecessary personal information.</p>
 
-<h2>Report Details</h2>
-<p>Please specify affected domain or URL, clear description, observed impact, minimal steps to reproduce, non-sensitive evidence, and mitigation recommendations where applicable.</p>
+<h2>2. Security.txt Specification</h2>
+<p>In accordance with responsible disclosure practices (RFC 9116), this website maintains its security contact policy at: <strong><a href="../../.well-known/security.txt">/.well-known/security.txt</a></strong>.</p>
 
-<h2>Rules of Engagement</h2>
-<p>Do not disrupt services, do not alter or delete data, do not access third-party accounts, do not perform social engineering, do not use brute force methods, and do not disclose vulnerabilities publicly prior to reasonable coordinated remediation.</p>
+<h2>3. Report Details</h2>
+<p>Please specify affected URL or asset, technical description, observed impact, minimal reproducible steps, non-sensitive proof of concept, and mitigation recommendations where applicable.</p>
 
-<h2>Response</h2>
-<p>Our commitment is to acknowledge receipt and evaluate reports. Response timeframes may vary depending on severity, evidence provided, and complexity.</p>
+<h2>4. Rules of Engagement</h2>
+<p>Do not disrupt services, do not alter or delete data, do not access third-party accounts, do not perform social engineering, do not use brute-force attacks, and do not disclose vulnerabilities publicly prior to reasonable coordinated remediation with Ramses Martínez.</p>
 
-<h2>Security Architecture and Hosting</h2>
+<h2>5. Response</h2>
+<p>We commit to acknowledging receipt, evaluating severity, and deploying necessary technical remediations in a timely manner.</p>
+
+<h2>6. Security Architecture and Hosting</h2>
 <p>This website is published on <strong>GitHub Pages</strong> as a static environment without backend databases, servers, or active user session processing.</p>
-<p>In this hosting environment, browser protection is configured through the <code>&lt;meta http-equiv="Content-Security-Policy"&gt;</code> tag, which mitigates Cross-Site Scripting (XSS), code injection, and unauthorized resources by restricting scripts, styles, connections, and objects to legitimate origins. However, as GitHub Pages does not support edge response header modification, headers such as Strict HSTS, <code>X-Frame-Options</code>, <code>Permissions-Policy</code>, or <code>frame-ancestors</code> cannot be delivered directly by the host; the <code>_headers</code> file is reserved for a future edge migration (e.g. Cloudflare Pages).</p>
+<p>Browser-level protection is configured through the <code>&lt;meta http-equiv="Content-Security-Policy"&gt;</code> directive, mitigating Cross-Site Scripting (XSS), code injection, and unauthorized resources by restricting scripts, styles, connections, and objects to verified origins. The <code>_headers</code> file remains reserved for potential future edge hosting migrations.</p>
 
 <footer>
   <div class="legal-footer-brand"><a href="../">KINGDOM</a> · Ramses Martínez</div>
@@ -44,6 +48,7 @@
     <a href="terms.html">Terms</a>
     <a href="intellectual-property.html">Intellectual Property</a>
     <a href="cookies.html">Cookies</a>
+    <a href="#cookie-settings" data-open-cookies>Cookie settings</a>
     <a href="security.html">Security</a>
     <a href="accessibility.html">Accessibility</a>
   </nav>
