@@ -1,0 +1,468 @@
+[
+  {
+    "page": "index.html",
+    "lang": "es",
+    "title": "Kingdom | Diseño Textil y Bordado Industrial en Barquisimeto",
+    "titleLen": 60,
+    "description": "Estudio de diseño textil en Barquisimeto: matrices de bordado DST/PES, sublimación deportiva y streetwear bajo pedido. Cotiza por WhatsApp.",
+    "descriptionLen": 139,
+    "canonical": "https://kingdombyramsesmartinez.github.io/",
+    "robots": null,
+    "hreflangs": [
+      {
+        "lang": "es",
+        "href": "https://kingdombyramsesmartinez.github.io/"
+      },
+      {
+        "lang": "en",
+        "href": "https://kingdombyramsesmartinez.github.io/en/"
+      },
+      {
+        "lang": "x-default",
+        "href": "https://kingdombyramsesmartinez.github.io/"
+      }
+    ],
+    "openGraph": {
+      "ogTitle": "Kingdom | Diseño Textil y Bordado Industrial en Barquisimeto",
+      "ogDesc": "Estudio de diseño textil en Barquisimeto: matrices de bordado DST/PES, sublimación deportiva y streetwear bajo pedido.",
+      "ogImg": "https://kingdombyramsesmartinez.github.io/assets/brand/og-image.png"
+    },
+    "jsonLdCount": 0,
+    "jsonLdScripts": []
+  },
+  {
+    "page": "portfolio.html",
+    "lang": "es",
+    "title": "Portafolio de Diseño Textil | KINGDOM — Kingdom by Ramses Martínez",
+    "titleLen": 66,
+    "description": "Galería completa de presentaciones de diseño, indumentaria personalizada y digitalización de matrices textiles desarrolladas por KINGDOM (Kingdom by Ramses Martínez).",
+    "descriptionLen": 166,
+    "canonical": "https://kingdombyramsesmartinez.github.io/portfolio.html",
+    "robots": null,
+    "hreflangs": [
+      {
+        "lang": "es",
+        "href": "https://kingdombyramsesmartinez.github.io/portfolio.html"
+      },
+      {
+        "lang": "en",
+        "href": "https://kingdombyramsesmartinez.github.io/en/portfolio.html"
+      },
+      {
+        "lang": "x-default",
+        "href": "https://kingdombyramsesmartinez.github.io/portfolio.html"
+      }
+    ],
+    "openGraph": {
+      "ogTitle": "Portafolio de Diseño Textil | KINGDOM — Kingdom by Ramses Martínez",
+      "ogDesc": "Galería completa de presentaciones de diseño, indumentaria personalizada y digitalización de matrices textiles desarrolladas por KINGDOM (Kingdom by Ramses Martínez).",
+      "ogImg": "https://kingdombyramsesmartinez.github.io/assets/brand/og-image.png"
+    },
+    "jsonLdCount": 0,
+    "jsonLdScripts": []
+  },
+  {
+    "page": "404.html",
+    "lang": "es",
+    "title": "404 — Pieza No Encontrada | Kingdom",
+    "titleLen": 35,
+    "description": "La página o catálogo que buscas no existe o fue movida en Kingdom.",
+    "descriptionLen": 66,
+    "canonical": null,
+    "robots": "noindex,follow",
+    "hreflangs": [],
+    "openGraph": {
+      "ogTitle": null,
+      "ogDesc": null,
+      "ogImg": null
+    },
+    "jsonLdCount": 0,
+    "jsonLdScripts": []
+  },
+  {
+    "page": "en/index.html",
+    "lang": "en",
+    "title": "Kingdom | Textile Design & Industrial Embroidery in Barquisimeto",
+    "titleLen": 64,
+    "description": "Textile design studio in Barquisimeto: DST/PES embroidery files, sports sublimation and custom streetwear. Request a quote via WhatsApp.",
+    "descriptionLen": 136,
+    "canonical": "https://kingdombyramsesmartinez.github.io/en/",
+    "robots": null,
+    "hreflangs": [
+      {
+        "lang": "es",
+        "href": "https://kingdombyramsesmartinez.github.io/"
+      },
+      {
+        "lang": "en",
+        "href": "https://kingdombyramsesmartinez.github.io/en/"
+      },
+      {
+        "lang": "x-default",
+        "href": "https://kingdombyramsesmartinez.github.io/"
+      }
+    ],
+    "openGraph": {
+      "ogTitle": "Kingdom | Textile Design & Industrial Embroidery in Barquisimeto",
+      "ogDesc": "Textile design studio in Barquisimeto: DST/PES embroidery files, sports sublimation and custom streetwear.",
+      "ogImg": "https://kingdombyramsesmartinez.github.io/assets/brand/og-image.png"
+    },
+    "jsonLdCount": 0,
+    "jsonLdScripts": []
+  },
+  {
+    "page": "en/portfolio.html",
+    "lang": "en",
+    "title": "Textile Design Portfolio | KINGDOM — Kingdom by Ramses Martínez",
+    "titleLen": 63,
+    "description": "Full showcase of design presentations, custom athletic apparel, and textile artwork engineered by KINGDOM (Kingdom by Ramses Martínez).",
+    "descriptionLen": 135,
+    "canonical": "https://kingdombyramsesmartinez.github.io/en/portfolio.html",
+    "robots": null,
+    "hreflangs": [
+      {
+        "lang": "es",
+        "href": "https://kingdombyramsesmartinez.github.io/portfolio.html"
+      },
+      {
+        "lang": "en",
+        "href": "https://kingdombyramsesmartinez.github.io/en/portfolio.html"
+      },
+      {
+        "lang": "x-default",
+        "href": "https://kingdombyramsesmartinez.github.io/portfolio.html"
+      }
+    ],
+    "openGraph": {
+      "ogTitle": "Textile Design Portfolio | KINGDOM — Kingdom by Ramses Martínez",
+      "ogDesc": "Full showcase of design presentations, custom athletic apparel, and textile artwork engineered by KINGDOM (Kingdom by Ramses Martínez).",
+      "ogImg": "https://kingdombyramsesmartinez.github.io/assets/brand/og-image.png"
+    },
+    "jsonLdCount": 0,
+    "jsonLdScripts": []
+  },
+  {
+    "page": "legal/privacy.html",
+    "lang": "es",
+    "title": "Política de Privacidad | KINGDOM",
+    "titleLen": 32,
+    "description": "Cómo se gestiona la información que una persona decide proporcionar a Kingdom a través del sitio y sus canales externos.",
+    "descriptionLen": 120,
+    "canonical": "https://kingdombyramsesmartinez.github.io/legal/privacy.html",
+    "robots": null,
+    "hreflangs": [
+      {
+        "lang": "es",
+        "href": "https://kingdombyramsesmartinez.github.io/legal/privacy.html"
+      },
+      {
+        "lang": "en",
+        "href": "https://kingdombyramsesmartinez.github.io/en/legal/privacy.html"
+      }
+    ],
+    "openGraph": {
+      "ogTitle": null,
+      "ogDesc": null,
+      "ogImg": null
+    },
+    "jsonLdCount": 0,
+    "jsonLdScripts": []
+  },
+  {
+    "page": "legal/terms.html",
+    "lang": "es",
+    "title": "Términos de Uso | KINGDOM",
+    "titleLen": 25,
+    "description": "Términos generales para el uso informativo del sitio Kingdom y para entender cómo se formalizan cotizaciones y proyectos.",
+    "descriptionLen": 121,
+    "canonical": "https://kingdombyramsesmartinez.github.io/legal/terms.html",
+    "robots": null,
+    "hreflangs": [
+      {
+        "lang": "es",
+        "href": "https://kingdombyramsesmartinez.github.io/legal/terms.html"
+      },
+      {
+        "lang": "en",
+        "href": "https://kingdombyramsesmartinez.github.io/en/legal/terms.html"
+      }
+    ],
+    "openGraph": {
+      "ogTitle": null,
+      "ogDesc": null,
+      "ogImg": null
+    },
+    "jsonLdCount": 0,
+    "jsonLdScripts": []
+  },
+  {
+    "page": "legal/intellectual-property.html",
+    "lang": "es",
+    "title": "Propiedad Intelectual y Portafolio | KINGDOM",
+    "titleLen": 44,
+    "description": "Aviso sobre propiedad intelectual, portafolio, material de clientes y contenido de terceros en Kingdom.",
+    "descriptionLen": 103,
+    "canonical": "https://kingdombyramsesmartinez.github.io/legal/intellectual-property.html",
+    "robots": null,
+    "hreflangs": [
+      {
+        "lang": "es",
+        "href": "https://kingdombyramsesmartinez.github.io/legal/intellectual-property.html"
+      },
+      {
+        "lang": "en",
+        "href": "https://kingdombyramsesmartinez.github.io/en/legal/intellectual-property.html"
+      }
+    ],
+    "openGraph": {
+      "ogTitle": null,
+      "ogDesc": null,
+      "ogImg": null
+    },
+    "jsonLdCount": 0,
+    "jsonLdScripts": []
+  },
+  {
+    "page": "legal/cookies.html",
+    "lang": "es",
+    "title": "Cookies y Tecnologías Similares | KINGDOM",
+    "titleLen": 41,
+    "description": "Información sobre cookies y tecnologías similares utilizadas por la versión actual del sitio Kingdom.",
+    "descriptionLen": 101,
+    "canonical": "https://kingdombyramsesmartinez.github.io/legal/cookies.html",
+    "robots": null,
+    "hreflangs": [
+      {
+        "lang": "es",
+        "href": "https://kingdombyramsesmartinez.github.io/legal/cookies.html"
+      },
+      {
+        "lang": "en",
+        "href": "https://kingdombyramsesmartinez.github.io/en/legal/cookies.html"
+      }
+    ],
+    "openGraph": {
+      "ogTitle": null,
+      "ogDesc": null,
+      "ogImg": null
+    },
+    "jsonLdCount": 0,
+    "jsonLdScripts": []
+  },
+  {
+    "page": "legal/security.html",
+    "lang": "es",
+    "title": "Seguridad y Reporte de Vulnerabilidades | KINGDOM",
+    "titleLen": 49,
+    "description": "Canal y reglas para reportar vulnerabilidades de seguridad relacionadas con el sitio Kingdom.",
+    "descriptionLen": 93,
+    "canonical": "https://kingdombyramsesmartinez.github.io/legal/security.html",
+    "robots": null,
+    "hreflangs": [
+      {
+        "lang": "es",
+        "href": "https://kingdombyramsesmartinez.github.io/legal/security.html"
+      },
+      {
+        "lang": "en",
+        "href": "https://kingdombyramsesmartinez.github.io/en/legal/security.html"
+      }
+    ],
+    "openGraph": {
+      "ogTitle": null,
+      "ogDesc": null,
+      "ogImg": null
+    },
+    "jsonLdCount": 0,
+    "jsonLdScripts": []
+  },
+  {
+    "page": "legal/accessibility.html",
+    "lang": "es",
+    "title": "Accesibilidad | KINGDOM",
+    "titleLen": 23,
+    "description": "Información de accesibilidad y canal para comunicar barreras de acceso en el sitio Kingdom.",
+    "descriptionLen": 91,
+    "canonical": "https://kingdombyramsesmartinez.github.io/legal/accessibility.html",
+    "robots": null,
+    "hreflangs": [
+      {
+        "lang": "es",
+        "href": "https://kingdombyramsesmartinez.github.io/legal/accessibility.html"
+      },
+      {
+        "lang": "en",
+        "href": "https://kingdombyramsesmartinez.github.io/en/legal/accessibility.html"
+      }
+    ],
+    "openGraph": {
+      "ogTitle": null,
+      "ogDesc": null,
+      "ogImg": null
+    },
+    "jsonLdCount": 0,
+    "jsonLdScripts": []
+  },
+  {
+    "page": "en/legal/privacy.html",
+    "lang": "en",
+    "title": "Privacy Policy | KINGDOM",
+    "titleLen": 24,
+    "description": "How information that a user chooses to provide to Kingdom through this website and external channels is managed.",
+    "descriptionLen": 112,
+    "canonical": "https://kingdombyramsesmartinez.github.io/en/legal/privacy.html",
+    "robots": null,
+    "hreflangs": [
+      {
+        "lang": "es",
+        "href": "https://kingdombyramsesmartinez.github.io/legal/privacy.html"
+      },
+      {
+        "lang": "en",
+        "href": "https://kingdombyramsesmartinez.github.io/en/legal/privacy.html"
+      }
+    ],
+    "openGraph": {
+      "ogTitle": null,
+      "ogDesc": null,
+      "ogImg": null
+    },
+    "jsonLdCount": 0,
+    "jsonLdScripts": []
+  },
+  {
+    "page": "en/legal/terms.html",
+    "lang": "en",
+    "title": "Terms of Use | KINGDOM",
+    "titleLen": 22,
+    "description": "General terms for the informative use of the Kingdom website and understanding how quotes and projects are formalized.",
+    "descriptionLen": 118,
+    "canonical": "https://kingdombyramsesmartinez.github.io/en/legal/terms.html",
+    "robots": null,
+    "hreflangs": [
+      {
+        "lang": "es",
+        "href": "https://kingdombyramsesmartinez.github.io/legal/terms.html"
+      },
+      {
+        "lang": "en",
+        "href": "https://kingdombyramsesmartinez.github.io/en/legal/terms.html"
+      }
+    ],
+    "openGraph": {
+      "ogTitle": null,
+      "ogDesc": null,
+      "ogImg": null
+    },
+    "jsonLdCount": 0,
+    "jsonLdScripts": []
+  },
+  {
+    "page": "en/legal/intellectual-property.html",
+    "lang": "en",
+    "title": "Intellectual Property & Portfolio | KINGDOM",
+    "titleLen": 43,
+    "description": "Notice regarding intellectual property, portfolio presentations, client materials, and third-party content at Kingdom.",
+    "descriptionLen": 118,
+    "canonical": "https://kingdombyramsesmartinez.github.io/en/legal/intellectual-property.html",
+    "robots": null,
+    "hreflangs": [
+      {
+        "lang": "es",
+        "href": "https://kingdombyramsesmartinez.github.io/legal/intellectual-property.html"
+      },
+      {
+        "lang": "en",
+        "href": "https://kingdombyramsesmartinez.github.io/en/legal/intellectual-property.html"
+      }
+    ],
+    "openGraph": {
+      "ogTitle": null,
+      "ogDesc": null,
+      "ogImg": null
+    },
+    "jsonLdCount": 0,
+    "jsonLdScripts": []
+  },
+  {
+    "page": "en/legal/cookies.html",
+    "lang": "en",
+    "title": "Cookies & Similar Technologies | KINGDOM",
+    "titleLen": 40,
+    "description": "Information regarding cookies and similar technologies used by the current version of the Kingdom website.",
+    "descriptionLen": 106,
+    "canonical": "https://kingdombyramsesmartinez.github.io/en/legal/cookies.html",
+    "robots": null,
+    "hreflangs": [
+      {
+        "lang": "es",
+        "href": "https://kingdombyramsesmartinez.github.io/legal/cookies.html"
+      },
+      {
+        "lang": "en",
+        "href": "https://kingdombyramsesmartinez.github.io/en/legal/cookies.html"
+      }
+    ],
+    "openGraph": {
+      "ogTitle": null,
+      "ogDesc": null,
+      "ogImg": null
+    },
+    "jsonLdCount": 0,
+    "jsonLdScripts": []
+  },
+  {
+    "page": "en/legal/security.html",
+    "lang": "en",
+    "title": "Security & Vulnerability Reporting | KINGDOM",
+    "titleLen": 44,
+    "description": "Channel and coordinated rules for reporting security vulnerabilities related to the Kingdom website.",
+    "descriptionLen": 100,
+    "canonical": "https://kingdombyramsesmartinez.github.io/en/legal/security.html",
+    "robots": null,
+    "hreflangs": [
+      {
+        "lang": "es",
+        "href": "https://kingdombyramsesmartinez.github.io/legal/security.html"
+      },
+      {
+        "lang": "en",
+        "href": "https://kingdombyramsesmartinez.github.io/en/legal/security.html"
+      }
+    ],
+    "openGraph": {
+      "ogTitle": null,
+      "ogDesc": null,
+      "ogImg": null
+    },
+    "jsonLdCount": 0,
+    "jsonLdScripts": []
+  },
+  {
+    "page": "en/legal/accessibility.html",
+    "lang": "en",
+    "title": "Accessibility | KINGDOM",
+    "titleLen": 23,
+    "description": "Accessibility commitment and contact channel for reporting access barriers on the Kingdom website.",
+    "descriptionLen": 98,
+    "canonical": "https://kingdombyramsesmartinez.github.io/en/legal/accessibility.html",
+    "robots": null,
+    "hreflangs": [
+      {
+        "lang": "es",
+        "href": "https://kingdombyramsesmartinez.github.io/legal/accessibility.html"
+      },
+      {
+        "lang": "en",
+        "href": "https://kingdombyramsesmartinez.github.io/en/legal/accessibility.html"
+      }
+    ],
+    "openGraph": {
+      "ogTitle": null,
+      "ogDesc": null,
+      "ogImg": null
+    },
+    "jsonLdCount": 0,
+    "jsonLdScripts": []
+  }
+]

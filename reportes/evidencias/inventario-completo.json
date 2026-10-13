@@ -1,0 +1,770 @@
+{
+  "htmlPages": [
+    {
+      "path": "index.html",
+      "sizeBytes": 26148
+    },
+    {
+      "path": "portfolio.html",
+      "sizeBytes": 111796
+    },
+    {
+      "path": "404.html",
+      "sizeBytes": 2372
+    },
+    {
+      "path": "en/index.html",
+      "sizeBytes": 25852
+    },
+    {
+      "path": "en/portfolio.html",
+      "sizeBytes": 110440
+    },
+    {
+      "path": "legal/privacy.html",
+      "sizeBytes": 6699
+    },
+    {
+      "path": "legal/terms.html",
+      "sizeBytes": 5946
+    },
+    {
+      "path": "legal/intellectual-property.html",
+      "sizeBytes": 7222
+    },
+    {
+      "path": "legal/cookies.html",
+      "sizeBytes": 4482
+    },
+    {
+      "path": "legal/security.html",
+      "sizeBytes": 4495
+    },
+    {
+      "path": "legal/accessibility.html",
+      "sizeBytes": 3235
+    },
+    {
+      "path": "en/legal/privacy.html",
+      "sizeBytes": 6451
+    },
+    {
+      "path": "en/legal/terms.html",
+      "sizeBytes": 5943
+    },
+    {
+      "path": "en/legal/intellectual-property.html",
+      "sizeBytes": 6655
+    },
+    {
+      "path": "en/legal/cookies.html",
+      "sizeBytes": 4219
+    },
+    {
+      "path": "en/legal/security.html",
+      "sizeBytes": 4349
+    },
+    {
+      "path": "en/legal/accessibility.html",
+      "sizeBytes": 3267
+    }
+  ],
+  "cssFiles": [
+    {
+      "path": "assets/css/style.css",
+      "sizeBytes": 30380
+    },
+    {
+      "path": "assets/css/urban.css",
+      "sizeBytes": 23004
+    },
+    {
+      "path": "assets/css/legal.css",
+      "sizeBytes": 3404
+    },
+    {
+      "path": "assets/css/404.css",
+      "sizeBytes": 3913
+    }
+  ],
+  "jsFiles": [
+    {
+      "path": "assets/js/analytics.js",
+      "sizeBytes": 7422
+    },
+    {
+      "path": "assets/js/app.js",
+      "sizeBytes": 24546
+    },
+    {
+      "path": "assets/js/site.config.js",
+      "sizeBytes": 1239
+    }
+  ],
+  "toolFiles": [
+    {
+      "path": "tools/audit-site.mjs",
+      "sizeBytes": 18282
+    },
+    {
+      "path": "tools/build-i18n.mjs",
+      "sizeBytes": 22309
+    },
+    {
+      "path": "tools/check-js-syntax.mjs",
+      "sizeBytes": 3672
+    },
+    {
+      "path": "tools/convert-wilcom.mjs",
+      "sizeBytes": 1254
+    },
+    {
+      "path": "tools/serve-static.mjs",
+      "sizeBytes": 2789
+    },
+    {
+      "path": "tools/sync-artwork.mjs",
+      "sizeBytes": 13732
+    },
+    {
+      "path": "tools/test-audit.mjs",
+      "sizeBytes": 35010
+    },
+    {
+      "path": "tools/update-portfolio-artistic.mjs",
+      "sizeBytes": 3098
+    }
+  ],
+  "fontFiles": [
+    {
+      "path": "assets/fonts/montserrat-cyrillic-ext-wght-italic.woff2",
+      "sizeBytes": 26944
+    },
+    {
+      "path": "assets/fonts/montserrat-cyrillic-ext-wght-normal.woff2",
+      "sizeBytes": 26368
+    },
+    {
+      "path": "assets/fonts/montserrat-cyrillic-wght-italic.woff2",
+      "sizeBytes": 24536
+    },
+    {
+      "path": "assets/fonts/montserrat-cyrillic-wght-normal.woff2",
+      "sizeBytes": 23828
+    },
+    {
+      "path": "assets/fonts/montserrat-latin-ext-wght-italic.woff2",
+      "sizeBytes": 74892
+    },
+    {
+      "path": "assets/fonts/montserrat-latin-ext-wght-normal.woff2",
+      "sizeBytes": 70688
+    },
+    {
+      "path": "assets/fonts/montserrat-latin-wght-italic.woff2",
+      "sizeBytes": 39632
+    },
+    {
+      "path": "assets/fonts/montserrat-latin-wght-normal.woff2",
+      "sizeBytes": 37956
+    },
+    {
+      "path": "assets/fonts/montserrat-vietnamese-wght-italic.woff2",
+      "sizeBytes": 13900
+    },
+    {
+      "path": "assets/fonts/montserrat-vietnamese-wght-normal.woff2",
+      "sizeBytes": 12928
+    },
+    {
+      "path": "assets/fonts/sedgwick-ave-display.ttf",
+      "sizeBytes": 135996
+    },
+    {
+      "path": "assets/fonts/sedgwick-ave-display.woff2",
+      "sizeBytes": 55220
+    },
+    {
+      "path": "assets/fonts/SEDGWICK-OFL.txt",
+      "sizeBytes": 4397
+    }
+  ],
+  "artworkFiles": [
+    {
+      "path": "assets/artwork/academia de cuatro-franela sublimada.webp",
+      "sizeBytes": 110672
+    },
+    {
+      "path": "assets/artwork/alcaldia de san felipe-chaqueta sublimada.webp",
+      "sizeBytes": 194242
+    },
+    {
+      "path": "assets/artwork/alcaldia de san felipe-franela manga corta sublimada.webp",
+      "sizeBytes": 113686
+    },
+    {
+      "path": "assets/artwork/Alexauto-camisa corporativa.webp",
+      "sizeBytes": 100542
+    },
+    {
+      "path": "assets/artwork/Amigos Fc-franela manga corta sublimada.webp",
+      "sizeBytes": 144146
+    },
+    {
+      "path": "assets/artwork/Avengers Doomsday- franela con dtf.webp",
+      "sizeBytes": 184590
+    },
+    {
+      "path": "assets/artwork/Bakugo MHA-franela con dtf 2.webp",
+      "sizeBytes": 101852
+    },
+    {
+      "path": "assets/artwork/Bakugo MHA-franela con dtf.webp",
+      "sizeBytes": 94390
+    },
+    {
+      "path": "assets/artwork/bordado.webp",
+      "sizeBytes": 71666
+    },
+    {
+      "path": "assets/artwork/bordado1.webp",
+      "sizeBytes": 106494
+    },
+    {
+      "path": "assets/artwork/bordado2.webp",
+      "sizeBytes": 92052
+    },
+    {
+      "path": "assets/artwork/bordado3.webp",
+      "sizeBytes": 43120
+    },
+    {
+      "path": "assets/artwork/bordado4.webp",
+      "sizeBytes": 52706
+    },
+    {
+      "path": "assets/artwork/bordado5.webp",
+      "sizeBytes": 69190
+    },
+    {
+      "path": "assets/artwork/Camaro Edition-franela con dtf negra.webp",
+      "sizeBytes": 117250
+    },
+    {
+      "path": "assets/artwork/Camaro Edition-franela con dtf.webp",
+      "sizeBytes": 112124
+    },
+    {
+      "path": "assets/artwork/Corvette Edition-franela con dtf.webp",
+      "sizeBytes": 114256
+    },
+    {
+      "path": "assets/artwork/CR7 Edition-franela manga corta sublimada.webp",
+      "sizeBytes": 127480
+    },
+    {
+      "path": "assets/artwork/DBS Edition-franela con dtf back.webp",
+      "sizeBytes": 123358
+    },
+    {
+      "path": "assets/artwork/DBS Edition-franela con dtf front and back.webp",
+      "sizeBytes": 109058
+    },
+    {
+      "path": "assets/artwork/Deku Edition-franela con dtf back.webp",
+      "sizeBytes": 122322
+    },
+    {
+      "path": "assets/artwork/Deku Edition-franela con dtf front and back.webp",
+      "sizeBytes": 107508
+    },
+    {
+      "path": "assets/artwork/Ferreconstrucciones- franela manga larga sublimada.webp",
+      "sizeBytes": 209940
+    },
+    {
+      "path": "assets/artwork/Fitness 24-7-chaqueta sublimada.webp",
+      "sizeBytes": 233286
+    },
+    {
+      "path": "assets/artwork/Fitness 24-7-franela manga corta sublimada.webp",
+      "sizeBytes": 159736
+    },
+    {
+      "path": "assets/artwork/Ford Ka Edition-franela con dtf.webp",
+      "sizeBytes": 114648
+    },
+    {
+      "path": "assets/artwork/Gerreras SC-franela manga corta sublimada.webp",
+      "sizeBytes": 149548
+    },
+    {
+      "path": "assets/artwork/Gigantes BC- camisa de beisbol sublimada .webp",
+      "sizeBytes": 160038
+    },
+    {
+      "path": "assets/artwork/IMPA-chaqueta bordadax.webp",
+      "sizeBytes": 211832
+    },
+    {
+      "path": "assets/artwork/Jswim Academi-chaqueta sublimada.webp",
+      "sizeBytes": 146096
+    },
+    {
+      "path": "assets/artwork/Jswim Academi-franela manga corta sublimada.webp",
+      "sizeBytes": 112470
+    },
+    {
+      "path": "assets/artwork/kingdom-tarjeta de presentacion.webp",
+      "sizeBytes": 46442
+    },
+    {
+      "path": "assets/artwork/Laneros Gamers-franela manga corta sublimada.webp",
+      "sizeBytes": 137858
+    },
+    {
+      "path": "assets/artwork/Maderera 2PI-chemise sublimada.webp",
+      "sizeBytes": 142458
+    },
+    {
+      "path": "assets/artwork/Messi Edition-franela manga corta sublimada.webp",
+      "sizeBytes": 127122
+    },
+    {
+      "path": "assets/artwork/Michelle collection-camisa corporativa blanca.webp",
+      "sizeBytes": 112848
+    },
+    {
+      "path": "assets/artwork/Michelle collection-camisa corporativa negra.webp",
+      "sizeBytes": 95712
+    },
+    {
+      "path": "assets/artwork/Naruto Edition-franela con dtf front and back.webp",
+      "sizeBytes": 89858
+    },
+    {
+      "path": "assets/artwork/Naruto Edition-franela con dtf.webp",
+      "sizeBytes": 95060
+    },
+    {
+      "path": "assets/artwork/Oasis Sport-franela con dtf blanca.webp",
+      "sizeBytes": 89888
+    },
+    {
+      "path": "assets/artwork/Oasis Sport-franela con dtf Negra.webp",
+      "sizeBytes": 91554
+    },
+    {
+      "path": "assets/artwork/Paramedicos Acosta ortiz-camisa corporativa blanca.webp",
+      "sizeBytes": 141098
+    },
+    {
+      "path": "assets/artwork/Paramedicos Acosta ortiz-camisa corporativa roja.webp",
+      "sizeBytes": 121876
+    },
+    {
+      "path": "assets/artwork/Personal Trainer-chaqueta sublimada.webp",
+      "sizeBytes": 206342
+    },
+    {
+      "path": "assets/artwork/Potenza-chaqueta sublimada.webp",
+      "sizeBytes": 233490
+    },
+    {
+      "path": "assets/artwork/Promocion Ups-franela con dtf.webp",
+      "sizeBytes": 106298
+    },
+    {
+      "path": "assets/artwork/Ramones Edition-franela con dtf front.webp",
+      "sizeBytes": 131674
+    },
+    {
+      "path": "assets/artwork/Ramones Edition-franela con dtf.webp",
+      "sizeBytes": 115770
+    },
+    {
+      "path": "assets/artwork/Repuestos Villegas-franela manga corta sublimada.webp",
+      "sizeBytes": 126318
+    },
+    {
+      "path": "assets/artwork/Santisima Trinidad-franela manga corta sublimada.webp",
+      "sizeBytes": 121132
+    },
+    {
+      "path": "assets/artwork/Spark Edition-franela con dtf.webp",
+      "sizeBytes": 110990
+    },
+    {
+      "path": "assets/artwork/Tahoe Edition-franela con dtf.webp",
+      "sizeBytes": 99458
+    },
+    {
+      "path": "assets/artwork/Tanjiro Edition-franela con dtf 2.webp",
+      "sizeBytes": 111070
+    },
+    {
+      "path": "assets/artwork/Tanjiro Edition-franela con dtf.webp",
+      "sizeBytes": 100674
+    },
+    {
+      "path": "assets/artwork/TSJ tricolor-chaqueta sublimada.webp",
+      "sizeBytes": 170222
+    },
+    {
+      "path": "assets/artwork/TSJ-chaqueta sublimada.webp",
+      "sizeBytes": 209578
+    },
+    {
+      "path": "assets/artwork/Venezolano Edition-franela manga larga sublimada.webp",
+      "sizeBytes": 123452
+    },
+    {
+      "path": "assets/artwork/Wrangler Edition-franela con dtf.webp",
+      "sizeBytes": 140196
+    },
+    {
+      "path": "assets/artwork/WWW.listaprecio.com-camisa corporativa.webp",
+      "sizeBytes": 202240
+    },
+    {
+      "path": "assets/artwork/Zoto-camisa corporativa blanca.webp",
+      "sizeBytes": 113814
+    },
+    {
+      "path": "assets/artwork/Zoto-camisa corporativa negra.webp",
+      "sizeBytes": 104816
+    }
+  ],
+  "thumbFiles": [
+    {
+      "path": "assets/artwork/thumbs/academia de cuatro-franela sublimada.webp",
+      "sizeBytes": 24112
+    },
+    {
+      "path": "assets/artwork/thumbs/alcaldia de san felipe-chaqueta sublimada.webp",
+      "sizeBytes": 29224
+    },
+    {
+      "path": "assets/artwork/thumbs/alcaldia de san felipe-franela manga corta sublimada.webp",
+      "sizeBytes": 27070
+    },
+    {
+      "path": "assets/artwork/thumbs/Alexauto-camisa corporativa.webp",
+      "sizeBytes": 22676
+    },
+    {
+      "path": "assets/artwork/thumbs/Amigos Fc-franela manga corta sublimada.webp",
+      "sizeBytes": 35898
+    },
+    {
+      "path": "assets/artwork/thumbs/Avengers Doomsday- franela con dtf.webp",
+      "sizeBytes": 36298
+    },
+    {
+      "path": "assets/artwork/thumbs/Bakugo MHA-franela con dtf 2.webp",
+      "sizeBytes": 25924
+    },
+    {
+      "path": "assets/artwork/thumbs/Bakugo MHA-franela con dtf.webp",
+      "sizeBytes": 23942
+    },
+    {
+      "path": "assets/artwork/thumbs/bordado.webp",
+      "sizeBytes": 64338
+    },
+    {
+      "path": "assets/artwork/thumbs/bordado1.webp",
+      "sizeBytes": 30610
+    },
+    {
+      "path": "assets/artwork/thumbs/bordado2.webp",
+      "sizeBytes": 29052
+    },
+    {
+      "path": "assets/artwork/thumbs/bordado3.webp",
+      "sizeBytes": 43376
+    },
+    {
+      "path": "assets/artwork/thumbs/bordado4.webp",
+      "sizeBytes": 22532
+    },
+    {
+      "path": "assets/artwork/thumbs/bordado5.webp",
+      "sizeBytes": 55328
+    },
+    {
+      "path": "assets/artwork/thumbs/Camaro Edition-franela con dtf negra.webp",
+      "sizeBytes": 25706
+    },
+    {
+      "path": "assets/artwork/thumbs/Camaro Edition-franela con dtf.webp",
+      "sizeBytes": 25104
+    },
+    {
+      "path": "assets/artwork/thumbs/Corvette Edition-franela con dtf.webp",
+      "sizeBytes": 25572
+    },
+    {
+      "path": "assets/artwork/thumbs/CR7 Edition-franela manga corta sublimada.webp",
+      "sizeBytes": 27536
+    },
+    {
+      "path": "assets/artwork/thumbs/DBS Edition-franela con dtf back.webp",
+      "sizeBytes": 29784
+    },
+    {
+      "path": "assets/artwork/thumbs/DBS Edition-franela con dtf front and back.webp",
+      "sizeBytes": 26112
+    },
+    {
+      "path": "assets/artwork/thumbs/Deku Edition-franela con dtf back.webp",
+      "sizeBytes": 30084
+    },
+    {
+      "path": "assets/artwork/thumbs/Deku Edition-franela con dtf front and back.webp",
+      "sizeBytes": 26490
+    },
+    {
+      "path": "assets/artwork/thumbs/Ferreconstrucciones- franela manga larga sublimada.webp",
+      "sizeBytes": 38226
+    },
+    {
+      "path": "assets/artwork/thumbs/Fitness 24-7-chaqueta sublimada.webp",
+      "sizeBytes": 37930
+    },
+    {
+      "path": "assets/artwork/thumbs/Fitness 24-7-franela manga corta sublimada.webp",
+      "sizeBytes": 37890
+    },
+    {
+      "path": "assets/artwork/thumbs/Ford Ka Edition-franela con dtf.webp",
+      "sizeBytes": 24512
+    },
+    {
+      "path": "assets/artwork/thumbs/Gerreras SC-franela manga corta sublimada.webp",
+      "sizeBytes": 32524
+    },
+    {
+      "path": "assets/artwork/thumbs/Gigantes BC- camisa de beisbol sublimada .webp",
+      "sizeBytes": 32654
+    },
+    {
+      "path": "assets/artwork/thumbs/IMPA-chaqueta bordadax.webp",
+      "sizeBytes": 20896
+    },
+    {
+      "path": "assets/artwork/thumbs/Jswim Academi-chaqueta sublimada.webp",
+      "sizeBytes": 26042
+    },
+    {
+      "path": "assets/artwork/thumbs/Jswim Academi-franela manga corta sublimada.webp",
+      "sizeBytes": 26596
+    },
+    {
+      "path": "assets/artwork/thumbs/kingdom-tarjeta de presentacion.webp",
+      "sizeBytes": 16582
+    },
+    {
+      "path": "assets/artwork/thumbs/Laneros Gamers-franela manga corta sublimada.webp",
+      "sizeBytes": 29544
+    },
+    {
+      "path": "assets/artwork/thumbs/Maderera 2PI-chemise sublimada.webp",
+      "sizeBytes": 28344
+    },
+    {
+      "path": "assets/artwork/thumbs/Messi Edition-franela manga corta sublimada.webp",
+      "sizeBytes": 29452
+    },
+    {
+      "path": "assets/artwork/thumbs/Michelle collection-camisa corporativa blanca.webp",
+      "sizeBytes": 27104
+    },
+    {
+      "path": "assets/artwork/thumbs/Michelle collection-camisa corporativa negra.webp",
+      "sizeBytes": 23710
+    },
+    {
+      "path": "assets/artwork/thumbs/Naruto Edition-franela con dtf front and back.webp",
+      "sizeBytes": 22824
+    },
+    {
+      "path": "assets/artwork/thumbs/Naruto Edition-franela con dtf.webp",
+      "sizeBytes": 24462
+    },
+    {
+      "path": "assets/artwork/thumbs/Oasis Sport-franela con dtf blanca.webp",
+      "sizeBytes": 22754
+    },
+    {
+      "path": "assets/artwork/thumbs/Oasis Sport-franela con dtf Negra.webp",
+      "sizeBytes": 22364
+    },
+    {
+      "path": "assets/artwork/thumbs/Paramedicos Acosta ortiz-camisa corporativa blanca.webp",
+      "sizeBytes": 33276
+    },
+    {
+      "path": "assets/artwork/thumbs/Paramedicos Acosta ortiz-camisa corporativa roja.webp",
+      "sizeBytes": 31592
+    },
+    {
+      "path": "assets/artwork/thumbs/Personal Trainer-chaqueta sublimada.webp",
+      "sizeBytes": 40470
+    },
+    {
+      "path": "assets/artwork/thumbs/Potenza-chaqueta sublimada.webp",
+      "sizeBytes": 34836
+    },
+    {
+      "path": "assets/artwork/thumbs/Promocion Ups-franela con dtf.webp",
+      "sizeBytes": 25964
+    },
+    {
+      "path": "assets/artwork/thumbs/Ramones Edition-franela con dtf front.webp",
+      "sizeBytes": 32620
+    },
+    {
+      "path": "assets/artwork/thumbs/Ramones Edition-franela con dtf.webp",
+      "sizeBytes": 28462
+    },
+    {
+      "path": "assets/artwork/thumbs/Repuestos Villegas-franela manga corta sublimada.webp",
+      "sizeBytes": 31168
+    },
+    {
+      "path": "assets/artwork/thumbs/Santisima Trinidad-franela manga corta sublimada.webp",
+      "sizeBytes": 24422
+    },
+    {
+      "path": "assets/artwork/thumbs/Spark Edition-franela con dtf.webp",
+      "sizeBytes": 24852
+    },
+    {
+      "path": "assets/artwork/thumbs/Tahoe Edition-franela con dtf.webp",
+      "sizeBytes": 23308
+    },
+    {
+      "path": "assets/artwork/thumbs/Tanjiro Edition-franela con dtf 2.webp",
+      "sizeBytes": 27708
+    },
+    {
+      "path": "assets/artwork/thumbs/Tanjiro Edition-franela con dtf.webp",
+      "sizeBytes": 25030
+    },
+    {
+      "path": "assets/artwork/thumbs/TSJ tricolor-chaqueta sublimada.webp",
+      "sizeBytes": 36908
+    },
+    {
+      "path": "assets/artwork/thumbs/TSJ-chaqueta sublimada.webp",
+      "sizeBytes": 36324
+    },
+    {
+      "path": "assets/artwork/thumbs/Venezolano Edition-franela manga larga sublimada.webp",
+      "sizeBytes": 21836
+    },
+    {
+      "path": "assets/artwork/thumbs/Wrangler Edition-franela con dtf.webp",
+      "sizeBytes": 32898
+    },
+    {
+      "path": "assets/artwork/thumbs/WWW.listaprecio.com-camisa corporativa.webp",
+      "sizeBytes": 29090
+    },
+    {
+      "path": "assets/artwork/thumbs/Zoto-camisa corporativa blanca.webp",
+      "sizeBytes": 25862
+    },
+    {
+      "path": "assets/artwork/thumbs/Zoto-camisa corporativa negra.webp",
+      "sizeBytes": 23638
+    }
+  ],
+  "brandFiles": [
+    {
+      "path": "assets/brand/apple-touch-icon.png",
+      "sizeBytes": 9344
+    },
+    {
+      "path": "assets/brand/brick-wall.webp",
+      "sizeBytes": 8788
+    },
+    {
+      "path": "assets/brand/drip-divider.svg",
+      "sizeBytes": 1045
+    },
+    {
+      "path": "assets/brand/favicon-16.png",
+      "sizeBytes": 555
+    },
+    {
+      "path": "assets/brand/favicon-32.png",
+      "sizeBytes": 1173
+    },
+    {
+      "path": "assets/brand/favicon-48.png",
+      "sizeBytes": 1753
+    },
+    {
+      "path": "assets/brand/glass-grain.webp",
+      "sizeBytes": 10304
+    },
+    {
+      "path": "assets/brand/google-logo-dark-bg.png",
+      "sizeBytes": 290360
+    },
+    {
+      "path": "assets/brand/google-logo-horizontal-oscuro.jpg",
+      "sizeBytes": 53864
+    },
+    {
+      "path": "assets/brand/google-logo-horizontal.jpg",
+      "sizeBytes": 52762
+    },
+    {
+      "path": "assets/brand/google-logo-perfecto-oscuro.jpg",
+      "sizeBytes": 199232
+    },
+    {
+      "path": "assets/brand/google-logo-perfecto.jpg",
+      "sizeBytes": 215121
+    },
+    {
+      "path": "assets/brand/google-logo-white-bg.png",
+      "sizeBytes": 275206
+    },
+    {
+      "path": "assets/brand/icon-192.png",
+      "sizeBytes": 10297
+    },
+    {
+      "path": "assets/brand/icon-512.png",
+      "sizeBytes": 55008
+    },
+    {
+      "path": "assets/brand/kingdom-logo-black.png",
+      "sizeBytes": 312841
+    },
+    {
+      "path": "assets/brand/kingdom-logo-white.png",
+      "sizeBytes": 329963
+    },
+    {
+      "path": "assets/brand/logo-white-web.png",
+      "sizeBytes": 18781
+    },
+    {
+      "path": "assets/brand/logo.png",
+      "sizeBytes": 175466
+    },
+    {
+      "path": "assets/brand/logo.webp",
+      "sizeBytes": 164430
+    },
+    {
+      "path": "assets/brand/og-image.png",
+      "sizeBytes": 69172
+    }
+  ]
+}
