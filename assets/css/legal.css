@@ -125,6 +125,49 @@ strong {
   margin: 28px 0;
 }
 
+.legal-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin: 24px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.legal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: left;
+}
+
+.legal-table th,
+.legal-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.legal-table th {
+  background: var(--surface-alt);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.legal-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.legal-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.legal-table td code {
+  white-space: nowrap;
+}
+
 code {
   font-family: Consolas, monospace;
   color: var(--beige);
