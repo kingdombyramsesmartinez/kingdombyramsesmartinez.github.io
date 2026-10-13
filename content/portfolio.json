@@ -25,7 +25,8 @@
     "fabricEs": "Microfibra Dry-Fit antibacteriana 140g",
     "fabricEn": "Antibacterial Dry-Fit microfiber 140g",
     "storyEs": "Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Academia De Cuatro.",
-    "storyEn": "Artwork tailored to the visual identity and textile requirements of Academia De Cuatro."
+    "storyEn": "Artwork tailored to the visual identity and textile requirements of Academia De Cuatro.",
+    "tipo": "cliente"
   },
   {
     "id": "alexauto",
@@ -53,7 +54,8 @@
     "fabricEs": "Algodón Egipcio",
     "fabricEn": "Egyptian Cotton",
     "storyEs": "Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Alexauto.",
-    "storyEn": "Artwork tailored to the visual identity and textile requirements of Alexauto."
+    "storyEn": "Artwork tailored to the visual identity and textile requirements of Alexauto.",
+    "tipo": "cliente"
   },
   {
     "id": "amigos-fc",
@@ -81,7 +83,8 @@
     "fabricEs": "Microfibra Dry-Fit antibacteriana 140g",
     "fabricEn": "Antibacterial Dry-Fit microfiber 140g",
     "storyEs": "Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Amigos Fc.",
-    "storyEn": "Artwork tailored to the visual identity and textile requirements of Amigos Fc."
+    "storyEn": "Artwork tailored to the visual identity and textile requirements of Amigos Fc.",
+    "tipo": "cliente"
   },
   {
     "id": "avengers-doomsday",
@@ -95,9 +98,9 @@
     "techniqueEn": "Premium 4-Position DTF Print",
     "garmentEs": "Camiseta Algodón 100% Full DTF",
     "garmentEn": "100% Cotton T-Shirt Full DTF",
-    "priceEs": "USD 20.00 / Unidad",
-    "priceEn": "USD 20.00 / Unidad",
-    "priceFinal": "USD 20.00 / Unidad",
+    "priceEs": "",
+    "priceEn": "",
+    "priceFinal": "",
     "availabilityEs": "Bajo pedido / Por lote o unidad",
     "availabilityEn": "Artistic exhibition piece",
     "noteEs": "Diseño propio · Mockup referencial.",
@@ -125,7 +128,8 @@
       "Graphic design & illustration showcase",
       "Not available for commercial reproduction or apparel sale"
     ],
-    "availability": "Obra de exhibición artística"
+    "availability": "Obra de exhibición artística",
+    "tipo": "fanart"
   },
   {
     "id": "bakugo-mha",
@@ -139,9 +143,9 @@
     "techniqueEn": "Premium 4-Position DTF Print",
     "garmentEs": "Camiseta Algodón 100% Full DTF",
     "garmentEn": "100% Cotton T-Shirt Full DTF",
-    "priceEs": "USD 20.00 / Unidad",
-    "priceEn": "USD 20.00 / Unidad",
-    "priceFinal": "USD 20.00 / Unidad",
+    "priceEs": "",
+    "priceEn": "",
+    "priceFinal": "",
     "availabilityEs": "Bajo pedido / Por lote o unidad",
     "availabilityEn": "Artistic exhibition piece",
     "noteEs": "Diseño propio · Mockup referencial.",
@@ -196,7 +200,8 @@
       "Graphic design & illustration showcase",
       "Not available for commercial reproduction or apparel sale"
     ],
-    "availability": "Obra de exhibición artística"
+    "availability": "Obra de exhibición artística",
+    "tipo": "fanart"
   },
   {
     "id": "muestrario-de-bordado",
@@ -326,7 +331,8 @@
         "storyEs": "Diseño desarrollado para diversificar la indumentaria manteniendo la línea gráfica institucional.",
         "storyEn": "Design developed to diversify apparel while preserving brand identity."
       }
-    ]
+    ],
+    "tipo": "cliente"
   },
   {
     "id": "camaro-edition",
@@ -340,9 +346,9 @@
     "techniqueEn": "Premium 4-Position DTF Print",
     "garmentEs": "Camiseta Algodón 100% Full DTF",
     "garmentEn": "100% Cotton T-Shirt Full DTF",
-    "priceEs": "USD 20.00 / Unidad",
-    "priceEn": "USD 20.00 / Unidad",
-    "priceFinal": "USD 20.00 / Unidad",
+    "priceEs": "",
+    "priceEn": "",
+    "priceFinal": "",
     "availabilityEs": "Bajo pedido / Por lote o unidad",
     "availabilityEn": "Automotive graphic study",
     "noteEs": "Diseño propio · Mockup referencial.",
@@ -395,7 +401,8 @@
       "Vector illustration & technical showcase",
       "Technical exhibition piece"
     ],
-    "availability": "Estudio gráfico automotriz"
+    "availability": "Estudio gráfico automotriz",
+    "tipo": "encargo-marca"
   },
   {
     "id": "corvette-edition",
@@ -409,9 +416,9 @@
     "techniqueEn": "Premium 4-Position DTF Print",
     "garmentEs": "Camiseta Algodón 100% Full DTF",
     "garmentEn": "100% Cotton T-Shirt Full DTF",
-    "priceEs": "USD 20.00 / Unidad",
-    "priceEn": "USD 20.00 / Unidad",
-    "priceFinal": "USD 20.00 / Unidad",
+    "priceEs": "",
+    "priceEn": "",
+    "priceFinal": "",
     "availabilityEs": "Bajo pedido / Por lote o unidad",
     "availabilityEn": "Automotive graphic study",
     "noteEs": "Diseño propio · Mockup referencial.",
@@ -439,7 +446,8 @@
       "Vector illustration & technical showcase",
       "Technical exhibition piece"
     ],
-    "availability": "Estudio gráfico automotriz"
+    "availability": "Estudio gráfico automotriz",
+    "tipo": "encargo-marca"
   },
   {
     "id": "cr7-edition",
@@ -453,9 +461,9 @@
     "techniqueEn": "Full Color Dry-Fit Sports Sublimation",
     "garmentEs": "Franela Dry-Fit Sublimada",
     "garmentEn": "Dry-Fit Sublimated T-Shirt",
-    "priceEs": "USD 15.00 / Unidad",
-    "priceEn": "USD 15.00 / Unidad",
-    "priceFinal": "USD 15.00 / Unidad",
+    "priceEs": "",
+    "priceEn": "",
+    "priceFinal": "",
     "availabilityEs": "Bajo pedido / Por lote o unidad",
     "availabilityEn": "Artistic tribute",
     "noteEs": "Diseño propio · Mockup referencial.",
@@ -483,7 +491,8 @@
       "Artistic composition & typography showcase",
       "Creative portfolio piece"
     ],
-    "availability": "Homenaje artístico"
+    "availability": "Homenaje artístico",
+    "tipo": "fanart"
   },
   {
     "id": "dbs-edition",
@@ -497,9 +506,9 @@
     "techniqueEn": "Premium 4-Position DTF Print",
     "garmentEs": "Camiseta Algodón 100% Full DTF",
     "garmentEn": "100% Cotton T-Shirt Full DTF",
-    "priceEs": "USD 20.00 / Unidad",
-    "priceEn": "USD 20.00 / Unidad",
-    "priceFinal": "USD 20.00 / Unidad",
+    "priceEs": "",
+    "priceEn": "",
+    "priceFinal": "",
     "availabilityEs": "Bajo pedido / Por lote o unidad",
     "availabilityEn": "Artistic exhibition piece",
     "noteEs": "Diseño propio · Mockup referencial.",
@@ -556,7 +565,8 @@
       "Graphic design & illustration showcase",
       "Not available for commercial reproduction or apparel sale"
     ],
-    "availability": "Obra de exhibición artística"
+    "availability": "Obra de exhibición artística",
+    "tipo": "fanart"
   },
   {
     "id": "deku-edition",
@@ -570,9 +580,9 @@
     "techniqueEn": "Premium 4-Position DTF Print",
     "garmentEs": "Camiseta Algodón 100% Full DTF",
     "garmentEn": "100% Cotton T-Shirt Full DTF",
-    "priceEs": "USD 20.00 / Unidad",
-    "priceEn": "USD 20.00 / Unidad",
-    "priceFinal": "USD 20.00 / Unidad",
+    "priceEs": "",
+    "priceEn": "",
+    "priceFinal": "",
     "availabilityEs": "Bajo pedido / Por lote o unidad",
     "availabilityEn": "Artistic exhibition piece",
     "noteEs": "Diseño propio · Mockup referencial.",
@@ -629,7 +639,8 @@
       "Graphic design & illustration showcase",
       "Not available for commercial reproduction or apparel sale"
     ],
-    "availability": "Obra de exhibición artística"
+    "availability": "Obra de exhibición artística",
+    "tipo": "fanart"
   },
   {
     "id": "ferreconstrucciones",
@@ -657,7 +668,8 @@
     "fabricEs": "Microfibra Dry-Fit antibacteriana 140g",
     "fabricEn": "Antibacterial Dry-Fit microfiber 140g",
     "storyEs": "Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Ferreconstrucciones.",
-    "storyEn": "Artwork tailored to the visual identity and textile requirements of Ferreconstrucciones."
+    "storyEn": "Artwork tailored to the visual identity and textile requirements of Ferreconstrucciones.",
+    "tipo": "cliente"
   },
   {
     "id": "fitness-24-7",
@@ -711,7 +723,8 @@
         "storyEs": "Diseño desarrollado para diversificar la indumentaria manteniendo la línea gráfica institucional.",
         "storyEn": "Design developed to diversify apparel while preserving brand identity."
       }
-    ]
+    ],
+    "tipo": "cliente"
   },
   {
     "id": "ford-ka-edition",
@@ -725,9 +738,9 @@
     "techniqueEn": "Premium 4-Position DTF Print",
     "garmentEs": "Camiseta Algodón 100% Full DTF",
     "garmentEn": "100% Cotton T-Shirt Full DTF",
-    "priceEs": "USD 20.00 / Unidad",
-    "priceEn": "USD 20.00 / Unidad",
-    "priceFinal": "USD 20.00 / Unidad",
+    "priceEs": "",
+    "priceEn": "",
+    "priceFinal": "",
     "availabilityEs": "Bajo pedido / Por lote o unidad",
     "availabilityEn": "Automotive graphic study",
     "noteEs": "Diseño propio · Mockup referencial.",
@@ -755,7 +768,8 @@
       "Vector illustration & technical showcase",
       "Technical exhibition piece"
     ],
-    "availability": "Estudio gráfico automotriz"
+    "availability": "Estudio gráfico automotriz",
+    "tipo": "encargo-marca"
   },
   {
     "id": "gerreras-sc",
@@ -783,7 +797,8 @@
     "fabricEs": "Microfibra Dry-Fit antibacteriana 140g",
     "fabricEn": "Antibacterial Dry-Fit microfiber 140g",
     "storyEs": "Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Guerreras SC.",
-    "storyEn": "Artwork tailored to the visual identity and textile requirements of Guerreras SC."
+    "storyEn": "Artwork tailored to the visual identity and textile requirements of Guerreras SC.",
+    "tipo": "cliente"
   },
   {
     "id": "gigantes-bc",
@@ -811,7 +826,8 @@
     "fabricEs": "Tela Grandes Ligas (Malla de béisbol)",
     "fabricEn": "Heavyweight Baseball Mesh (Grandes Ligas)",
     "storyEs": "Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Gigantes BC.",
-    "storyEn": "Artwork tailored to the visual identity and textile requirements of Gigantes BC."
+    "storyEn": "Artwork tailored to the visual identity and textile requirements of Gigantes BC.",
+    "tipo": "cliente"
   },
   {
     "id": "impa",
@@ -839,7 +855,8 @@
     "fabricEs": "Tela Novak repelente de fluidos con forro de malla",
     "fabricEn": "Fluid-repellent Novak fabric with mesh lining",
     "storyEs": "Desarrollo adaptado a la identidad gráfica y especificaciones textiles de IMPA.",
-    "storyEn": "Artwork tailored to the visual identity and textile requirements of IMPA."
+    "storyEn": "Artwork tailored to the visual identity and textile requirements of IMPA.",
+    "tipo": "cliente"
   },
   {
     "id": "jswim-academi",
@@ -893,7 +910,8 @@
         "storyEs": "Diseño desarrollado para diversificar la indumentaria manteniendo la línea gráfica institucional.",
         "storyEn": "Design developed to diversify apparel while preserving brand identity."
       }
-    ]
+    ],
+    "tipo": "cliente"
   },
   {
     "id": "kingdom-presentacion",
@@ -921,7 +939,8 @@
     "fabricEs": "Papel Glasé 300g acabado mate o brillante",
     "fabricEn": "300g Gloss paper matte or gloss finish",
     "storyEs": "Desarrollo de identidad visual comercial y papelería corporativa con tipografía y acabados de alta definición.",
-    "storyEn": "Commercial visual identity and stationery design with high-definition typography and finishes."
+    "storyEn": "Commercial visual identity and stationery design with high-definition typography and finishes.",
+    "tipo": "cliente"
   },
   {
     "id": "laneros-gamers",
@@ -949,7 +968,8 @@
     "fabricEs": "Microfibra Dry-Fit antibacteriana 140g",
     "fabricEn": "Antibacterial Dry-Fit microfiber 140g",
     "storyEs": "Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Laneros Gamers.",
-    "storyEn": "Artwork tailored to the visual identity and textile requirements of Laneros Gamers."
+    "storyEn": "Artwork tailored to the visual identity and textile requirements of Laneros Gamers.",
+    "tipo": "cliente"
   },
   {
     "id": "maderera-2pi",
@@ -977,7 +997,8 @@
     "fabricEs": "Algodón Egipcio",
     "fabricEn": "Egyptian Cotton",
     "storyEs": "Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Maderera 2PI.",
-    "storyEn": "Artwork tailored to the visual identity and textile requirements of Maderera 2PI."
+    "storyEn": "Artwork tailored to the visual identity and textile requirements of Maderera 2PI.",
+    "tipo": "cliente"
   },
   {
     "id": "messi-edition",
@@ -991,9 +1012,9 @@
     "techniqueEn": "Full Color Dry-Fit Sports Sublimation",
     "garmentEs": "Franela Dry-Fit Sublimada",
     "garmentEn": "Dry-Fit Sublimated T-Shirt",
-    "priceEs": "USD 15.00 / Unidad",
-    "priceEn": "USD 15.00 / Unidad",
-    "priceFinal": "USD 15.00 / Unidad",
+    "priceEs": "",
+    "priceEn": "",
+    "priceFinal": "",
     "availabilityEs": "Bajo pedido / Por lote o unidad",
     "availabilityEn": "Artistic tribute",
     "noteEs": "Diseño propio · Mockup referencial.",
@@ -1021,7 +1042,8 @@
       "Artistic composition & typography showcase",
       "Creative portfolio piece"
     ],
-    "availability": "Homenaje artístico"
+    "availability": "Homenaje artístico",
+    "tipo": "fanart"
   },
   {
     "id": "michelle-collection",
@@ -1077,7 +1099,8 @@
       }
     ],
     "variant": "Blanca",
-    "variantEn": "White"
+    "variantEn": "White",
+    "tipo": "cliente"
   },
   {
     "id": "naruto-edition",
@@ -1091,9 +1114,9 @@
     "techniqueEn": "Premium 4-Position DTF Print",
     "garmentEs": "Camiseta Algodón 100% Full DTF",
     "garmentEn": "100% Cotton T-Shirt Full DTF",
-    "priceEs": "USD 20.00 / Unidad",
-    "priceEn": "USD 20.00 / Unidad",
-    "priceFinal": "USD 20.00 / Unidad",
+    "priceEs": "",
+    "priceEn": "",
+    "priceFinal": "",
     "availabilityEs": "Bajo pedido / Por lote o unidad",
     "availabilityEn": "Artistic exhibition piece",
     "noteEs": "Diseño propio · Mockup referencial.",
@@ -1150,7 +1173,8 @@
       "Graphic design & illustration showcase",
       "Not available for commercial reproduction or apparel sale"
     ],
-    "availability": "Obra de exhibición artística"
+    "availability": "Obra de exhibición artística",
+    "tipo": "fanart"
   },
   {
     "id": "oasis-sport",
@@ -1206,7 +1230,8 @@
       }
     ],
     "variant": "Blanca",
-    "variantEn": "White"
+    "variantEn": "White",
+    "tipo": "cliente"
   },
   {
     "id": "paramedicos-acosta-ortiz",
@@ -1262,7 +1287,8 @@
       }
     ],
     "variant": "Blanca",
-    "variantEn": "White"
+    "variantEn": "White",
+    "tipo": "cliente"
   },
   {
     "id": "personal-trainer",
@@ -1290,7 +1316,8 @@
     "fabricEs": "Tela Novak repelente de fluidos con forro de malla",
     "fabricEn": "Fluid-repellent Novak fabric with mesh lining",
     "storyEs": "Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Personal Trainer.",
-    "storyEn": "Artwork tailored to the visual identity and textile requirements of Personal Trainer."
+    "storyEn": "Artwork tailored to the visual identity and textile requirements of Personal Trainer.",
+    "tipo": "cliente"
   },
   {
     "id": "potenza",
@@ -1318,7 +1345,8 @@
     "fabricEs": "Tela Novak repelente de fluidos con forro de malla",
     "fabricEn": "Fluid-repellent Novak fabric with mesh lining",
     "storyEs": "Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Potenza.",
-    "storyEn": "Artwork tailored to the visual identity and textile requirements of Potenza."
+    "storyEn": "Artwork tailored to the visual identity and textile requirements of Potenza.",
+    "tipo": "cliente"
   },
   {
     "id": "promocion-ups",
@@ -1346,7 +1374,8 @@
     "fabricEs": "Algodón 20/1 (200g)",
     "fabricEn": "20/1 Combed Cotton (200g)",
     "storyEs": "Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Promocion Ups.",
-    "storyEn": "Artwork tailored to the visual identity and textile requirements of Promocion Ups."
+    "storyEn": "Artwork tailored to the visual identity and textile requirements of Promocion Ups.",
+    "tipo": "cliente"
   },
   {
     "id": "ramones-edition",
@@ -1360,9 +1389,9 @@
     "techniqueEn": "Premium 4-Position DTF Print",
     "garmentEs": "Camiseta Algodón 100% Full DTF",
     "garmentEn": "100% Cotton T-Shirt Full DTF",
-    "priceEs": "USD 20.00 / Unidad",
-    "priceEn": "USD 20.00 / Unidad",
-    "priceFinal": "USD 20.00 / Unidad",
+    "priceEs": "",
+    "priceEn": "",
+    "priceFinal": "",
     "availabilityEs": "Bajo pedido / Por lote o unidad",
     "availabilityEn": "Artistic tribute",
     "noteEs": "Diseño propio · Mockup referencial.",
@@ -1417,7 +1446,8 @@
       "Artistic composition & typography showcase",
       "Creative portfolio piece"
     ],
-    "availability": "Homenaje artístico"
+    "availability": "Homenaje artístico",
+    "tipo": "fanart"
   },
   {
     "id": "repuestos-villegas",
@@ -1445,7 +1475,8 @@
     "fabricEs": "Microfibra Dry-Fit antibacteriana 140g",
     "fabricEn": "Antibacterial Dry-Fit microfiber 140g",
     "storyEs": "Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Repuestos Villegas.",
-    "storyEn": "Artwork tailored to the visual identity and textile requirements of Repuestos Villegas."
+    "storyEn": "Artwork tailored to the visual identity and textile requirements of Repuestos Villegas.",
+    "tipo": "cliente"
   },
   {
     "id": "santisima-trinidad",
@@ -1473,7 +1504,8 @@
     "fabricEs": "Microfibra Dry-Fit antibacteriana 140g",
     "fabricEn": "Antibacterial Dry-Fit microfiber 140g",
     "storyEs": "Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Santisima Trinidad.",
-    "storyEn": "Artwork tailored to the visual identity and textile requirements of Santisima Trinidad."
+    "storyEn": "Artwork tailored to the visual identity and textile requirements of Santisima Trinidad.",
+    "tipo": "cliente"
   },
   {
     "id": "spark-edition",
@@ -1487,9 +1519,9 @@
     "techniqueEn": "Premium 4-Position DTF Print",
     "garmentEs": "Camiseta Algodón 100% Full DTF",
     "garmentEn": "100% Cotton T-Shirt Full DTF",
-    "priceEs": "USD 20.00 / Unidad",
-    "priceEn": "USD 20.00 / Unidad",
-    "priceFinal": "USD 20.00 / Unidad",
+    "priceEs": "",
+    "priceEn": "",
+    "priceFinal": "",
     "availabilityEs": "Bajo pedido / Por lote o unidad",
     "availabilityEn": "Automotive graphic study",
     "noteEs": "Diseño propio · Mockup referencial.",
@@ -1517,7 +1549,8 @@
       "Vector illustration & technical showcase",
       "Technical exhibition piece"
     ],
-    "availability": "Estudio gráfico automotriz"
+    "availability": "Estudio gráfico automotriz",
+    "tipo": "encargo-marca"
   },
   {
     "id": "tahoe-edition",
@@ -1531,9 +1564,9 @@
     "techniqueEn": "Premium 4-Position DTF Print",
     "garmentEs": "Camiseta Algodón 100% Full DTF",
     "garmentEn": "100% Cotton T-Shirt Full DTF",
-    "priceEs": "USD 20.00 / Unidad",
-    "priceEn": "USD 20.00 / Unidad",
-    "priceFinal": "USD 20.00 / Unidad",
+    "priceEs": "",
+    "priceEn": "",
+    "priceFinal": "",
     "availabilityEs": "Bajo pedido / Por lote o unidad",
     "availabilityEn": "Automotive graphic study",
     "noteEs": "Diseño propio · Mockup referencial.",
@@ -1561,7 +1594,8 @@
       "Vector illustration & technical showcase",
       "Technical exhibition piece"
     ],
-    "availability": "Estudio gráfico automotriz"
+    "availability": "Estudio gráfico automotriz",
+    "tipo": "encargo-marca"
   },
   {
     "id": "tanjiro-edition",
@@ -1575,9 +1609,9 @@
     "techniqueEn": "Premium 4-Position DTF Print",
     "garmentEs": "Camiseta Algodón 100% Full DTF",
     "garmentEn": "100% Cotton T-Shirt Full DTF",
-    "priceEs": "USD 20.00 / Unidad",
-    "priceEn": "USD 20.00 / Unidad",
-    "priceFinal": "USD 20.00 / Unidad",
+    "priceEs": "",
+    "priceEn": "",
+    "priceFinal": "",
     "availabilityEs": "Bajo pedido / Por lote o unidad",
     "availabilityEn": "Artistic exhibition piece",
     "noteEs": "Diseño propio · Mockup referencial.",
@@ -1632,7 +1666,8 @@
       "Graphic design & illustration showcase",
       "Not available for commercial reproduction or apparel sale"
     ],
-    "availability": "Obra de exhibición artística"
+    "availability": "Obra de exhibición artística",
+    "tipo": "fanart"
   },
   {
     "id": "venezolano-edition",
@@ -1660,7 +1695,8 @@
     "fabricEs": "Microfibra Dry-Fit antibacteriana 140g",
     "fabricEn": "Antibacterial Dry-Fit microfiber 140g",
     "storyEs": "Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Venezolano Edition.",
-    "storyEn": "Artwork tailored to the visual identity and textile requirements of Venezolano Edition."
+    "storyEn": "Artwork tailored to the visual identity and textile requirements of Venezolano Edition.",
+    "tipo": "propio"
   },
   {
     "id": "wrangler-edition",
@@ -1674,9 +1710,9 @@
     "techniqueEn": "Premium 4-Position DTF Print",
     "garmentEs": "Camiseta Algodón 100% Full DTF",
     "garmentEn": "100% Cotton T-Shirt Full DTF",
-    "priceEs": "USD 20.00 / Unidad",
-    "priceEn": "USD 20.00 / Unidad",
-    "priceFinal": "USD 20.00 / Unidad",
+    "priceEs": "",
+    "priceEn": "",
+    "priceFinal": "",
     "availabilityEs": "Bajo pedido / Por lote o unidad",
     "availabilityEn": "Automotive graphic study",
     "noteEs": "Diseño propio · Mockup referencial.",
@@ -1704,7 +1740,8 @@
       "Vector illustration & technical showcase",
       "Technical exhibition piece"
     ],
-    "availability": "Estudio gráfico automotriz"
+    "availability": "Estudio gráfico automotriz",
+    "tipo": "encargo-marca"
   },
   {
     "id": "www-listaprecio-com",
@@ -1732,7 +1769,8 @@
     "fabricEs": "Algodón Egipcio",
     "fabricEn": "Egyptian Cotton",
     "storyEs": "Desarrollo adaptado a la identidad gráfica y especificaciones textiles de WWW.listaprecio.com.",
-    "storyEn": "Artwork tailored to the visual identity and textile requirements of WWW.listaprecio.com."
+    "storyEn": "Artwork tailored to the visual identity and textile requirements of WWW.listaprecio.com.",
+    "tipo": "cliente"
   },
   {
     "id": "zoto",
@@ -1788,6 +1826,7 @@
       }
     ],
     "variant": "Blanca",
-    "variantEn": "White"
+    "variantEn": "White",
+    "tipo": "cliente"
   }
 ]

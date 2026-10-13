@@ -121,17 +121,15 @@
           <button class="filter-btn" type="button" data-filter="branding" aria-pressed="false">
             Branding & Corporativo
           </button>
-          <button class="filter-btn" type="button" data-filter="fanart" aria-pressed="false">
-            Fan Art y Exploraciones Gráficas
-          </button>
         </div>
 
         <div id="filterLiveStatus" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
 
-        <div class="portfolio-grid">
+        <div class="portfolio-grid" id="mainPortfolioGrid">
           
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="sublimacion"
+                   data-tipo="cliente"
                    data-title="Academia De Cuatro"
                    data-tag="Sublimación Deportiva Dry-Fit Full Color"
                    data-specs="Franela Dry-Fit Sublimada · Bajo pedido / Por lote o unidad" data-price="USD 15.00 / Unidad"
@@ -159,6 +157,7 @@
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="branding"
+                   data-tipo="cliente"
                    data-title="Alexauto"
                    data-tag="Confección Premium &amp; 2 Bordados Computarizados"
                    data-specs="Camisa Corporativa Tipo Columbia (2 Bordados) · Bajo pedido / Por lote o unidad" data-price="USD 26.00 / Unidad"
@@ -186,6 +185,7 @@
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="sublimacion"
+                   data-tipo="cliente"
                    data-title="Amigos Fc"
                    data-tag="Sublimación Deportiva Dry-Fit Full Color"
                    data-specs="Franela Dry-Fit Sublimada · Bajo pedido / Por lote o unidad" data-price="USD 15.00 / Unidad"
@@ -212,61 +212,8 @@
             </div>
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="fanart"
-                   data-title="Avengers Doomsday"
-                   data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
-                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Avengers Doomsday (Franela Con Dtf). (Diseño propio · Mockup referencial.)"
-                   data-status="Propuesta técnica para Avengers Doomsday: Franela Con Dtf."
-                   data-fabric="Algodón 20/1 (200g)"
-                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Avengers Doomsday."
-                   data-img="assets/artwork/Avengers Doomsday- franela con dtf.webp">
-            <div class="pc-media">
-              
-              <img src="assets/artwork/thumbs/Avengers Doomsday- franela con dtf.webp"
-                   srcset="assets/artwork/thumbs/Avengers%20Doomsday-%20franela%20con%20dtf.webp 480w, assets/artwork/Avengers%20Doomsday-%20franela%20con%20dtf.webp 1080w"
-                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
-                   alt="Presentación textil y propuesta gráfica para Avengers Doomsday" width="1080" height="1350" loading="lazy" decoding="async"/>
-            </div>
-            <div class="pc-body">
-              <h3 class="pc-title">Avengers Doomsday</h3>
-              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Avengers Doomsday (Franela Con Dtf).</p>
-              <div class="pc-foot">
-                <span class="pc-action-hint">Clic para ver detalle</span>
-                <span class="pc-arrow" aria-hidden="true">→</span>
-              </div>
-              <span class="visually-hidden">Clic para ver detalle</span>
-            </div>
-          </article>
-          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="fanart"
-                   data-title="Bakugo MHA"
-                   data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
-                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Bakugo MHA (Franela Con Dtf 2). (Diseño propio · Mockup referencial.)"
-                   data-status="Propuesta técnica para Bakugo MHA: Franela Con Dtf 2."
-                   data-fabric="Algodón 20/1 (200g)"
-                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Bakugo MHA."
-                   data-img="assets/artwork/Bakugo MHA-franela con dtf 2.webp" data-proposals="[{&quot;image&quot;:&quot;assets/artwork/Bakugo MHA-franela con dtf.webp&quot;,&quot;alt&quot;:&quot;Variante de propuesta — Bakugo MHA (Franela Con Dtf)&quot;,&quot;title&quot;:&quot;Bakugo MHA — Franela Con Dtf&quot;,&quot;specs&quot;:&quot;Camiseta Algodón 100% Full DTF · Bajo pedido&quot;,&quot;tag&quot;:&quot;Estampado DTF Premium Cuatro Posiciones&quot;,&quot;fabric&quot;:&quot;Algodón 20/1 (200g)&quot;,&quot;price&quot;:&quot;USD 20.00 / Unidad&quot;,&quot;desc&quot;:&quot;Alternativa complementaria de diseño y confección para Bakugo MHA.&quot;,&quot;story&quot;:&quot;Diseño desarrollado para diversificar la indumentaria manteniendo la línea gráfica institucional.&quot;,&quot;status&quot;:&quot;Variante: Franela Con Dtf&quot;}]">
-            <div class="pc-media">
-              <div class="portfolio-ribbon">2 propuestas</div>
-              <img src="assets/artwork/thumbs/Bakugo MHA-franela con dtf 2.webp"
-                   srcset="assets/artwork/thumbs/Bakugo%20MHA-franela%20con%20dtf%202.webp 480w, assets/artwork/Bakugo%20MHA-franela%20con%20dtf%202.webp 1080w"
-                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
-                   alt="Presentación textil y propuesta gráfica para Bakugo MHA" width="1080" height="1350" loading="lazy" decoding="async"/>
-            </div>
-            <div class="pc-body">
-              <h3 class="pc-title">Bakugo MHA</h3>
-              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Bakugo MHA (Franela Con Dtf 2).</p>
-              <div class="pc-foot">
-                <span class="pc-action-hint">Clic para ver detalle</span>
-                <span class="pc-arrow" aria-hidden="true">→</span>
-              </div>
-              <span class="visually-hidden">Clic para ver detalle</span>
-            </div>
-          </article>
-          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="branding"
+                   data-tipo="cliente"
                    data-title="Muestrario De Bordado"
                    data-tag="Digitalización Wilcom DST/PES"
                    data-specs="Diseño de Matriz &amp; Bordado Computarizado · Bajo pedido / Por lote o unidad" data-price="USD 5.00 / Matriz"
@@ -293,142 +240,8 @@
             </div>
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="streetwear"
-                   data-title="Camaro Edition"
-                   data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
-                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Camaro Edition (Franela Con Dtf Negra). (Diseño propio · Mockup referencial.)"
-                   data-status="Propuesta técnica para Camaro Edition: Franela Con Dtf Negra."
-                   data-fabric="Algodón 20/1 (200g)"
-                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Camaro Edition."
-                   data-img="assets/artwork/Camaro Edition-franela con dtf negra.webp" data-proposals="[{&quot;image&quot;:&quot;assets/artwork/Camaro Edition-franela con dtf.webp&quot;,&quot;alt&quot;:&quot;Variante de propuesta — Camaro Edition (Franela Con Dtf)&quot;,&quot;title&quot;:&quot;Camaro Edition — Franela Con Dtf&quot;,&quot;specs&quot;:&quot;Camiseta Algodón 100% Full DTF · Bajo pedido&quot;,&quot;tag&quot;:&quot;Estampado DTF Premium Cuatro Posiciones&quot;,&quot;fabric&quot;:&quot;Algodón 20/1 (200g)&quot;,&quot;price&quot;:&quot;USD 20.00 / Unidad&quot;,&quot;desc&quot;:&quot;Alternativa complementaria de diseño y confección para Camaro Edition.&quot;,&quot;story&quot;:&quot;Diseño desarrollado para diversificar la indumentaria manteniendo la línea gráfica institucional.&quot;,&quot;status&quot;:&quot;Variante: Franela Con Dtf&quot;}]">
-            <div class="pc-media">
-              <div class="portfolio-ribbon">2 propuestas</div>
-              <img src="assets/artwork/thumbs/Camaro Edition-franela con dtf negra.webp"
-                   srcset="assets/artwork/thumbs/Camaro%20Edition-franela%20con%20dtf%20negra.webp 480w, assets/artwork/Camaro%20Edition-franela%20con%20dtf%20negra.webp 1080w"
-                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
-                   alt="Presentación textil y propuesta gráfica para Camaro Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
-            </div>
-            <div class="pc-body">
-              <h3 class="pc-title">Camaro Edition</h3>
-              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Camaro Edition (Franela Con Dtf Negra).</p>
-              <div class="pc-foot">
-                <span class="pc-action-hint">Clic para ver detalle</span>
-                <span class="pc-arrow" aria-hidden="true">→</span>
-              </div>
-              <span class="visually-hidden">Clic para ver detalle</span>
-            </div>
-          </article>
-          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="streetwear"
-                   data-title="Corvette Edition"
-                   data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
-                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Corvette Edition (Franela Con Dtf). (Diseño propio · Mockup referencial.)"
-                   data-status="Propuesta técnica para Corvette Edition: Franela Con Dtf."
-                   data-fabric="Algodón 20/1 (200g)"
-                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Corvette Edition."
-                   data-img="assets/artwork/Corvette Edition-franela con dtf.webp">
-            <div class="pc-media">
-              
-              <img src="assets/artwork/thumbs/Corvette Edition-franela con dtf.webp"
-                   srcset="assets/artwork/thumbs/Corvette%20Edition-franela%20con%20dtf.webp 480w, assets/artwork/Corvette%20Edition-franela%20con%20dtf.webp 1080w"
-                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
-                   alt="Presentación textil y propuesta gráfica para Corvette Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
-            </div>
-            <div class="pc-body">
-              <h3 class="pc-title">Corvette Edition</h3>
-              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Corvette Edition (Franela Con Dtf).</p>
-              <div class="pc-foot">
-                <span class="pc-action-hint">Clic para ver detalle</span>
-                <span class="pc-arrow" aria-hidden="true">→</span>
-              </div>
-              <span class="visually-hidden">Clic para ver detalle</span>
-            </div>
-          </article>
-          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="sublimacion"
-                   data-title="CR7 Edition"
-                   data-tag="Sublimación Deportiva Dry-Fit Full Color"
-                   data-specs="Franela Dry-Fit Sublimada · Bajo pedido / Por lote o unidad" data-artistic="true"
-                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para CR7 Edition (Franela Manga Corta Sublimada). (Diseño propio · Mockup referencial.)"
-                   data-status="Propuesta técnica para CR7 Edition: Franela Manga Corta Sublimada."
-                   data-fabric="Microfibra Dry-Fit antibacteriana 140g"
-                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de CR7 Edition."
-                   data-img="assets/artwork/CR7 Edition-franela manga corta sublimada.webp">
-            <div class="pc-media">
-              
-              <img src="assets/artwork/thumbs/CR7 Edition-franela manga corta sublimada.webp"
-                   srcset="assets/artwork/thumbs/CR7%20Edition-franela%20manga%20corta%20sublimada.webp 480w, assets/artwork/CR7%20Edition-franela%20manga%20corta%20sublimada.webp 1080w"
-                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
-                   alt="Presentación textil y propuesta gráfica para CR7 Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
-            </div>
-            <div class="pc-body">
-              <h3 class="pc-title">CR7 Edition</h3>
-              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para CR7 Edition (Franela Manga Corta Sublimada).</p>
-              <div class="pc-foot">
-                <span class="pc-action-hint">Clic para ver detalle</span>
-                <span class="pc-arrow" aria-hidden="true">→</span>
-              </div>
-              <span class="visually-hidden">Clic para ver detalle</span>
-            </div>
-          </article>
-          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="fanart"
-                   data-title="DBS Edition"
-                   data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
-                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para DBS Edition (Franela Con Dtf Back). (Diseño propio · Mockup referencial.)"
-                   data-status="Propuesta técnica para DBS Edition: Franela Con Dtf Back."
-                   data-fabric="Algodón 20/1 (200g)"
-                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de DBS Edition."
-                   data-img="assets/artwork/DBS Edition-franela con dtf back.webp" data-proposals="[{&quot;image&quot;:&quot;assets/artwork/DBS Edition-franela con dtf front and back.webp&quot;,&quot;alt&quot;:&quot;Variante de propuesta — DBS Edition (Franela Con Dtf Front And Back)&quot;,&quot;title&quot;:&quot;DBS Edition — Franela Con DTF (Front and Back)&quot;,&quot;specs&quot;:&quot;Camiseta Algodón 100% Full DTF · Bajo pedido&quot;,&quot;tag&quot;:&quot;Estampado DTF Premium Cuatro Posiciones&quot;,&quot;fabric&quot;:&quot;Algodón 20/1 (200g)&quot;,&quot;price&quot;:&quot;USD 20.00 / Unidad&quot;,&quot;desc&quot;:&quot;Alternativa complementaria de diseño y confección para DBS Edition.&quot;,&quot;story&quot;:&quot;Diseño desarrollado para diversificar la indumentaria manteniendo la línea gráfica institucional.&quot;,&quot;status&quot;:&quot;Variante: Franela Con DTF (Front and Back)&quot;}]">
-            <div class="pc-media">
-              <div class="portfolio-ribbon">2 propuestas</div>
-              <img src="assets/artwork/thumbs/DBS Edition-franela con dtf back.webp"
-                   srcset="assets/artwork/thumbs/DBS%20Edition-franela%20con%20dtf%20back.webp 480w, assets/artwork/DBS%20Edition-franela%20con%20dtf%20back.webp 1080w"
-                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
-                   alt="Presentación textil y propuesta gráfica para DBS Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
-            </div>
-            <div class="pc-body">
-              <h3 class="pc-title">DBS Edition</h3>
-              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para DBS Edition (Franela Con Dtf Back).</p>
-              <div class="pc-foot">
-                <span class="pc-action-hint">Clic para ver detalle</span>
-                <span class="pc-arrow" aria-hidden="true">→</span>
-              </div>
-              <span class="visually-hidden">Clic para ver detalle</span>
-            </div>
-          </article>
-          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="fanart"
-                   data-title="Deku Edition"
-                   data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
-                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Deku Edition (Franela Con Dtf Back). (Diseño propio · Mockup referencial.)"
-                   data-status="Propuesta técnica para Deku Edition: Franela Con Dtf Back."
-                   data-fabric="Algodón 20/1 (200g)"
-                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Deku Edition."
-                   data-img="assets/artwork/Deku Edition-franela con dtf back.webp" data-proposals="[{&quot;image&quot;:&quot;assets/artwork/Deku Edition-franela con dtf front and back.webp&quot;,&quot;alt&quot;:&quot;Variante de propuesta — Deku Edition (Franela Con Dtf Front And Back)&quot;,&quot;title&quot;:&quot;Deku Edition — Franela Con DTF (Front and Back)&quot;,&quot;specs&quot;:&quot;Camiseta Algodón 100% Full DTF · Bajo pedido&quot;,&quot;tag&quot;:&quot;Estampado DTF Premium Cuatro Posiciones&quot;,&quot;fabric&quot;:&quot;Algodón 20/1 (200g)&quot;,&quot;price&quot;:&quot;USD 20.00 / Unidad&quot;,&quot;desc&quot;:&quot;Alternativa complementaria de diseño y confección para Deku Edition.&quot;,&quot;story&quot;:&quot;Diseño desarrollado para diversificar la indumentaria manteniendo la línea gráfica institucional.&quot;,&quot;status&quot;:&quot;Variante: Franela Con DTF (Front and Back)&quot;}]">
-            <div class="pc-media">
-              <div class="portfolio-ribbon">2 propuestas</div>
-              <img src="assets/artwork/thumbs/Deku Edition-franela con dtf back.webp"
-                   srcset="assets/artwork/thumbs/Deku%20Edition-franela%20con%20dtf%20back.webp 480w, assets/artwork/Deku%20Edition-franela%20con%20dtf%20back.webp 1080w"
-                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
-                   alt="Presentación textil y propuesta gráfica para Deku Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
-            </div>
-            <div class="pc-body">
-              <h3 class="pc-title">Deku Edition</h3>
-              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Deku Edition (Franela Con Dtf Back).</p>
-              <div class="pc-foot">
-                <span class="pc-action-hint">Clic para ver detalle</span>
-                <span class="pc-arrow" aria-hidden="true">→</span>
-              </div>
-              <span class="visually-hidden">Clic para ver detalle</span>
-            </div>
-          </article>
-          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="sublimacion"
+                   data-tipo="cliente"
                    data-title="Ferreconstrucciones"
                    data-tag="Sublimación Deportiva Dry-Fit"
                    data-specs="Sudadera / Franela Manga Larga Dry-Fit Sublimada · Bajo pedido / Por lote o unidad" data-price="USD 17.50 / Unidad"
@@ -456,6 +269,7 @@
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="sublimacion"
+                   data-tipo="cliente"
                    data-title="Fitness 24/7"
                    data-tag="Sublimación Full Print, Cierre &amp; Forro de Malla"
                    data-specs="Chaqueta Novak Forrada Sublimada · Bajo pedido / Por lote o unidad" data-price="USD 35.00 / Unidad"
@@ -482,34 +296,8 @@
             </div>
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="streetwear"
-                   data-title="Ford Ka Edition"
-                   data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
-                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Ford Ka Edition (Franela Con Dtf). (Diseño propio · Mockup referencial.)"
-                   data-status="Propuesta técnica para Ford Ka Edition: Franela Con Dtf."
-                   data-fabric="Algodón 20/1 (200g)"
-                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Ford Ka Edition."
-                   data-img="assets/artwork/Ford Ka Edition-franela con dtf.webp">
-            <div class="pc-media">
-              
-              <img src="assets/artwork/thumbs/Ford Ka Edition-franela con dtf.webp"
-                   srcset="assets/artwork/thumbs/Ford%20Ka%20Edition-franela%20con%20dtf.webp 480w, assets/artwork/Ford%20Ka%20Edition-franela%20con%20dtf.webp 1080w"
-                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
-                   alt="Presentación textil y propuesta gráfica para Ford Ka Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
-            </div>
-            <div class="pc-body">
-              <h3 class="pc-title">Ford Ka Edition</h3>
-              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Ford Ka Edition (Franela Con Dtf).</p>
-              <div class="pc-foot">
-                <span class="pc-action-hint">Clic para ver detalle</span>
-                <span class="pc-arrow" aria-hidden="true">→</span>
-              </div>
-              <span class="visually-hidden">Clic para ver detalle</span>
-            </div>
-          </article>
-          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="sublimacion"
+                   data-tipo="cliente"
                    data-title="Guerreras SC"
                    data-tag="Sublimación Deportiva Dry-Fit Full Color"
                    data-specs="Franela Dry-Fit Sublimada · Bajo pedido / Por lote o unidad" data-price="USD 15.00 / Unidad"
@@ -537,6 +325,7 @@
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="sublimacion"
+                   data-tipo="cliente"
                    data-title="Gigantes BC"
                    data-tag="Sublimación Full Print &amp; Botonería Deportiva"
                    data-specs="Camisa de Béisbol Sublimada · Bajo pedido / Por lote o unidad" data-price="USD 25.00 / Unidad"
@@ -564,6 +353,7 @@
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="branding"
+                   data-tipo="cliente"
                    data-title="IMPA"
                    data-tag="Digitalización Wilcom DST/PES"
                    data-specs="Chaqueta Bordada · Bajo pedido / Por lote o unidad" data-price="USD 5.00 / Matriz"
@@ -591,6 +381,7 @@
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="sublimacion"
+                   data-tipo="cliente"
                    data-title="Jswim Academi"
                    data-tag="Sublimación Full Print, Cierre &amp; Forro de Malla"
                    data-specs="Chaqueta Novak Forrada Sublimada · Bajo pedido / Por lote o unidad" data-price="USD 35.00 / Unidad"
@@ -618,6 +409,7 @@
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="branding"
+                   data-tipo="cliente"
                    data-title="Kingdom Presentación"
                    data-tag="Creación de Diseño Gráfico Vectorial + Impresión Glasé 300g"
                    data-specs="Tarjetas de Presentación Corporativas · Bajo pedido / Por lote o unidad" data-price="USD 5.00 Creación de Diseño · USD 15.00 Impresión de 100 Tarjetas"
@@ -645,6 +437,7 @@
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="sublimacion"
+                   data-tipo="cliente"
                    data-title="Laneros Gamers"
                    data-tag="Sublimación Full Color &amp; Microfibra Transpirable"
                    data-specs="Camiseta Gaming Dry-Fit Sublimada · Bajo pedido / Por lote o unidad" data-price="USD 18.00 / Unidad"
@@ -672,6 +465,7 @@
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="branding"
+                   data-tipo="cliente"
                    data-title="Maderera 2PI"
                    data-tag="Sublimación Dry-Fit &amp; Cuello Tejido"
                    data-specs="Chemise Piqué Poliéster / Dry-Fit Sublimada · Bajo pedido / Por lote o unidad" data-price="USD 18.50 / Unidad"
@@ -698,34 +492,8 @@
             </div>
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="sublimacion"
-                   data-title="Messi Edition"
-                   data-tag="Sublimación Deportiva Dry-Fit Full Color"
-                   data-specs="Franela Dry-Fit Sublimada · Bajo pedido / Por lote o unidad" data-artistic="true"
-                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Messi Edition (Franela Manga Corta Sublimada). (Diseño propio · Mockup referencial.)"
-                   data-status="Propuesta técnica para Messi Edition: Franela Manga Corta Sublimada."
-                   data-fabric="Microfibra Dry-Fit antibacteriana 140g"
-                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Messi Edition."
-                   data-img="assets/artwork/Messi Edition-franela manga corta sublimada.webp">
-            <div class="pc-media">
-              
-              <img src="assets/artwork/thumbs/Messi Edition-franela manga corta sublimada.webp"
-                   srcset="assets/artwork/thumbs/Messi%20Edition-franela%20manga%20corta%20sublimada.webp 480w, assets/artwork/Messi%20Edition-franela%20manga%20corta%20sublimada.webp 1080w"
-                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
-                   alt="Presentación textil y propuesta gráfica para Messi Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
-            </div>
-            <div class="pc-body">
-              <h3 class="pc-title">Messi Edition</h3>
-              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Messi Edition (Franela Manga Corta Sublimada).</p>
-              <div class="pc-foot">
-                <span class="pc-action-hint">Clic para ver detalle</span>
-                <span class="pc-arrow" aria-hidden="true">→</span>
-              </div>
-              <span class="visually-hidden">Clic para ver detalle</span>
-            </div>
-          </article>
-          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="branding"
+                   data-tipo="cliente"
                    data-title="Michelle Collection"
                    data-tag="Confección Premium &amp; 5 Bordados Computarizados"
                    data-specs="Camisa Corporativa Tipo Columbia (5 Bordados) · Bajo pedido / Por lote o unidad" data-price="USD 35.00 / Unidad"
@@ -752,34 +520,8 @@
             </div>
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="fanart"
-                   data-title="Naruto Edition"
-                   data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
-                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Naruto Edition (Franela Con Dtf Front And Back). (Diseño propio · Mockup referencial.)"
-                   data-status="Propuesta técnica para Naruto Edition: Franela Con Dtf Front And Back."
-                   data-fabric="Algodón 20/1 (200g)"
-                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Naruto Edition."
-                   data-img="assets/artwork/Naruto Edition-franela con dtf front and back.webp" data-proposals="[{&quot;image&quot;:&quot;assets/artwork/Naruto Edition-franela con dtf.webp&quot;,&quot;alt&quot;:&quot;Variante de propuesta — Naruto Edition (Franela Con Dtf)&quot;,&quot;title&quot;:&quot;Naruto Edition — Franela Con DTF (Front and Back)&quot;,&quot;specs&quot;:&quot;Camiseta Algodón 100% Full DTF · Bajo pedido&quot;,&quot;tag&quot;:&quot;Estampado DTF Premium Cuatro Posiciones&quot;,&quot;fabric&quot;:&quot;Algodón 20/1 (200g)&quot;,&quot;price&quot;:&quot;USD 20.00 / Unidad&quot;,&quot;desc&quot;:&quot;Alternativa complementaria de diseño y confección para Naruto Edition.&quot;,&quot;story&quot;:&quot;Diseño desarrollado para diversificar la indumentaria manteniendo la línea gráfica institucional.&quot;,&quot;status&quot;:&quot;Variante: Franela Con DTF (Front and Back)&quot;}]">
-            <div class="pc-media">
-              <div class="portfolio-ribbon">2 propuestas</div>
-              <img src="assets/artwork/thumbs/Naruto Edition-franela con dtf front and back.webp"
-                   srcset="assets/artwork/thumbs/Naruto%20Edition-franela%20con%20dtf%20front%20and%20back.webp 480w, assets/artwork/Naruto%20Edition-franela%20con%20dtf%20front%20and%20back.webp 1080w"
-                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
-                   alt="Presentación textil y propuesta gráfica para Naruto Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
-            </div>
-            <div class="pc-body">
-              <h3 class="pc-title">Naruto Edition</h3>
-              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Naruto Edition (Franela Con Dtf Front And Back).</p>
-              <div class="pc-foot">
-                <span class="pc-action-hint">Clic para ver detalle</span>
-                <span class="pc-arrow" aria-hidden="true">→</span>
-              </div>
-              <span class="visually-hidden">Clic para ver detalle</span>
-            </div>
-          </article>
-          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="streetwear"
+                   data-tipo="cliente"
                    data-title="Oasis Sport"
                    data-tag="Estampado DTF Premium Cuatro Posiciones"
                    data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-price="USD 20.00 / Unidad"
@@ -807,6 +549,7 @@
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="branding"
+                   data-tipo="cliente"
                    data-title="Paramedicos Acosta Ortiz"
                    data-tag="Confección Premium &amp; 5 Bordados Computarizados"
                    data-specs="Camisa Corporativa Tipo Columbia (5 Bordados) · Bajo pedido / Por lote o unidad" data-price="USD 35.00 / Unidad"
@@ -834,6 +577,7 @@
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="sublimacion"
+                   data-tipo="cliente"
                    data-title="Personal Trainer"
                    data-tag="Sublimación Full Print, Cierre &amp; Forro de Malla"
                    data-specs="Chaqueta Novak Forrada Sublimada · Bajo pedido / Por lote o unidad" data-price="USD 35.00 / Unidad"
@@ -861,6 +605,7 @@
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="sublimacion"
+                   data-tipo="cliente"
                    data-title="Potenza"
                    data-tag="Sublimación Full Print, Cierre &amp; Forro de Malla"
                    data-specs="Chaqueta Novak Forrada Sublimada · Bajo pedido / Por lote o unidad" data-price="USD 35.00 / Unidad"
@@ -888,6 +633,7 @@
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="streetwear"
+                   data-tipo="cliente"
                    data-title="Promocion Ups"
                    data-tag="Estampado DTF Premium Cuatro Posiciones"
                    data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-price="USD 20.00 / Unidad"
@@ -914,34 +660,8 @@
             </div>
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="streetwear"
-                   data-title="Ramones Edition"
-                   data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
-                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Ramones Edition (Franela Con Dtf Front). (Diseño propio · Mockup referencial.)"
-                   data-status="Propuesta técnica para Ramones Edition: Franela Con Dtf Front."
-                   data-fabric="Algodón 20/1 (200g)"
-                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Ramones Edition."
-                   data-img="assets/artwork/Ramones Edition-franela con dtf front.webp" data-proposals="[{&quot;image&quot;:&quot;assets/artwork/Ramones Edition-franela con dtf.webp&quot;,&quot;alt&quot;:&quot;Variante de propuesta — Ramones Edition (Franela Con Dtf)&quot;,&quot;title&quot;:&quot;Ramones Edition — Franela Con Dtf&quot;,&quot;specs&quot;:&quot;Camiseta Algodón 100% Full DTF · Bajo pedido&quot;,&quot;tag&quot;:&quot;Estampado DTF Premium Cuatro Posiciones&quot;,&quot;fabric&quot;:&quot;Algodón 20/1 (200g)&quot;,&quot;price&quot;:&quot;USD 20.00 / Unidad&quot;,&quot;desc&quot;:&quot;Alternativa complementaria de diseño y confección para Ramones Edition.&quot;,&quot;story&quot;:&quot;Diseño desarrollado para diversificar la indumentaria manteniendo la línea gráfica institucional.&quot;,&quot;status&quot;:&quot;Variante: Franela Con Dtf&quot;}]">
-            <div class="pc-media">
-              <div class="portfolio-ribbon">2 propuestas</div>
-              <img src="assets/artwork/thumbs/Ramones Edition-franela con dtf front.webp"
-                   srcset="assets/artwork/thumbs/Ramones%20Edition-franela%20con%20dtf%20front.webp 480w, assets/artwork/Ramones%20Edition-franela%20con%20dtf%20front.webp 1080w"
-                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
-                   alt="Presentación textil y propuesta gráfica para Ramones Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
-            </div>
-            <div class="pc-body">
-              <h3 class="pc-title">Ramones Edition</h3>
-              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Ramones Edition (Franela Con Dtf Front).</p>
-              <div class="pc-foot">
-                <span class="pc-action-hint">Clic para ver detalle</span>
-                <span class="pc-arrow" aria-hidden="true">→</span>
-              </div>
-              <span class="visually-hidden">Clic para ver detalle</span>
-            </div>
-          </article>
-          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="sublimacion"
+                   data-tipo="cliente"
                    data-title="Repuestos Villegas"
                    data-tag="Sublimación Deportiva Dry-Fit Full Color"
                    data-specs="Franela Dry-Fit Sublimada · Bajo pedido / Por lote o unidad" data-price="USD 15.00 / Unidad"
@@ -969,6 +689,7 @@
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="sublimacion"
+                   data-tipo="cliente"
                    data-title="Santisima Trinidad"
                    data-tag="Sublimación Deportiva Dry-Fit Full Color"
                    data-specs="Franela Dry-Fit Sublimada · Bajo pedido / Por lote o unidad" data-price="USD 15.00 / Unidad"
@@ -995,88 +716,8 @@
             </div>
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="streetwear"
-                   data-title="Spark Edition"
-                   data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
-                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Spark Edition (Franela Con Dtf). (Diseño propio · Mockup referencial.)"
-                   data-status="Propuesta técnica para Spark Edition: Franela Con Dtf."
-                   data-fabric="Algodón 20/1 (200g)"
-                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Spark Edition."
-                   data-img="assets/artwork/Spark Edition-franela con dtf.webp">
-            <div class="pc-media">
-              
-              <img src="assets/artwork/thumbs/Spark Edition-franela con dtf.webp"
-                   srcset="assets/artwork/thumbs/Spark%20Edition-franela%20con%20dtf.webp 480w, assets/artwork/Spark%20Edition-franela%20con%20dtf.webp 1080w"
-                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
-                   alt="Presentación textil y propuesta gráfica para Spark Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
-            </div>
-            <div class="pc-body">
-              <h3 class="pc-title">Spark Edition</h3>
-              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Spark Edition (Franela Con Dtf).</p>
-              <div class="pc-foot">
-                <span class="pc-action-hint">Clic para ver detalle</span>
-                <span class="pc-arrow" aria-hidden="true">→</span>
-              </div>
-              <span class="visually-hidden">Clic para ver detalle</span>
-            </div>
-          </article>
-          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="streetwear"
-                   data-title="Tahoe Edition"
-                   data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
-                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Tahoe Edition (Franela Con Dtf). (Diseño propio · Mockup referencial.)"
-                   data-status="Propuesta técnica para Tahoe Edition: Franela Con Dtf."
-                   data-fabric="Algodón 20/1 (200g)"
-                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Tahoe Edition."
-                   data-img="assets/artwork/Tahoe Edition-franela con dtf.webp">
-            <div class="pc-media">
-              
-              <img src="assets/artwork/thumbs/Tahoe Edition-franela con dtf.webp"
-                   srcset="assets/artwork/thumbs/Tahoe%20Edition-franela%20con%20dtf.webp 480w, assets/artwork/Tahoe%20Edition-franela%20con%20dtf.webp 1080w"
-                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
-                   alt="Presentación textil y propuesta gráfica para Tahoe Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
-            </div>
-            <div class="pc-body">
-              <h3 class="pc-title">Tahoe Edition</h3>
-              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Tahoe Edition (Franela Con Dtf).</p>
-              <div class="pc-foot">
-                <span class="pc-action-hint">Clic para ver detalle</span>
-                <span class="pc-arrow" aria-hidden="true">→</span>
-              </div>
-              <span class="visually-hidden">Clic para ver detalle</span>
-            </div>
-          </article>
-          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="fanart"
-                   data-title="Tanjiro Edition"
-                   data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
-                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Tanjiro Edition (Franela Con Dtf 2). (Diseño propio · Mockup referencial.)"
-                   data-status="Propuesta técnica para Tanjiro Edition: Franela Con Dtf 2."
-                   data-fabric="Algodón 20/1 (200g)"
-                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Tanjiro Edition."
-                   data-img="assets/artwork/Tanjiro Edition-franela con dtf 2.webp" data-proposals="[{&quot;image&quot;:&quot;assets/artwork/Tanjiro Edition-franela con dtf.webp&quot;,&quot;alt&quot;:&quot;Variante de propuesta — Tanjiro Edition (Franela Con Dtf)&quot;,&quot;title&quot;:&quot;Tanjiro Edition — Franela Con Dtf&quot;,&quot;specs&quot;:&quot;Camiseta Algodón 100% Full DTF · Bajo pedido&quot;,&quot;tag&quot;:&quot;Estampado DTF Premium Cuatro Posiciones&quot;,&quot;fabric&quot;:&quot;Algodón 20/1 (200g)&quot;,&quot;price&quot;:&quot;USD 20.00 / Unidad&quot;,&quot;desc&quot;:&quot;Alternativa complementaria de diseño y confección para Tanjiro Edition.&quot;,&quot;story&quot;:&quot;Diseño desarrollado para diversificar la indumentaria manteniendo la línea gráfica institucional.&quot;,&quot;status&quot;:&quot;Variante: Franela Con Dtf&quot;}]">
-            <div class="pc-media">
-              <div class="portfolio-ribbon">2 propuestas</div>
-              <img src="assets/artwork/thumbs/Tanjiro Edition-franela con dtf 2.webp"
-                   srcset="assets/artwork/thumbs/Tanjiro%20Edition-franela%20con%20dtf%202.webp 480w, assets/artwork/Tanjiro%20Edition-franela%20con%20dtf%202.webp 1080w"
-                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
-                   alt="Presentación textil y propuesta gráfica para Tanjiro Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
-            </div>
-            <div class="pc-body">
-              <h3 class="pc-title">Tanjiro Edition</h3>
-              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Tanjiro Edition (Franela Con Dtf 2).</p>
-              <div class="pc-foot">
-                <span class="pc-action-hint">Clic para ver detalle</span>
-                <span class="pc-arrow" aria-hidden="true">→</span>
-              </div>
-              <span class="visually-hidden">Clic para ver detalle</span>
-            </div>
-          </article>
-          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="sublimacion"
+                   data-tipo="propio"
                    data-title="Venezolano Edition"
                    data-tag="Sublimación Deportiva Dry-Fit"
                    data-specs="Sudadera / Franela Manga Larga Dry-Fit Sublimada · Bajo pedido / Por lote o unidad" data-price="USD 17.50 / Unidad"
@@ -1103,34 +744,8 @@
             </div>
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="streetwear"
-                   data-title="Wrangler Edition"
-                   data-tag="Estampado DTF Premium Cuatro Posiciones"
-                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
-                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Wrangler Edition (Franela Con Dtf). (Diseño propio · Mockup referencial.)"
-                   data-status="Propuesta técnica para Wrangler Edition: Franela Con Dtf."
-                   data-fabric="Algodón 20/1 (200g)"
-                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Wrangler Edition."
-                   data-img="assets/artwork/Wrangler Edition-franela con dtf.webp">
-            <div class="pc-media">
-              
-              <img src="assets/artwork/thumbs/Wrangler Edition-franela con dtf.webp"
-                   srcset="assets/artwork/thumbs/Wrangler%20Edition-franela%20con%20dtf.webp 480w, assets/artwork/Wrangler%20Edition-franela%20con%20dtf.webp 1080w"
-                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
-                   alt="Presentación textil y propuesta gráfica para Wrangler Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
-            </div>
-            <div class="pc-body">
-              <h3 class="pc-title">Wrangler Edition</h3>
-              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Wrangler Edition (Franela Con Dtf).</p>
-              <div class="pc-foot">
-                <span class="pc-action-hint">Clic para ver detalle</span>
-                <span class="pc-arrow" aria-hidden="true">→</span>
-              </div>
-              <span class="visually-hidden">Clic para ver detalle</span>
-            </div>
-          </article>
-          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="branding"
+                   data-tipo="cliente"
                    data-title="WWW.listaprecio.com"
                    data-tag="Confección Premium &amp; 5 Bordados Computarizados"
                    data-specs="Camisa Corporativa Tipo Columbia (5 Bordados) · Bajo pedido / Por lote o unidad" data-price="USD 35.00 / Unidad"
@@ -1158,6 +773,7 @@
           </article>
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="branding"
+                   data-tipo="cliente"
                    data-title="Zoto"
                    data-tag="Confección Premium &amp; 5 Bordados Computarizados"
                    data-specs="Camisa Corporativa Tipo Columbia (5 Bordados) · Bajo pedido / Por lote o unidad" data-price="USD 35.00 / Unidad"
@@ -1185,9 +801,465 @@
           </article>
         </div>
 
-        <p class="portfolio-disclaimer">
-          Muestra gráfica no oficial presentada como parte de las exploraciones artísticas y técnicas de Ramses Martínez. No es un producto oficial ni se ofrece a la venta o para encargos de reproducción a través de Kingdom. No implica afiliación, patrocinio, autorización ni licencia de los titulares correspondientes. Los derechos de terceros permanecen en sus respectivos titulares.
-        </p>
+        <!-- Sección de Exploraciones Gráficas: Fan Art y Diseños Automotrices por Encargo -->
+        <section class="portfolio-special-section" id="seccionEspecial" aria-labelledby="headingSpecialSection">
+          <div class="urban-divider urban-divider--tape" aria-hidden="true"></div>
+          
+          <div class="portfolio-subgroup" id="subgrupoFanart">
+            <h3 class="section-title text-center" id="headingFanart">Exploraciones Gráficas — Fan Art</h3>
+            <p class="section-desc text-center">Muestras de ilustración y estudio visual basadas en cultura popular.</p>
+            <div class="portfolio-grid">
+              
+          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
+                   data-category="fanart"
+                   data-tipo="fanart"
+                   data-title="Avengers Doomsday"
+                   data-tag="Estampado DTF Premium Cuatro Posiciones"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
+                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Avengers Doomsday (Franela Con Dtf). (Diseño propio · Mockup referencial.)"
+                   data-status="Propuesta técnica para Avengers Doomsday: Franela Con Dtf."
+                   data-fabric="Algodón 20/1 (200g)"
+                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Avengers Doomsday."
+                   data-img="assets/artwork/Avengers Doomsday- franela con dtf.webp">
+            <div class="pc-media">
+              
+              <img src="assets/artwork/thumbs/Avengers Doomsday- franela con dtf.webp"
+                   srcset="assets/artwork/thumbs/Avengers%20Doomsday-%20franela%20con%20dtf.webp 480w, assets/artwork/Avengers%20Doomsday-%20franela%20con%20dtf.webp 1080w"
+                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
+                   alt="Presentación textil y propuesta gráfica para Avengers Doomsday" width="1080" height="1350" loading="lazy" decoding="async"/>
+            </div>
+            <div class="pc-body">
+              <h3 class="pc-title">Avengers Doomsday</h3>
+              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Avengers Doomsday (Franela Con Dtf).</p>
+              <div class="pc-foot">
+                <span class="pc-action-hint">Clic para ver detalle</span>
+                <span class="pc-arrow" aria-hidden="true">→</span>
+              </div>
+              <span class="visually-hidden">Clic para ver detalle</span>
+            </div>
+          </article>
+          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
+                   data-category="fanart"
+                   data-tipo="fanart"
+                   data-title="Bakugo MHA"
+                   data-tag="Estampado DTF Premium Cuatro Posiciones"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
+                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Bakugo MHA (Franela Con Dtf 2). (Diseño propio · Mockup referencial.)"
+                   data-status="Propuesta técnica para Bakugo MHA: Franela Con Dtf 2."
+                   data-fabric="Algodón 20/1 (200g)"
+                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Bakugo MHA."
+                   data-img="assets/artwork/Bakugo MHA-franela con dtf 2.webp" data-proposals="[{&quot;image&quot;:&quot;assets/artwork/Bakugo MHA-franela con dtf.webp&quot;,&quot;alt&quot;:&quot;Variante de propuesta — Bakugo MHA (Franela Con Dtf)&quot;,&quot;title&quot;:&quot;Bakugo MHA — Franela Con Dtf&quot;,&quot;specs&quot;:&quot;Camiseta Algodón 100% Full DTF · Bajo pedido&quot;,&quot;tag&quot;:&quot;Estampado DTF Premium Cuatro Posiciones&quot;,&quot;fabric&quot;:&quot;Algodón 20/1 (200g)&quot;,&quot;price&quot;:&quot;USD 20.00 / Unidad&quot;,&quot;desc&quot;:&quot;Alternativa complementaria de diseño y confección para Bakugo MHA.&quot;,&quot;story&quot;:&quot;Diseño desarrollado para diversificar la indumentaria manteniendo la línea gráfica institucional.&quot;,&quot;status&quot;:&quot;Variante: Franela Con Dtf&quot;}]">
+            <div class="pc-media">
+              <div class="portfolio-ribbon">2 propuestas</div>
+              <img src="assets/artwork/thumbs/Bakugo MHA-franela con dtf 2.webp"
+                   srcset="assets/artwork/thumbs/Bakugo%20MHA-franela%20con%20dtf%202.webp 480w, assets/artwork/Bakugo%20MHA-franela%20con%20dtf%202.webp 1080w"
+                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
+                   alt="Presentación textil y propuesta gráfica para Bakugo MHA" width="1080" height="1350" loading="lazy" decoding="async"/>
+            </div>
+            <div class="pc-body">
+              <h3 class="pc-title">Bakugo MHA</h3>
+              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Bakugo MHA (Franela Con Dtf 2).</p>
+              <div class="pc-foot">
+                <span class="pc-action-hint">Clic para ver detalle</span>
+                <span class="pc-arrow" aria-hidden="true">→</span>
+              </div>
+              <span class="visually-hidden">Clic para ver detalle</span>
+            </div>
+          </article>
+          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
+                   data-category="sublimacion"
+                   data-tipo="fanart"
+                   data-title="CR7 Edition"
+                   data-tag="Sublimación Deportiva Dry-Fit Full Color"
+                   data-specs="Franela Dry-Fit Sublimada · Bajo pedido / Por lote o unidad" data-artistic="true"
+                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para CR7 Edition (Franela Manga Corta Sublimada). (Diseño propio · Mockup referencial.)"
+                   data-status="Propuesta técnica para CR7 Edition: Franela Manga Corta Sublimada."
+                   data-fabric="Microfibra Dry-Fit antibacteriana 140g"
+                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de CR7 Edition."
+                   data-img="assets/artwork/CR7 Edition-franela manga corta sublimada.webp">
+            <div class="pc-media">
+              
+              <img src="assets/artwork/thumbs/CR7 Edition-franela manga corta sublimada.webp"
+                   srcset="assets/artwork/thumbs/CR7%20Edition-franela%20manga%20corta%20sublimada.webp 480w, assets/artwork/CR7%20Edition-franela%20manga%20corta%20sublimada.webp 1080w"
+                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
+                   alt="Presentación textil y propuesta gráfica para CR7 Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
+            </div>
+            <div class="pc-body">
+              <h3 class="pc-title">CR7 Edition</h3>
+              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para CR7 Edition (Franela Manga Corta Sublimada).</p>
+              <div class="pc-foot">
+                <span class="pc-action-hint">Clic para ver detalle</span>
+                <span class="pc-arrow" aria-hidden="true">→</span>
+              </div>
+              <span class="visually-hidden">Clic para ver detalle</span>
+            </div>
+          </article>
+          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
+                   data-category="fanart"
+                   data-tipo="fanart"
+                   data-title="DBS Edition"
+                   data-tag="Estampado DTF Premium Cuatro Posiciones"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
+                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para DBS Edition (Franela Con Dtf Back). (Diseño propio · Mockup referencial.)"
+                   data-status="Propuesta técnica para DBS Edition: Franela Con Dtf Back."
+                   data-fabric="Algodón 20/1 (200g)"
+                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de DBS Edition."
+                   data-img="assets/artwork/DBS Edition-franela con dtf back.webp" data-proposals="[{&quot;image&quot;:&quot;assets/artwork/DBS Edition-franela con dtf front and back.webp&quot;,&quot;alt&quot;:&quot;Variante de propuesta — DBS Edition (Franela Con Dtf Front And Back)&quot;,&quot;title&quot;:&quot;DBS Edition — Franela Con DTF (Front and Back)&quot;,&quot;specs&quot;:&quot;Camiseta Algodón 100% Full DTF · Bajo pedido&quot;,&quot;tag&quot;:&quot;Estampado DTF Premium Cuatro Posiciones&quot;,&quot;fabric&quot;:&quot;Algodón 20/1 (200g)&quot;,&quot;price&quot;:&quot;USD 20.00 / Unidad&quot;,&quot;desc&quot;:&quot;Alternativa complementaria de diseño y confección para DBS Edition.&quot;,&quot;story&quot;:&quot;Diseño desarrollado para diversificar la indumentaria manteniendo la línea gráfica institucional.&quot;,&quot;status&quot;:&quot;Variante: Franela Con DTF (Front and Back)&quot;}]">
+            <div class="pc-media">
+              <div class="portfolio-ribbon">2 propuestas</div>
+              <img src="assets/artwork/thumbs/DBS Edition-franela con dtf back.webp"
+                   srcset="assets/artwork/thumbs/DBS%20Edition-franela%20con%20dtf%20back.webp 480w, assets/artwork/DBS%20Edition-franela%20con%20dtf%20back.webp 1080w"
+                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
+                   alt="Presentación textil y propuesta gráfica para DBS Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
+            </div>
+            <div class="pc-body">
+              <h3 class="pc-title">DBS Edition</h3>
+              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para DBS Edition (Franela Con Dtf Back).</p>
+              <div class="pc-foot">
+                <span class="pc-action-hint">Clic para ver detalle</span>
+                <span class="pc-arrow" aria-hidden="true">→</span>
+              </div>
+              <span class="visually-hidden">Clic para ver detalle</span>
+            </div>
+          </article>
+          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
+                   data-category="fanart"
+                   data-tipo="fanart"
+                   data-title="Deku Edition"
+                   data-tag="Estampado DTF Premium Cuatro Posiciones"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
+                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Deku Edition (Franela Con Dtf Back). (Diseño propio · Mockup referencial.)"
+                   data-status="Propuesta técnica para Deku Edition: Franela Con Dtf Back."
+                   data-fabric="Algodón 20/1 (200g)"
+                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Deku Edition."
+                   data-img="assets/artwork/Deku Edition-franela con dtf back.webp" data-proposals="[{&quot;image&quot;:&quot;assets/artwork/Deku Edition-franela con dtf front and back.webp&quot;,&quot;alt&quot;:&quot;Variante de propuesta — Deku Edition (Franela Con Dtf Front And Back)&quot;,&quot;title&quot;:&quot;Deku Edition — Franela Con DTF (Front and Back)&quot;,&quot;specs&quot;:&quot;Camiseta Algodón 100% Full DTF · Bajo pedido&quot;,&quot;tag&quot;:&quot;Estampado DTF Premium Cuatro Posiciones&quot;,&quot;fabric&quot;:&quot;Algodón 20/1 (200g)&quot;,&quot;price&quot;:&quot;USD 20.00 / Unidad&quot;,&quot;desc&quot;:&quot;Alternativa complementaria de diseño y confección para Deku Edition.&quot;,&quot;story&quot;:&quot;Diseño desarrollado para diversificar la indumentaria manteniendo la línea gráfica institucional.&quot;,&quot;status&quot;:&quot;Variante: Franela Con DTF (Front and Back)&quot;}]">
+            <div class="pc-media">
+              <div class="portfolio-ribbon">2 propuestas</div>
+              <img src="assets/artwork/thumbs/Deku Edition-franela con dtf back.webp"
+                   srcset="assets/artwork/thumbs/Deku%20Edition-franela%20con%20dtf%20back.webp 480w, assets/artwork/Deku%20Edition-franela%20con%20dtf%20back.webp 1080w"
+                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
+                   alt="Presentación textil y propuesta gráfica para Deku Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
+            </div>
+            <div class="pc-body">
+              <h3 class="pc-title">Deku Edition</h3>
+              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Deku Edition (Franela Con Dtf Back).</p>
+              <div class="pc-foot">
+                <span class="pc-action-hint">Clic para ver detalle</span>
+                <span class="pc-arrow" aria-hidden="true">→</span>
+              </div>
+              <span class="visually-hidden">Clic para ver detalle</span>
+            </div>
+          </article>
+          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
+                   data-category="sublimacion"
+                   data-tipo="fanart"
+                   data-title="Messi Edition"
+                   data-tag="Sublimación Deportiva Dry-Fit Full Color"
+                   data-specs="Franela Dry-Fit Sublimada · Bajo pedido / Por lote o unidad" data-artistic="true"
+                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Messi Edition (Franela Manga Corta Sublimada). (Diseño propio · Mockup referencial.)"
+                   data-status="Propuesta técnica para Messi Edition: Franela Manga Corta Sublimada."
+                   data-fabric="Microfibra Dry-Fit antibacteriana 140g"
+                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Messi Edition."
+                   data-img="assets/artwork/Messi Edition-franela manga corta sublimada.webp">
+            <div class="pc-media">
+              
+              <img src="assets/artwork/thumbs/Messi Edition-franela manga corta sublimada.webp"
+                   srcset="assets/artwork/thumbs/Messi%20Edition-franela%20manga%20corta%20sublimada.webp 480w, assets/artwork/Messi%20Edition-franela%20manga%20corta%20sublimada.webp 1080w"
+                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
+                   alt="Presentación textil y propuesta gráfica para Messi Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
+            </div>
+            <div class="pc-body">
+              <h3 class="pc-title">Messi Edition</h3>
+              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Messi Edition (Franela Manga Corta Sublimada).</p>
+              <div class="pc-foot">
+                <span class="pc-action-hint">Clic para ver detalle</span>
+                <span class="pc-arrow" aria-hidden="true">→</span>
+              </div>
+              <span class="visually-hidden">Clic para ver detalle</span>
+            </div>
+          </article>
+          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
+                   data-category="fanart"
+                   data-tipo="fanart"
+                   data-title="Naruto Edition"
+                   data-tag="Estampado DTF Premium Cuatro Posiciones"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
+                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Naruto Edition (Franela Con Dtf Front And Back). (Diseño propio · Mockup referencial.)"
+                   data-status="Propuesta técnica para Naruto Edition: Franela Con Dtf Front And Back."
+                   data-fabric="Algodón 20/1 (200g)"
+                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Naruto Edition."
+                   data-img="assets/artwork/Naruto Edition-franela con dtf front and back.webp" data-proposals="[{&quot;image&quot;:&quot;assets/artwork/Naruto Edition-franela con dtf.webp&quot;,&quot;alt&quot;:&quot;Variante de propuesta — Naruto Edition (Franela Con Dtf)&quot;,&quot;title&quot;:&quot;Naruto Edition — Franela Con DTF (Front and Back)&quot;,&quot;specs&quot;:&quot;Camiseta Algodón 100% Full DTF · Bajo pedido&quot;,&quot;tag&quot;:&quot;Estampado DTF Premium Cuatro Posiciones&quot;,&quot;fabric&quot;:&quot;Algodón 20/1 (200g)&quot;,&quot;price&quot;:&quot;USD 20.00 / Unidad&quot;,&quot;desc&quot;:&quot;Alternativa complementaria de diseño y confección para Naruto Edition.&quot;,&quot;story&quot;:&quot;Diseño desarrollado para diversificar la indumentaria manteniendo la línea gráfica institucional.&quot;,&quot;status&quot;:&quot;Variante: Franela Con DTF (Front and Back)&quot;}]">
+            <div class="pc-media">
+              <div class="portfolio-ribbon">2 propuestas</div>
+              <img src="assets/artwork/thumbs/Naruto Edition-franela con dtf front and back.webp"
+                   srcset="assets/artwork/thumbs/Naruto%20Edition-franela%20con%20dtf%20front%20and%20back.webp 480w, assets/artwork/Naruto%20Edition-franela%20con%20dtf%20front%20and%20back.webp 1080w"
+                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
+                   alt="Presentación textil y propuesta gráfica para Naruto Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
+            </div>
+            <div class="pc-body">
+              <h3 class="pc-title">Naruto Edition</h3>
+              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Naruto Edition (Franela Con Dtf Front And Back).</p>
+              <div class="pc-foot">
+                <span class="pc-action-hint">Clic para ver detalle</span>
+                <span class="pc-arrow" aria-hidden="true">→</span>
+              </div>
+              <span class="visually-hidden">Clic para ver detalle</span>
+            </div>
+          </article>
+          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
+                   data-category="streetwear"
+                   data-tipo="fanart"
+                   data-title="Ramones Edition"
+                   data-tag="Estampado DTF Premium Cuatro Posiciones"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
+                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Ramones Edition (Franela Con Dtf Front). (Diseño propio · Mockup referencial.)"
+                   data-status="Propuesta técnica para Ramones Edition: Franela Con Dtf Front."
+                   data-fabric="Algodón 20/1 (200g)"
+                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Ramones Edition."
+                   data-img="assets/artwork/Ramones Edition-franela con dtf front.webp" data-proposals="[{&quot;image&quot;:&quot;assets/artwork/Ramones Edition-franela con dtf.webp&quot;,&quot;alt&quot;:&quot;Variante de propuesta — Ramones Edition (Franela Con Dtf)&quot;,&quot;title&quot;:&quot;Ramones Edition — Franela Con Dtf&quot;,&quot;specs&quot;:&quot;Camiseta Algodón 100% Full DTF · Bajo pedido&quot;,&quot;tag&quot;:&quot;Estampado DTF Premium Cuatro Posiciones&quot;,&quot;fabric&quot;:&quot;Algodón 20/1 (200g)&quot;,&quot;price&quot;:&quot;USD 20.00 / Unidad&quot;,&quot;desc&quot;:&quot;Alternativa complementaria de diseño y confección para Ramones Edition.&quot;,&quot;story&quot;:&quot;Diseño desarrollado para diversificar la indumentaria manteniendo la línea gráfica institucional.&quot;,&quot;status&quot;:&quot;Variante: Franela Con Dtf&quot;}]">
+            <div class="pc-media">
+              <div class="portfolio-ribbon">2 propuestas</div>
+              <img src="assets/artwork/thumbs/Ramones Edition-franela con dtf front.webp"
+                   srcset="assets/artwork/thumbs/Ramones%20Edition-franela%20con%20dtf%20front.webp 480w, assets/artwork/Ramones%20Edition-franela%20con%20dtf%20front.webp 1080w"
+                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
+                   alt="Presentación textil y propuesta gráfica para Ramones Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
+            </div>
+            <div class="pc-body">
+              <h3 class="pc-title">Ramones Edition</h3>
+              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Ramones Edition (Franela Con Dtf Front).</p>
+              <div class="pc-foot">
+                <span class="pc-action-hint">Clic para ver detalle</span>
+                <span class="pc-arrow" aria-hidden="true">→</span>
+              </div>
+              <span class="visually-hidden">Clic para ver detalle</span>
+            </div>
+          </article>
+          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
+                   data-category="fanart"
+                   data-tipo="fanart"
+                   data-title="Tanjiro Edition"
+                   data-tag="Estampado DTF Premium Cuatro Posiciones"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
+                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Tanjiro Edition (Franela Con Dtf 2). (Diseño propio · Mockup referencial.)"
+                   data-status="Propuesta técnica para Tanjiro Edition: Franela Con Dtf 2."
+                   data-fabric="Algodón 20/1 (200g)"
+                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Tanjiro Edition."
+                   data-img="assets/artwork/Tanjiro Edition-franela con dtf 2.webp" data-proposals="[{&quot;image&quot;:&quot;assets/artwork/Tanjiro Edition-franela con dtf.webp&quot;,&quot;alt&quot;:&quot;Variante de propuesta — Tanjiro Edition (Franela Con Dtf)&quot;,&quot;title&quot;:&quot;Tanjiro Edition — Franela Con Dtf&quot;,&quot;specs&quot;:&quot;Camiseta Algodón 100% Full DTF · Bajo pedido&quot;,&quot;tag&quot;:&quot;Estampado DTF Premium Cuatro Posiciones&quot;,&quot;fabric&quot;:&quot;Algodón 20/1 (200g)&quot;,&quot;price&quot;:&quot;USD 20.00 / Unidad&quot;,&quot;desc&quot;:&quot;Alternativa complementaria de diseño y confección para Tanjiro Edition.&quot;,&quot;story&quot;:&quot;Diseño desarrollado para diversificar la indumentaria manteniendo la línea gráfica institucional.&quot;,&quot;status&quot;:&quot;Variante: Franela Con Dtf&quot;}]">
+            <div class="pc-media">
+              <div class="portfolio-ribbon">2 propuestas</div>
+              <img src="assets/artwork/thumbs/Tanjiro Edition-franela con dtf 2.webp"
+                   srcset="assets/artwork/thumbs/Tanjiro%20Edition-franela%20con%20dtf%202.webp 480w, assets/artwork/Tanjiro%20Edition-franela%20con%20dtf%202.webp 1080w"
+                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
+                   alt="Presentación textil y propuesta gráfica para Tanjiro Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
+            </div>
+            <div class="pc-body">
+              <h3 class="pc-title">Tanjiro Edition</h3>
+              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Tanjiro Edition (Franela Con Dtf 2).</p>
+              <div class="pc-foot">
+                <span class="pc-action-hint">Clic para ver detalle</span>
+                <span class="pc-arrow" aria-hidden="true">→</span>
+              </div>
+              <span class="visually-hidden">Clic para ver detalle</span>
+            </div>
+          </article>
+            </div>
+            <div class="portfolio-disclaimer-box">
+              <p class="portfolio-disclaimer">
+                Exploraciones gráficas de fan art realizadas con fines de práctica y portafolio. Los personajes, nombres, logotipos y marcas pertenecen a sus respectivos titulares; no existe afiliación, patrocinio ni autorización por parte de ellos. Si eres titular de derechos y deseas el retiro de una pieza, escribe a kingdombrandbqto@gmail.com.
+              </p>
+            </div>
+          </div>
+
+          <div class="urban-divider urban-divider--stitch" aria-hidden="true"></div>
+
+          <div class="portfolio-subgroup" id="subgrupoEncargoMarca">
+            <h3 class="section-title text-center" id="headingEncargoMarca">Diseños Automotrices por Encargo</h3>
+            <p class="section-desc text-center">Piezas gráficas para prendas desarrolladas a solicitud de clientes para entusiastas del motor.</p>
+            <div class="portfolio-grid">
+              
+          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
+                   data-category="streetwear"
+                   data-tipo="encargo-marca"
+                   data-title="Camaro Edition"
+                   data-tag="Estampado DTF Premium Cuatro Posiciones"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
+                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Camaro Edition (Franela Con Dtf Negra). (Diseño propio · Mockup referencial.)"
+                   data-status="Propuesta técnica para Camaro Edition: Franela Con Dtf Negra."
+                   data-fabric="Algodón 20/1 (200g)"
+                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Camaro Edition."
+                   data-img="assets/artwork/Camaro Edition-franela con dtf negra.webp" data-proposals="[{&quot;image&quot;:&quot;assets/artwork/Camaro Edition-franela con dtf.webp&quot;,&quot;alt&quot;:&quot;Variante de propuesta — Camaro Edition (Franela Con Dtf)&quot;,&quot;title&quot;:&quot;Camaro Edition — Franela Con Dtf&quot;,&quot;specs&quot;:&quot;Camiseta Algodón 100% Full DTF · Bajo pedido&quot;,&quot;tag&quot;:&quot;Estampado DTF Premium Cuatro Posiciones&quot;,&quot;fabric&quot;:&quot;Algodón 20/1 (200g)&quot;,&quot;price&quot;:&quot;USD 20.00 / Unidad&quot;,&quot;desc&quot;:&quot;Alternativa complementaria de diseño y confección para Camaro Edition.&quot;,&quot;story&quot;:&quot;Diseño desarrollado para diversificar la indumentaria manteniendo la línea gráfica institucional.&quot;,&quot;status&quot;:&quot;Variante: Franela Con Dtf&quot;}]">
+            <div class="pc-media">
+              <div class="portfolio-ribbon">2 propuestas</div>
+              <img src="assets/artwork/thumbs/Camaro Edition-franela con dtf negra.webp"
+                   srcset="assets/artwork/thumbs/Camaro%20Edition-franela%20con%20dtf%20negra.webp 480w, assets/artwork/Camaro%20Edition-franela%20con%20dtf%20negra.webp 1080w"
+                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
+                   alt="Presentación textil y propuesta gráfica para Camaro Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
+            </div>
+            <div class="pc-body">
+              <h3 class="pc-title">Camaro Edition</h3>
+              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Camaro Edition (Franela Con Dtf Negra).</p>
+              <div class="pc-foot">
+                <span class="pc-action-hint">Clic para ver detalle</span>
+                <span class="pc-arrow" aria-hidden="true">→</span>
+              </div>
+              <span class="visually-hidden">Clic para ver detalle</span>
+            </div>
+          </article>
+          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
+                   data-category="streetwear"
+                   data-tipo="encargo-marca"
+                   data-title="Corvette Edition"
+                   data-tag="Estampado DTF Premium Cuatro Posiciones"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
+                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Corvette Edition (Franela Con Dtf). (Diseño propio · Mockup referencial.)"
+                   data-status="Propuesta técnica para Corvette Edition: Franela Con Dtf."
+                   data-fabric="Algodón 20/1 (200g)"
+                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Corvette Edition."
+                   data-img="assets/artwork/Corvette Edition-franela con dtf.webp">
+            <div class="pc-media">
+              
+              <img src="assets/artwork/thumbs/Corvette Edition-franela con dtf.webp"
+                   srcset="assets/artwork/thumbs/Corvette%20Edition-franela%20con%20dtf.webp 480w, assets/artwork/Corvette%20Edition-franela%20con%20dtf.webp 1080w"
+                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
+                   alt="Presentación textil y propuesta gráfica para Corvette Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
+            </div>
+            <div class="pc-body">
+              <h3 class="pc-title">Corvette Edition</h3>
+              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Corvette Edition (Franela Con Dtf).</p>
+              <div class="pc-foot">
+                <span class="pc-action-hint">Clic para ver detalle</span>
+                <span class="pc-arrow" aria-hidden="true">→</span>
+              </div>
+              <span class="visually-hidden">Clic para ver detalle</span>
+            </div>
+          </article>
+          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
+                   data-category="streetwear"
+                   data-tipo="encargo-marca"
+                   data-title="Ford Ka Edition"
+                   data-tag="Estampado DTF Premium Cuatro Posiciones"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
+                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Ford Ka Edition (Franela Con Dtf). (Diseño propio · Mockup referencial.)"
+                   data-status="Propuesta técnica para Ford Ka Edition: Franela Con Dtf."
+                   data-fabric="Algodón 20/1 (200g)"
+                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Ford Ka Edition."
+                   data-img="assets/artwork/Ford Ka Edition-franela con dtf.webp">
+            <div class="pc-media">
+              
+              <img src="assets/artwork/thumbs/Ford Ka Edition-franela con dtf.webp"
+                   srcset="assets/artwork/thumbs/Ford%20Ka%20Edition-franela%20con%20dtf.webp 480w, assets/artwork/Ford%20Ka%20Edition-franela%20con%20dtf.webp 1080w"
+                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
+                   alt="Presentación textil y propuesta gráfica para Ford Ka Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
+            </div>
+            <div class="pc-body">
+              <h3 class="pc-title">Ford Ka Edition</h3>
+              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Ford Ka Edition (Franela Con Dtf).</p>
+              <div class="pc-foot">
+                <span class="pc-action-hint">Clic para ver detalle</span>
+                <span class="pc-arrow" aria-hidden="true">→</span>
+              </div>
+              <span class="visually-hidden">Clic para ver detalle</span>
+            </div>
+          </article>
+          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
+                   data-category="streetwear"
+                   data-tipo="encargo-marca"
+                   data-title="Spark Edition"
+                   data-tag="Estampado DTF Premium Cuatro Posiciones"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
+                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Spark Edition (Franela Con Dtf). (Diseño propio · Mockup referencial.)"
+                   data-status="Propuesta técnica para Spark Edition: Franela Con Dtf."
+                   data-fabric="Algodón 20/1 (200g)"
+                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Spark Edition."
+                   data-img="assets/artwork/Spark Edition-franela con dtf.webp">
+            <div class="pc-media">
+              
+              <img src="assets/artwork/thumbs/Spark Edition-franela con dtf.webp"
+                   srcset="assets/artwork/thumbs/Spark%20Edition-franela%20con%20dtf.webp 480w, assets/artwork/Spark%20Edition-franela%20con%20dtf.webp 1080w"
+                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
+                   alt="Presentación textil y propuesta gráfica para Spark Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
+            </div>
+            <div class="pc-body">
+              <h3 class="pc-title">Spark Edition</h3>
+              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Spark Edition (Franela Con Dtf).</p>
+              <div class="pc-foot">
+                <span class="pc-action-hint">Clic para ver detalle</span>
+                <span class="pc-arrow" aria-hidden="true">→</span>
+              </div>
+              <span class="visually-hidden">Clic para ver detalle</span>
+            </div>
+          </article>
+          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
+                   data-category="streetwear"
+                   data-tipo="encargo-marca"
+                   data-title="Tahoe Edition"
+                   data-tag="Estampado DTF Premium Cuatro Posiciones"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
+                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Tahoe Edition (Franela Con Dtf). (Diseño propio · Mockup referencial.)"
+                   data-status="Propuesta técnica para Tahoe Edition: Franela Con Dtf."
+                   data-fabric="Algodón 20/1 (200g)"
+                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Tahoe Edition."
+                   data-img="assets/artwork/Tahoe Edition-franela con dtf.webp">
+            <div class="pc-media">
+              
+              <img src="assets/artwork/thumbs/Tahoe Edition-franela con dtf.webp"
+                   srcset="assets/artwork/thumbs/Tahoe%20Edition-franela%20con%20dtf.webp 480w, assets/artwork/Tahoe%20Edition-franela%20con%20dtf.webp 1080w"
+                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
+                   alt="Presentación textil y propuesta gráfica para Tahoe Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
+            </div>
+            <div class="pc-body">
+              <h3 class="pc-title">Tahoe Edition</h3>
+              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Tahoe Edition (Franela Con Dtf).</p>
+              <div class="pc-foot">
+                <span class="pc-action-hint">Clic para ver detalle</span>
+                <span class="pc-arrow" aria-hidden="true">→</span>
+              </div>
+              <span class="visually-hidden">Clic para ver detalle</span>
+            </div>
+          </article>
+          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
+                   data-category="streetwear"
+                   data-tipo="encargo-marca"
+                   data-title="Wrangler Edition"
+                   data-tag="Estampado DTF Premium Cuatro Posiciones"
+                   data-specs="Camiseta Algodón 100% Full DTF · Bajo pedido / Por lote o unidad" data-artistic="true"
+                   data-desc="Propuesta de diseño y presentación gráfica de alta resolución para Wrangler Edition (Franela Con Dtf). (Diseño propio · Mockup referencial.)"
+                   data-status="Propuesta técnica para Wrangler Edition: Franela Con Dtf."
+                   data-fabric="Algodón 20/1 (200g)"
+                   data-story="Desarrollo adaptado a la identidad gráfica y especificaciones textiles de Wrangler Edition."
+                   data-img="assets/artwork/Wrangler Edition-franela con dtf.webp">
+            <div class="pc-media">
+              
+              <img src="assets/artwork/thumbs/Wrangler Edition-franela con dtf.webp"
+                   srcset="assets/artwork/thumbs/Wrangler%20Edition-franela%20con%20dtf.webp 480w, assets/artwork/Wrangler%20Edition-franela%20con%20dtf.webp 1080w"
+                   sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 960px) calc((100vw - 64px) / 2), 360px"
+                   alt="Presentación textil y propuesta gráfica para Wrangler Edition" width="1080" height="1350" loading="lazy" decoding="async"/>
+            </div>
+            <div class="pc-body">
+              <h3 class="pc-title">Wrangler Edition</h3>
+              <p class="pc-desc">Propuesta de diseño y presentación gráfica de alta resolución para Wrangler Edition (Franela Con Dtf).</p>
+              <div class="pc-foot">
+                <span class="pc-action-hint">Clic para ver detalle</span>
+                <span class="pc-arrow" aria-hidden="true">→</span>
+              </div>
+              <span class="visually-hidden">Clic para ver detalle</span>
+            </div>
+          </article>
+            </div>
+            <div class="portfolio-disclaimer-box">
+              <p class="portfolio-disclaimer">
+                Diseños automotrices realizados por encargo de clientes. Los nombres, logotipos y marcas de los vehículos pertenecen a sus respectivos titulares; no existe afiliación, patrocinio ni autorización por parte de ellos. Si eres titular de derechos y deseas el retiro de una pieza, escribe a kingdombrandbqto@gmail.com.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Aviso general de logos de clientes -->
+        <div class="portfolio-client-logos-notice text-center">
+          <p class="portfolio-client-logos-text">
+            Los nombres, marcas y logotipos de clientes mostrados pertenecen a sus respectivos titulares y se exhiben como referencia de trabajos realizados o propuestos por Kingdom.
+          </p>
+        </div>
 
         <div class="portfolio-back-wrap text-center">
           <a class="btn-secondary" href="/">← Volver al Inicio</a>
@@ -1251,7 +1323,7 @@
         <div>
           <img src="assets/brand/logo.png" alt="Kingdom Tag Logo" width="1024" height="691" class="footer-logo" translate="no"/>
           <p class="footer-brand-text">
-            KINGDOM — Estudio de diseño textil, ilustración vectorial y digitalización de bordado industrial fundado por <span translate="no">Ramses Martínez</span>.
+            KINGDOM — Marca personal de <span translate="no">Ramses Martínez</span>. Diseño textil, ilustración vectorial y digitalización de bordado industrial.
           </p>
         </div>
 

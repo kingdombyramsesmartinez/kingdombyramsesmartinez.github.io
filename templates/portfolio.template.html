@@ -113,13 +113,49 @@
 
         <div id="filterLiveStatus" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
 
-        <div class="portfolio-grid">
+        <div class="portfolio-grid" id="mainPortfolioGrid">
           {{PORTFOLIO_CARDS_HTML}}
         </div>
 
-        <p class="portfolio-disclaimer">
-          {{PORTFOLIO_DISCLAIMER}}
-        </p>
+        <!-- Sección de Exploraciones Gráficas: Fan Art y Diseños Automotrices por Encargo -->
+        <section class="portfolio-special-section" id="seccionEspecial" aria-labelledby="headingSpecialSection">
+          <div class="urban-divider urban-divider--tape" aria-hidden="true"></div>
+          
+          <div class="portfolio-subgroup" id="subgrupoFanart">
+            <h3 class="section-title text-center" id="headingFanart">{{FANART_SUBGROUP_TITLE}}</h3>
+            <p class="section-desc text-center">{{FANART_SUBGROUP_DESC}}</p>
+            <div class="portfolio-grid">
+              {{FANART_CARDS_HTML}}
+            </div>
+            <div class="portfolio-disclaimer-box">
+              <p class="portfolio-disclaimer">
+                {{FANART_DISCLAIMER}}
+              </p>
+            </div>
+          </div>
+
+          <div class="urban-divider urban-divider--stitch" aria-hidden="true"></div>
+
+          <div class="portfolio-subgroup" id="subgrupoEncargoMarca">
+            <h3 class="section-title text-center" id="headingEncargoMarca">{{ENCARGO_SUBGROUP_TITLE}}</h3>
+            <p class="section-desc text-center">{{ENCARGO_SUBGROUP_DESC}}</p>
+            <div class="portfolio-grid">
+              {{ENCARGO_CARDS_HTML}}
+            </div>
+            <div class="portfolio-disclaimer-box">
+              <p class="portfolio-disclaimer">
+                {{ENCARGO_DISCLAIMER}}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Aviso general de logos de clientes -->
+        <div class="portfolio-client-logos-notice text-center">
+          <p class="portfolio-client-logos-text">
+            {{CLIENT_LOGOS_DISCLAIMER}}
+          </p>
+        </div>
 
         <div class="portfolio-back-wrap text-center">
           <a class="btn-secondary" href="{{HOME_PAGE_HREF}}">{{PORTFOLIO_CTA_BACK}}</a>

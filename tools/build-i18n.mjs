@@ -280,8 +280,8 @@ function renderPortfolioPage(data, isEn) {
           </button>`).join("");
   out = out.replaceAll("{{PORTFOLIO_FILTERS_HTML}}", filtersHtml);
 
-  // Cards (Clean view: info is hidden inside data attributes until clicked to open modal)
-  const cardsHtml = portfolioData.map(p => {
+  // Helper to render a card
+  function renderCard(p) {
     const title = isEn ? p.titleEn : p.titleEs;
     const tag = isEn ? p.techniqueEn : p.techniqueEs;
     const garment = isEn ? p.garmentEn : p.garmentEs;
@@ -299,7 +299,6 @@ function renderPortfolioPage(data, isEn) {
 
     const ribbonHtml = ribbon ? `<div class="portfolio-ribbon">${esc(ribbon)}</div>` : "";
 
-    // Soporte para variantes/carrusel de propuestas internas
     const proposalsList = (p.proposals || []).map(prop => ({
       image: `${assetPrefix}${prop.image}`,
       alt: isEn ? (prop.altEn || alt) : (prop.altEs || alt),
@@ -315,13 +314,14 @@ function renderPortfolioPage(data, isEn) {
 
     const proposalsJsonAttr = proposalsList.length > 0 ? ` data-proposals="${esc(JSON.stringify(proposalsList))}"` : "";
 
-    const isArtistic = p.isArtistic || p.category === "fanart";
+    const isArtistic = p.isArtistic || p.category === "fanart" || p.tipo === "fanart" || p.tipo === "encargo-marca";
     const artisticAttr = isArtistic ? ' data-artistic="true"' : "";
     const priceAttr = (!isArtistic && SITE_CONFIG.pricing?.enabled) ? ` data-price="${esc(price)}"` : "";
 
     return `
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="${p.category}"
+                   data-tipo="${p.tipo || "cliente"}"
                    data-title="${esc(title)}"
                    data-tag="${esc(tag)}"
                    data-specs="${esc(specs)}"${priceAttr}${artisticAttr}
@@ -347,8 +347,28 @@ function renderPortfolioPage(data, isEn) {
               <span class="visually-hidden">${clickHint}</span>
             </div>
           </article>`;
-  }).join("");
+  }
+
+  // Segregate pieces: Main (cliente + propio: 24), Fanart (9), Encargo-marca (6)
+  const clientPieces = portfolioData.filter(p => p.tipo !== "fanart" && p.tipo !== "encargo-marca");
+  const fanartPieces = portfolioData.filter(p => p.tipo === "fanart");
+  const encargoPieces = portfolioData.filter(p => p.tipo === "encargo-marca");
+
+  const cardsHtml = clientPieces.map(renderCard).join("");
+  const fanartCardsHtml = fanartPieces.map(renderCard).join("");
+  const encargoCardsHtml = encargoPieces.map(renderCard).join("");
+
   out = out.replaceAll("{{PORTFOLIO_CARDS_HTML}}", cardsHtml);
+  out = out.replaceAll("{{FANART_CARDS_HTML}}", fanartCardsHtml);
+  out = out.replaceAll("{{ENCARGO_CARDS_HTML}}", encargoCardsHtml);
+
+  out = out.replaceAll("{{FANART_SUBGROUP_TITLE}}", data.portfolio.fanartSubgroupTitle);
+  out = out.replaceAll("{{FANART_SUBGROUP_DESC}}", data.portfolio.fanartSubgroupDesc);
+  out = out.replaceAll("{{FANART_DISCLAIMER}}", data.portfolio.fanartDisclaimer);
+  out = out.replaceAll("{{ENCARGO_SUBGROUP_TITLE}}", data.portfolio.encargoSubgroupTitle);
+  out = out.replaceAll("{{ENCARGO_SUBGROUP_DESC}}", data.portfolio.encargoSubgroupDesc);
+  out = out.replaceAll("{{ENCARGO_DISCLAIMER}}", data.portfolio.encargoDisclaimer);
+  out = out.replaceAll("{{CLIENT_LOGOS_DISCLAIMER}}", data.portfolio.clientLogosDisclaimer);
 
   // Modal
   out = out.replaceAll("{{MODAL_CLOSE_ARIA}}", data.modal.closeAria);
