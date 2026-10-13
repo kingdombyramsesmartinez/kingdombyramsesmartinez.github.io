@@ -295,3 +295,82 @@ Los siguientes aspectos quedan anotados para que Ramses Martínez los confirme o
 4. [CONFIRMAR con abogado]: Evaluar la conveniencia del registro formal de la marca denominativa y figurativa 'Kingdom' ante el SAPI para proteger el nombre y logotipo.
 5. [CONFIRMAR con contador]: Consultar las obligaciones tributarias aplicables (emisión de comprobantes, RIF comercial y exención de sujeto pasivo especial del IGTF).
 6. Tareas de Fase 2 (Datos, títulos, glifos y precios): Quedan estrictamente reservadas para su ejecución una vez que Ramses Martínez revise este informe y autorice el inicio de la siguiente fase.
+
+
+17. AUDITORÍA DE CONFORMIDAD Y CIERRE FINAL
+
+1. Discrepancias encontradas entre la implementación previa y la especificación maestra:
+   - Discrepancia P0 (Marcadores pendientes): La versión inicial de las páginas legales en ES y EN contenía marcadores literales '[CONFIRMAR %]', '[CONFIRMAR]' y '[CONFIRMAR con abogado]' expuestos a los visitantes públicos.
+   - Discrepancia P1 (Tablas de cookies): El requisito de la Sección 3.2 de Claude exigía explícitamente presentar las cookies utilizadas en formato de tabla, pero se había implementado un inventario en texto plano con párrafos. Además, la clave de localStorage se presentaba en la misma lista sin distinguir que no constituye una cookie HTTP.
+   - Discrepancia P2 (Trazabilidad de commits): La Regla Permanente 1 exige un commit por tarea. Inicialmente se habían agrupado algunas tareas en un mismo commit (por ejemplo, disclaimers con segregación o las 12 páginas legales juntas). Se requirió documentar la correspondencia detallada y comprometer las correcciones de forma estrictamente atómica.
+
+2. Correcciones ejecutadas y archivos afectados:
+   - Corrección P0: Se retiraron todos los marcadores pendientes de las 12 páginas legales públicas sin inventar porcentajes, plazos ni tribunales exclusivos. Archivos modificados: legal/terms.html, en/legal/terms.html, legal/intellectual-property.html y en/legal/intellectual-property.html. Commit: 1dd1e1a.
+   - Corrección P1: Se transformó el inventario de cookies en una tabla HTML semántica y accesible con encabezados de columna y fila (<table class="legal-table" aria-label="...">), separando además una tabla técnica independiente para localStorage. Se añadieron estilos nativos accesibles en assets/css/legal.css sin librerías externas. Archivos modificados: assets/css/legal.css, legal/cookies.html y en/legal/cookies.html. Commit: d44db4d.
+
+3. Confirmación de marcadores pendientes en páginas públicas:
+   - Se ejecutó una búsqueda automatizada sobre las 17 páginas HTML finales del sitio (en español e inglés) buscando patrones '[CONFIRMAR*]' y '[CONFIRM*]'.
+   - Resultado comprobado: CERO (0) marcadores pendientes encontrados en el contenido público. Todos los pendientes permanecen exclusivamente documentados en este informe interno para decisión de Ramses.
+
+4. Evidencia de la estructura de las tablas de cookies ES/EN:
+   - Ambas versiones (legal/cookies.html y en/legal/cookies.html) implementan tablas idénticas con estructura semántica:
+     Tabla 1: Cookies de Google Analytics 4 (_ga y _ga_YQCLS51XJE / _ga_*), proveedor Google LLC, finalidad técnica de distinción y persistencia de sesión, y duración oficial de 2 años.
+     Tabla 2: Mecanismos de almacenamiento local del navegador, identificando 'kingdom_cookie_consent' como almacenamiento first-party persistente hasta su revocación o limpieza, explicitando claramente que no es una cookie HTTP.
+   - Ambas páginas incluyen el enlace accesible con [data-open-cookies] para reabrir y modificar la preferencia en cualquier momento.
+
+5. Resultados comprobados de consentimiento de Analytics (Playwright tests/cookie-consent.spec.mjs):
+   - Escenario A (Primera visita): Sin interacción previa, NO se descarga gtag.js, NO se inicializa GA4 y NO se depositan cookies de analítica. Comprobado (código de salida 0).
+   - Escenario B (Aceptación): Al pulsar 'Aceptar', se persiste 'granted' en localStorage y se inicializa GA4 descargando el script oficial. Comprobado (código de salida 0).
+   - Escenario C (Rechazo): Al pulsar 'Rechazar', se persiste 'denied', se activa window['ga-disable-G-YQCLS51XJE']=true y no se realiza medición. Comprobado (código de salida 0).
+   - Escenario D (Revocación): Al reabrir preferencias y pulsar 'Rechazar', se detiene el tracking y se purgan las cookies existentes de GA4. Comprobado (código de salida 0).
+   - Escenario E (Navegación): La preferencia de consentimiento se conserva de forma consistente entre páginas en español e inglés. Comprobado (código de salida 0).
+
+6. Correspondencia de tareas con commits (Trazabilidad Git):
+   - Tarea 1 (Segregación de catálogo 24/15, tipo, isArtistic, supresión de precios): content/portfolio.json, templates/portfolio.template.html, tools/build-i18n.mjs, portfolio.html, en/portfolio.html -> Commit ea43f90.
+   - Tarea 1b (Auditoría de imágenes de vehículos y placas): Verificación visual y técnica de Ford Ka y piezas automotrices. No requirió edición de binarios porque no existen placas reales legibles ni datos personales expuestos.
+   - Tarea 2 (Auditoría del Hero): Verificación de ausencia de fotos ajenas en index.html y en/index.html.
+   - Tarea 3 (Retiro de propuesta de Alcaldía en modal): templates/index.template.html, index.html, en/index.html -> Commit 3923fd7.
+   - Tarea 4 (Aviso de logos de clientes Sección 3.4): Incluido en plantillas y compilación de portafolio -> Commit ea43f90.
+   - Tarea 5 (Fuentes autoalojadas y remoción de TTF): assets/fonts/sedgwick-ave-display.ttf, assets/css/style.css, assets/css/urban.css -> Commit 7a38afe.
+   - Tarea 6 (Cookies en footer de 17 páginas): analytics.js y enlaces [data-open-cookies] en las 17 páginas -> Compilados en commits ea43f90, 3923fd7 y f458549.
+   - Tarea 7 (Páginas legales venezolanas con citas LDA y CRBV): 12 archivos en legal/ y en/legal/ -> Commit f458549.
+   - Tarea 8 (Archivo security.txt): Verificación de RFC 9116 en /.well-known/security.txt (existente y validado).
+   - Tarea 9 (Transición a marca personal de Ramses Martínez y JSON-LD Person): content/es.json, content/en.json, assets/js/app.js -> Commit 1c1942e.
+   - Tarea 10 (Saneamiento de 404 y reglas de auditor): 404.html, assets/css/404.css, tools/audit-site.mjs -> Commit 4c35dcc.
+   - Corrección de Auditoría P0 (Retiro de CONFIRMAR de páginas públicas): legal/terms.html, en/legal/terms.html, legal/intellectual-property.html, en/legal/intellectual-property.html -> Commit 1dd1e1a.
+   - Corrección de Auditoría P1 (Tablas semánticas de cookies): assets/css/legal.css, legal/cookies.html, en/legal/cookies.html -> Commit d44db4d.
+   - Referencia de respaldo creada previa a la auditoría: etiqueta backup-pre-fase1-review-2026-10-12 sobre el commit 388fe80.
+
+7. Detalle de las 8 pruebas omitidas (skipped) de Playwright:
+   - Archivo afectado: tests/navigation.spec.mjs (Línea 21: testInfo.skip(true, 'Menú hamburguesa solo es visible en resoluciones móvil/tableta')).
+   - Proyecto afectado: 'desktop-chromium' (resolución 1280x720).
+   - Pruebas omitidas (4 en ES y 4 en EN):
+     1. [desktop-chromium] Menú Móvil - apertura, cierre y navegación en ES - Inicio
+     2. [desktop-chromium] Menú Móvil - apertura, cierre y navegación en EN - Home
+     3. [desktop-chromium] Menú Móvil - apertura, cierre y navegación en ES - Portafolio
+     4. [desktop-chromium] Menú Móvil - apertura, cierre y navegación en EN - Portfolio
+   - Condición de validez técnica: En resoluciones de escritorio superiores a 768px, el botón de menú hamburguesa (#burgerBtn) se oculta mediante la regla CSS @media 'display: none', mostrándose la barra de navegación horizontal fija. La prueba comprueba la visibilidad y emite testInfo.skip de forma deliberada y correcta. Estas mismas 4 pruebas se ejecutan y APRUEBAN al 100 % en los proyectos 'tablet-chromium' y 'mobile-chromium'. Cero omisiones injustificadas.
+
+8. Resultados reproducibles de las 4 herramientas de prueba:
+   - node tools/check-js-syntax.mjs: 11 archivos de JavaScript validados y aprobados. Código de salida: 0.
+   - node tools/audit-site.mjs: 17 páginas HTML y 4 hojas CSS analizadas. 0 IDs duplicados, 0 referencias rotas, 0 frases comerciales prohibidas, 100 % CSP canónica cumplida. Código de salida: 0.
+   - node tools/test-audit.mjs: 33 pruebas unitarias aprobadas, 0 fallos. Código de salida: 0.
+   - npx playwright test: 127 pruebas pasadas, 8 omitidas válidas (viewport desktop), 0 fallos. Código de salida: 0.
+
+9. Pendientes para decisión de Ramses Martínez:
+   - Definir porcentaje de anticipo comercial para pedidos a medida (ej. 50 % o 70 %).
+   - Definir plazos estándar promedio de confección y digitalización en taller.
+   - Validar con abogado la cláusula territorial de tribunales en Barquisimeto y la eventual solicitud de registro marcario de 'Kingdom' ante el SAPI.
+   - Consultar con contador las obligaciones tributarias aplicables (facturación y exención de sujeto pasivo especial de IGTF).
+
+10. Información externa y archivos manuales:
+    - No se requiere subir archivos binarios manuales para la Fase 1. La imagen de 'Ford Ka' no contiene matrículas legibles de circulación y se mantiene segura en el portafolio.
+
+11. Confirmación de ramas y Git:
+    - Se confirmó que la rama activa es mejora-2026-10.
+    - La etiqueta original backup-pre-mejora (commit 793d73c) se mantiene intacta.
+    - Se creó la etiqueta backup-pre-fase1-review-2026-10-12 (commit 388fe80).
+    - Cero push y cero merges hacia la rama main.
+
+12. Dictamen final:
+    FASE 1 AUDITADA Y CORREGIDA. LISTA PARA REVISIÓN DEL PROPIETARIO (RAMSES MARTÍNEZ).
