@@ -265,9 +265,15 @@
       if (modalNote) modalNote.hidden = true;
       if (modalArtNotice) {
         modalArtNotice.hidden = false;
-        modalArtNotice.textContent = isEnglish
-          ? "Unofficial graphic study presented as part of Ramses Martínez's artistic and technical explorations. It is not an official product and is not offered for sale or reproduction commissions through Kingdom. No affiliation, sponsorship, authorization, or license from the respective rights holders is implied. Third-party rights remain with their respective holders."
-          : "Muestra gráfica no oficial presentada como parte de las exploraciones artísticas y técnicas de Ramses Martínez. No es un producto oficial ni se ofrece a la venta o para encargos de reproducción a través de Kingdom. No implica afiliación, patrocinio, autorización ni licencia de los titulares correspondientes. Los derechos de terceros permanecen en sus respectivos titulares.";
+        if (item.tipo === "encargo-marca") {
+          modalArtNotice.textContent = isEnglish
+            ? "Automotive designs created upon client commission. Names, logos and trademarks of vehicles belong to their respective owners; no affiliation, sponsorship or authorization exists on their part. If you are a rights holder and request the removal of a piece, please write to kingdombrandbqto@gmail.com."
+            : "Diseños automotrices realizados por encargo de clientes. Los nombres, logotipos y marcas de los vehículos pertenecen a sus respectivos titulares; no existe afiliación, patrocinio ni autorización por parte de ellos. Si eres titular de derechos y deseas el retiro de una pieza, escribe a kingdombrandbqto@gmail.com.";
+        } else {
+          modalArtNotice.textContent = isEnglish
+            ? "Graphic explorations of fan art created for practice and portfolio purposes. Characters, names, logos and trademarks belong to their respective owners; no affiliation, sponsorship or authorization exists on their part. If you are a rights holder and request the removal of a piece, please write to kingdombrandbqto@gmail.com."
+            : "Exploraciones gráficas de fan art realizadas con fines de práctica y portafolio. Los personajes, nombres, logotipos y marcas pertenecen a sus respectivos titulares; no existe afiliación, patrocinio ni autorización por parte de ellos. Si eres titular de derechos y deseas el retiro de una pieza, escribe a kingdombrandbqto@gmail.com.";
+        }
       }
     } else {
       if (modalFeatures) modalFeatures.hidden = false;
@@ -309,6 +315,7 @@
     const story = card.dataset.story || "";
 
     const isArtistic = card.dataset.artistic === "true";
+    const tipo = card.dataset.tipo || "cliente";
 
     // Parsear propuestas si existen para activar carrusel
     let proposals = [];
@@ -333,9 +340,10 @@
           fabric,
           price,
           story,
-          isArtistic
+          isArtistic,
+          tipo
         },
-        ...proposals.map(p => ({ ...p, isArtistic }))
+        ...proposals.map(p => ({ ...p, isArtistic, tipo }))
       ];
     } else {
       activeProposals = [
@@ -350,7 +358,8 @@
           fabric,
           price,
           story,
-          isArtistic
+          isArtistic,
+          tipo
         }
       ];
     }
@@ -476,22 +485,16 @@
     const logoUrl = `${siteUrl}/assets/brand/kingdom-logo-white.png`;
     const ogImageUrl = `${siteUrl}/assets/brand/og-image.png`;
 
-    const orgEntity = {
-      "@type": "Organization",
-      "@id": `${siteUrl}/#organization`,
-      "name": "KINGDOM",
-      "alternateName": [
-        "Kingdom by Ramses Martínez",
-        "Kingdom Ramses Martinez",
-        "Kingdom"
-      ],
+    const personEntity = {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      "name": "Ramses Martínez",
+      "jobTitle": isEn ? "Textile Graphic Designer & Embroidery Digitizer" : "Diseñador Gráfico Textil y Digitalizador de Bordados",
       "url": siteUrl,
-      "logo": {
-        "@type": "ImageObject",
-        "@id": `${siteUrl}/#logo`,
-        "url": logoUrl,
-        "contentUrl": logoUrl,
-        "caption": "KINGDOM Logo"
+      "telephone": `+${SITE_CONFIG.contact.whatsappNumber}`,
+      "brand": {
+        "@type": "Brand",
+        "name": "Kingdom"
       },
       "image": {
         "@type": "ImageObject",
@@ -501,48 +504,35 @@
         "caption": "KINGDOM — Diseño Textil & Bordado Industrial"
       },
       "description": isEn
-        ? "Official website of KINGDOM (Kingdom by Ramses Martínez). Textile design studio, industrial DST/PES embroidery digitizing, sports sublimation and custom apparel in Barquisimeto, Venezuela."
-        : "Sitio oficial de KINGDOM (Kingdom by Ramses Martínez). Estudio de diseño textil, matrices de bordado industrial DST/PES, sublimación deportiva y streetwear en Barquisimeto, Venezuela.",
-      "founder": {
-        "@type": "Person",
-        "@id": `${siteUrl}/#founder`,
-        "name": "Ramses Martínez",
-        "jobTitle": isEn ? "Textile Designer & Embroidery Digitizer" : "Diseñador Textil y Digitalizador de Bordado",
-        "sameAs": ["https://www.linkedin.com/in/ramses-martinez-bqto"]
-      },
+        ? "Portfolio of Ramses Martínez (Kingdom). Industrial DST/PES embroidery digitizing, sports sublimation and textile design in Barquisimeto, Venezuela."
+        : "Portafolio de Ramses Martínez (Kingdom). Digitalización de bordados DST/PES, sublimación deportiva y diseño textil en Barquisimeto, Venezuela.",
       "sameAs": [
         "https://instagram.com/kingdom_vzla",
         "https://www.tiktok.com/@kingdom_vzla",
         "https://www.linkedin.com/in/ramses-martinez-bqto"
-      ],
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "telephone": `+${SITE_CONFIG.contact.whatsappNumber}`,
-          "contactType": "customer service",
-          "availableLanguage": ["Spanish", "English"],
-          "url": `https://wa.me/${SITE_CONFIG.contact.whatsappNumber}`
-        }
       ],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Barquisimeto",
         "addressRegion": "Lara",
         "addressCountry": "VE"
-      }
+      },
+      "knowsAbout": isEn
+        ? ["Industrial DST/PES Embroidery Digitizing", "Sports Sublimation", "Textile Graphic Design"]
+        : ["Digitalización de bordados DST/PES", "Sublimación deportiva", "Diseño textil"]
     };
 
     const websiteEntity = {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
       "url": siteUrl,
-      "name": "KINGDOM",
+      "name": "Kingdom",
       "alternateName": "Kingdom by Ramses Martínez",
-      "publisher": { "@id": `${siteUrl}/#organization` },
+      "author": { "@id": `${siteUrl}/#person` },
       "inLanguage": isEn ? "en" : "es"
     };
 
-    const graph = [orgEntity, websiteEntity];
+    const graph = [personEntity, websiteEntity];
 
     if (!isPortfolio) {
       graph.push(
@@ -552,14 +542,14 @@
           "url": canonicalUrl,
           "name": document.title,
           "isPartOf": { "@id": `${siteUrl}/#website` },
-          "about": { "@id": `${siteUrl}/#organization` },
+          "about": { "@id": `${siteUrl}/#person` },
           "inLanguage": isEn ? "en" : "es"
         },
         {
           "@type": "Service",
           "@id": `${siteUrl}/#service-embroidery`,
           "name": isEn ? "Industrial Embroidery Digitizing (DST / PES)" : "Digitalización de Bordado Industrial (DST / PES)",
-          "provider": { "@id": `${siteUrl}/#organization` },
+          "provider": { "@id": `${siteUrl}/#person` },
           "description": isEn
             ? "Technical digitizing calibrated with pull compensation, optimized density and clean stitch paths for industrial embroidery machines."
             : "Digitalización técnica con compensación de estiramiento, densidad calibrada y secuencias limpias para optimizar el paso en máquina bordadora.",
@@ -569,7 +559,7 @@
           "@type": "Service",
           "@id": `${siteUrl}/#service-sublimation`,
           "name": isEn ? "Full Print Sports Sublimation" : "Sublimación Deportiva Full Print",
-          "provider": { "@id": `${siteUrl}/#organization` },
+          "provider": { "@id": `${siteUrl}/#person` },
           "description": isEn
             ? "Scale template engineering and color calibration for quick-dry athletic textiles (Dry-Fit, microfiber)."
             : "Diseño de plantillas a escala y calibración de color para textiles deportivos de secado rápido (Dry-Fit, microfibras y win).",
@@ -579,7 +569,7 @@
           "@type": "Service",
           "@id": `${siteUrl}/#service-vector`,
           "name": isEn ? "Vector Illustration & Streetwear Graphic Design" : "Ilustración Vectorial & Streetwear",
-          "provider": { "@id": `${siteUrl}/#organization` },
+          "provider": { "@id": `${siteUrl}/#person` },
           "description": isEn
             ? "Character vectorizing, logo cleanups and color separations for screen printing and DTF printing on cotton and blends."
             : "Trazado de personajes, vectorización de logotipos y separación de color para serigrafía o impresión DTF sobre algodón y mezclas.",
@@ -620,7 +610,7 @@
           "@id": `${canonicalUrl}#collection`,
           "url": canonicalUrl,
           "name": document.title,
-          "publisher": { "@id": `${siteUrl}/#organization` }
+          "publisher": { "@id": `${siteUrl}/#person` }
         }
       );
     }
