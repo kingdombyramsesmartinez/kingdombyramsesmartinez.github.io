@@ -82,7 +82,7 @@ export function runAudit(options = {}) {
       return;
     }
     for (const entry of entries) {
-      if (entry.name === ".git" || entry.name === "node_modules" || entry.name === "tools" || entry.name === "_staging" || entry.name === "templates") continue;
+      if (entry.name === ".git" || entry.name === "node_modules" || entry.name === "tools" || entry.name === "_staging" || entry.name === "templates" || entry.name === "reportes") continue;
       const full = path.join(dir, entry.name);
       if (entry.isDirectory()) walk(full);
       else if (entry.name.endsWith(".html")) pages.push(full);

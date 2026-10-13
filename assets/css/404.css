@@ -170,3 +170,20 @@ body {
     padding: 40px 20px;
   }
 }
+
+.error-footer {
+  margin-top: 32px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.error-footer-link {
+  color: var(--gray-400);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin: 0 8px;
+}
+
+.error-footer-link:hover {
+  color: var(--paper);
+}
