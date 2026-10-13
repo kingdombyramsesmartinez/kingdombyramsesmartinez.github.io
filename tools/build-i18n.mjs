@@ -20,6 +20,141 @@ const portfolioData = JSON.parse(fs.readFileSync(path.join(root, "content", "por
 const esc = (v) => String(v ?? "")
   .replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 
+/**
+ * Datos estructurados JSON-LD (Person + Brand Kingdom + WebSite) escritos en el
+ * HTML estático en tiempo de build, para que los buscadores los lean sin ejecutar
+ * JavaScript. Un bloque application/ld+json no es ejecutable: la CSP no lo afecta.
+ * Sin aggregateRating ni reseñas (plan, sección 9).
+ */
+function buildJsonLd({ isEn, isPortfolio, pageTitle, canonicalUrl }) {
+  const siteUrl = SITE_CONFIG.siteUrl;
+  const homeUrl = isEn ? `${siteUrl}/en/` : `${siteUrl}/`;
+  const ogImageUrl = `${siteUrl}/assets/brand/og-image.png`;
+  const lang = isEn ? "en" : "es";
+
+  const personEntity = {
+    "@type": "Person",
+    "@id": `${siteUrl}/#person`,
+    "name": "Ramses Martínez",
+    "jobTitle": isEn ? "Textile Graphic Designer & Embroidery Digitizer" : "Diseñador gráfico textil y digitalizador de bordados",
+    "url": `${siteUrl}/`,
+    "telephone": `+${SITE_CONFIG.contact.whatsappNumber}`,
+    "brand": { "@type": "Brand", "name": "Kingdom" },
+    "image": {
+      "@type": "ImageObject",
+      "@id": `${siteUrl}/#primaryimage`,
+      "url": ogImageUrl,
+      "contentUrl": ogImageUrl,
+      "caption": "KINGDOM — Diseño Textil & Bordado Industrial"
+    },
+    "description": isEn
+      ? "Portfolio of Ramses Martínez (Kingdom). Industrial DST/PES embroidery digitizing, sports sublimation and textile design in Barquisimeto, Venezuela."
+      : "Portafolio de Ramses Martínez (Kingdom). Digitalización de bordados DST/PES, sublimación deportiva y diseño textil en Barquisimeto, Venezuela.",
+    "sameAs": [
+      SITE_CONFIG.contact.social.instagram,
+      SITE_CONFIG.contact.social.tiktok,
+      SITE_CONFIG.contact.social.linkedin
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Barquisimeto",
+      "addressRegion": "Lara",
+      "addressCountry": "VE"
+    },
+    "knowsAbout": isEn
+      ? ["Industrial DST/PES Embroidery Digitizing", "Sports Sublimation", "Textile Graphic Design"]
+      : ["Digitalización de bordados DST/PES", "Sublimación deportiva", "Diseño textil"]
+  };
+
+  const websiteEntity = {
+    "@type": "WebSite",
+    "@id": `${siteUrl}/#website`,
+    "url": `${siteUrl}/`,
+    "name": "Kingdom",
+    "alternateName": "Kingdom by Ramses Martínez",
+    "author": { "@id": `${siteUrl}/#person` },
+    "inLanguage": ["es", "en"]
+  };
+
+  const graph = [personEntity, websiteEntity];
+
+  if (!isPortfolio) {
+    graph.push(
+      {
+        "@type": "WebPage",
+        "@id": `${canonicalUrl}#webpage`,
+        "url": canonicalUrl,
+        "name": pageTitle,
+        "isPartOf": { "@id": `${siteUrl}/#website` },
+        "about": { "@id": `${siteUrl}/#person` },
+        "inLanguage": lang
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/#service-embroidery`,
+        "name": isEn ? "Industrial Embroidery Digitizing (DST / PES)" : "Digitalización de Bordado Industrial (DST / PES)",
+        "provider": { "@id": `${siteUrl}/#person` },
+        "description": isEn
+          ? "Technical digitizing calibrated with pull compensation, optimized density and clean stitch paths for industrial embroidery machines."
+          : "Digitalización técnica con compensación de estiramiento, densidad calibrada y secuencias limpias para optimizar el paso en máquina bordadora.",
+        "serviceType": isEn ? "Embroidery Digitizing" : "Matrices de Bordado"
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/#service-sublimation`,
+        "name": isEn ? "Full Print Sports Sublimation" : "Sublimación Deportiva Full Print",
+        "provider": { "@id": `${siteUrl}/#person` },
+        "description": isEn
+          ? "Scale template engineering and color calibration for quick-dry athletic textiles (Dry-Fit, microfiber)."
+          : "Diseño de plantillas a escala y calibración de color para textiles deportivos de secado rápido (Dry-Fit, microfibras y win).",
+        "serviceType": isEn ? "Sports Apparel Sublimation" : "Sublimación Deportiva"
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/#service-vector`,
+        "name": isEn ? "Vector Illustration & Streetwear Graphic Design" : "Ilustración Vectorial & Streetwear",
+        "provider": { "@id": `${siteUrl}/#person` },
+        "description": isEn
+          ? "Character vectorizing, logo cleanups and color separations for screen printing and DTF printing on cotton and blends."
+          : "Trazado de personajes, vectorización de logotipos y separación de color para serigrafía o impresión DTF sobre algodón y mezclas.",
+        "serviceType": isEn ? "Vector Graphic Design" : "Diseño Vectorial"
+      }
+    );
+  } else {
+    graph.push(
+      {
+        "@type": "WebPage",
+        "@id": `${canonicalUrl}#webpage`,
+        "url": canonicalUrl,
+        "name": pageTitle,
+        "isPartOf": { "@id": `${siteUrl}/#website` },
+        "breadcrumb": { "@id": `${canonicalUrl}#breadcrumb` },
+        "inLanguage": lang
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${canonicalUrl}#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": isEn ? "Home" : "Inicio", "item": homeUrl },
+          { "@type": "ListItem", "position": 2, "name": isEn ? "Textile Design Portfolio" : "Portafolio de Diseño Textil", "item": canonicalUrl }
+        ]
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": `${canonicalUrl}#collection`,
+        "url": canonicalUrl,
+        "name": pageTitle,
+        "publisher": { "@id": `${siteUrl}/#person` }
+      }
+    );
+  }
+
+  // Escapar "<" evita que una cadena cierre el bloque </script> por accidente.
+  const json = JSON.stringify({ "@context": "https://schema.org", "@graph": graph }, null, 2)
+    .replaceAll("<", "\\u003c");
+  return `<script type="application/ld+json">\n${json}\n  </script>`;
+}
+
 
 
 function renderIndex(data, isEn) {
@@ -44,6 +179,7 @@ function renderIndex(data, isEn) {
   out = out.replaceAll("{{SITE_URL}}", siteUrl);
   out = out.replaceAll("{{ASSET_PREFIX}}", assetPrefix);
   out = out.replaceAll("{{LEGAL_PREFIX}}", legalPrefix);
+  out = out.replaceAll("{{JSON_LD}}", buildJsonLd({ isEn, isPortfolio: false, pageTitle: data.meta.title, canonicalUrl }));
 
   // Nav
   out = out.replaceAll("{{NAV_SKIP}}", data.nav.skip);
@@ -242,6 +378,12 @@ function renderPortfolioPage(data, isEn) {
   out = out.replaceAll("{{LANG}}", data.lang);
   out = out.replaceAll("{{DIR}}", data.dir);
   out = out.replaceAll("{{PORTFOLIO_PAGE_TITLE}}", `${data.portfolio.title} | KINGDOM — Kingdom by Ramses Martínez`);
+  out = out.replaceAll("{{JSON_LD}}", buildJsonLd({
+    isEn,
+    isPortfolio: true,
+    pageTitle: `${data.portfolio.title} | KINGDOM — Kingdom by Ramses Martínez`,
+    canonicalUrl
+  }));
   out = out.replaceAll("{{PORTFOLIO_PAGE_DESC}}", data.portfolio.desc);
   out = out.replaceAll("{{PORTFOLIO_CANONICAL_URL}}", canonicalUrl);
   out = out.replaceAll("{{SITE_URL}}", siteUrl);
