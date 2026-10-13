@@ -10,8 +10,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../fonts/sedgwick-ave-display.woff2') format('woff2'),
-       url('../fonts/sedgwick-ave-display.ttf') format('truetype');
+  src: url('../fonts/sedgwick-ave-display.woff2') format('woff2');
 }
 
 :root {

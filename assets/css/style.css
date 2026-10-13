@@ -14,13 +14,12 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-02BA;
 }
 
-/* Sedgwick Ave Display (Self-hosted WOFF2/TTF para títulos y acentos de marca) */
+/* Sedgwick Ave Display (Self-hosted WOFF2 para títulos y acentos de marca) */
 @font-face {
   font-family: 'Sedgwick Ave Display';
   font-style: normal;
   font-display: swap;
-  src: url('../fonts/sedgwick-ave-display.woff2') format('woff2'),
-       url('../fonts/sedgwick-ave-display.ttf') format('truetype');
+  src: url('../fonts/sedgwick-ave-display.woff2') format('woff2');
 }
 
 :root {
@@ -1240,10 +1239,50 @@ footer.site-footer {
 }
 
 .portfolio-disclaimer {
-  margin-top: 28px;
+  margin-top: 14px;
   font-size: 13px;
   color: var(--gray-500);
   line-height: 1.5;
+}
+
+.portfolio-special-section {
+  margin-top: 64px;
+}
+
+.portfolio-subgroup {
+  margin-top: 48px;
+}
+
+.portfolio-subgroup .section-title {
+  margin-bottom: 8px;
+}
+
+.portfolio-subgroup .section-desc {
+  margin-bottom: 28px;
+}
+
+.portfolio-disclaimer-box {
+  margin-top: 24px;
+  padding: 16px 20px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--line-light);
+}
+
+.portfolio-client-logos-notice {
+  margin-top: 56px;
+  margin-bottom: 24px;
+  padding: 16px 24px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--line-light);
+}
+
+.portfolio-client-logos-text {
+  font-size: 13px;
+  color: var(--gray-500);
+  line-height: 1.6;
+  margin: 0;
 }
 
 .atelier-secondary-block {
