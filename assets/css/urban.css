@@ -29,8 +29,8 @@
 [hidden] { display: none !important; }
 
 /* ---------- Pared + luz ---------- */
-html { background-color: var(--u-ink); }
-body { background: transparent; }
+html { background-color: var(--u-ink); overflow-x: clip; }
+body { background: transparent; overflow-x: clip; }
 
 body::before {
   content: "";

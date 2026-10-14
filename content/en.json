@@ -15,6 +15,7 @@
     "services": "Services",
     "materials": "Specs",
     "portfolio": "Portfolio",
+    "faq": "FAQ",
     "contact": "Contact",
     "quoteCta": "Request a Quote",
     "menu": "MENU",
@@ -85,21 +86,31 @@
     "items": [
       {
         "index": "01 // DIGITAL",
-        "title": "Embroidery Digitizing DST / PES",
+        "title": "DST / PES Embroidery Digitizing",
+        "badge": "from $5",
         "body": "Technical punching with fabric pull-compensation, calibrated density and clean sequences designed to minimize thread breaks in production.",
         "cta": "Order stitch file →"
       },
       {
         "index": "02 // TECHNICAL",
         "title": "Full Print Sports Sublimation",
+        "badge": "shirts from $15 · jackets $35",
         "body": "Scaled pattern templates and color profile calibration for performance fabrics (Dry-Fit, microfibers and technical polyester).",
         "cta": "Quote team kits →"
       },
       {
-        "index": "03 // DESIGN",
-        "title": "Vector Illustration & Streetwear",
-        "body": "Original character illustrations, logo vectorization and color separations for screen printing or DTF transfers on cotton and blends.",
-        "cta": "Develop graphics →"
+        "index": "03 // CORPORATE",
+        "title": "Embroidered Corporate Uniforms",
+        "badge": "from $25",
+        "body": "Corporate shirts ($25 with 2 logos · $35 with 5 logos) and institutional jackets embroidered in high definition.",
+        "cta": "Quote corporate →"
+      },
+      {
+        "index": "04 // GRAPHIC",
+        "title": "DTF Shirts & Graphic Design",
+        "badge": "DTF shirt $20 · card design $5",
+        "body": "Textile DTF printing on 20/1 cotton and blends, logo vectorization, color separation, and business card design.",
+        "cta": "Quote DTF or design →"
       }
     ]
   },
@@ -141,10 +152,10 @@
     ]
   },
   "portfolio": {
-    "eyebrow": "Works & Presentations",
-    "title": "Textile Design Portfolio",
-    "desc": "Full showcase of design presentations, custom athletic apparel, and textile artwork engineered by KINGDOM (Kingdom by Ramses Martínez).",
-    "ctaExplore": "Explore Full Portfolio ({{PORTFOLIO_COUNT}} Presentations) →",
+    "eyebrow": "Real Client Work",
+    "title": "Client Portfolio",
+    "desc": "Selected authentic client apparel and digitizing projects. Explore the full catalog to browse all technical presentations, commissions, and graphic studies.",
+    "ctaExplore": "Explore Full Portfolio ({{PORTFOLIO_COUNT}} Pieces) →",
     "ctaBack": "← Back to Home",
     "filters": [
       {
@@ -236,5 +247,43 @@
     "copyright": "<span translate=\"no\">KINGDOM</span> © 2026 — <span translate=\"no\">Kingdom by Ramses Martínez</span>. Barquisimeto, Venezuela.",
     "disclaimer": "This website is for informational purposes and does not constitute a binding legal contract.",
     "browserTranslate": "Prefer another language? You can use your web browser's built-in translation tool (Chrome, Edge, Safari, or Firefox)."
+  },
+  "pricingTable": {
+    "eyebrow": "Official Rates",
+    "title": "Retail Price List",
+    "desc": "Reference unit prices in USD. For volume orders or custom project specs, request a direct quote.",
+    "wrapLabel": "Retail Pricing Table",
+    "headers": [
+      "Service / Garment",
+      "Fabric / Detail",
+      "Price (USD)"
+    ],
+    "note": "Retail reference prices in USD. Payment details are coordinated via WhatsApp. Applicable taxes may apply."
+  },
+  "faq": {
+    "eyebrow": "Frequently Asked Questions",
+    "title": "Technical FAQ",
+    "desc": "Key details regarding embroidery punching, fabric compatibility, delivery formats, and payments."
+  },
+  "quoteInteractive": {
+    "step1Title": "1. What do you need?",
+    "step2Title": "2. How many pieces?",
+    "step3Title": "3. Project details (optional)",
+    "nameLabel": "Your name or brand",
+    "namePlaceholder": "E.g. Carlos / Sports Club",
+    "fabricLabel": "Target garment or fabric",
+    "fabricPlaceholder": "E.g. Corporate shirt, Dry-Fit, cotton...",
+    "logoLabel": "Do you have your logo?",
+    "logoYes": "Yes, I have my logo ready",
+    "logoNo": "No logo yet",
+    "logoNeed": "I need artwork design / vectorization",
+    "logoHelper": "Send your logo via WhatsApp after starting the chat.",
+    "noteLabel": "Additional notes or target deadline",
+    "notePlaceholder": "Colors, tentative sizes or special requirements",
+    "summaryTag": "Quote Summary",
+    "estimateBadge": "Reference Estimate",
+    "submitBtn": "Quote via WhatsApp (+58 424-109-2124)",
+    "preferEmail": "I prefer to request a quote via email",
+    "trustText": "Direct, personalized consultation with Ramses Martínez"
   }
 }

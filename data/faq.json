@@ -1,0 +1,51 @@
+[
+  {
+    "id": "faq-1",
+    "pregunta_es": "¿Qué debo enviar para solicitar una matriz de bordado?",
+    "pregunta_en": "What do I need to send to request an embroidery matrix?",
+    "respuesta_es": "Una imagen clara o archivo vectorial del logo o diseño (JPG, PNG, PDF, AI o EPS), indicando las dimensiones deseadas en centímetros y el tipo de tela o prenda donde se va a bordar (piqué, gabardina, drill, gorra, etc.) para calibrar la densidad de puntada y la compensación de estiramiento.",
+    "respuesta_en": "A clear image or vector file of your logo or artwork (JPG, PNG, PDF, AI, or EPS), specifying desired dimensions in centimeters and the target fabric or garment type (piqué, twill, drill, cap, etc.) to calibrate stitch density and pull compensation."
+  },
+  {
+    "id": "faq-2",
+    "pregunta_es": "¿En qué formatos se entregan las matrices de bordado?",
+    "pregunta_en": "Which formats are the embroidery matrices delivered in?",
+    "respuesta_es": "Se entregan principalmente en formato DST (estándar industrial compatible con Tajima, Barudan, SWF y la mayoría de máquinas) y PES (formato estándar para Brother y Babylock). Si tu máquina requiere otro formato específico (EXP, JEF, etc.), indícalo al cotizar.",
+    "respuesta_en": "They are delivered primarily in DST format (industry standard compatible with Tajima, Barudan, SWF, and most machines) and PES (standard for Brother and Babylock). If your machine requires a specific format (such as EXP or JEF), let us know during your inquiry."
+  },
+  {
+    "id": "faq-3",
+    "pregunta_es": "¿Cómo se realiza la entrega de los archivos digitales?",
+    "pregunta_en": "How are digital files delivered?",
+    "respuesta_es": "Los archivos digitales de matrices DST/PES o artes vectoriales se entregan de forma directa por correo electrónico o WhatsApp, listos para transferir a la máquina bordadora o al taller de producción.",
+    "respuesta_en": "Digital files for DST/PES matrices or vector artwork are delivered directly via email or WhatsApp, ready to load onto your embroidery machine or send to production."
+  },
+  {
+    "id": "faq-4",
+    "pregunta_es": "¿Cómo se coordinan los pagos desde el exterior y pedidos locales?",
+    "pregunta_en": "How are international payments and local orders handled?",
+    "respuesta_es": "Para clientes internacionales (servicios digitales de matrices y arte vectorial), la cotización y pago se coordinan por correo electrónico o WhatsApp. Para pedidos locales en Venezuela (prendas físicas y confección), los detalles de pago y entrega se acuerdan directamente vía WhatsApp.",
+    "respuesta_en": "For international clients (digital digitizing and vector artwork), quotation and payment coordination are conducted via email or WhatsApp. For local Venezuelan orders (physical garments and manufacturing), payment and shipping details are arranged directly via WhatsApp."
+  },
+  {
+    "id": "faq-5",
+    "pregunta_es": "¿Cuál es la diferencia entre Sublimación, DTF y Bordado?",
+    "pregunta_en": "What is the difference between Sublimation, DTF, and Embroidery?",
+    "respuesta_es": "La sublimación tiñe químicamente las fibras de poliéster (Dry-Fit) sin relieve al tacto y con máxima transpirabilidad, ideal para uniformes deportivos full print. El DTF estampa mediante calor una película digital sobre algodón y mezclas de cualquier color, perfecto para camisetas urbanas. El bordado aplica relieve con hilos de poliéster de alta resistencia, óptimo para camisas corporativas, chaquetas y gorras con presencia institucional.",
+    "respuesta_en": "Sublimation chemically dyes polyester fibers (Dry-Fit) with zero tactile weight and full breathability, ideal for full-print athletic uniforms. DTF heat-transfers a digital film onto cotton and blends in any color, perfect for streetwear tees. Embroidery stitches high-durability polyester threads with rich texture, optimal for corporate shirts, jackets, and caps with institutional prestige."
+  },
+  {
+    "id": "faq-6",
+    "pregunta_es": "¿Cómo se manejan las revisiones del diseño o de la matriz?",
+    "pregunta_en": "How are design or matrix revisions handled?",
+    "respuesta_es": "Antes de la entrega definitiva o pase a producción, se valida una simulación visual o vista previa de puntadas junto al cliente para verificar dimensiones, ortografía de textos y distribución de colores.",
+    "respuesta_en": "Before final delivery or production, a visual simulation or stitch preview is verified with the client to confirm dimensions, typography, spelling, and color distribution."
+  },
+  {
+    "id": "faq-7",
+    "pregunta_es": "¿Puedo solicitar una muestra o prueba de bordado?",
+    "pregunta_en": "Can I request an embroidery sample or stitch test?",
+    "respuesta_es": "Para confección de uniformes corporativos o pedidos por volumen, se recomienda siempre realizar una prueba de bordado en un retazo de la tela definitiva para ajustar la tensión de hilo de la bordadora antes de confeccionar la tirada completa.",
+    "respuesta_en": "For corporate uniforms or bulk apparel orders, a sample stitchout on a fabric swatch of the actual garment is always recommended to adjust thread tension before running the full batch."
+  }
+]

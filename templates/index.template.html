@@ -66,6 +66,7 @@
         <a class="nav-link link-magic" href="#servicios">{{NAV_SERVICES}}</a>
         <a class="nav-link link-magic" href="#materiales">{{NAV_MATERIALS}}</a>
         <a class="nav-link link-magic" href="#portafolio">{{NAV_PORTFOLIO}}</a>
+        <a class="nav-link link-magic" href="#faq">{{NAV_FAQ}}</a>
         <a class="nav-link link-magic" href="#contacto">{{NAV_CONTACT}}</a>
         <a class="nav-link link-magic" href="{{NAV_LANG_HREF}}" hreflang="{{NAV_LANG_TARGET}}" aria-label="{{NAV_LANG_ARIA}}"><b>{{NAV_LANG_TEXT}}</b></a>
       </nav>
@@ -148,6 +149,25 @@
         <div class="services-grid">
           {{SERVICES_ITEMS_HTML}}
         </div>
+
+        <div class="services-pricing-block">
+          <div class="section-eyebrow">{{PRICING_TABLE_EYEBROW}}</div>
+          <h3 class="pricing-table-title">{{PRICING_TABLE_TITLE}}</h3>
+          <p class="pricing-table-desc">{{PRICING_TABLE_DESC}}</p>
+          <div class="tech-table-wrap glass" tabindex="0" role="region" aria-label="{{PRICING_TABLE_WRAP_LABEL}}">
+            <table class="tech-table">
+              <thead>
+                <tr>
+                  {{PRICING_TABLE_HEADERS_HTML}}
+                </tr>
+              </thead>
+              <tbody>
+                {{PRICING_TABLE_ROWS_HTML}}
+              </tbody>
+            </table>
+          </div>
+          <p class="pricing-table-note">{{PRICING_TABLE_NOTE}}</p>
+        </div>
       </div>
     </section>
 
@@ -173,17 +193,36 @@
       </div>
     </section>
 
-    <!-- Sección Portafolio (Acceso a Galería Completa) -->
+    <!-- Sección Portafolio (Muestra de Piezas de Clientes y Acceso a Galería Completa) -->
     <div class="urban-divider urban-divider--tape" aria-hidden="true"></div>
     <section id="portafolio" class="section-bg-subtle portfolio-teaser-section">
       <div class="container portfolio-teaser-container">
         <div class="section-eyebrow">{{PORTFOLIO_EYEBROW}}</div>
         <h2 class="section-title">{{PORTFOLIO_TITLE}}</h2>
         <p class="section-desc portfolio-teaser-desc">{{PORTFOLIO_DESC}}</p>
+        
+        <div class="portfolio-featured-grid">
+          {{PORTFOLIO_FEATURED_ITEMS_HTML}}
+        </div>
+
         <div class="portfolio-teaser-cta-wrap">
           <a class="btn-premium btn-portfolio-hub" href="{{PORTFOLIO_PAGE_HREF}}">
             {{PORTFOLIO_CTA_EXPLORE}}
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Preguntas Frecuentes (FAQ) -->
+    <div class="urban-divider urban-divider--tape" aria-hidden="true"></div>
+    <section id="faq" class="faq-section section-bg-subtle">
+      <div class="container">
+        <div class="section-eyebrow">{{FAQ_EYEBROW}}</div>
+        <h2 class="section-title">{{FAQ_TITLE}}</h2>
+        <p class="section-desc">{{FAQ_DESC}}</p>
+
+        <div class="faq-list">
+          {{FAQ_ITEMS_HTML}}
         </div>
       </div>
     </section>
@@ -197,29 +236,88 @@
           <h2 class="quote-title">{{CONTACT_QUOTE_TITLE}}</h2>
           <p class="quote-subtitle">{{CONTACT_QUOTE_DESC}}</p>
 
-          <form id="quickQuoteForm">
-            <div class="quote-field">
-              <label for="quoteService">{{FORM_SERVICE_LABEL}}</label>
-              <select class="quote-select" id="quoteService" required>
-                {{FORM_SERVICES_OPTIONS_HTML}}
-              </select>
+          <form id="quickQuoteForm" novalidate>
+            <!-- Paso 1: Servicio -->
+            <div class="quote-step">
+              <div class="quote-step-title">
+                <span class="quote-step-num">1</span>
+                <span>{{QUOTE_STEP1_TITLE}}</span>
+              </div>
+              <div class="quote-service-grid" role="radiogroup" aria-label="{{QUOTE_STEP1_TITLE}}">
+                {{QUOTE_SERVICES_CARDS_HTML}}
+              </div>
             </div>
 
-            <div class="quote-field">
-              <label for="quoteVolume">{{FORM_VOLUME_LABEL}}</label>
-              <select class="quote-select" id="quoteVolume" required>
-                {{FORM_VOLUMES_OPTIONS_HTML}}
-              </select>
+            <!-- Paso 2: Cantidad -->
+            <div class="quote-step">
+              <div class="quote-step-title">
+                <span class="quote-step-num">2</span>
+                <span>{{QUOTE_STEP2_TITLE}}</span>
+              </div>
+              <div class="quote-qty-chips" role="radiogroup" aria-label="{{QUOTE_STEP2_TITLE}}">
+                {{QUOTE_QTY_CHIPS_HTML}}
+              </div>
             </div>
 
-            <div class="quote-field">
-              <label for="quoteNote">{{FORM_NOTE_LABEL}}</label>
-              <input class="quote-input" type="text" id="quoteNote" placeholder="{{FORM_NOTE_PLACEHOLDER}}"/>
+            <!-- Paso 3: Detalles opcionales -->
+            <div class="quote-step">
+              <div class="quote-step-title">
+                <span class="quote-step-num">3</span>
+                <span>{{QUOTE_STEP3_TITLE}}</span>
+              </div>
+              
+              <div class="quote-details-grid">
+                <div class="quote-field">
+                  <label for="quoteName">{{QUOTE_NAME_LABEL}}</label>
+                  <input class="quote-input" type="text" id="quoteName" placeholder="{{QUOTE_NAME_PLACEHOLDER}}"/>
+                </div>
+                <div class="quote-field">
+                  <label for="quoteFabric">{{QUOTE_FABRIC_LABEL}}</label>
+                  <input class="quote-input" type="text" id="quoteFabric" placeholder="{{QUOTE_FABRIC_PLACEHOLDER}}"/>
+                </div>
+              </div>
+
+              <div class="quote-field">
+                <label for="quoteLogo">{{QUOTE_LOGO_LABEL}}</label>
+                <select class="quote-select" id="quoteLogo">
+                  <option value="ready">{{QUOTE_LOGO_YES}}</option>
+                  <option value="none">{{QUOTE_LOGO_NO}}</option>
+                  <option value="need_design">{{QUOTE_LOGO_NEED}}</option>
+                </select>
+                <div class="quote-helper-text">{{QUOTE_LOGO_HELPER}}</div>
+              </div>
+
+              <div class="quote-field">
+                <label for="quoteNote">{{QUOTE_NOTE_LABEL}}</label>
+                <textarea class="quote-input quote-textarea" id="quoteNote" rows="2" placeholder="{{QUOTE_NOTE_PLACEHOLDER}}"></textarea>
+              </div>
             </div>
 
-            <button class="btn-premium quote-submit-btn" type="submit">
-              {{FORM_SUBMIT_BTN}}
-            </button>
+            <!-- Resumen vivo -->
+            <div class="quote-summary-box glass" id="quoteSummaryBox" aria-live="polite">
+              <div class="quote-summary-header">
+                <span class="quote-summary-tag">{{QUOTE_SUMMARY_TAG}}</span>
+                <span class="quote-summary-badge">{{QUOTE_ESTIMATE_BADGE}}</span>
+              </div>
+              <div class="quote-summary-text" id="quoteSummaryText">
+                <!-- Se actualiza dinámicamente con JavaScript -->
+              </div>
+            </div>
+
+            <!-- Acciones -->
+            <div class="quote-actions">
+              <button class="btn-premium quote-submit-btn" type="submit">
+                {{QUOTE_SUBMIT_WA_BTN}}
+              </button>
+              <a class="quote-email-link" id="quoteEmailLink" href="mailto:{{EMAIL_WORK}}">
+                {{QUOTE_PREFER_EMAIL}}
+              </a>
+            </div>
+
+            <div class="quote-trust-note">
+              <span class="quote-trust-icon" aria-hidden="true">✓</span>
+              <span>{{QUOTE_TRUST_TEXT}}</span>
+            </div>
           </form>
         </div>
 

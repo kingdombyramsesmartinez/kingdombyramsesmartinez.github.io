@@ -15,6 +15,8 @@ const portfolioTemplate = fs.readFileSync(portfolioTemplatePath, "utf8");
 const esData = JSON.parse(fs.readFileSync(path.join(root, "content", "es.json"), "utf8"));
 const enData = JSON.parse(fs.readFileSync(path.join(root, "content", "en.json"), "utf8"));
 const portfolioData = JSON.parse(fs.readFileSync(path.join(root, "content", "portfolio.json"), "utf8"));
+const preciosData = JSON.parse(fs.readFileSync(path.join(root, "data", "precios.json"), "utf8"));
+const faqData = JSON.parse(fs.readFileSync(path.join(root, "data", "faq.json"), "utf8"));
 
 // Escapa texto para atributos HTML (los campos del portafolio los escribe el dueño)
 const esc = (v) => String(v ?? "")
@@ -118,6 +120,16 @@ function buildJsonLd({ isEn, isPortfolio, pageTitle, canonicalUrl }) {
           ? "Character vectorizing, logo cleanups and color separations for screen printing and DTF printing on cotton and blends."
           : "Trazado de personajes, vectorización de logotipos y separación de color para serigrafía o impresión DTF sobre algodón y mezclas.",
         "serviceType": isEn ? "Vector Graphic Design" : "Diseño Vectorial"
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/#service-corporate-embroidery`,
+        "name": isEn ? "Embroidered Corporate Uniforms" : "Uniformes Corporativos Bordados",
+        "provider": { "@id": `${siteUrl}/#person` },
+        "description": isEn
+          ? "High-definition embroidered corporate shirts and institutional jackets tailored for businesses and organizations."
+          : "Camisas corporativas y chaquetas institucionales con bordado computarizado de alta definición para dotación de personal.",
+        "serviceType": isEn ? "Corporate Uniforms" : "Uniformes Corporativos"
       }
     );
   } else {
@@ -187,6 +199,7 @@ function renderIndex(data, isEn) {
   out = out.replaceAll("{{NAV_SERVICES}}", data.nav.services);
   out = out.replaceAll("{{NAV_MATERIALS}}", data.nav.materials);
   out = out.replaceAll("{{NAV_PORTFOLIO}}", data.nav.portfolio);
+  out = out.replaceAll("{{NAV_FAQ}}", data.nav.faq || "FAQ");
   out = out.replaceAll("{{NAV_CONTACT}}", data.nav.contact);
   out = out.replaceAll("{{NAV_QUOTE}}", data.nav.quoteCta);
   out = out.replaceAll("{{NAV_MENU}}", data.nav.menu);
@@ -244,16 +257,37 @@ function renderIndex(data, isEn) {
   out = out.replaceAll("{{SERVICES_TITLE}}", data.services.title);
   out = out.replaceAll("{{SERVICES_DESC}}", data.services.desc);
 
-  const servicesHtml = data.services.items.map(s => `
+  const servicesHtml = preciosData.servicios.map(s => `
           <article class="glass-card service-card">
             <div>
-              <div class="service-index">${s.index}</div>
-              <h3 class="service-title">${s.title}</h3>
-              <p class="service-body">${s.body}</p>
+              <div class="service-header-row">
+                <div class="service-index">${isEn ? s.index_en : s.index}</div>
+                <span class="service-badge">${isEn ? s.badge_en : s.badge_es}</span>
+              </div>
+              <h3 class="service-title">${isEn ? s.title_en : s.title_es}</h3>
+              <p class="service-body">${isEn ? s.body_en : s.body_es}</p>
             </div>
-            <a class="link-magic" href="#contacto">${s.cta}</a>
+            <a class="link-magic" href="#contacto">${isEn ? s.cta_en : s.cta_es}</a>
           </article>`).join("");
   out = out.replaceAll("{{SERVICES_ITEMS_HTML}}", servicesHtml);
+
+  // Pricing Table in Services
+  out = out.replaceAll("{{PRICING_TABLE_EYEBROW}}", data.pricingTable.eyebrow);
+  out = out.replaceAll("{{PRICING_TABLE_TITLE}}", data.pricingTable.title);
+  out = out.replaceAll("{{PRICING_TABLE_DESC}}", data.pricingTable.desc);
+  out = out.replaceAll("{{PRICING_TABLE_WRAP_LABEL}}", data.pricingTable.wrapLabel);
+  out = out.replaceAll("{{PRICING_TABLE_NOTE}}", isEn ? preciosData.nota_pago_en : preciosData.nota_pago_es);
+
+  const pricingHeadersHtml = data.pricingTable.headers.map(h => `<th>${h}</th>`).join("");
+  out = out.replaceAll("{{PRICING_TABLE_HEADERS_HTML}}", pricingHeadersHtml);
+
+  const pricingRowsHtml = preciosData.tabla_precios.map(r => `
+              <tr>
+                <td class="table-header-cell">${isEn ? r.servicio_en : r.servicio_es}</td>
+                <td>${isEn ? r.tela_en : r.tela_es}</td>
+                <td><strong>${r.precio}</strong></td>
+              </tr>`).join("");
+  out = out.replaceAll("{{PRICING_TABLE_ROWS_HTML}}", pricingRowsHtml);
 
   // Materials
   out = out.replaceAll("{{MATERIALS_EYEBROW}}", data.materials.eyebrow);
@@ -273,7 +307,7 @@ function renderIndex(data, isEn) {
               </tr>`).join("");
   out = out.replaceAll("{{MATERIALS_ROWS_HTML}}", matRowsHtml);
 
-  // Portfolio Teaser
+  // Portfolio Teaser & Featured Client Items (Home)
   const portfolioCount = portfolioData.length;
   const ctaExploreText = (data.portfolio.ctaExplore || "")
     .replaceAll("{{PORTFOLIO_COUNT}}", portfolioCount);
@@ -282,21 +316,99 @@ function renderIndex(data, isEn) {
   out = out.replaceAll("{{PORTFOLIO_DESC}}", data.portfolio.desc);
   out = out.replaceAll("{{PORTFOLIO_CTA_EXPLORE}}", ctaExploreText);
 
-  // Contact & Form
+  const featuredIds = [
+    "impa",
+    "alexauto",
+    "gigantes-bc",
+    "guerreras-sc",
+    "muestrario-de-bordado",
+    "oasis-sport",
+    "ferreconstrucciones",
+    "fitness-24-7"
+  ];
+  const featuredItems = featuredIds
+    .map(id => portfolioData.find(item => item.id === id))
+    .filter(Boolean);
+
+  const featuredItemsHtml = featuredItems.map(item => `
+          <a class="glass-card featured-card" href="${portfolioPageHref}#${item.id}">
+            <div class="featured-thumb-wrap">
+              <img src="${assetPrefix}${item.miniatura}" alt="${esc(isEn ? item.altEn : item.altEs)}" width="400" height="300" loading="lazy" decoding="async"/>
+            </div>
+            <div class="featured-card-info">
+              <span class="featured-card-tag">${esc(isEn ? item.techniqueEn : item.techniqueEs)}</span>
+              <h3 class="featured-card-title">${esc(isEn ? item.titleEn : item.titleEs)}</h3>
+              <span class="featured-card-meta">${esc(isEn ? item.fabricEn : item.fabricEs)}</span>
+            </div>
+          </a>`).join("");
+  out = out.replaceAll("{{PORTFOLIO_FEATURED_ITEMS_HTML}}", featuredItemsHtml);
+
+  // FAQ Accordion
+  out = out.replaceAll("{{FAQ_EYEBROW}}", data.faq.eyebrow);
+  out = out.replaceAll("{{FAQ_TITLE}}", data.faq.title);
+  out = out.replaceAll("{{FAQ_DESC}}", data.faq.desc);
+
+  const faqItemsHtml = faqData.map(q => `
+          <details class="faq-item glass-card">
+            <summary class="faq-question">
+              <span>${esc(isEn ? q.pregunta_en : q.pregunta_es)}</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>${esc(isEn ? q.respuesta_en : q.respuesta_es)}</p>
+            </div>
+          </details>`).join("");
+  out = out.replaceAll("{{FAQ_ITEMS_HTML}}", faqItemsHtml);
+
+  // Contact & Interactive Quote
   out = out.replaceAll("{{CONTACT_EYEBROW}}", data.contact.eyebrow);
   out = out.replaceAll("{{CONTACT_QUOTE_TITLE}}", data.contact.quoteTitle);
   out = out.replaceAll("{{CONTACT_QUOTE_DESC}}", data.contact.quoteDesc);
-  out = out.replaceAll("{{FORM_SERVICE_LABEL}}", data.contact.form.serviceLabel);
-  out = out.replaceAll("{{FORM_VOLUME_LABEL}}", data.contact.form.volumeLabel);
-  out = out.replaceAll("{{FORM_NOTE_LABEL}}", data.contact.form.noteLabel);
-  out = out.replaceAll("{{FORM_NOTE_PLACEHOLDER}}", data.contact.form.notePlaceholder);
-  out = out.replaceAll("{{FORM_SUBMIT_BTN}}", data.contact.form.submitBtn);
 
-  const formServicesHtml = data.contact.form.services.map(s => `<option value="${s}">${s}</option>`).join("");
-  out = out.replaceAll("{{FORM_SERVICES_OPTIONS_HTML}}", formServicesHtml);
+  const qData = data.quoteInteractive;
+  out = out.replaceAll("{{QUOTE_STEP1_TITLE}}", qData.step1Title);
+  out = out.replaceAll("{{QUOTE_STEP2_TITLE}}", qData.step2Title);
+  out = out.replaceAll("{{QUOTE_STEP3_TITLE}}", qData.step3Title);
+  out = out.replaceAll("{{QUOTE_NAME_LABEL}}", qData.nameLabel);
+  out = out.replaceAll("{{QUOTE_NAME_PLACEHOLDER}}", qData.namePlaceholder);
+  out = out.replaceAll("{{QUOTE_FABRIC_LABEL}}", qData.fabricLabel);
+  out = out.replaceAll("{{QUOTE_FABRIC_PLACEHOLDER}}", qData.fabricPlaceholder);
+  out = out.replaceAll("{{QUOTE_LOGO_LABEL}}", qData.logoLabel);
+  out = out.replaceAll("{{QUOTE_LOGO_YES}}", qData.logoYes);
+  out = out.replaceAll("{{QUOTE_LOGO_NO}}", qData.logoNo);
+  out = out.replaceAll("{{QUOTE_LOGO_NEED}}", qData.logoNeed);
+  out = out.replaceAll("{{QUOTE_LOGO_HELPER}}", qData.logoHelper);
+  out = out.replaceAll("{{QUOTE_NOTE_LABEL}}", qData.noteLabel);
+  out = out.replaceAll("{{QUOTE_NOTE_PLACEHOLDER}}", qData.notePlaceholder);
+  out = out.replaceAll("{{QUOTE_SUMMARY_TAG}}", qData.summaryTag);
+  out = out.replaceAll("{{QUOTE_ESTIMATE_BADGE}}", qData.estimateBadge);
+  out = out.replaceAll("{{QUOTE_SUBMIT_WA_BTN}}", qData.submitBtn);
+  out = out.replaceAll("{{QUOTE_PREFER_EMAIL}}", qData.preferEmail);
+  out = out.replaceAll("{{QUOTE_TRUST_TEXT}}", qData.trustText);
 
-  const formVolumesHtml = data.contact.form.volumes.map(v => `<option value="${v}">${v}</option>`).join("");
-  out = out.replaceAll("{{FORM_VOLUMES_OPTIONS_HTML}}", formVolumesHtml);
+  const quoteCardsHtml = preciosData.servicios.map((s, idx) => `
+                <label class="quote-service-card" for="quoteService_${s.id}">
+                  <input type="radio" name="quoteService" id="quoteService_${s.id}" value="${s.id}" data-name="${esc(isEn ? s.title_en : s.title_es)}" data-price="${s.price_from}" data-unit="${esc(isEn ? s.price_unit_en : s.price_unit_es)}" ${idx === 0 ? "checked" : ""} class="sr-only quote-service-radio"/>
+                  <div class="quote-service-card-inner">
+                    <div class="quote-service-header">
+                      <span class="quote-service-badge">${esc(isEn ? s.badge_en : s.badge_es)}</span>
+                    </div>
+                    <div class="quote-service-name">${esc(isEn ? s.title_en : s.title_es)}</div>
+                    <p class="quote-service-desc">${esc(isEn ? s.body_en : s.body_es)}</p>
+                  </div>
+                </label>`).join("");
+  out = out.replaceAll("{{QUOTE_SERVICES_CARDS_HTML}}", quoteCardsHtml);
+
+  const qtyOptions = ["1–5", "6–24", "25–100", "100+"];
+  const qtyChipsHtml = qtyOptions.map((qty, idx) => {
+    const chipId = `quoteQty_${qty.replace(/[^\w]/g, "_")}`;
+    return `
+                <label class="quote-chip" for="${chipId}">
+                  <input type="radio" name="quoteQuantity" id="${chipId}" value="${qty}" ${idx === 0 ? "checked" : ""} class="sr-only"/>
+                  <span class="quote-chip-text">${qty}</span>
+                </label>`;
+  }).join("");
+  out = out.replaceAll("{{QUOTE_QTY_CHIPS_HTML}}", qtyChipsHtml);
 
   // Contact Info Blocks
   out = out.replaceAll("{{BLOCK1_TITLE}}", data.contact.blocks.block1Title);
@@ -461,7 +573,7 @@ function renderPortfolioPage(data, isEn) {
     const priceAttr = (!isArtistic && SITE_CONFIG.pricing?.enabled) ? ` data-price="${esc(price)}"` : "";
 
     return `
-          <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
+          <article id="${p.id}" class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
                    data-category="${p.categoria || p.category}"
                    data-tipo="${p.tipo || "cliente"}"
                    data-title="${esc(title)}"

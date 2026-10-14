@@ -15,6 +15,7 @@
     "services": "Servicios",
     "materials": "Especificaciones",
     "portfolio": "Portafolio",
+    "faq": "FAQ",
     "contact": "Contacto",
     "quoteCta": "Cotizar Proyecto",
     "menu": "MENÚ",
@@ -86,20 +87,30 @@
       {
         "index": "01 // DIGITAL",
         "title": "Matrices de Bordado DST / PES",
+        "badge": "desde $5",
         "body": "Digitalización técnica con compensación de estiramiento, densidad calibrada y secuencias limpias para optimizar el paso en máquina bordadora.",
         "cta": "Solicitar matriz →"
       },
       {
         "index": "02 // TÉCNICO",
         "title": "Sublimación Deportiva Full Print",
+        "badge": "franelas desde $15 · chaquetas $35",
         "body": "Diseño de plantillas a escala y calibración de color para textiles deportivos de secado rápido (Dry-Fit, microfibras y win).",
         "cta": "Cotizar uniformes →"
       },
       {
-        "index": "03 // DISEÑO",
-        "title": "Ilustración Vectorial & Streetwear",
-        "body": "Trazado de personajes, vectorización de logotipos y separación de color para serigrafía o impresión DTF sobre algodón y mezclas.",
-        "cta": "Desarrollar arte →"
+        "index": "03 // CORPORATIVO",
+        "title": "Uniformes Corporativos Bordados",
+        "badge": "desde $25",
+        "body": "Camisas corporativas ($25 con 2 logos · $35 con 5 logos) y chaquetas institucionales bordadas en alta definición.",
+        "cta": "Cotizar corporativo →"
+      },
+      {
+        "index": "04 // GRÁFICO",
+        "title": "Franelas DTF y Diseño Gráfico",
+        "badge": "franela DTF $20 · diseño de tarjetas $5",
+        "body": "Estampado textil DTF sobre algodón 20/1 y mezclas, vectorización de logotipos, separación de color y diseño de tarjetas.",
+        "cta": "Cotizar DTF o diseño →"
       }
     ]
   },
@@ -141,10 +152,10 @@
     ]
   },
   "portfolio": {
-    "eyebrow": "Trabajos & Presentaciones",
-    "title": "Portafolio de Diseño Textil",
-    "desc": "Galería completa de presentaciones de diseño, indumentaria personalizada y digitalización de matrices textiles desarrolladas por KINGDOM (Kingdom by Ramses Martínez).",
-    "ctaExplore": "Explorar Portafolio Completo ({{PORTFOLIO_COUNT}} Presentaciones) →",
+    "eyebrow": "Trabajos Reales",
+    "title": "Portafolio de Clientes",
+    "desc": "Muestra de piezas reales elaboradas para clientes. Explora el catálogo completo para ver todas las presentaciones técnicas, encargos y exploraciones gráficas.",
+    "ctaExplore": "Explorar Portafolio Completo ({{PORTFOLIO_COUNT}} Piezas) →",
     "ctaBack": "← Volver al Inicio",
     "filters": [
       {
@@ -236,5 +247,43 @@
     "copyright": "<span translate=\"no\">KINGDOM</span> © 2026 — <span translate=\"no\">Kingdom by Ramses Martínez</span>. Barquisimeto, Venezuela.",
     "disclaimer": "Este sitio es informativo y no constituye una oferta contractual vinculante.",
     "browserTranslate": "¿Prefieres otro idioma? Puedes utilizar la herramienta de traducción integrada de tu navegador (Chrome, Edge, Safari o Firefox)."
+  },
+  "pricingTable": {
+    "eyebrow": "Precios Oficiales",
+    "title": "Lista de Precios al Detal",
+    "desc": "Precios de referencia por unidad en USD. Para pedidos por volumen o requerimientos especiales, solicita tu cotización directa.",
+    "wrapLabel": "Tabla de Precios al Detal",
+    "headers": [
+      "Servicio / Prenda",
+      "Tela / Detalle",
+      "Precio (USD)"
+    ],
+    "note": "Precios al detal, referenciales, en USD. El pago se coordina por WhatsApp. Impuestos según corresponda."
+  },
+  "faq": {
+    "eyebrow": "Dudas Frecuentes",
+    "title": "Preguntas y Respuestas Técnicas",
+    "desc": "Información clave sobre digitalización de matrices, confección, formatos de entrega y formas de pago."
+  },
+  "quoteInteractive": {
+    "step1Title": "1. ¿Qué necesitas?",
+    "step2Title": "2. ¿Cuántas piezas?",
+    "step3Title": "3. Detalles del proyecto (opcional)",
+    "nameLabel": "Tu nombre o marca",
+    "namePlaceholder": "Ej. Carlos / Taller Deportivo",
+    "fabricLabel": "Prenda o tela deseada",
+    "fabricPlaceholder": "Ej. Camisa corporativa, Dry-Fit, algodón...",
+    "logoLabel": "¿Tienes tu logo?",
+    "logoYes": "Sí, tengo mi logo listo",
+    "logoNo": "No tengo logo aún",
+    "logoNeed": "Necesito diseño / vectorización",
+    "logoHelper": "Envía tu logo por WhatsApp después de abrir el chat.",
+    "noteLabel": "Observaciones o fecha deseada",
+    "notePlaceholder": "Colores, tallas tentativas o requerimientos especiales",
+    "summaryTag": "Resumen de cotización",
+    "estimateBadge": "Estimado referencial",
+    "submitBtn": "Cotizar por WhatsApp (+58 424-109-2124)",
+    "preferEmail": "Prefiero solicitar cotización por correo electrónico",
+    "trustText": "Atención directa y personalizada de Ramses Martínez"
   }
 }

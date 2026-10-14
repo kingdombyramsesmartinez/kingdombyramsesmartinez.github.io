@@ -1,0 +1,156 @@
+{
+  "servicios": [
+    {
+      "id": "embroidery_matrix",
+      "index": "01 // DIGITAL",
+      "index_en": "01 // DIGITAL",
+      "title_es": "Matrices de Bordado DST / PES",
+      "title_en": "DST / PES Embroidery Digitizing",
+      "badge_es": "desde $5",
+      "badge_en": "from $5",
+      "price_from": 5,
+      "price_unit_es": "desde $5",
+      "price_unit_en": "from $5",
+      "body_es": "Digitalización técnica con compensación de estiramiento, densidad calibrada y secuencias limpias para optimizar el paso en máquina bordadora.",
+      "body_en": "Technical digitizing calibrated with pull compensation, optimized density, and clean stitch paths for industrial embroidery machines.",
+      "cta_es": "Solicitar matriz →",
+      "cta_en": "Request matrix →"
+    },
+    {
+      "id": "sublimation",
+      "index": "02 // TÉCNICO",
+      "index_en": "02 // TECHNICAL",
+      "title_es": "Sublimación Deportiva Full Print",
+      "title_en": "Full Print Sports Sublimation",
+      "badge_es": "franelas desde $15 · chaquetas $35",
+      "badge_en": "shirts from $15 · jackets $35",
+      "price_from": 15,
+      "price_unit_es": "desde $15 c/u",
+      "price_unit_en": "from $15 ea",
+      "body_es": "Diseño de plantillas a escala y calibración de color para textiles deportivos de secado rápido (Dry-Fit, microfibras y win).",
+      "body_en": "Scaled template design and color calibration for quick-dry athletic textiles (Dry-Fit, microfibers, and win).",
+      "cta_es": "Cotizar uniformes →",
+      "cta_en": "Quote uniforms →"
+    },
+    {
+      "id": "corporate_uniforms",
+      "index": "03 // CORPORATIVO",
+      "index_en": "03 // CORPORATE",
+      "title_es": "Uniformes Corporativos Bordados",
+      "title_en": "Embroidered Corporate Uniforms",
+      "badge_es": "desde $25",
+      "badge_en": "from $25",
+      "price_from": 25,
+      "price_unit_es": "desde $25 c/u",
+      "price_unit_en": "from $25 ea",
+      "body_es": "Camisas corporativas ($25 con 2 logos · $35 con 5 logos) y chaquetas institucionales bordadas en alta definición.",
+      "body_en": "Corporate shirts ($25 with 2 logos · $35 with 5 logos) and institutional jackets embroidered in high definition.",
+      "cta_es": "Cotizar uniformes →",
+      "cta_en": "Quote uniforms →"
+    },
+    {
+      "id": "dtf_graphic_design",
+      "index": "04 // GRÁFICO",
+      "index_en": "04 // GRAPHIC",
+      "title_es": "Franelas DTF y Diseño Gráfico",
+      "title_en": "DTF Shirts & Graphic Design",
+      "badge_es": "franela DTF $20 · diseño de tarjetas $5",
+      "badge_en": "DTF shirt $20 · card design $5",
+      "price_from": 5,
+      "price_unit_es": "desde $5 (tarjetas) / $20 (DTF)",
+      "price_unit_en": "from $5 (cards) / $20 (DTF)",
+      "body_es": "Estampado textil DTF sobre algodón 20/1 y mezclas, vectorización de logotipos, separación de color y diseño de tarjetas.",
+      "body_en": "Textile DTF printing on 20/1 cotton and blends, logo vectorization, color separation, and business card design.",
+      "cta_es": "Cotizar DTF o diseño →",
+      "cta_en": "Quote DTF or design →"
+    }
+  ],
+  "tabla_precios": [
+    {
+      "servicio_es": "Chaqueta sublimada",
+      "servicio_en": "Sublimated Jacket",
+      "tela_es": "Novak Repel",
+      "tela_en": "Novak Repel",
+      "precio": "$35"
+    },
+    {
+      "servicio_es": "Chaqueta bordada (ej. IMPA)",
+      "servicio_en": "Embroidered Jacket (e.g. IMPA)",
+      "tela_es": "Novak Repel",
+      "tela_en": "Novak Repel",
+      "precio": "$25"
+    },
+    {
+      "servicio_es": "Franela sublimada manga larga",
+      "servicio_en": "Long Sleeve Sublimated Shirt",
+      "tela_es": "Dry-Fit",
+      "tela_en": "Dry-Fit",
+      "precio": "$18"
+    },
+    {
+      "servicio_es": "Franela sublimada manga corta",
+      "servicio_en": "Short Sleeve Sublimated Shirt",
+      "tela_es": "Dry-Fit",
+      "tela_en": "Dry-Fit",
+      "precio": "$15"
+    },
+    {
+      "servicio_es": "Franela con DTF",
+      "servicio_en": "DTF Printed T-Shirt",
+      "tela_es": "Algodón 20/1",
+      "tela_en": "20/1 Cotton",
+      "precio": "$20"
+    },
+    {
+      "servicio_es": "Camisa de béisbol sublimada (ej. Gigantes BC)",
+      "servicio_en": "Sublimated Baseball Jersey (e.g. Gigantes BC)",
+      "tela_es": "—",
+      "tela_en": "—",
+      "precio": "$25"
+    },
+    {
+      "servicio_es": "Chemise sublimada",
+      "servicio_en": "Sublimated Polo Shirt",
+      "tela_es": "—",
+      "tela_en": "—",
+      "precio": "$18"
+    },
+    {
+      "servicio_es": "Camisa corporativa con 5 logos bordados",
+      "servicio_en": "Corporate Shirt with 5 Embroidered Logos",
+      "tela_es": "Algodón egipcio",
+      "tela_en": "Egyptian Cotton",
+      "precio": "$35"
+    },
+    {
+      "servicio_es": "Camisa corporativa con 2 logos bordados",
+      "servicio_en": "Corporate Shirt with 2 Embroidered Logos",
+      "tela_es": "Algodón egipcio",
+      "tela_en": "Egyptian Cotton",
+      "precio": "$25"
+    },
+    {
+      "servicio_es": "Matriz de bordado DST/PES",
+      "servicio_en": "DST/PES Embroidery Digitizing Matrix",
+      "tela_es": "Según complejidad y colores",
+      "tela_en": "According to complexity and stitch count",
+      "precio": "Desde $5"
+    },
+    {
+      "servicio_es": "Diseño de tarjeta de presentación",
+      "servicio_en": "Business Card Design",
+      "tela_es": "Vectorial",
+      "tela_en": "Vectorial",
+      "precio": "$5"
+    },
+    {
+      "servicio_es": "100 tarjetas impresas (incluye diseño)",
+      "servicio_en": "100 Printed Cards (includes design)",
+      "tela_es": "Papel glasé 300 g",
+      "tela_en": "Glossy Cardstock 300 gsm",
+      "precio": "$15"
+    }
+  ],
+  "nota_pago_es": "Precios al detal, referenciales, en USD. El pago se coordina por WhatsApp. Impuestos según corresponda.",
+  "nota_pago_en": "Retail reference prices in USD. Payment details are coordinated via WhatsApp. Applicable taxes may apply."
+}

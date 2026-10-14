@@ -116,34 +116,159 @@
   });
 
   /* --------------------------------------------------------------------------
-     Cotizador Directo a WhatsApp (Fuente: site.config.js)
+     Cotizador Interactivo con Estimado Referencial, Mailto y WhatsApp
      -------------------------------------------------------------------------- */
   const quoteForm = qs("#quickQuoteForm");
   const isEnglish = document.documentElement.lang === "en";
 
+  // Evento global para rastrear clics en WhatsApp (sin datos personales)
+  document.addEventListener("click", e => {
+    const waLink = e.target.closest('a[href*="wa.me"]');
+    if (waLink && typeof window.gtag === "function") {
+      window.gtag("event", "whatsapp_click", {
+        link_url: "wa.me",
+        page_language: isEnglish ? "en" : "es"
+      });
+    }
+  });
+
   if (quoteForm) {
+    const serviceRadios = qsa('input[name="quoteService"]', quoteForm);
+    const qtyRadios = qsa('input[name="quoteQuantity"]', quoteForm);
+    const nameInput = qs("#quoteName", quoteForm);
+    const fabricInput = qs("#quoteFabric", quoteForm);
+    const logoSelect = qs("#quoteLogo", quoteForm);
+    const noteInput = qs("#quoteNote", quoteForm);
+    const summaryText = qs("#quoteSummaryText", quoteForm);
+    const emailLink = qs("#quoteEmailLink", quoteForm);
+
+    let quoteStarted = false;
+    function triggerQuoteStart() {
+      if (quoteStarted) return;
+      quoteStarted = true;
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "quote_start", {
+          form_name: "quick_quote",
+          page_language: isEnglish ? "en" : "es"
+        });
+      }
+    }
+
+    quoteForm.addEventListener("focusin", triggerQuoteStart, { once: true });
+    quoteForm.addEventListener("change", triggerQuoteStart, { once: true });
+
+    function getSelectedService() {
+      const checked = qs('input[name="quoteService"]:checked', quoteForm);
+      if (!checked) return { id: "", name: "", price: 0, unit: "" };
+      return {
+        id: checked.value,
+        name: checked.dataset.name || checked.value,
+        price: Number(checked.dataset.price) || 0,
+        unit: checked.dataset.unit || ""
+      };
+    }
+
+    function getSelectedQty() {
+      const checked = qs('input[name="quoteQuantity"]:checked', quoteForm);
+      return checked ? checked.value : "1–5";
+    }
+
+    function buildDetailsText() {
+      const parts = [];
+      const name = nameInput?.value.trim();
+      const fabric = fabricInput?.value.trim();
+      const logoVal = logoSelect?.value;
+      const note = noteInput?.value.trim();
+
+      if (name) {
+        parts.push(isEnglish ? `Client: ${name}` : `Cliente: ${name}`);
+      }
+      if (fabric) {
+        parts.push(isEnglish ? `Garment/Fabric: ${fabric}` : `Prenda/Tela: ${fabric}`);
+      }
+      if (logoVal === "ready") {
+        parts.push(isEnglish ? "Logo: Ready" : "Logo: Listo para confección");
+      } else if (logoVal === "none") {
+        parts.push(isEnglish ? "Logo: No logo yet" : "Logo: Sin logo aún");
+      } else if (logoVal === "need_design") {
+        parts.push(isEnglish ? "Logo: Needs design / vectorization" : "Logo: Requiere diseño / vectorización");
+      }
+      if (note) {
+        parts.push(isEnglish ? `Notes: ${note}` : `Observaciones: ${note}`);
+      }
+
+      if (parts.length === 0) {
+        return isEnglish ? "No additional details" : "Sin detalles adicionales";
+      }
+      return parts.join(" · ");
+    }
+
+    function updateSummary() {
+      const s = getSelectedService();
+      const q = getSelectedQty();
+
+      if (summaryText) {
+        const text = isEnglish
+          ? `Your inquiry: ${s.name} · ${q} pieces · Estimated from: ${s.unit}`
+          : `Tu solicitud: ${s.name} · ${q} piezas · Estimado: ${s.unit}`;
+        summaryText.textContent = text;
+      }
+
+      if (emailLink) {
+        const details = buildDetailsText();
+        const subject = isEnglish
+          ? `Quote Request — ${s.name}`
+          : `Solicitud de Cotización — ${s.name}`;
+        const body = isEnglish
+          ? `Hello Ramses,\n\nI would like to quote:\n• Service: ${s.name}\n• Quantity: ${q} pieces\n• Details: ${details}\n\nSent from kingdombyramsesmartinez.github.io`
+          : `Hola Ramses,\n\nQuiero cotizar:\n• Servicio: ${s.name}\n• Cantidad: ${q} piezas\n• Detalles: ${details}\n\nEnviado desde kingdombyramsesmartinez.github.io`;
+
+        emailLink.href = `mailto:${SITE_CONFIG.contact.emailWork}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      }
+    }
+
+    serviceRadios.forEach(r => r.addEventListener("change", updateSummary));
+    qtyRadios.forEach(r => r.addEventListener("change", updateSummary));
+    nameInput?.addEventListener("input", updateSummary);
+    fabricInput?.addEventListener("input", updateSummary);
+    logoSelect?.addEventListener("change", updateSummary);
+    noteInput?.addEventListener("input", updateSummary);
+
+    updateSummary();
+
     quoteForm.addEventListener("submit", e => {
       e.preventDefault();
       try {
-        const service = qs("#quoteService")?.value;
-        const volume = qs("#quoteVolume")?.value;
-        const note = qs("#quoteNote")?.value.trim() || (isEnglish ? "No additional notes" : "Sin observaciones adicionales");
+        const s = getSelectedService();
+        const q = getSelectedQty();
+        const details = buildDetailsText();
 
-        if (!service || !volume) {
+        if (!s.name) {
           showToast(
-            isEnglish ? "Please select the service and volume." : "Por favor selecciona el servicio y volumen estimado.",
+            isEnglish ? "Please select a service." : "Por favor selecciona un servicio.",
             "error"
           );
           return;
         }
 
+        if (typeof window.gtag === "function") {
+          window.gtag("event", "quote_submit", {
+            service_id: s.id,
+            quantity_range: q,
+            page_language: isEnglish ? "en" : "es"
+          });
+          window.gtag("event", "whatsapp_click", {
+            source: "quick_quote_submit",
+            page_language: isEnglish ? "en" : "es"
+          });
+        }
+
         const msg = isEnglish
-          ? `Hello Ramses, I would like to request a quote with Kingdom:\n\n• Service: ${service}\n• Estimated Volume: ${volume}\n• Details: ${note}\n\nCould you please let me know availability and lead time?`
-          : `Hola Ramses, deseo solicitar una cotización con Kingdom:\n\n• Servicio: ${service}\n• Volumen: ${volume}\n• Detalle: ${note}\n\n¿Podrías indicarme disponibilidad y tiempos de confección?`;
+          ? `Hello Ramses, I would like to quote:\n• Service: ${s.name}\n• Quantity: ${q} pieces\n• Details: ${details}\n\nSent from kingdombyramsesmartinez.github.io`
+          : `Hola Ramses, quiero cotizar:\n• Servicio: ${s.name}\n• Cantidad: ${q} piezas\n• Detalles: ${details}\n\nEnviado desde kingdombyramsesmartinez.github.io`;
 
         const url = `https://wa.me/${SITE_CONFIG.contact.whatsappNumber}?text=${encodeURIComponent(msg)}`;
-        
-        // Abrir directamente en nueva pestaña o redirigir sin que el bloqueador de popups lo cancele
+
         const opened = window.open(url, "_blank", "noopener,noreferrer");
         if (!opened || opened.closed || typeof opened.closed === "undefined") {
           window.location.href = url;
@@ -155,7 +280,9 @@
         );
       } catch {
         showToast(
-          isEnglish ? "An error occurred. Please contact via WhatsApp directly." : "Ocurrió un error al procesar la cotización. Contáctanos directamente vía WhatsApp.",
+          isEnglish
+            ? "An error occurred. Please contact via WhatsApp directly."
+            : "Ocurrió un error al procesar la cotización. Contáctanos directamente vía WhatsApp.",
           "error"
         );
       }
