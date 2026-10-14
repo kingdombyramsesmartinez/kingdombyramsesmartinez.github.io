@@ -4,9 +4,6 @@
 **Fecha:** 12 de octubre de 2026
 **Propietario:** Ramses Martínez · **Ejecuta:** Antigravity · **Dirige:** Claude
 **Revisión 2:** fan art por encargo, operación informal sin registro mercantil, fuentes confirmadas y precios nuevos.
-**Revisión 3:** ajustes tras el reporte de la Fase 0 (arquitectura real del proyecto y estado verificado).
-**Revisión 4:** cierre de Fase 1 (Fase 1B) tras el reporte de la Fase 1.
-**Decisiones de Ramses (13/10/2026):** se mantiene el Ford Ka sin difuminar la placa y no se retiran los archivos de imagen de la Alcaldía de San Felipe y el TSJ. Donde este documento diga lo contrario, prevalece esta decisión.
 
 > **Aviso:** este documento no es asesoría legal ni contable. La parte legal resume el marco venezolano y marca riesgos; antes de publicar las páginas legales, que las revise un abogado y, para lo fiscal, un contador.
 
@@ -58,29 +55,12 @@ En lo legal separo dos niveles:
 | T-5 | Errores en Search Console, Analytics y Business Profile (reportados por ti, no visibles para mí). | P0 |
 | T-6 | 39 tarjetas en una sola página y los efectos pedidos (vidrio áspero, fondo de ladrillo) pesan en móviles de gama baja si no se optimizan. | P2 |
 
-## 1b. Estado real tras la Fase 0 (12/10/2026)
-
-**Ya estaba bien (no rehacer):** `robots.txt`, `sitemap.xml` (es/en), `404.html`, `.well-known/security.txt`, `_headers` con CSP, fuentes Sedgwick Ave Display y Montserrat con licencia OFL y sin fuentes prohibidas, GA4 que solo carga tras pulsar Aceptar y se desactiva al Rechazar (ID `G-YQCLS51XJE`), etiqueta de verificación de Search Console, hero sin la foto ajena, contador "39" igual a las 39 tarjetas, axe móvil con 0 violaciones.
-
-**Arquitectura existente:** el sitio se genera desde `content/portfolio.json` (datos), `templates/` (plantillas) y 7 scripts en `tools/`, con pruebas Playwright + axe (`npm run test:e2e`). Los HTML son salida generada: se edita la fuente y se regenera. Donde este documento dice `data/portfolio.json` o `scripts/build-portfolio.mjs`, se aplica sobre esta estructura (ver Regla 12).
-
-**Correcciones a mi diagnóstico inicial:** L-2 (hero) y C-8 (contador) no aplican al repositorio actual; T-4 se reduce a datos estructurados (`ProfessionalService` → `Person`) y a confirmar `hreflang`. Las 12 páginas legales sin JSON-LD u Open Graph son P2: no necesitan datos estructurados.
-
-**Hallazgos nuevos:**
-- Los archivos con insignias oficiales (Alcaldía de San Felipe y dos del TSJ) y la foto del Ford Ka están en `assets/`. **Decisión de Ramses:** se mantienen. Si algún día se muestran, la propuesta de la Alcaldía debe presentarse como propuesta, no como trabajo adjudicado, sin sugerir relación institucional.
-- "Preferencias de cookies" aparece en el footer de `index.html` y `portfolio.html`, pero no en las otras 15 páginas.
-- Contraste del botón de WhatsApp del cotizador en escritorio: 3,78:1 (mínimo 4,5:1). Se corrige en la Fase 3.
-- 52 + 55 archivos de imagen con espacios y mayúsculas.
-- Las mediciones de rendimiento se hicieron sin limitar CPU ni red (FCP de 150 ms), así que no representan un móvil de gama baja; hay que repetirlas con Lighthouse real y límites (Fase 6).
-
-**Discrepancia por aclarar:** al leer el sitio publicado vi "41 Presentaciones", sin enlace de cookies en el footer del home y un precio en la tarjeta "Kingdom Presentación"; el repositorio dice 39, enlace presente y precio en "Academia De Cuatro". Puede ser caché de mi lectura o que lo publicado no coincida con el repositorio (despliegue atrasado o fallido). Lo que Google rastrea es lo publicado, así que conviene aclararlo antes de interpretar los errores de Search Console.
-
 ## 2. Prioridades y orden de ejecución
 
 | Orden | Fase | Qué resuelve | Prioridad |
 |---|---|---|---|
 | 1 | F0 Respaldo y diagnóstico | Ver el estado real y los errores de Google | P0 |
-| 2 | F1 Legal y riesgos, y F1B cierre | L-1 a L-10; luego publicar a `main` | P0 |
+| 2 | F1 Legal y riesgos | L-1 a L-8 | P0 |
 | 3 | F5 SEO técnico y Google | T-4, T-5, T-3 | P0 |
 | 4 | F2 Datos, títulos, glifos, precios | C-2, C-3, C-8, T-1, T-2 | P1 |
 | 5 | F3 Cotizador, servicios y home | C-6, C-7, C-9 | P1 |
@@ -142,7 +122,7 @@ Piezas: Camaro, Corvette, Ford Ka, Spark, Tahoe y Wrangler. Que las haya pedido 
 
 - Que el cliente lo haya pedido no cambia lo explicado en 3.3 sobre la responsabilidad: sigue siendo tuya.
 - Para el portafolio público lo más prudente es mostrarlas sin el nombre ni el logo de la marca en el título (por ejemplo "Diseño automotriz — Franela DTF") o no mostrarlas. Es decisión tuya. Sin precio ni botón de cotizar.
-- **Ford Ka:** decisión de Ramses: la imagen se mantiene con la placa visible; el riesgo lo asume él. No publiques el nombre del cliente que no pagó y guarda el chat o comprobante de entrega y de la falta de pago. Si el dueño del vehículo pide el retiro, retira la imagen.
+- **Ford Ka:** (1) la placa identifica a una persona (Constitución, art. 60, vida privada): difumínala o recórtala en la imagen, la miniatura y la imagen OG; (2) no publiques el nombre del cliente que no pagó; (3) guarda el chat o comprobante de entrega y de la falta de pago por si lo necesitas.
 - **Regla general:** revisar todas las imágenes en busca de placas, caras, teléfonos o cédulas de terceros antes de publicar.
 
 ### 3.4 Aviso general de logos de clientes (texto propuesto)
@@ -315,7 +295,7 @@ Enviado desde kingdombyramsesmartinez.github.io
 - Errores típicos: sitemap no legible, duplicada sin canónica, rastreada pero no indexada (páginas finas), 404 por imágenes renombradas. **Pega los mensajes exactos y los clasifico.**
 
 **Analytics (GA4)**
-- Conservar el ID de medición actual (`G-YQCLS51XJE`) y el esquema actual: gtag se carga solo tras Aceptar y Rechazar lo desactiva. Enlace de preferencias visible en todas las páginas.
+- Conservar el ID de medición actual. Consentimiento antes de cargar (Consent Mode v2, denegado por defecto), banner con Aceptar/Rechazar y enlace de preferencias en todas las páginas.
 - Eventos: `whatsapp_click`, `quote_start`, `quote_submit`, `cv_download`, `portfolio_item_view`, `email_click`. Sin datos personales en parámetros (ni el texto del mensaje de WhatsApp).
 - Marcar `quote_submit`, `whatsapp_click` y `cv_download` como eventos clave. Excluir tu tráfico interno.
 
@@ -373,7 +353,6 @@ REGLAS PERMANENTES (aplican a toda la sesión)
 9. Al terminar crea reportes/FASE-N.md con: archivos cambiados, decisiones tomadas, pendientes y cómo probarlo.
 10. Lenguaje: Kingdom es una marca personal de Ramses Martínez, persona natural, sin registro mercantil. Prohibido en cualquier página, metadato o JSON-LD: empresa, corporación, compañía, sociedad, S.A., C.A., "nuestro equipo", "somos", "fundada". Usa primera persona singular o "Kingdom by Ramses Martínez" y "diseñador independiente". "Uniformes corporativos" se mantiene solo como nombre de producto.
 11. Veracidad: ninguna frase del sitio puede afirmar algo que no sea cierto en la práctica (por ejemplo, que algo no se vende o no se acepta por encargo).
-12. Arquitectura existente: el sitio ya se genera desde content/portfolio.json (datos), templates/ (plantillas) y tools/ (scripts). Edita siempre las fuentes y plantillas y regenera con el comando de build existente; nunca edites a mano un HTML generado. Donde este documento diga data/portfolio.json, data/*.json o scripts/build-portfolio.mjs, aplícalo sobre content/ y tools/ y amplía lo existente en vez de duplicarlo. Tras cada fase ejecuta npm run test:e2e y adjunta el resultado; no cierres una fase con pruebas rotas.
 ```
 
 ### Fase 0 — Respaldo y diagnóstico (solo lectura)
@@ -406,25 +385,8 @@ Tareas:
 7. Reescribe las seis páginas legales (privacidad, términos, propiedad intelectual, cookies, seguridad, accesibilidad) en es y en, siguiendo EXACTAMENTE el contenido mínimo de la sección 3.2 del documento. Usa [CONFIRMAR] para lo que no se sepa y NO lo publiques; repórtalo. Incluye el correo de retiro de contenidos y un /.well-known/security.txt.
 8. Verifica que nada en el repo contenga cédula, dirección exacta ni datos sensibles.
 9. Lenguaje: aplica la Regla 10 en home, portafolio, /en/, legales, metadatos, JSON-LD y alt. Cambios mínimos: la tabla de la sección 3.5 del documento. En las páginas legales el responsable es Ramses Martínez, persona natural que opera la marca Kingdom.
-10. Archivos con insignias oficiales: saca de assets/ y de cualquier lista, JSON, sitemap o plantilla las imágenes con escudos o símbolos oficiales ("alcaldia de san felipe-chaqueta sublimada.webp", "TSJ tricolor-chaqueta sublimada.webp", "TSJ-chaqueta sublimada.webp" y cualquier otra que encuentres). Muévelas a una carpeta ignorada por git (_privado/ en .gitignore) y dime la ruta. Para el Ford Ka (imagen y miniatura) sustituye los archivos por una versión con la placa difuminada o retíralos hasta que Ramses suba la versión editada. Reporta cada archivo movido o reemplazado.
-11. JSON-LD: en index.html, en/index.html, portfolio.html y en/portfolio.html sustituye ProfessionalService por Person con brand Kingdom (sección 9 del documento). No añadas JSON-LD a las páginas legales.
-12. Publicación: indica desde qué rama y carpeta se publica GitHub Pages (revisa .github/workflows si existe), si hay commits locales sin push y si algo del repo difiere de lo publicado. No hagas push.
 No toques títulos, precios ni cotizador (fases siguientes).
 ```
-
-### Fase 1B — Cierre de Fase 1 y publicación temprana
-```text
-FASE 1B — Cierre de la Fase 1 (aplica las Reglas permanentes, incluida la 12).
-Antes de empezar, vuelve a leer docs/KINGDOM-plan-mejora-portafolio.md: trabajaste con la Revisión 2 y faltan tareas de la Revisión 3. No rehagas lo ya aprobado en tus pruebas.
-1. Archivos de la Alcaldía de San Felipe y del TSJ: NO los muevas ni los borres (decisión de Ramses). Solo confirma e informa si algún HTML, JSON, plantilla o sitemap los referencia. Si ninguno los referencia, déjalos como están. Si alguna pieza visible los usa, no la retires: indícalo en el reporte.
-2. Ford Ka: NO modifiques ni ocultes la imagen ni la miniatura (decisión de Ramses). No hace falta más acción.
-3. Páginas legales, Ley sobre el Derecho de Autor: quita los números de artículo (Arts. 1, 2, 5, 6, 18, 19, 51) y cita solo "Ley sobre el Derecho de Autor (1993)". Conserva los principios. Reformula la frase sobre "derecho moral a divulgar obras en el portafolio" de forma neutra: "Kingdom puede mostrar trabajos realizados como referencia, con los avisos de titularidad de este sitio." Deja los artículos 28 y 60 de la Constitución. Antes de cambiar nada, lista en el reporte cada artículo que habías citado y para qué.
-4. JSON-LD: confirma que el bloque Person + WebSite esté escrito en el HTML generado (index, en/index, portfolio, en/portfolio) y no inyectado por JavaScript en tiempo de ejecución. Si lo genera assets/js/app.js, muévelo al build (templates / tools) para que esté en el HTML estático.
-5. Publicación: indica desde qué rama y carpeta publica GitHub Pages (revisa .github/workflows si existe), si hay commits locales sin push y si el repositorio difiere de lo publicado. No hagas push ni merge.
-6. Ejecuta node tools/check-js-syntax.mjs, node tools/audit-site.mjs, node tools/test-audit.mjs y npx playwright test. Entrega reportes/FASE-1B.md con archivos movidos, resultado de las pruebas y pendientes.
-```
-
-**Publicación temprana:** el riesgo legal está en lo que hoy está publicado, no en la rama. Cuando la Fase 1B esté aprobada, fusiona `mejora-2026-10` a `main` sin esperar a la Fase 7 y comprueba el sitio publicado.
 
 ### Fase 2 — Datos del portafolio, títulos, glifos y precios
 ```text
@@ -469,9 +431,9 @@ No inventes nada: todo lo que falte se reporta como PENDIENTE.
 FASE 5 — SEO técnico y Google (aplica las Reglas permanentes).
 1. URLs: crea /portafolio/index.html y /en/portfolio/index.html (usando el build de la Fase 2). Deja /portfolio.html y /en/portfolio.html como páginas de redirección (meta refresh a 0 s + canonical al nuevo destino). Actualiza todos los enlaces internos, el menú y el sitemap.
 2. Cada página: <html lang>, un único <title> (≤60 caracteres) y meta description (≤155), canonical absoluta, hreflang es / en / x-default recíprocos, og:* y twitter:* completos con imagen 1200×630 que exista.
-3. robots.txt, sitemap.xml y 404.html ya existen: verifica y completa, no los recrees. El sitemap debe reflejar las URLs nuevas (/portafolio/, /en/portfolio/) con lastmod, y 404.html debe tener navegación útil.
-4. JSON-LD: verifica que quede Person (con Brand Kingdom) + WebSite según la sección 9 del documento, idénticos a lo visible en la página y escritos en el HTML generado, no inyectados por JavaScript. Sin aggregateRating ni reseñas. Valida la sintaxis y pásalo por el Rich Results Test.
-5. Google Analytics: conserva el ID actual y el esquema actual (gtag se inyecta solo tras Aceptar; Rechazar lo desactiva y limpia las cookies _ga*), que ya funciona. No lo reemplaces por Consent Mode v2. Verifica que el enlace de preferencias esté en las 17 páginas y añade los eventos: whatsapp_click, quote_start, quote_submit, cv_download, portfolio_item_view, email_click.
+3. Genera sitemap.xml (home, portafolio, legales, /en/) con lastmod, y robots.txt con la línea Sitemap. Crea 404.html con navegación útil.
+4. JSON-LD: Person (con Brand Kingdom) + WebSite según la sección 9 del documento, idénticos a lo visible en la página. No uses Organization ni ProfessionalService. Sin aggregateRating ni reseñas. Valida la sintaxis.
+5. Google Analytics: conserva el ID actual. Implementa Consent Mode v2 (denegado por defecto), banner Aceptar/Rechazar y enlace de preferencias en el footer. Eventos: whatsapp_click, quote_start, quote_submit, cv_download, portfolio_item_view, email_click.
 6. Search Console: mantén la etiqueta de verificación existente. No la quites.
 7. Enlaces para Business Profile: genera en reportes/FASE-5.md las URLs con UTM para el perfil y para Instagram/TikTok/LinkedIn (utm_source, utm_medium=bio o organic, utm_campaign).
 8. Redacta en reportes/FASE-5.md una lista clara de qué debe revisar Ramses manualmente en Search Console (enviar sitemap, solicitar indexación, revisar cobertura y Core Web Vitals), en Analytics (marcar eventos clave) y en Business Profile (categorías, área de servicio, teléfono igual, fotos, servicios).
@@ -487,7 +449,7 @@ Metas en Lighthouse móvil: rendimiento ≥ 90, accesibilidad ≥ 95, buenas pr�
 3. El estilo urbano pedido (fondo de ladrillo desgastado y "vidrio áspero con luz de fondo") se mantiene, pero: fondo de ladrillo como un único WebP optimizado (≤ 80 KB) o CSS; backdrop-filter solo en pantallas anchas y con alternativa de color sólido semitransparente en móviles y cuando se use prefers-reduced-motion o prefers-reduced-data; sin animaciones infinitas pesadas.
 4. JavaScript total < 100 KB, sin librerías innecesarias. Pagina o carga progresivamente las 39 tarjetas del portafolio.
 5. Accesibilidad: modal con foco atrapado, cierre con Esc, botón de cierre con etiqueta; filtros navegables con teclado; contraste AA en los títulos sobre el fondo de ladrillo; texto alternativo útil.
-6. Mide antes y después con Lighthouse real (o PageSpeed) y con CPU 4× más lenta y red 4G lenta; las mediciones sin límites no valen. Registra en reportes/FASE-6.md.
+6. Mide antes y después y registra en reportes/FASE-6.md.
 ```
 
 ### Fase 7 — QA final y entrega

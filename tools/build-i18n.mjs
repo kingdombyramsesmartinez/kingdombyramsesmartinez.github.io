@@ -462,7 +462,7 @@ function renderPortfolioPage(data, isEn) {
 
     return `
           <article class="portfolio-card portfolio-card-clean" tabindex="0" role="button" aria-haspopup="dialog"
-                   data-category="${p.category}"
+                   data-category="${p.categoria || p.category}"
                    data-tipo="${p.tipo || "cliente"}"
                    data-title="${esc(title)}"
                    data-tag="${esc(tag)}"
