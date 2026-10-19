@@ -104,7 +104,9 @@
 
     gtag("js", new Date());
     gtag("config", GA_MEASUREMENT_ID, {
-      send_page_view: true
+      send_page_view: true,
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
     });
 
     const script = document.createElement("script");
