@@ -1,0 +1,30 @@
+{
+  "site_url": "https://kingdombyramsesmartinez.github.io",
+  "pricing_enabled": true,
+  "gbp_review_url": "",
+  "catalogo_url": "https://drive.google.com/file/d/10KQF5rr5QT9E7Qtyob0UIiuXTiVKnLw6/view?usp=drive_link",
+  "whatsapp_number": "584241092124",
+  "whatsapp_display": "+58 424-109-2124",
+  "email_work": "kingdombrandbqto@gmail.com",
+  "linkedin_url": "https://www.linkedin.com/in/ramses-martinez-bqto",
+  "instagram_url": "https://instagram.com/kingdom_vzla",
+  "tiktok_url": "https://www.tiktok.com/@kingdom_vzla",
+  "cv_path": "assets/cv/ramses-martinez-cv.pdf",
+  "brand": {
+    "name": "KINGDOM",
+    "alternateName": "Kingdom by Ramses Martínez",
+    "fullName": "KINGDOM by Ramses Martínez",
+    "owner": "Ramses Martínez",
+    "tagline": "Diseño Textil, Bordado Industrial & Sublimación",
+    "location": "Barquisimeto, Estado Lara, Venezuela",
+    "originCountry": "Venezuela"
+  },
+  "palette": {
+    "ink": "#070706",
+    "surface": "#0D0D0C",
+    "surfaceAlt": "#121211",
+    "paper": "#F7F7F4",
+    "olive": "#7A8058",
+    "beige": "#E9E0D0"
+  }
+}

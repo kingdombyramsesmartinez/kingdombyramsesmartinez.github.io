@@ -1,0 +1,892 @@
+{
+  "totalBroken": 0,
+  "brokenLinksByPage": {
+    "index.html": [],
+    "portfolio.html": [],
+    "404.html": [],
+    "en/index.html": [],
+    "en/portfolio.html": [],
+    "legal/privacy.html": [],
+    "legal/terms.html": [],
+    "legal/intellectual-property.html": [],
+    "legal/cookies.html": [],
+    "legal/security.html": [],
+    "legal/accessibility.html": [],
+    "en/legal/privacy.html": [],
+    "en/legal/terms.html": [],
+    "en/legal/intellectual-property.html": [],
+    "en/legal/cookies.html": [],
+    "en/legal/security.html": [],
+    "en/legal/accessibility.html": []
+  },
+  "imgAudit": {
+    "index.html": {
+      "totalImgs": 4,
+      "withoutDims": 0,
+      "withoutLazy": 4,
+      "genericOrEmptyAlt": 2,
+      "imgs": [
+        {
+          "src": "assets/brand/logo.png",
+          "alt": "Kingdom Tag Logo",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": false,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/brand/kingdom-logo-white.png",
+          "alt": "",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": false,
+          "isGeneric": true
+        },
+        {
+          "src": "assets/artwork/alcaldia de san felipe-chaqueta sublimada.webp",
+          "alt": "",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": false,
+          "isGeneric": true
+        },
+        {
+          "src": "assets/brand/logo.png",
+          "alt": "Kingdom Tag Logo",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": false,
+          "isGeneric": false
+        }
+      ]
+    },
+    "portfolio.html": {
+      "totalImgs": 42,
+      "withoutDims": 0,
+      "withoutLazy": 3,
+      "genericOrEmptyAlt": 1,
+      "imgs": [
+        {
+          "src": "assets/brand/logo.png",
+          "alt": "Kingdom Tag Logo",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": false,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/academia de cuatro-franela sublimada.webp",
+          "alt": "Presentación textil y propuesta gráfica para Academia De Cuatro",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Alexauto-camisa corporativa.webp",
+          "alt": "Presentación textil y propuesta gráfica para Alexauto",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Amigos Fc-franela manga corta sublimada.webp",
+          "alt": "Presentación textil y propuesta gráfica para Amigos Fc",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Avengers Doomsday- franela con dtf.webp",
+          "alt": "Presentación textil y propuesta gráfica para Avengers Doomsday",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Bakugo MHA-franela con dtf 2.webp",
+          "alt": "Presentación textil y propuesta gráfica para Bakugo MHA",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/bordado.webp",
+          "alt": "Presentación textil y propuesta gráfica para Muestrario De Bordado",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Camaro Edition-franela con dtf negra.webp",
+          "alt": "Presentación textil y propuesta gráfica para Camaro Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Corvette Edition-franela con dtf.webp",
+          "alt": "Presentación textil y propuesta gráfica para Corvette Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/CR7 Edition-franela manga corta sublimada.webp",
+          "alt": "Presentación textil y propuesta gráfica para CR7 Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/DBS Edition-franela con dtf back.webp",
+          "alt": "Presentación textil y propuesta gráfica para DBS Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Deku Edition-franela con dtf back.webp",
+          "alt": "Presentación textil y propuesta gráfica para Deku Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Ferreconstrucciones- franela manga larga sublimada.webp",
+          "alt": "Presentación textil y propuesta gráfica para Ferreconstrucciones",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Fitness 24-7-chaqueta sublimada.webp",
+          "alt": "Presentación textil y propuesta gráfica para Fitness 24/7",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Ford Ka Edition-franela con dtf.webp",
+          "alt": "Presentación textil y propuesta gráfica para Ford Ka Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Gerreras SC-franela manga corta sublimada.webp",
+          "alt": "Presentación textil y propuesta gráfica para Guerreras SC",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Gigantes BC- camisa de beisbol sublimada .webp",
+          "alt": "Presentación textil y propuesta gráfica para Gigantes BC",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/IMPA-chaqueta bordadax.webp",
+          "alt": "Presentación textil y propuesta gráfica para IMPA",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Jswim Academi-chaqueta sublimada.webp",
+          "alt": "Presentación textil y propuesta gráfica para Jswim Academi",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/kingdom-tarjeta de presentacion.webp",
+          "alt": "Presentación textil y propuesta gráfica para Kingdom Presentación",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Laneros Gamers-franela manga corta sublimada.webp",
+          "alt": "Presentación textil y propuesta gráfica para Laneros Gamers",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Maderera 2PI-chemise sublimada.webp",
+          "alt": "Presentación textil y propuesta gráfica para Maderera 2PI",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Messi Edition-franela manga corta sublimada.webp",
+          "alt": "Presentación textil y propuesta gráfica para Messi Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Michelle collection-camisa corporativa blanca.webp",
+          "alt": "Presentación textil y propuesta gráfica para Michelle Collection",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Naruto Edition-franela con dtf front and back.webp",
+          "alt": "Presentación textil y propuesta gráfica para Naruto Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Oasis Sport-franela con dtf blanca.webp",
+          "alt": "Presentación textil y propuesta gráfica para Oasis Sport",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Paramedicos Acosta ortiz-camisa corporativa blanca.webp",
+          "alt": "Presentación textil y propuesta gráfica para Paramedicos Acosta Ortiz",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Personal Trainer-chaqueta sublimada.webp",
+          "alt": "Presentación textil y propuesta gráfica para Personal Trainer",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Potenza-chaqueta sublimada.webp",
+          "alt": "Presentación textil y propuesta gráfica para Potenza",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Promocion Ups-franela con dtf.webp",
+          "alt": "Presentación textil y propuesta gráfica para Promocion Ups",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Ramones Edition-franela con dtf front.webp",
+          "alt": "Presentación textil y propuesta gráfica para Ramones Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Repuestos Villegas-franela manga corta sublimada.webp",
+          "alt": "Presentación textil y propuesta gráfica para Repuestos Villegas",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Santisima Trinidad-franela manga corta sublimada.webp",
+          "alt": "Presentación textil y propuesta gráfica para Santisima Trinidad",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Spark Edition-franela con dtf.webp",
+          "alt": "Presentación textil y propuesta gráfica para Spark Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Tahoe Edition-franela con dtf.webp",
+          "alt": "Presentación textil y propuesta gráfica para Tahoe Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Tanjiro Edition-franela con dtf 2.webp",
+          "alt": "Presentación textil y propuesta gráfica para Tanjiro Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Venezolano Edition-franela manga larga sublimada.webp",
+          "alt": "Presentación textil y propuesta gráfica para Venezolano Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Wrangler Edition-franela con dtf.webp",
+          "alt": "Presentación textil y propuesta gráfica para Wrangler Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/WWW.listaprecio.com-camisa corporativa.webp",
+          "alt": "Presentación textil y propuesta gráfica para WWW.listaprecio.com",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/thumbs/Zoto-camisa corporativa blanca.webp",
+          "alt": "Presentación textil y propuesta gráfica para Zoto",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "assets/artwork/academia de cuatro-franela sublimada.webp",
+          "alt": "",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": false,
+          "isGeneric": true
+        },
+        {
+          "src": "assets/brand/logo.png",
+          "alt": "Kingdom Tag Logo",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": false,
+          "isGeneric": false
+        }
+      ]
+    },
+    "404.html": {
+      "totalImgs": 1,
+      "withoutDims": 0,
+      "withoutLazy": 1,
+      "genericOrEmptyAlt": 0,
+      "imgs": [
+        {
+          "src": "/assets/brand/kingdom-logo-white.png",
+          "alt": "Kingdom",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": false,
+          "isGeneric": false
+        }
+      ]
+    },
+    "en/index.html": {
+      "totalImgs": 4,
+      "withoutDims": 0,
+      "withoutLazy": 4,
+      "genericOrEmptyAlt": 2,
+      "imgs": [
+        {
+          "src": "../assets/brand/logo.png",
+          "alt": "Kingdom Tag Logo",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": false,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/brand/kingdom-logo-white.png",
+          "alt": "",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": false,
+          "isGeneric": true
+        },
+        {
+          "src": "../assets/artwork/alcaldia de san felipe-chaqueta sublimada.webp",
+          "alt": "",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": false,
+          "isGeneric": true
+        },
+        {
+          "src": "../assets/brand/logo.png",
+          "alt": "Kingdom Tag Logo",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": false,
+          "isGeneric": false
+        }
+      ]
+    },
+    "en/portfolio.html": {
+      "totalImgs": 42,
+      "withoutDims": 0,
+      "withoutLazy": 3,
+      "genericOrEmptyAlt": 1,
+      "imgs": [
+        {
+          "src": "../assets/brand/logo.png",
+          "alt": "Kingdom Tag Logo",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": false,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/academia de cuatro-franela sublimada.webp",
+          "alt": "Textile design presentation and concept artwork for Academia De Cuatro",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Alexauto-camisa corporativa.webp",
+          "alt": "Textile design presentation and concept artwork for Alexauto",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Amigos Fc-franela manga corta sublimada.webp",
+          "alt": "Textile design presentation and concept artwork for Amigos Fc",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Avengers Doomsday- franela con dtf.webp",
+          "alt": "Textile design presentation and concept artwork for Avengers Doomsday",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Bakugo MHA-franela con dtf 2.webp",
+          "alt": "Textile design presentation and concept artwork for Bakugo MHA",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/bordado.webp",
+          "alt": "Textile design presentation and concept artwork for Muestrario De Bordado",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Camaro Edition-franela con dtf negra.webp",
+          "alt": "Textile design presentation and concept artwork for Camaro Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Corvette Edition-franela con dtf.webp",
+          "alt": "Textile design presentation and concept artwork for Corvette Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/CR7 Edition-franela manga corta sublimada.webp",
+          "alt": "Textile design presentation and concept artwork for CR7 Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/DBS Edition-franela con dtf back.webp",
+          "alt": "Textile design presentation and concept artwork for DBS Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Deku Edition-franela con dtf back.webp",
+          "alt": "Textile design presentation and concept artwork for Deku Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Ferreconstrucciones- franela manga larga sublimada.webp",
+          "alt": "Textile design presentation and concept artwork for Ferreconstrucciones",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Fitness 24-7-chaqueta sublimada.webp",
+          "alt": "Textile design presentation and concept artwork for Fitness 24/7",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Ford Ka Edition-franela con dtf.webp",
+          "alt": "Textile design presentation and concept artwork for Ford Ka Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Gerreras SC-franela manga corta sublimada.webp",
+          "alt": "Textile design presentation and concept artwork for Guerreras SC",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Gigantes BC- camisa de beisbol sublimada .webp",
+          "alt": "Textile design presentation and concept artwork for Gigantes BC",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/IMPA-chaqueta bordadax.webp",
+          "alt": "Textile design presentation and concept artwork for IMPA",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Jswim Academi-chaqueta sublimada.webp",
+          "alt": "Textile design presentation and concept artwork for Jswim Academi",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/kingdom-tarjeta de presentacion.webp",
+          "alt": "Textile design presentation and concept artwork for Kingdom Presentación",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Laneros Gamers-franela manga corta sublimada.webp",
+          "alt": "Textile design presentation and concept artwork for Laneros Gamers",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Maderera 2PI-chemise sublimada.webp",
+          "alt": "Textile design presentation and concept artwork for Maderera 2PI",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Messi Edition-franela manga corta sublimada.webp",
+          "alt": "Textile design presentation and concept artwork for Messi Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Michelle collection-camisa corporativa blanca.webp",
+          "alt": "Textile design presentation and concept artwork for Michelle Collection",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Naruto Edition-franela con dtf front and back.webp",
+          "alt": "Textile design presentation and concept artwork for Naruto Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Oasis Sport-franela con dtf blanca.webp",
+          "alt": "Textile design presentation and concept artwork for Oasis Sport",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Paramedicos Acosta ortiz-camisa corporativa blanca.webp",
+          "alt": "Textile design presentation and concept artwork for Paramedicos Acosta Ortiz",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Personal Trainer-chaqueta sublimada.webp",
+          "alt": "Textile design presentation and concept artwork for Personal Trainer",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Potenza-chaqueta sublimada.webp",
+          "alt": "Textile design presentation and concept artwork for Potenza",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Promocion Ups-franela con dtf.webp",
+          "alt": "Textile design presentation and concept artwork for Promocion Ups",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Ramones Edition-franela con dtf front.webp",
+          "alt": "Textile design presentation and concept artwork for Ramones Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Repuestos Villegas-franela manga corta sublimada.webp",
+          "alt": "Textile design presentation and concept artwork for Repuestos Villegas",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Santisima Trinidad-franela manga corta sublimada.webp",
+          "alt": "Textile design presentation and concept artwork for Santisima Trinidad",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Spark Edition-franela con dtf.webp",
+          "alt": "Textile design presentation and concept artwork for Spark Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Tahoe Edition-franela con dtf.webp",
+          "alt": "Textile design presentation and concept artwork for Tahoe Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Tanjiro Edition-franela con dtf 2.webp",
+          "alt": "Textile design presentation and concept artwork for Tanjiro Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Venezolano Edition-franela manga larga sublimada.webp",
+          "alt": "Textile design presentation and concept artwork for Venezolano Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Wrangler Edition-franela con dtf.webp",
+          "alt": "Textile design presentation and concept artwork for Wrangler Edition",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/WWW.listaprecio.com-camisa corporativa.webp",
+          "alt": "Textile design presentation and concept artwork for WWW.listaprecio.com",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/thumbs/Zoto-camisa corporativa blanca.webp",
+          "alt": "Textile design presentation and concept artwork for Zoto",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": true,
+          "isGeneric": false
+        },
+        {
+          "src": "../assets/artwork/academia de cuatro-franela sublimada.webp",
+          "alt": "",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": false,
+          "isGeneric": true
+        },
+        {
+          "src": "../assets/brand/logo.png",
+          "alt": "Kingdom Tag Logo",
+          "hasWidth": true,
+          "hasHeight": true,
+          "hasLazy": false,
+          "isGeneric": false
+        }
+      ]
+    },
+    "legal/privacy.html": {
+      "totalImgs": 0,
+      "withoutDims": 0,
+      "withoutLazy": 0,
+      "genericOrEmptyAlt": 0,
+      "imgs": []
+    },
+    "legal/terms.html": {
+      "totalImgs": 0,
+      "withoutDims": 0,
+      "withoutLazy": 0,
+      "genericOrEmptyAlt": 0,
+      "imgs": []
+    },
+    "legal/intellectual-property.html": {
+      "totalImgs": 0,
+      "withoutDims": 0,
+      "withoutLazy": 0,
+      "genericOrEmptyAlt": 0,
+      "imgs": []
+    },
+    "legal/cookies.html": {
+      "totalImgs": 0,
+      "withoutDims": 0,
+      "withoutLazy": 0,
+      "genericOrEmptyAlt": 0,
+      "imgs": []
+    },
+    "legal/security.html": {
+      "totalImgs": 0,
+      "withoutDims": 0,
+      "withoutLazy": 0,
+      "genericOrEmptyAlt": 0,
+      "imgs": []
+    },
+    "legal/accessibility.html": {
+      "totalImgs": 0,
+      "withoutDims": 0,
+      "withoutLazy": 0,
+      "genericOrEmptyAlt": 0,
+      "imgs": []
+    },
+    "en/legal/privacy.html": {
+      "totalImgs": 0,
+      "withoutDims": 0,
+      "withoutLazy": 0,
+      "genericOrEmptyAlt": 0,
+      "imgs": []
+    },
+    "en/legal/terms.html": {
+      "totalImgs": 0,
+      "withoutDims": 0,
+      "withoutLazy": 0,
+      "genericOrEmptyAlt": 0,
+      "imgs": []
+    },
+    "en/legal/intellectual-property.html": {
+      "totalImgs": 0,
+      "withoutDims": 0,
+      "withoutLazy": 0,
+      "genericOrEmptyAlt": 0,
+      "imgs": []
+    },
+    "en/legal/cookies.html": {
+      "totalImgs": 0,
+      "withoutDims": 0,
+      "withoutLazy": 0,
+      "genericOrEmptyAlt": 0,
+      "imgs": []
+    },
+    "en/legal/security.html": {
+      "totalImgs": 0,
+      "withoutDims": 0,
+      "withoutLazy": 0,
+      "genericOrEmptyAlt": 0,
+      "imgs": []
+    },
+    "en/legal/accessibility.html": {
+      "totalImgs": 0,
+      "withoutDims": 0,
+      "withoutLazy": 0,
+      "genericOrEmptyAlt": 0,
+      "imgs": []
+    }
+  }
+}

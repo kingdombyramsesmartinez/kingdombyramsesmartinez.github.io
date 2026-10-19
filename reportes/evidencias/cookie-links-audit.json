@@ -1,0 +1,70 @@
+{
+  "index.html": {
+    "hasCookieLink": true,
+    "hasAnalyticsScript": true
+  },
+  "portfolio.html": {
+    "hasCookieLink": true,
+    "hasAnalyticsScript": true
+  },
+  "404.html": {
+    "hasCookieLink": false,
+    "hasAnalyticsScript": true
+  },
+  "en/index.html": {
+    "hasCookieLink": true,
+    "hasAnalyticsScript": true
+  },
+  "en/portfolio.html": {
+    "hasCookieLink": true,
+    "hasAnalyticsScript": true
+  },
+  "legal/privacy.html": {
+    "hasCookieLink": false,
+    "hasAnalyticsScript": false
+  },
+  "legal/terms.html": {
+    "hasCookieLink": false,
+    "hasAnalyticsScript": false
+  },
+  "legal/intellectual-property.html": {
+    "hasCookieLink": false,
+    "hasAnalyticsScript": false
+  },
+  "legal/cookies.html": {
+    "hasCookieLink": true,
+    "hasAnalyticsScript": false
+  },
+  "legal/security.html": {
+    "hasCookieLink": false,
+    "hasAnalyticsScript": false
+  },
+  "legal/accessibility.html": {
+    "hasCookieLink": false,
+    "hasAnalyticsScript": false
+  },
+  "en/legal/privacy.html": {
+    "hasCookieLink": false,
+    "hasAnalyticsScript": false
+  },
+  "en/legal/terms.html": {
+    "hasCookieLink": false,
+    "hasAnalyticsScript": false
+  },
+  "en/legal/intellectual-property.html": {
+    "hasCookieLink": false,
+    "hasAnalyticsScript": false
+  },
+  "en/legal/cookies.html": {
+    "hasCookieLink": true,
+    "hasAnalyticsScript": false
+  },
+  "en/legal/security.html": {
+    "hasCookieLink": false,
+    "hasAnalyticsScript": false
+  },
+  "en/legal/accessibility.html": {
+    "hasCookieLink": false,
+    "hasAnalyticsScript": false
+  }
+}

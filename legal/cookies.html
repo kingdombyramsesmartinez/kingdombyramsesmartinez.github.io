@@ -13,26 +13,82 @@
 <link rel="preload" as="font" type="font/woff2" href="../assets/fonts/sedgwick-ave-display.woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/legal.css">
 <link rel="stylesheet" href="../assets/css/urban.css">
+<script src="../assets/js/analytics.js" defer></script>
 </head>
 <body>
 <main class="legal-shell">
 <nav class="legal-nav" aria-label="Legal"><a class="legal-brand" href="../">KINGDOM</a><a class="legal-back" href="../">← Volver al sitio</a></nav>
-<p class="legal-meta">Cookies · versión 1.0 · 02/10/2026</p>
+<p class="legal-meta">Cookies · versión 1.1 · 12/10/2026</p>
 <h1>Cookies y tecnologías similares</h1>
 
 <h2>1. Tecnologías utilizadas en este sitio</h2>
-<p>El sitio web de Kingdom utiliza almacenamiento local técnico estrictamente necesario para registrar tus preferencias de consentimiento de cookies (mediante la clave <code>kingdom_cookie_consent</code> en <code>localStorage</code>).</p>
-<p>De forma complementaria y puramente opcional, el sitio integra la herramienta <strong>Google Analytics 4</strong> (identificador <code>G-YQCLS51XJE</code>) para recopilar métricas agregadas y anónimas de navegación (páginas visitadas, tipo de dispositivo, tiempo de permanencia). <strong>Google Analytics no se inicializa ni instala cookies o identificadores hasta que el usuario hace clic expresamente en "Aceptar" en el aviso de privacidad y cookies.</strong></p>
+<p>El sitio web de Kingdom utiliza almacenamiento local estrictamente técnico para registrar tu preferencia de consentimiento (clave <code>kingdom_cookie_consent</code> en <code>localStorage</code>).</p>
+<p>De forma complementaria y puramente opcional, el sitio incorpora <strong>Google Analytics 4</strong> (identificador <code>G-YQCLS51XJE</code>) para medir visitas agregadas de forma anónima. <strong>Google Analytics no se descarga, no se inicializa ni instala cookies o identificadores hasta que el usuario hace clic expresamente en "Aceptar" en el aviso de consentimiento.</strong></p>
 
-<h2>2. Elección y gestión de preferencias</h2>
-<p>Al acceder por primera vez al sitio, se presenta un panel con opciones claras para aceptar o declinar la recopilación analítica. Si decides pulsar "Rechazar", no se descargará ningún recurso de analítica ni se efectuará seguimiento alguno.</p>
-<p>Puedes revisar o cambiar tu elección en cualquier momento usando el siguiente enlace directo: <a href="#cookie-settings" data-open-cookies class="cookie-consent-link"><strong>Configurar preferencias de cookies</strong></a> o limpiando los datos de este sitio en las opciones de privacidad de tu navegador.</p>
+<h2>2. Tabla de cookies utilizadas</h2>
+<p>Únicamente si el usuario otorga su consentimiento previo y expreso, Google Analytics 4 puede depositar las siguientes cookies en el navegador:</p>
 
-<h2>3. Enlaces a servicios externos</h2>
-<p>Al interactuar con los enlaces hacia WhatsApp, Instagram, LinkedIn, TikTok o Google Drive, el visitante es redirigido a plataformas operadas por terceros. Esos proveedores gestionan sus propias cookies, píxeles y políticas de privacidad conforme a sus respectivos términos.</p>
+<div class="legal-table-wrap">
+  <table class="legal-table" aria-label="Inventario de cookies de Google Analytics 4">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Proveedor</th>
+        <th scope="col">Finalidad</th>
+        <th scope="col">Duración</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"><code>_ga</code></th>
+        <td>Google LLC (GA4)</td>
+        <td>Distingue a usuarios únicos mediante un identificador de cliente seudónimo generado aleatoriamente para agregar estadísticas de visitas.</td>
+        <td>2 años desde su creación o actualización</td>
+      </tr>
+      <tr>
+        <th scope="row"><code>_ga_YQCLS51XJE</code> (o <code>_ga_*</code>)</th>
+        <td>Google LLC (GA4)</td>
+        <td>Mantiene y persiste el identificador y estado de la sesión activa para el flujo de medición configurado.</td>
+        <td>2 años desde su creación o actualización</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<h2>4. Ausencia de cookies publicitarias o perfiles comerciales</h2>
-<p>Este sitio web no utiliza cookies de publicidad comportamental, redes de remarketing, píxeles de seguimiento publicitario ni herramientas de elaboración de perfiles de usuario.</p>
+<h2>3. Almacenamiento local del navegador (no constituye cookie)</h2>
+<p>De forma complementaria a las cookies, el sitio utiliza almacenamiento local propio (<code>localStorage</code>) estrictamente necesario para registrar de forma técnica la elección de consentimiento del usuario:</p>
+
+<div class="legal-table-wrap">
+  <table class="legal-table" aria-label="Mecanismos de almacenamiento local">
+    <thead>
+      <tr>
+        <th scope="col">Clave</th>
+        <th scope="col">Proveedor</th>
+        <th scope="col">Finalidad</th>
+        <th scope="col">Duración</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"><code>kingdom_cookie_consent</code></th>
+        <td>Propio (Kingdom)</td>
+        <td>Registra el estado del consentimiento (<code>granted</code> o <code>denied</code>) para respetar la preferencia del usuario y evitar desplegar nuevamente el aviso.</td>
+        <td>Persistente hasta que el usuario limpie los datos del navegador o revoque su decisión</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>4. Gestión y retiro del consentimiento</h2>
+<p>Puedes cambiar de opinión, revocar o actualizar tu consentimiento en cualquier momento mediante el enlace disponible al pie de todas las páginas del sitio:</p>
+<p><a href="#cookie-settings" data-open-cookies class="cookie-consent-link"><strong>Configurar preferencias de cookies</strong></a></p>
+<p>Al hacer clic en "Rechazar" o revocar el consentimiento, se elimina el registro y se detiene de inmediato cualquier script de medición analítica en la sesión.</p>
+
+<h2>5. Enlaces a servicios externos</h2>
+<p>Al hacer clic en enlaces hacia WhatsApp, Instagram, LinkedIn, TikTok o Google Drive, el usuario ingresa a plataformas de terceros que administran sus propias cookies y políticas de rastreo.</p>
+
+<h2>6. Ausencia de publicidad o elaboración de perfiles</h2>
+<p>Este sitio web no utiliza cookies de remarketing, redes publicitarias de terceros, píxeles de conversión comercial ni perfiles automatizados de usuarios.</p>
 
 <footer>
   <div class="legal-footer-brand"><a href="../">KINGDOM</a> · Ramses Martínez</div>
@@ -41,6 +97,7 @@
     <a href="terms.html">Términos</a>
     <a href="intellectual-property.html">Propiedad intelectual</a>
     <a href="cookies.html">Cookies</a>
+    <a href="#cookie-settings" data-open-cookies>Preferencias de cookies</a>
     <a href="security.html">Seguridad</a>
     <a href="accessibility.html">Accesibilidad</a>
   </nav>

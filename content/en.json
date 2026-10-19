@@ -3,9 +3,9 @@
   "dir": "ltr",
   "meta": {
     "title": "Kingdom | Textile Design & Industrial Embroidery in Barquisimeto",
-    "description": "Textile design studio in Barquisimeto: DST/PES embroidery files, sports sublimation and custom streetwear. Request a quote via WhatsApp.",
+    "description": "Textile design and industrial embroidery in Barquisimeto: DST/PES embroidery digitizing, sports sublimation and custom apparel. Inquire directly with Ramses.",
     "ogTitle": "Kingdom | Textile Design & Industrial Embroidery in Barquisimeto",
-    "ogDesc": "Textile design studio in Barquisimeto: DST/PES embroidery files, sports sublimation and custom streetwear.",
+    "ogDesc": "Textile design and industrial embroidery in Barquisimeto: DST/PES embroidery digitizing, sports sublimation and custom apparel.",
     "ogLocale": "en_US",
     "ogLocaleAlt": "es_LA"
   },
@@ -15,6 +15,7 @@
     "services": "Services",
     "materials": "Specs",
     "portfolio": "Portfolio",
+    "faq": "FAQ",
     "contact": "Contact",
     "quoteCta": "Request a Quote",
     "menu": "MENU",
@@ -51,7 +52,7 @@
   "about": {
     "eyebrow": "Trajectory & Profile",
     "title": "<span translate=\"no\">KINGDOM</span> by <span translate=\"no\">Ramses Martínez</span>",
-    "desc": "Immersed in the textile trade from an early age and working professionally since age 18, <span translate=\"no\">KINGDOM</span> is the studio and brand founded by <span translate=\"no\">Ramses Martínez</span>, uniting industrial embroidery digitizing, athletic vector illustration, and custom made-to-order production.",
+    "desc": "Immersed in the textile trade from an early age and working professionally since age 18, <span translate=\"no\">KINGDOM</span> is the personal brand of <span translate=\"no\">Ramses Martínez</span>, uniting industrial embroidery digitizing, athletic vector illustration, and custom made-to-order production.",
     "timeline": [
       {
         "period": "Background",
@@ -65,8 +66,8 @@
       },
       {
         "period": "2021 – Present",
-        "title": "<span translate=\"no\">Kingdom</span> Studio Founded",
-        "desc": "Independent design practice in Barquisimeto: high-volume embroidery digitizing, performance sublimation art and made-to-order streetwear."
+        "title": "Birth of <span translate=\"no\">Kingdom</span>",
+        "desc": "Independent workshop in Barquisimeto: high-volume embroidery digitizing, performance sublimation art and made-to-order apparel."
       }
     ],
     "toolsTitle": "Primary Tools",
@@ -85,21 +86,31 @@
     "items": [
       {
         "index": "01 // DIGITAL",
-        "title": "Embroidery Digitizing DST / PES",
+        "title": "DST / PES Embroidery Digitizing",
+        "badge": "from $5",
         "body": "Technical punching with fabric pull-compensation, calibrated density and clean sequences designed to minimize thread breaks in production.",
         "cta": "Order stitch file →"
       },
       {
         "index": "02 // TECHNICAL",
         "title": "Full Print Sports Sublimation",
+        "badge": "shirts from $15 · jackets $35",
         "body": "Scaled pattern templates and color profile calibration for performance fabrics (Dry-Fit, microfibers and technical polyester).",
         "cta": "Quote team kits →"
       },
       {
-        "index": "03 // DESIGN",
-        "title": "Vector Illustration & Streetwear",
-        "body": "Original character illustrations, logo vectorization and color separations for screen printing or DTF transfers on cotton and blends.",
-        "cta": "Develop graphics →"
+        "index": "03 // CORPORATE",
+        "title": "Embroidered Corporate Uniforms",
+        "badge": "from $25",
+        "body": "Corporate shirts ($25 with 2 logos · $35 with 5 logos) and institutional jackets embroidered in high definition.",
+        "cta": "Quote corporate →"
+      },
+      {
+        "index": "04 // GRAPHIC",
+        "title": "DTF Shirts & Graphic Design",
+        "badge": "DTF shirt $20 · card design $5",
+        "body": "Textile DTF printing on 20/1 cotton and blends, logo vectorization, color separation, and business card design.",
+        "cta": "Quote DTF or design →"
       }
     ]
   },
@@ -141,15 +152,19 @@
     ]
   },
   "portfolio": {
-    "eyebrow": "Works & Presentations",
-    "title": "Textile Design Portfolio",
-    "desc": "Full showcase of design presentations, custom athletic apparel, and textile artwork engineered by KINGDOM (Kingdom by Ramses Martínez).",
-    "ctaExplore": "Explore Full Portfolio ({{PORTFOLIO_COUNT}} Presentations) →",
+    "eyebrow": "Real Client Work",
+    "title": "Works & Explorations",
+    "desc": "Selected authentic client apparel, digitizing projects, and graphic explorations. Explore the full catalog to browse all technical presentations, commissions, and graphic studies.",
+    "ctaExplore": "Explore Full Portfolio ({{PORTFOLIO_COUNT}} Pieces) →",
     "ctaBack": "← Back to Home",
     "filters": [
       {
         "id": "all",
         "label": "All"
+      },
+      {
+        "id": "bordado",
+        "label": "Embroidery & Digitizing"
       },
       {
         "id": "sublimacion",
@@ -162,13 +177,15 @@
       {
         "id": "branding",
         "label": "Branding & Corporate"
-      },
-      {
-        "id": "fanart",
-        "label": "Fan Art & Graphic Explorations"
       }
     ],
-    "disclaimer": "Unofficial graphic study presented as part of Ramses Martínez's artistic and technical explorations. It is not an official product and is not offered for sale or reproduction commissions through Kingdom. No affiliation, sponsorship, authorization, or license from the respective rights holders is implied. Third-party rights remain with their respective holders."
+    "fanartSubgroupTitle": "Graphic Explorations — Fan Art",
+    "fanartSubgroupDesc": "Illustration samples and visual studies based on popular culture.",
+    "fanartDisclaimer": "Graphic explorations of fan art created for practice and portfolio purposes. Characters, names, logos and trademarks belong to their respective owners; no affiliation, sponsorship or authorization exists on their part. If you are a rights holder and request the removal of a piece, please write to kingdombrandbqto@gmail.com.",
+    "encargoSubgroupTitle": "Custom Automotive Apparel Commissions",
+    "encargoSubgroupDesc": "Apparel graphic designs developed upon client request for motorsport enthusiasts.",
+    "encargoDisclaimer": "Automotive designs created upon client commission. Names, logos and trademarks of vehicles belong to their respective owners; no affiliation, sponsorship or authorization exists on their part. If you are a rights holder and request the removal of a piece, please write to kingdombrandbqto@gmail.com.",
+    "clientLogosDisclaimer": "Client names, trademarks and logos shown belong to their respective owners and are displayed as reference of work completed or proposed by Kingdom."
   },
   "contact": {
     "eyebrow": "Direct Inquiries",
@@ -197,10 +214,9 @@
       "block1Title": "Orders & Local Manufacturing",
       "block1Desc": "For regional inquiries, embroidery stitch files and custom sportswear orders:",
       "whatsappLabel": "Official WhatsApp",
-      "emailWorkLabel": "Studio Email",
+      "emailWorkLabel": "Kingdom Email",
       "block2Title": "Collaborations & Remote Inquiries",
       "block2Desc": "For international design agencies, recruiters and remote freelance engagements:",
-      "emailPersonalLabel": "Personal Email",
       "linkedinLabel": "LinkedIn Profile",
       "locationLabel": "Location",
       "locationVal": "Barquisimeto, Lara State, Venezuela",
@@ -221,7 +237,7 @@
     "cta": "Contact"
   },
   "footer": {
-    "brandDesc": "KINGDOM — Textile design studio, vector artwork and industrial embroidery digitizing founded by <span translate=\"no\">Ramses Martínez</span>.",
+    "brandDesc": "KINGDOM — Personal brand of <span translate=\"no\">Ramses Martínez</span>. Textile design, vector illustration, and industrial embroidery digitizing.",
     "legalTitle": "Legal & Policies",
     "links": {
       "privacy": "Privacy",
@@ -234,5 +250,95 @@
     "copyright": "<span translate=\"no\">KINGDOM</span> © 2026 — <span translate=\"no\">Kingdom by Ramses Martínez</span>. Barquisimeto, Venezuela.",
     "disclaimer": "This website is for informational purposes and does not constitute a binding legal contract.",
     "browserTranslate": "Prefer another language? You can use your web browser's built-in translation tool (Chrome, Edge, Safari, or Firefox)."
+  },
+  "pricingTable": {
+    "eyebrow": "Official Rates",
+    "title": "Retail Price List",
+    "desc": "Reference unit prices in USD. For volume orders or custom project specs, request a direct quote.",
+    "wrapLabel": "Retail Pricing Table",
+    "headers": [
+      "Service / Garment",
+      "Fabric / Detail",
+      "Price (USD)"
+    ],
+    "note": "Retail reference prices in USD. Payment details are coordinated via WhatsApp. Applicable taxes may apply."
+  },
+  "faq": {
+    "eyebrow": "Frequently Asked Questions",
+    "title": "Technical FAQ",
+    "desc": "Key details regarding embroidery punching, fabric compatibility, delivery formats, and payments."
+  },
+  "quoteInteractive": {
+    "step1Title": "1. What do you need?",
+    "step2Title": "2. How many pieces?",
+    "step3Title": "3. Project details (optional)",
+    "nameLabel": "Your name or brand",
+    "namePlaceholder": "E.g. Carlos / Sports Club",
+    "fabricLabel": "Target garment or fabric",
+    "fabricPlaceholder": "E.g. Corporate shirt, Dry-Fit, cotton...",
+    "logoLabel": "Do you have your logo?",
+    "logoYes": "Yes, I have my logo ready",
+    "logoNo": "No logo yet",
+    "logoNeed": "I need artwork design / vectorization",
+    "logoHelper": "Send your logo via WhatsApp after starting the chat.",
+    "noteLabel": "Additional notes or target deadline",
+    "notePlaceholder": "Colors, tentative sizes or special requirements",
+    "summaryTag": "Quote Summary",
+    "estimateBadge": "Reference Estimate",
+    "submitBtn": "Quote via WhatsApp (+58 424-109-2124)",
+    "preferEmail": "I prefer to request a quote via email",
+    "trustText": "Direct, personalized consultation with Ramses Martínez"
+  },
+  "hire": {
+    "eyebrow": "Professional Profile & Remote Work",
+    "title": "Available for remote work & digitizing projects",
+    "desc": "Technical embroidery digitizing services and textile graphic design for apparel shops, brands, and individual clients worldwide.",
+    "servicesTitle": "Specialties & Services",
+    "services": [
+      {
+        "title": "DST / PES Embroidery Digitizing",
+        "desc": "Calibrated computerized punch files for industrial embroidery machines, with precise density, pull compensation, and underlay paths."
+      },
+      {
+        "title": "Vector Art for Sublimation",
+        "desc": "Clean vector paths, color separations, and full-scale pattern layouts for athletic jerseys and streetwear."
+      },
+      {
+        "title": "Textile Design & Uniforms",
+        "desc": "Visual mockups and technical layout proposals for work shirts, institutional jackets, and custom teamwear."
+      },
+      {
+        "title": "3D Modeling (Intermediate)",
+        "desc": "Three-dimensional visualization and realistic product mockups in Blender for design validation."
+      }
+    ],
+    "toolsTitle": "Software & Tools",
+    "tools": [
+      "Wilcom EmbroideryStudio",
+      "Adobe Illustrator",
+      "Adobe Photoshop",
+      "Blender (intermediate)"
+    ],
+    "languagesTitle": "Communication Languages",
+    "languages": "Native Spanish · Basic English",
+    "cvBtn": "Download Resume (PDF)",
+    "linkedinBtn": "View LinkedIn Profile ↗",
+    "emailBtn": "Email Personal Inbox ↗",
+    "localOrdersNote": "Local orders & textile production in Venezuela: quote directly via WhatsApp or Kingdom email (kingdombrandbqto@gmail.com)."
+  },
+  "clients": {
+    "eyebrow": "Social Proof",
+    "title": "Clients & Testimonials",
+    "desc": "Authentic feedback and messages from clients who trusted Kingdom for design and apparel production.",
+    "instagramBtn": "See more on Instagram (@kingdom_vzla) ↗",
+    "googleReviewBtn": "Leave a review on Google ↗"
+  },
+  "bordadoSection": {
+    "eyebrow": "Computerized Technique",
+    "title": "Embroidery Process & Stitch Matrices",
+    "desc": "Showcase of technical digitizing in Wilcom paired with real embroidered results on textile.",
+    "garmentPhotoLabel": "Finished garment",
+    "matrixScreenshotLabel": "Wilcom matrix screenshot",
+    "videoLabel": "Embroidery machine video"
   }
 }

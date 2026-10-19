@@ -22,19 +22,33 @@ test.describe('Formulario de Cotización y WhatsApp URL', () => {
         };
       });
 
-      // Seleccionar campos del formulario
-      const serviceSelect = page.locator('#quoteService');
-      const volumeSelect = page.locator('#quoteVolume');
+      // Seleccionar campos del formulario interactivo
+      const serviceRadio = form.locator('input[name="quoteService"]').nth(1);
+      const volumeRadio = form.locator('input[name="quoteQuantity"]').nth(1);
       const noteInput = page.locator('#quoteNote');
       const submitBtn = form.locator('button[type="submit"]');
 
-      // Seleccionar opciones válidas
-      await serviceSelect.selectOption({ index: 1 });
-      await volumeSelect.selectOption({ index: 1 });
+      // Seleccionar opciones válidas haciendo clic en la tarjeta y el chip accesible
+      await form.locator('label.quote-service-card').nth(1).click();
+      await form.locator('label.quote-chip').nth(1).click();
       await noteInput.fill('Prueba automatizada de QA');
 
-      const selectedService = await serviceSelect.inputValue();
-      const selectedVolume = await volumeSelect.inputValue();
+      const selectedServiceName = await serviceRadio.getAttribute('data-name');
+      const selectedVolume = await volumeRadio.inputValue();
+
+      // Verificar que el resumen vivo se actualice
+      const summaryText = page.locator('#quoteSummaryText');
+      await expect(summaryText).toBeVisible();
+      const summaryContent = await summaryText.textContent();
+      expect(summaryContent).toContain(selectedServiceName);
+
+      // Verificar enlace secundario a correo
+      const emailLink = page.locator('#quoteEmailLink');
+      await expect(emailLink).toBeVisible();
+      await expect(emailLink).toHaveAttribute('href', /^mailto:kingdombrandbqto@gmail\.com\?subject=/);
+      const emailHref = await emailLink.getAttribute('href');
+      expect(emailHref).not.toContain('undefined');
+      expect(emailHref).not.toContain('null');
 
       // Enviar formulario
       await submitBtn.click();
@@ -61,7 +75,7 @@ test.describe('Formulario de Cotización y WhatsApp URL', () => {
       const textParam = urlObj.searchParams.get('text');
 
       expect(textParam).toBeTruthy();
-      expect(textParam).toContain(selectedService);
+      expect(textParam).toContain(selectedServiceName);
       expect(textParam).toContain(selectedVolume);
       expect(textParam).toContain('Prueba automatizada de QA');
 

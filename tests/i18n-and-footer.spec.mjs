@@ -19,6 +19,7 @@ test.describe('Navegación de Idiomas y Enlaces de Pie de Página', () => {
     const esToEnLink = page.locator('#navMenu a[hreflang="en"]');
     await expect(esToEnLink).toBeVisible();
     await esToEnLink.click();
+    await page.waitForLoadState('domcontentloaded');
     await expect(page).toHaveURL(/\/en\/?(index\.html)?$/);
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
 
@@ -27,6 +28,7 @@ test.describe('Navegación de Idiomas y Enlaces de Pie de Página', () => {
     const enToEsLink = page.locator('#navMenu a[hreflang="es"]');
     await expect(enToEsLink).toBeVisible();
     await enToEsLink.click();
+    await page.waitForLoadState('domcontentloaded');
     await expect(page).toHaveURL(/\/(index\.html)?$/);
     await expect(page.locator('html')).toHaveAttribute('lang', 'es');
 
@@ -36,6 +38,7 @@ test.describe('Navegación de Idiomas y Enlaces de Pie de Página', () => {
     const portEsToEn = page.locator('#navMenu a[hreflang="en"]');
     await expect(portEsToEn).toBeVisible();
     await portEsToEn.click();
+    await page.waitForLoadState('domcontentloaded');
     await expect(page).toHaveURL(/\/en\/portfolio\.html$/);
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
 
@@ -44,6 +47,7 @@ test.describe('Navegación de Idiomas y Enlaces de Pie de Página', () => {
     const portEnToEs = page.locator('#navMenu a[hreflang="es"]');
     await expect(portEnToEs).toBeVisible();
     await portEnToEs.click();
+    await page.waitForLoadState('domcontentloaded');
     await expect(page).toHaveURL(/\/portfolio\.html$/);
     await expect(page.locator('html')).toHaveAttribute('lang', 'es');
   });

@@ -46,10 +46,12 @@
   <link rel="preload" as="font" type="font/woff2" href="{{ASSET_PREFIX}}assets/fonts/sedgwick-ave-display.woff2" crossorigin/>
   <link rel="stylesheet" href="{{ASSET_PREFIX}}assets/css/style.css?v=2"/>
   <link rel="stylesheet" href="{{ASSET_PREFIX}}assets/css/urban.css"/>
+  <!-- Datos estructurados (generados en build) -->
+  {{JSON_LD}}
   <!-- Google Analytics & Consent -->
   <script src="{{ASSET_PREFIX}}assets/js/analytics.js" defer></script>
 </head>
-<body data-wa="{{WHATSAPP_NUMBER}}">
+<body data-wa="{{WHATSAPP_NUMBER}}" data-email-work="{{EMAIL_WORK}}">
   <a class="skip-link" href="#mainContent">{{NAV_SKIP}}</a>
 
   <!-- Header Sticky Street-Editorial -->
@@ -64,6 +66,7 @@
         <a class="nav-link link-magic" href="#servicios">{{NAV_SERVICES}}</a>
         <a class="nav-link link-magic" href="#materiales">{{NAV_MATERIALS}}</a>
         <a class="nav-link link-magic" href="#portafolio">{{NAV_PORTFOLIO}}</a>
+        <a class="nav-link link-magic" href="#faq">{{NAV_FAQ}}</a>
         <a class="nav-link link-magic" href="#contacto">{{NAV_CONTACT}}</a>
         <a class="nav-link link-magic" href="{{NAV_LANG_HREF}}" hreflang="{{NAV_LANG_TARGET}}" aria-label="{{NAV_LANG_ARIA}}"><b>{{NAV_LANG_TEXT}}</b></a>
       </nav>
@@ -82,7 +85,7 @@
     <section class="hero-section" id="top">
       <div class="container hero-fullwidth">
         <div class="hero-watermark" aria-hidden="true">
-          <img src="{{ASSET_PREFIX}}assets/brand/kingdom-logo-white.png" alt="" aria-hidden="true" width="1024" height="691" decoding="async"/>
+          <img src="{{ASSET_PREFIX}}assets/brand/kingdom-logo-white.webp" alt="" aria-hidden="true" width="400" height="270" fetchpriority="high" decoding="async"/>
         </div>
         <div class="hero-content">
           <div class="section-eyebrow">{{HERO_EYEBROW}}</div>
@@ -146,6 +149,25 @@
         <div class="services-grid">
           {{SERVICES_ITEMS_HTML}}
         </div>
+
+        <div class="services-pricing-block">
+          <div class="section-eyebrow">{{PRICING_TABLE_EYEBROW}}</div>
+          <h3 class="pricing-table-title">{{PRICING_TABLE_TITLE}}</h3>
+          <p class="pricing-table-desc">{{PRICING_TABLE_DESC}}</p>
+          <div class="tech-table-wrap glass" tabindex="0" role="region" aria-label="{{PRICING_TABLE_WRAP_LABEL}}">
+            <table class="tech-table">
+              <thead>
+                <tr>
+                  {{PRICING_TABLE_HEADERS_HTML}}
+                </tr>
+              </thead>
+              <tbody>
+                {{PRICING_TABLE_ROWS_HTML}}
+              </tbody>
+            </table>
+          </div>
+          <p class="pricing-table-note">{{PRICING_TABLE_NOTE}}</p>
+        </div>
       </div>
     </section>
 
@@ -171,17 +193,83 @@
       </div>
     </section>
 
-    <!-- Sección Portafolio (Acceso a Galería Completa) -->
+    <!-- Sección Portafolio (Muestra de Piezas de Clientes y Acceso a Galería Completa) -->
     <div class="urban-divider urban-divider--tape" aria-hidden="true"></div>
     <section id="portafolio" class="section-bg-subtle portfolio-teaser-section">
       <div class="container portfolio-teaser-container">
         <div class="section-eyebrow">{{PORTFOLIO_EYEBROW}}</div>
         <h2 class="section-title">{{PORTFOLIO_TITLE}}</h2>
         <p class="section-desc portfolio-teaser-desc">{{PORTFOLIO_DESC}}</p>
+        
+        <div class="portfolio-featured-grid">
+          {{PORTFOLIO_FEATURED_ITEMS_HTML}}
+        </div>
+
         <div class="portfolio-teaser-cta-wrap">
           <a class="btn-premium btn-portfolio-hub" href="{{PORTFOLIO_PAGE_HREF}}">
             {{PORTFOLIO_CTA_EXPLORE}}
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Preguntas Frecuentes (FAQ) -->
+    <div class="urban-divider urban-divider--tape" aria-hidden="true"></div>
+    <section id="faq" class="faq-section section-bg-subtle">
+      <div class="container">
+        <div class="section-eyebrow">{{FAQ_EYEBROW}}</div>
+        <h2 class="section-title">{{FAQ_TITLE}}</h2>
+        <p class="section-desc">{{FAQ_DESC}}</p>
+
+        <div class="faq-list">
+          {{FAQ_ITEMS_HTML}}
+        </div>
+      </div>
+    </section>
+
+{{CLIENTS_SECTION_HTML}}
+    <!-- Sección Contrátame (Perfil Profesional & Trabajo Remoto) -->
+    <div class="urban-divider urban-divider--tape" aria-hidden="true"></div>
+    <section id="contratame" class="section-bg-subtle hire-section">
+      <div class="container">
+        <div class="section-eyebrow">{{HIRE_EYEBROW}}</div>
+        <h2 class="section-title">{{HIRE_TITLE}}</h2>
+        <p class="section-desc hire-desc">{{HIRE_DESC}}</p>
+
+        <div class="hire-grid">
+          <!-- Tarjeta de Especialidades -->
+          <div class="glass-card hire-card">
+            <h3 class="hire-card-title">{{HIRE_SERVICES_TITLE}}</h3>
+            <div class="hire-services-list">
+{{HIRE_SERVICES_ITEMS_HTML}}
+            </div>
+          </div>
+
+          <!-- Tarjeta de Software, Idiomas y Enlaces de Contratación -->
+          <div class="glass-card hire-card">
+            <h3 class="hire-card-title">{{HIRE_TOOLS_TITLE}}</h3>
+            <div class="hire-tools-list">
+              {{HIRE_TOOLS_HTML}}
+            </div>
+
+            <h3 class="hire-card-title hire-lang-title">{{HIRE_LANGUAGES_TITLE}}</h3>
+            <p class="hire-languages-text">{{HIRE_LANGUAGES_TEXT}}</p>
+
+            <div class="hire-actions">
+{{HIRE_CV_BUTTON_HTML}}
+              <a class="btn-secondary hire-btn" href="{{LINKEDIN_URL}}" target="_blank" rel="noopener noreferrer">
+                {{HIRE_LINKEDIN_BTN}}
+              </a>
+              <a class="btn-secondary hire-btn" href="mailto:{{EMAIL_WORK}}">
+                {{HIRE_EMAIL_BTN}}
+              </a>
+            </div>
+
+            <div class="hire-local-note">
+              <span class="hire-local-icon" aria-hidden="true">ℹ</span>
+              <p>{{HIRE_LOCAL_ORDERS_NOTE}}</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -195,29 +283,88 @@
           <h2 class="quote-title">{{CONTACT_QUOTE_TITLE}}</h2>
           <p class="quote-subtitle">{{CONTACT_QUOTE_DESC}}</p>
 
-          <form id="quickQuoteForm">
-            <div class="quote-field">
-              <label for="quoteService">{{FORM_SERVICE_LABEL}}</label>
-              <select class="quote-select" id="quoteService" required>
-                {{FORM_SERVICES_OPTIONS_HTML}}
-              </select>
+          <form id="quickQuoteForm" novalidate>
+            <!-- Paso 1: Servicio -->
+            <div class="quote-step">
+              <div class="quote-step-title">
+                <span class="quote-step-num">1</span>
+                <span>{{QUOTE_STEP1_TITLE}}</span>
+              </div>
+              <div class="quote-service-grid" role="radiogroup" aria-label="{{QUOTE_STEP1_TITLE}}">
+                {{QUOTE_SERVICES_CARDS_HTML}}
+              </div>
             </div>
 
-            <div class="quote-field">
-              <label for="quoteVolume">{{FORM_VOLUME_LABEL}}</label>
-              <select class="quote-select" id="quoteVolume" required>
-                {{FORM_VOLUMES_OPTIONS_HTML}}
-              </select>
+            <!-- Paso 2: Cantidad -->
+            <div class="quote-step">
+              <div class="quote-step-title">
+                <span class="quote-step-num">2</span>
+                <span>{{QUOTE_STEP2_TITLE}}</span>
+              </div>
+              <div class="quote-qty-chips" role="radiogroup" aria-label="{{QUOTE_STEP2_TITLE}}">
+                {{QUOTE_QTY_CHIPS_HTML}}
+              </div>
             </div>
 
-            <div class="quote-field">
-              <label for="quoteNote">{{FORM_NOTE_LABEL}}</label>
-              <input class="quote-input" type="text" id="quoteNote" placeholder="{{FORM_NOTE_PLACEHOLDER}}"/>
+            <!-- Paso 3: Detalles opcionales -->
+            <div class="quote-step">
+              <div class="quote-step-title">
+                <span class="quote-step-num">3</span>
+                <span>{{QUOTE_STEP3_TITLE}}</span>
+              </div>
+              
+              <div class="quote-details-grid">
+                <div class="quote-field">
+                  <label for="quoteName">{{QUOTE_NAME_LABEL}}</label>
+                  <input class="quote-input" type="text" id="quoteName" placeholder="{{QUOTE_NAME_PLACEHOLDER}}"/>
+                </div>
+                <div class="quote-field">
+                  <label for="quoteFabric">{{QUOTE_FABRIC_LABEL}}</label>
+                  <input class="quote-input" type="text" id="quoteFabric" placeholder="{{QUOTE_FABRIC_PLACEHOLDER}}"/>
+                </div>
+              </div>
+
+              <div class="quote-field">
+                <label for="quoteLogo">{{QUOTE_LOGO_LABEL}}</label>
+                <select class="quote-select" id="quoteLogo">
+                  <option value="ready">{{QUOTE_LOGO_YES}}</option>
+                  <option value="none">{{QUOTE_LOGO_NO}}</option>
+                  <option value="need_design">{{QUOTE_LOGO_NEED}}</option>
+                </select>
+                <div class="quote-helper-text">{{QUOTE_LOGO_HELPER}}</div>
+              </div>
+
+              <div class="quote-field">
+                <label for="quoteNote">{{QUOTE_NOTE_LABEL}}</label>
+                <textarea class="quote-input quote-textarea" id="quoteNote" rows="2" placeholder="{{QUOTE_NOTE_PLACEHOLDER}}"></textarea>
+              </div>
             </div>
 
-            <button class="btn-premium quote-submit-btn" type="submit">
-              {{FORM_SUBMIT_BTN}}
-            </button>
+            <!-- Resumen vivo -->
+            <div class="quote-summary-box glass" id="quoteSummaryBox" aria-live="polite">
+              <div class="quote-summary-header">
+                <span class="quote-summary-tag">{{QUOTE_SUMMARY_TAG}}</span>
+                <span class="quote-summary-badge">{{QUOTE_ESTIMATE_BADGE}}</span>
+              </div>
+              <div class="quote-summary-text" id="quoteSummaryText">
+                <!-- Se actualiza dinámicamente con JavaScript -->
+              </div>
+            </div>
+
+            <!-- Acciones -->
+            <div class="quote-actions">
+              <button class="btn-premium quote-submit-btn" type="submit">
+                {{QUOTE_SUBMIT_WA_BTN}}
+              </button>
+              <a class="quote-email-link" id="quoteEmailLink" href="mailto:{{EMAIL_WORK}}">
+                {{QUOTE_PREFER_EMAIL}}
+              </a>
+            </div>
+
+            <div class="quote-trust-note">
+              <span class="quote-trust-icon" aria-hidden="true">✓</span>
+              <span>{{QUOTE_TRUST_TEXT}}</span>
+            </div>
           </form>
         </div>
 
@@ -239,11 +386,6 @@
             <div class="section-eyebrow">{{CONTACT_EYEBROW}}</div>
             <h2 class="atelier-title">{{BLOCK2_TITLE}}</h2>
             <p class="atelier-desc">{{BLOCK2_DESC}}</p>
-
-            <div class="contact-meta-item">
-              <span>{{BLOCK2_EMAIL_LABEL}}</span>
-              <a class="link-magic" href="mailto:{{EMAIL_PERSONAL}}" translate="no">{{EMAIL_PERSONAL}}</a>
-            </div>
             <div class="contact-meta-item">
               <span>{{BLOCK2_LINKEDIN_LABEL}}</span>
               <a class="link-magic" href="{{LINKEDIN_URL}}" target="_blank" rel="noopener noreferrer" translate="no">Ramses Martínez ↗</a>
@@ -262,9 +404,9 @@
             </div>
             <div class="contact-meta-item">
               <span>{{CATALOG_LABEL}}</span>
-              <a class="link-magic" href="{{DRIVE_CATALOG_URL}}" target="_blank" rel="noopener noreferrer">{{CATALOG_LINK_TEXT}}</a>
+              <a class="link-magic" href="{{CATALOG_URL}}" target="_blank" rel="noopener noreferrer">{{CATALOG_LINK_TEXT}}</a>
             </div>
-          </div>
+{{GBP_REVIEW_LINK_ITEM_HTML}}          </div>
         </div>
       </div>
     </section>
@@ -278,7 +420,7 @@
         <div class="pm-gallery">
           <div class="modal-img-wrap pm-stage">
             <span id="modalCarouselCounter" class="modal-carousel-counter" hidden>1 / 1</span>
-            <img id="modalImg" src="{{ASSET_PREFIX}}assets/artwork/alcaldia de san felipe-chaqueta sublimada.webp" alt="" width="1080" height="1350"/>
+            <img id="modalImg" src="{{ASSET_PREFIX}}assets/artwork/academia-de-cuatro-franela-sublimada.webp" alt="" width="1080" height="1350"/>
           </div>
           <div id="modalCarouselNav" class="pm-thumbs-row" hidden>
             <button type="button" class="modal-carousel-btn" id="modalPrevBtn" aria-label="{{MODAL_PREV}}">‹</button>
@@ -330,16 +472,15 @@
         </div>
 
         <div>
-          <div class="footer-nav-title">{{FOOTER_LEGAL_TITLE}}</div>
-          <div class="footer-legal-links">
-            <a class="link-magic" href="{{LEGAL_PREFIX}}privacy.html">{{FOOTER_LINK_PRIVACY}}</a>
-            <a class="link-magic" href="{{LEGAL_PREFIX}}terms.html">{{FOOTER_LINK_TERMS}}</a>
-            <a class="link-magic" href="{{LEGAL_PREFIX}}intellectual-property.html">{{FOOTER_LINK_IP}}</a>
-            <a class="link-magic" href="{{LEGAL_PREFIX}}cookies.html">{{FOOTER_LINK_COOKIES}}</a>
-            <a class="link-magic" href="#cookie-settings" data-open-cookies>{{FOOTER_LINK_COOKIE_PREFS}}</a>
-            <a class="link-magic" href="{{LEGAL_PREFIX}}security.html">{{FOOTER_LINK_SECURITY}}</a>
-            <a class="link-magic" href="{{LEGAL_PREFIX}}accessibility.html">{{FOOTER_LINK_A11Y}}</a>
-          </div>
+          <nav class="footer-legal-links" aria-label="{{FOOTER_LEGAL_TITLE}}">
+            <a class="link-magic" href="{{LEGAL_PREFIX}}privacy.html" aria-label="{{FOOTER_LINK_PRIVACY}} - Política de Privacidad">{{FOOTER_LINK_PRIVACY}}</a>
+            <a class="link-magic" href="{{LEGAL_PREFIX}}terms.html" aria-label="{{FOOTER_LINK_TERMS}} - Términos de Servicio">{{FOOTER_LINK_TERMS}}</a>
+            <a class="link-magic" href="{{LEGAL_PREFIX}}intellectual-property.html" aria-label="{{FOOTER_LINK_IP}} - Derechos de Autor y Marcas">{{FOOTER_LINK_IP}}</a>
+            <a class="link-magic" href="{{LEGAL_PREFIX}}cookies.html" aria-label="{{FOOTER_LINK_COOKIES}} - Política de Cookies">{{FOOTER_LINK_COOKIES}}</a>
+            <a class="link-magic" href="#cookie-settings" data-open-cookies aria-label="{{FOOTER_LINK_COOKIE_PREFS}} - Configuración de Cookies">{{FOOTER_LINK_COOKIE_PREFS}}</a>
+            <a class="link-magic" href="{{LEGAL_PREFIX}}security.html" aria-label="{{FOOTER_LINK_SECURITY}} - Medidas de Seguridad">{{FOOTER_LINK_SECURITY}}</a>
+            <a class="link-magic" href="{{LEGAL_PREFIX}}accessibility.html" aria-label="{{FOOTER_LINK_A11Y}} - Declaración de Accesibilidad">{{FOOTER_LINK_A11Y}}</a>
+          </nav>
         </div>
       </div>
 
@@ -358,6 +499,6 @@
     </div>
   </footer>
 
-  <script src="{{ASSET_PREFIX}}assets/js/app.js?v=2" defer></script>
+  <script src="{{ASSET_PREFIX}}assets/js/app.js?v=3" defer></script>
 </body>
 </html>

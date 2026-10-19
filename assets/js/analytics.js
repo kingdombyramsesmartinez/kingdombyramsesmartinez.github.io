@@ -19,7 +19,7 @@
   const i18n = {
     es: {
       title: "POLÍTICA DE PRIVACIDAD Y COOKIES",
-      desc: "Utilizamos Google Analytics de forma opcional para comprender el uso del portafolio. No se activan cookies de seguimiento sin tu consentimiento expreso.",
+      desc: "Usamos analítica opcional para mejorar tu experiencia. No activamos cookies sin tu permiso.",
       accept: "Aceptar",
       reject: "Rechazar",
       policy: "Más información",
@@ -27,7 +27,7 @@
     },
     en: {
       title: "PRIVACY & COOKIES NOTICE",
-      desc: "We optionally use Google Analytics to understand portfolio usage. No tracking cookies are activated without your explicit consent.",
+      desc: "We use optional analytics to improve your experience. No cookies activate without your consent.",
       accept: "Accept",
       reject: "Decline",
       policy: "Learn more",
@@ -104,7 +104,6 @@
 
     gtag("js", new Date());
     gtag("config", GA_MEASUREMENT_ID, {
-      anonymize_ip: true,
       send_page_view: true
     });
 
@@ -159,6 +158,7 @@
     linkEl.className = "cookie-consent-link";
     linkEl.href = t.policyHref;
     linkEl.textContent = t.policy;
+    linkEl.setAttribute("aria-label", isEn ? "Read our Cookie and Privacy Policy" : "Leer nuestra Política de Cookies y Privacidad");
     textEl.appendChild(linkEl);
 
     const actions = document.createElement("div");

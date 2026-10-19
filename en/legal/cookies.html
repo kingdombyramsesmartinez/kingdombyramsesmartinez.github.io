@@ -13,26 +13,82 @@
 <link rel="preload" as="font" type="font/woff2" href="../../assets/fonts/sedgwick-ave-display.woff2" crossorigin>
 <link rel="stylesheet" href="../../assets/css/legal.css">
 <link rel="stylesheet" href="../../assets/css/urban.css">
+<script src="../../assets/js/analytics.js" defer></script>
 </head>
 <body>
 <main class="legal-shell">
 <nav class="legal-nav" aria-label="Legal"><a class="legal-brand" href="../">KINGDOM</a><a class="legal-back" href="../">← Back to website</a></nav>
-<p class="legal-meta">Cookies · version 1.0 · 02/10/2026</p>
+<p class="legal-meta">Cookies · version 1.1 · 10/12/2026</p>
 <h1>Cookies and Similar Technologies</h1>
 
 <h2>1. Technologies Used on this Site</h2>
-<p>The Kingdom website utilizes strictly necessary technical local storage to record your cookie consent preferences (via the key <code>kingdom_cookie_consent</code> in <code>localStorage</code>).</p>
-<p>In addition and on a purely optional basis, the site integrates <strong>Google Analytics 4</strong> (measurement ID <code>G-YQCLS51XJE</code>) to collect aggregated and anonymous navigation metrics (pages visited, device type, duration of visit). <strong>Google Analytics is neither initialized nor installs cookies or identifiers until the user explicitly clicks "Accept" in the privacy and cookies notice.</strong></p>
+<p>The Kingdom website uses strictly necessary technical local storage to record your consent preference (key <code>kingdom_cookie_consent</code> in <code>localStorage</code>).</p>
+<p>In addition and on a purely optional basis, the site integrates <strong>Google Analytics 4</strong> (measurement ID <code>G-YQCLS51XJE</code>) to collect aggregated and anonymous visit metrics. <strong>Google Analytics is neither downloaded, initialized, nor installs cookies or identifiers until the user explicitly clicks "Accept" in the consent notice.</strong></p>
 
-<h2>2. Choice and Managing Preferences</h2>
-<p>When accessing the website for the first time, a notice is displayed with clear choices to accept or decline analytics collection. If you choose "Decline", no analytics scripts are downloaded and no tracking is performed.</p>
-<p>You can review or change your choice at any time using the direct link: <a href="#cookie-settings" data-open-cookies class="cookie-consent-link"><strong>Configure cookie settings</strong></a> or by clearing this site's storage in your browser privacy preferences.</p>
+<h2>2. Table of Cookies Used</h2>
+<p>Only if the user grants prior and express consent, Google Analytics 4 may set the following cookies in the browser:</p>
 
-<h2>3. Links to External Services</h2>
-<p>When interacting with links to WhatsApp, Instagram, LinkedIn, TikTok, or Google Drive, you are redirected to third-party platforms. Those providers manage their own cookies, pixels, and privacy policies under their respective terms.</p>
+<div class="legal-table-wrap">
+  <table class="legal-table" aria-label="Google Analytics 4 cookies inventory">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Provider</th>
+        <th scope="col">Purpose</th>
+        <th scope="col">Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"><code>_ga</code></th>
+        <td>Google LLC (GA4)</td>
+        <td>Distinguishes unique users by assigning a randomly generated pseudonymous client identifier to aggregate traffic metrics.</td>
+        <td>2 years from creation or update</td>
+      </tr>
+      <tr>
+        <th scope="row"><code>_ga_YQCLS51XJE</code> (or <code>_ga_*</code>)</th>
+        <td>Google LLC (GA4)</td>
+        <td>Maintains and persists session state and identifier for the configured measurement stream.</td>
+        <td>2 years from creation or update</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<h2>4. Absence of Advertising Cookies or Profiling</h2>
-<p>This website does not use behavioral advertising cookies, remarketing networks, ad tracking pixels, or commercial user profiling tools.</p>
+<h2>3. Browser Local Storage (Not an HTTP Cookie)</h2>
+<p>In addition to cookies, this website utilizes first-party browser local storage (<code>localStorage</code>) strictly necessary to record user consent choices technically:</p>
+
+<div class="legal-table-wrap">
+  <table class="legal-table" aria-label="Local storage mechanisms">
+    <thead>
+      <tr>
+        <th scope="col">Key</th>
+        <th scope="col">Provider</th>
+        <th scope="col">Purpose</th>
+        <th scope="col">Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"><code>kingdom_cookie_consent</code></th>
+        <td>First-party (Kingdom)</td>
+        <td>Stores the consent choice (<code>granted</code> or <code>denied</code>) to respect user preference and avoid re-displaying the banner on subsequent visits.</td>
+        <td>Persistent until cleared by the user or consent is revoked</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>4. Managing and Withdrawing Consent</h2>
+<p>You can update, withdraw, or alter your consent at any time via the direct link available in the footer of every page on this website:</p>
+<p><a href="#cookie-settings" data-open-cookies class="cookie-consent-link"><strong>Configure cookie settings</strong></a></p>
+<p>Clicking "Decline" or revoking consent clears the storage record and stops any analytical measurement scripts for the session immediately.</p>
+
+<h2>5. Links to External Third-Party Services</h2>
+<p>When clicking links to WhatsApp, Instagram, LinkedIn, TikTok, or Google Drive, users access external third-party platforms that manage their own tracking cookies and privacy policies.</p>
+
+<h2>6. Absence of Advertising Cookies or Profiling</h2>
+<p>This website does not employ remarketing cookies, third-party advertising networks, commercial tracking pixels, or automated behavioral user profiling.</p>
 
 <footer>
   <div class="legal-footer-brand"><a href="../">KINGDOM</a> · Ramses Martínez</div>
@@ -41,6 +97,7 @@
     <a href="terms.html">Terms</a>
     <a href="intellectual-property.html">Intellectual Property</a>
     <a href="cookies.html">Cookies</a>
+    <a href="#cookie-settings" data-open-cookies>Cookie settings</a>
     <a href="security.html">Security</a>
     <a href="accessibility.html">Accessibility</a>
   </nav>

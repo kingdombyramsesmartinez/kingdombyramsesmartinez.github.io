@@ -4,3 +4,12 @@ _staging/
 .DS_Store
 Thumbs.db
 test-results/
+motion-graphics/
+dist/
+audit-reports/
+graphify-out/cache/
+reportes/evidencias/
+kingdom-audit.zip
+tools/run-lh-median.mjs
+tools/take-audit-screenshots.mjs
+tools/package-zip.py

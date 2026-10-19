@@ -3,9 +3,9 @@
   "dir": "ltr",
   "meta": {
     "title": "Kingdom | Diseño Textil y Bordado Industrial en Barquisimeto",
-    "description": "Estudio de diseño textil en Barquisimeto: matrices de bordado DST/PES, sublimación deportiva y streetwear bajo pedido. Cotiza por WhatsApp.",
+    "description": "Diseño textil y bordado industrial en Barquisimeto: matrices de bordado DST/PES, sublimación deportiva y confección personalizada. Cotiza directo con Ramses.",
     "ogTitle": "Kingdom | Diseño Textil y Bordado Industrial en Barquisimeto",
-    "ogDesc": "Estudio de diseño textil en Barquisimeto: matrices de bordado DST/PES, sublimación deportiva y streetwear bajo pedido.",
+    "ogDesc": "Diseño textil y bordado industrial en Barquisimeto: matrices de bordado DST/PES, sublimación deportiva y confección personalizada.",
     "ogLocale": "es_LA",
     "ogLocaleAlt": "en_US"
   },
@@ -15,6 +15,7 @@
     "services": "Servicios",
     "materials": "Especificaciones",
     "portfolio": "Portafolio",
+    "faq": "FAQ",
     "contact": "Contacto",
     "quoteCta": "Cotizar Proyecto",
     "menu": "MENÚ",
@@ -51,7 +52,7 @@
   "about": {
     "eyebrow": "Trayectoria & Perfil",
     "title": "<span translate=\"no\">KINGDOM</span> by <span translate=\"no\">Ramses Martínez</span>",
-    "desc": "Con formación en el oficio textil desde temprana edad y actividad profesional continua desde los 18 años, <span translate=\"no\">KINGDOM</span> es la marca y estudio fundado por <span translate=\"no\">Ramses Martínez</span> que integra digitalización de bordado industrial, ilustración gráfica deportiva y manufactura personalizada bajo pedido.",
+    "desc": "Con formación en el oficio textil desde temprana edad y actividad profesional continua desde los 18 años, <span translate=\"no\">KINGDOM</span> es la marca personal de <span translate=\"no\">Ramses Martínez</span> que integra digitalización de bordado industrial, ilustración gráfica deportiva y manufactura personalizada bajo pedido.",
     "timeline": [
       {
         "period": "Trayectoria",
@@ -65,8 +66,8 @@
       },
       {
         "period": "2021 – Presente",
-        "title": "Fundación de <span translate=\"no\">Kingdom</span>",
-        "desc": "Estudio propio en Barquisimeto: digitalización de bordado de alto volumen, arte vectorial para sublimación deportiva y colecciones streetwear bajo pedido."
+        "title": "Nace <span translate=\"no\">Kingdom</span>",
+        "desc": "Taller independiente en Barquisimeto: digitalización de bordado de alto volumen, arte vectorial para sublimación deportiva y confección personalizada bajo pedido."
       }
     ],
     "toolsTitle": "Herramientas de Trabajo",
@@ -86,20 +87,30 @@
       {
         "index": "01 // DIGITAL",
         "title": "Matrices de Bordado DST / PES",
+        "badge": "desde $5",
         "body": "Digitalización técnica con compensación de estiramiento, densidad calibrada y secuencias limpias para optimizar el paso en máquina bordadora.",
         "cta": "Solicitar matriz →"
       },
       {
         "index": "02 // TÉCNICO",
         "title": "Sublimación Deportiva Full Print",
+        "badge": "franelas desde $15 · chaquetas $35",
         "body": "Diseño de plantillas a escala y calibración de color para textiles deportivos de secado rápido (Dry-Fit, microfibras y win).",
         "cta": "Cotizar uniformes →"
       },
       {
-        "index": "03 // DISEÑO",
-        "title": "Ilustración Vectorial & Streetwear",
-        "body": "Trazado de personajes, vectorización de logotipos y separación de color para serigrafía o impresión DTF sobre algodón y mezclas.",
-        "cta": "Desarrollar arte →"
+        "index": "03 // CORPORATIVO",
+        "title": "Uniformes Corporativos Bordados",
+        "badge": "desde $25",
+        "body": "Camisas corporativas ($25 con 2 logos · $35 con 5 logos) y chaquetas institucionales bordadas en alta definición.",
+        "cta": "Cotizar corporativo →"
+      },
+      {
+        "index": "04 // GRÁFICO",
+        "title": "Franelas DTF y Diseño Gráfico",
+        "badge": "franela DTF $20 · diseño de tarjetas $5",
+        "body": "Estampado textil DTF sobre algodón 20/1 y mezclas, vectorización de logotipos, separación de color y diseño de tarjetas.",
+        "cta": "Cotizar DTF o diseño →"
       }
     ]
   },
@@ -141,15 +152,19 @@
     ]
   },
   "portfolio": {
-    "eyebrow": "Trabajos & Presentaciones",
-    "title": "Portafolio de Diseño Textil",
-    "desc": "Galería completa de presentaciones de diseño, indumentaria personalizada y digitalización de matrices textiles desarrolladas por KINGDOM (Kingdom by Ramses Martínez).",
-    "ctaExplore": "Explorar Portafolio Completo ({{PORTFOLIO_COUNT}} Presentaciones) →",
+    "eyebrow": "Trabajos Reales",
+    "title": "Trabajos y exploraciones",
+    "desc": "Muestra de piezas reales elaboradas para clientes y exploraciones gráficas. Explora el catálogo completo para ver todas las presentaciones técnicas, encargos y exploraciones gráficas.",
+    "ctaExplore": "Explorar Portafolio Completo ({{PORTFOLIO_COUNT}} Piezas) →",
     "ctaBack": "← Volver al Inicio",
     "filters": [
       {
         "id": "all",
         "label": "Todos"
+      },
+      {
+        "id": "bordado",
+        "label": "Bordado & Matrices"
       },
       {
         "id": "sublimacion",
@@ -162,18 +177,20 @@
       {
         "id": "branding",
         "label": "Branding & Corporativo"
-      },
-      {
-        "id": "fanart",
-        "label": "Fan Art y Exploraciones Gráficas"
       }
     ],
-    "disclaimer": "Muestra gráfica no oficial presentada como parte de las exploraciones artísticas y técnicas de Ramses Martínez. No es un producto oficial ni se ofrece a la venta o para encargos de reproducción a través de Kingdom. No implica afiliación, patrocinio, autorización ni licencia de los titulares correspondientes. Los derechos de terceros permanecen en sus respectivos titulares."
+    "fanartSubgroupTitle": "Exploraciones Gráficas — Fan Art",
+    "fanartSubgroupDesc": "Muestras de ilustración y estudio visual basadas en cultura popular.",
+    "fanartDisclaimer": "Exploraciones gráficas de fan art realizadas con fines de práctica y portafolio. Los personajes, nombres, logotipos y marcas pertenecen a sus respectivos titulares; no existe afiliación, patrocinio ni autorización por parte de ellos. Si eres titular de derechos y deseas el retiro de una pieza, escribe a kingdombrandbqto@gmail.com.",
+    "encargoSubgroupTitle": "Diseños Automotrices por Encargo",
+    "encargoSubgroupDesc": "Piezas gráficas para prendas desarrolladas a solicitud de clientes para entusiastas del motor.",
+    "encargoDisclaimer": "Diseños automotrices realizados por encargo de clientes. Los nombres, logotipos y marcas de los vehículos pertenecen a sus respectivos titulares; no existe afiliación, patrocinio ni autorización por parte de ellos. Si eres titular de derechos y deseas el retiro de una pieza, escribe a kingdombrandbqto@gmail.com.",
+    "clientLogosDisclaimer": "Los nombres, marcas y logotipos de clientes mostrados pertenecen a sus respectivos titulares y se exhiben como referencia de trabajos realizados o propuestos por Kingdom."
   },
   "contact": {
     "eyebrow": "Contacto Directo",
     "quoteTitle": "Solicita tu Presupuesto",
-    "quoteDesc": "Configura los parámetros de tu pedido para preparar un mensaje directo a WhatsApp con nuestro taller.",
+    "quoteDesc": "Configura los parámetros de tu pedido para preparar un mensaje directo a WhatsApp con Ramses.",
     "form": {
       "serviceLabel": "Servicio Requerido",
       "services": [
@@ -197,10 +214,9 @@
       "block1Title": "Pedidos y Cotizaciones",
       "block1Desc": "Para pedidos locales, matrices técnicas y confección deportiva bajo pedido:",
       "whatsappLabel": "WhatsApp Oficial",
-      "emailWorkLabel": "Correo de Taller",
+      "emailWorkLabel": "Correo de Kingdom",
       "block2Title": "Colaboraciones & Proyectos Remotos",
       "block2Desc": "Para reclutadores, agencias de diseño y encargos de digitalización internacional:",
-      "emailPersonalLabel": "Correo Personal",
       "linkedinLabel": "Perfil LinkedIn",
       "locationLabel": "Ubicación",
       "locationVal": "Barquisimeto, Estado Lara, Venezuela",
@@ -221,7 +237,7 @@
     "cta": "Contactar"
   },
   "footer": {
-    "brandDesc": "KINGDOM — Estudio de diseño textil, ilustración vectorial y digitalización de bordado industrial fundado por <span translate=\"no\">Ramses Martínez</span>.",
+    "brandDesc": "KINGDOM — Marca personal de <span translate=\"no\">Ramses Martínez</span>. Diseño textil, ilustración vectorial y digitalización de bordado industrial.",
     "legalTitle": "Enlaces Legales",
     "links": {
       "privacy": "Privacidad",
@@ -234,5 +250,95 @@
     "copyright": "<span translate=\"no\">KINGDOM</span> © 2026 — <span translate=\"no\">Kingdom by Ramses Martínez</span>. Barquisimeto, Venezuela.",
     "disclaimer": "Este sitio es informativo y no constituye una oferta contractual vinculante.",
     "browserTranslate": "¿Prefieres otro idioma? Puedes utilizar la herramienta de traducción integrada de tu navegador (Chrome, Edge, Safari o Firefox)."
+  },
+  "pricingTable": {
+    "eyebrow": "Precios Oficiales",
+    "title": "Lista de Precios al Detal",
+    "desc": "Precios de referencia por unidad en USD. Para pedidos por volumen o requerimientos especiales, solicita tu cotización directa.",
+    "wrapLabel": "Tabla de Precios al Detal",
+    "headers": [
+      "Servicio / Prenda",
+      "Tela / Detalle",
+      "Precio (USD)"
+    ],
+    "note": "Precios al detal, referenciales, en USD. El pago se coordina por WhatsApp. Impuestos según corresponda."
+  },
+  "faq": {
+    "eyebrow": "Dudas Frecuentes",
+    "title": "Preguntas y Respuestas Técnicas",
+    "desc": "Información clave sobre digitalización de matrices, confección, formatos de entrega y formas de pago."
+  },
+  "quoteInteractive": {
+    "step1Title": "1. ¿Qué necesitas?",
+    "step2Title": "2. ¿Cuántas piezas?",
+    "step3Title": "3. Detalles del proyecto (opcional)",
+    "nameLabel": "Tu nombre o marca",
+    "namePlaceholder": "Ej. Carlos / Taller Deportivo",
+    "fabricLabel": "Prenda o tela deseada",
+    "fabricPlaceholder": "Ej. Camisa corporativa, Dry-Fit, algodón...",
+    "logoLabel": "¿Tienes tu logo?",
+    "logoYes": "Sí, tengo mi logo listo",
+    "logoNo": "No tengo logo aún",
+    "logoNeed": "Necesito diseño / vectorización",
+    "logoHelper": "Envía tu logo por WhatsApp después de abrir el chat.",
+    "noteLabel": "Observaciones o fecha deseada",
+    "notePlaceholder": "Colores, tallas tentativas o requerimientos especiales",
+    "summaryTag": "Resumen de cotización",
+    "estimateBadge": "Estimado referencial",
+    "submitBtn": "Cotizar por WhatsApp (+58 424-109-2124)",
+    "preferEmail": "Prefiero solicitar cotización por correo electrónico",
+    "trustText": "Atención directa y personalizada de Ramses Martínez"
+  },
+  "hire": {
+    "eyebrow": "Perfil Profesional & Remoto",
+    "title": "Disponible para trabajo remoto y proyectos de digitalización",
+    "desc": "Servicios de digitalización técnica de matrices de bordado y diseño gráfico textil para talleres, marcas y clientes particulares a nivel internacional.",
+    "servicesTitle": "Especialidades y Servicios",
+    "services": [
+      {
+        "title": "Digitalización DST / PES",
+        "desc": "Ponchado computarizado calibrado para máquinas de bordado industrial, con control de densidad, compensación de tiro y puntadas de soporte."
+      },
+      {
+        "title": "Arte Vectorial para Sublimación",
+        "desc": "Trazados limpios, separación de color y adaptación a patrones a escala para indumentaria deportiva y streetwear."
+      },
+      {
+        "title": "Diseño Textil y Uniformes",
+        "desc": "Desarrollo de propuestas visuales y fichas técnicas para camisas de trabajo, chaquetas institucionales y piezas personalizadas."
+      },
+      {
+        "title": "Modelado 3D (Nivel Intermedio)",
+        "desc": "Visualización tridimensional y mockups de prendas y componentes gráficos en Blender para validación previa de proyectos."
+      }
+    ],
+    "toolsTitle": "Software y Herramientas",
+    "tools": [
+      "Wilcom EmbroideryStudio",
+      "Adobe Illustrator",
+      "Adobe Photoshop",
+      "Blender (intermedio)"
+    ],
+    "languagesTitle": "Idiomas de Comunicación",
+    "languages": "Español nativo · Inglés básico",
+    "cvBtn": "Descargar CV (PDF)",
+    "linkedinBtn": "Ver LinkedIn ↗",
+    "emailBtn": "Escribir por Correo Personal ↗",
+    "localOrdersNote": "Pedidos locales y confección textil en Venezuela: coordinar directamente por WhatsApp o correo de Kingdom (kingdombrandbqto@gmail.com)."
+  },
+  "clients": {
+    "eyebrow": "Prueba Social",
+    "title": "Clientes y Testimonios",
+    "desc": "Opiniones y experiencias de clientes que confían en el diseño y confección de Kingdom.",
+    "instagramBtn": "Ver más en Instagram (@kingdom_vzla) ↗",
+    "googleReviewBtn": "Deja una reseña en Google ↗"
+  },
+  "bordadoSection": {
+    "eyebrow": "Bordado Computarizado",
+    "title": "Muestras de Bordado y Matrices",
+    "desc": "Comparativa técnica del diseño de puntadas en software (Wilcom) y el acabado físico en prenda terminada.",
+    "garmentPhotoLabel": "Prenda terminada",
+    "matrixScreenshotLabel": "Captura de matriz en Wilcom",
+    "videoLabel": "Video del proceso de bordado"
   }
 }

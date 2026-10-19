@@ -3,9 +3,18 @@
 (() => {
   "use strict";
 
-  const SITE_CONFIG = { contact: { whatsappNumber: document.body.dataset.wa || "" } };
+  const SITE_CONFIG = {
+    contact: {
+      whatsappNumber: document.body.dataset.wa || "",
+      emailWork: document.body.dataset.emailWork || (document.querySelector("#quoteEmailLink")?.getAttribute("href")?.replace(/^mailto:/, "")?.split("?")[0]) || "kingdombrandbqto@gmail.com"
+    }
+  };
 
-  // Anti-clickjacking de respaldo (no ocultar la página en localhost ni en previewers)
+  // Anti-clickjacking de respaldo del lado del cliente (window.top.location).
+  // NOTA TÉCNICA: La protección robusta contra clickjacking requiere cabeceras HTTP
+  // reales (Content-Security-Policy con frame-ancestors o X-Frame-Options: DENY).
+  // Dado que GitHub Pages es un hosting estático que no permite configurar cabeceras HTTP
+  // del servidor web, esta salvaguarda en JS actúa como defensa en profundidad de mejor esfuerzo.
   if (window.top !== window.self) {
     try {
       if (window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1") {
@@ -116,34 +125,175 @@
   });
 
   /* --------------------------------------------------------------------------
-     Cotizador Directo a WhatsApp (Fuente: site.config.js)
+     Cotizador Interactivo con Estimado Referencial, Mailto y WhatsApp
      -------------------------------------------------------------------------- */
   const quoteForm = qs("#quickQuoteForm");
   const isEnglish = document.documentElement.lang === "en";
 
+  // Evento global para rastrear clics en WhatsApp (sin datos personales)
+  document.addEventListener("click", e => {
+    const waLink = e.target.closest('a[href*="wa.me"]');
+    if (waLink && typeof window.gtag === "function") {
+      window.gtag("event", "whatsapp_click", {
+        link_url: "wa.me",
+        page_language: isEnglish ? "en" : "es"
+      });
+    }
+
+    const cvLink = e.target.closest('a[data-analytics="cv_download"], a[href*="ramses-martinez-cv.pdf"]');
+    if (cvLink && typeof window.gtag === "function") {
+      window.gtag("event", "cv_download", {
+        file_name: "ramses-martinez-cv.pdf",
+        page_language: isEnglish ? "en" : "es"
+      });
+    }
+
+    const mailLink = e.target.closest('a[href^="mailto:"]');
+    if (mailLink && typeof window.gtag === "function") {
+      window.gtag("event", "email_click", {
+        email_type: "work",
+        page_language: isEnglish ? "en" : "es"
+      });
+    }
+  });
+
   if (quoteForm) {
+    const serviceRadios = qsa('input[name="quoteService"]', quoteForm);
+    const qtyRadios = qsa('input[name="quoteQuantity"]', quoteForm);
+    const nameInput = qs("#quoteName", quoteForm);
+    const fabricInput = qs("#quoteFabric", quoteForm);
+    const logoSelect = qs("#quoteLogo", quoteForm);
+    const noteInput = qs("#quoteNote", quoteForm);
+    const summaryText = qs("#quoteSummaryText", quoteForm);
+    const emailLink = qs("#quoteEmailLink", quoteForm);
+
+    let quoteStarted = false;
+    function triggerQuoteStart() {
+      if (quoteStarted) return;
+      quoteStarted = true;
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "quote_start", {
+          form_name: "quick_quote",
+          page_language: isEnglish ? "en" : "es"
+        });
+      }
+    }
+
+    quoteForm.addEventListener("focusin", triggerQuoteStart, { once: true });
+    quoteForm.addEventListener("change", triggerQuoteStart, { once: true });
+
+    function getSelectedService() {
+      const checked = qs('input[name="quoteService"]:checked', quoteForm);
+      if (!checked) return { id: "", name: "", price: 0, unit: "" };
+      return {
+        id: checked.value,
+        name: checked.dataset.name || checked.value,
+        price: Number(checked.dataset.price) || 0,
+        unit: checked.dataset.unit || ""
+      };
+    }
+
+    function getSelectedQty() {
+      const checked = qs('input[name="quoteQuantity"]:checked', quoteForm);
+      return checked ? checked.value : "1–5";
+    }
+
+    function buildDetailsText() {
+      const parts = [];
+      const name = nameInput?.value.trim();
+      const fabric = fabricInput?.value.trim();
+      const logoVal = logoSelect?.value;
+      const note = noteInput?.value.trim();
+
+      if (name) {
+        parts.push(isEnglish ? `Client: ${name}` : `Cliente: ${name}`);
+      }
+      if (fabric) {
+        parts.push(isEnglish ? `Garment/Fabric: ${fabric}` : `Prenda/Tela: ${fabric}`);
+      }
+      if (logoVal === "ready") {
+        parts.push(isEnglish ? "Logo: Ready" : "Logo: Listo para confección");
+      } else if (logoVal === "none") {
+        parts.push(isEnglish ? "Logo: No logo yet" : "Logo: Sin logo aún");
+      } else if (logoVal === "need_design") {
+        parts.push(isEnglish ? "Logo: Needs design / vectorization" : "Logo: Requiere diseño / vectorización");
+      }
+      if (note) {
+        parts.push(isEnglish ? `Notes: ${note}` : `Observaciones: ${note}`);
+      }
+
+      if (parts.length === 0) {
+        return isEnglish ? "No additional details" : "Sin detalles adicionales";
+      }
+      return parts.join(" · ");
+    }
+
+    function updateSummary() {
+      const s = getSelectedService();
+      const q = getSelectedQty();
+
+      if (summaryText) {
+        const text = isEnglish
+          ? `Your inquiry: ${s.name} · ${q} pieces · Estimated from: ${s.unit}`
+          : `Tu solicitud: ${s.name} · ${q} piezas · Estimado: ${s.unit}`;
+        summaryText.textContent = text;
+      }
+
+      if (emailLink) {
+        const details = buildDetailsText();
+        const subject = isEnglish
+          ? `Quote Request — ${s.name}`
+          : `Solicitud de Cotización — ${s.name}`;
+        const body = isEnglish
+          ? `Hello Ramses,\n\nI would like to quote:\n• Service: ${s.name}\n• Quantity: ${q} pieces\n• Details: ${details}\n\nSent from kingdombyramsesmartinez.github.io`
+          : `Hola Ramses,\n\nQuiero cotizar:\n• Servicio: ${s.name}\n• Cantidad: ${q} piezas\n• Detalles: ${details}\n\nEnviado desde kingdombyramsesmartinez.github.io`;
+
+        emailLink.href = `mailto:${SITE_CONFIG.contact.emailWork}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      }
+    }
+
+    serviceRadios.forEach(r => r.addEventListener("change", updateSummary));
+    qtyRadios.forEach(r => r.addEventListener("change", updateSummary));
+    nameInput?.addEventListener("input", updateSummary);
+    fabricInput?.addEventListener("input", updateSummary);
+    logoSelect?.addEventListener("change", updateSummary);
+    noteInput?.addEventListener("input", updateSummary);
+
+    updateSummary();
+
     quoteForm.addEventListener("submit", e => {
       e.preventDefault();
       try {
-        const service = qs("#quoteService")?.value;
-        const volume = qs("#quoteVolume")?.value;
-        const note = qs("#quoteNote")?.value.trim() || (isEnglish ? "No additional notes" : "Sin observaciones adicionales");
+        const s = getSelectedService();
+        const q = getSelectedQty();
+        const details = buildDetailsText();
 
-        if (!service || !volume) {
+        if (!s.name) {
           showToast(
-            isEnglish ? "Please select the service and volume." : "Por favor selecciona el servicio y volumen estimado.",
+            isEnglish ? "Please select a service." : "Por favor selecciona un servicio.",
             "error"
           );
           return;
         }
 
+        if (typeof window.gtag === "function") {
+          window.gtag("event", "quote_submit", {
+            service_id: s.id,
+            quantity_range: q,
+            page_language: isEnglish ? "en" : "es"
+          });
+          window.gtag("event", "whatsapp_click", {
+            source: "quick_quote_submit",
+            page_language: isEnglish ? "en" : "es"
+          });
+        }
+
         const msg = isEnglish
-          ? `Hello Ramses, I would like to request a quote with Kingdom:\n\n• Service: ${service}\n• Estimated Volume: ${volume}\n• Details: ${note}\n\nCould you please let me know availability and lead time?`
-          : `Hola Ramses, deseo solicitar una cotización con Kingdom:\n\n• Servicio: ${service}\n• Volumen: ${volume}\n• Detalle: ${note}\n\n¿Podrías indicarme disponibilidad y tiempos de confección?`;
+          ? `Hello Ramses, I would like to quote:\n• Service: ${s.name}\n• Quantity: ${q} pieces\n• Details: ${details}\n\nSent from kingdombyramsesmartinez.github.io`
+          : `Hola Ramses, quiero cotizar:\n• Servicio: ${s.name}\n• Cantidad: ${q} piezas\n• Detalles: ${details}\n\nEnviado desde kingdombyramsesmartinez.github.io`;
 
         const url = `https://wa.me/${SITE_CONFIG.contact.whatsappNumber}?text=${encodeURIComponent(msg)}`;
-        
-        // Abrir directamente en nueva pestaña o redirigir sin que el bloqueador de popups lo cancele
+
         const opened = window.open(url, "_blank", "noopener,noreferrer");
         if (!opened || opened.closed || typeof opened.closed === "undefined") {
           window.location.href = url;
@@ -155,7 +305,9 @@
         );
       } catch {
         showToast(
-          isEnglish ? "An error occurred. Please contact via WhatsApp directly." : "Ocurrió un error al procesar la cotización. Contáctanos directamente vía WhatsApp.",
+          isEnglish
+            ? "An error occurred. Please contact via WhatsApp directly."
+            : "Ocurrió un error al procesar la cotización. Contáctame directamente vía WhatsApp.",
           "error"
         );
       }
@@ -265,9 +417,15 @@
       if (modalNote) modalNote.hidden = true;
       if (modalArtNotice) {
         modalArtNotice.hidden = false;
-        modalArtNotice.textContent = isEnglish
-          ? "Unofficial graphic study presented as part of Ramses Martínez's artistic and technical explorations. It is not an official product and is not offered for sale or reproduction commissions through Kingdom. No affiliation, sponsorship, authorization, or license from the respective rights holders is implied. Third-party rights remain with their respective holders."
-          : "Muestra gráfica no oficial presentada como parte de las exploraciones artísticas y técnicas de Ramses Martínez. No es un producto oficial ni se ofrece a la venta o para encargos de reproducción a través de Kingdom. No implica afiliación, patrocinio, autorización ni licencia de los titulares correspondientes. Los derechos de terceros permanecen en sus respectivos titulares.";
+        if (item.tipo === "encargo-marca") {
+          modalArtNotice.textContent = isEnglish
+            ? "Automotive designs created upon client commission. Names, logos and trademarks of vehicles belong to their respective owners; no affiliation, sponsorship or authorization exists on their part. If you are a rights holder and request the removal of a piece, please write to kingdombrandbqto@gmail.com."
+            : "Diseños automotrices realizados por encargo de clientes. Los nombres, logotipos y marcas de los vehículos pertenecen a sus respectivos titulares; no existe afiliación, patrocinio ni autorización por parte de ellos. Si eres titular de derechos y deseas el retiro de una pieza, escribe a kingdombrandbqto@gmail.com.";
+        } else {
+          modalArtNotice.textContent = isEnglish
+            ? "Graphic explorations of fan art created for practice and portfolio purposes. Characters, names, logos and trademarks belong to their respective owners; no affiliation, sponsorship or authorization exists on their part. If you are a rights holder and request the removal of a piece, please write to kingdombrandbqto@gmail.com."
+            : "Exploraciones gráficas de fan art realizadas con fines de práctica y portafolio. Los personajes, nombres, logotipos y marcas pertenecen a sus respectivos titulares; no existe afiliación, patrocinio ni autorización por parte de ellos. Si eres titular de derechos y deseas el retiro de una pieza, escribe a kingdombrandbqto@gmail.com.";
+        }
       }
     } else {
       if (modalFeatures) modalFeatures.hidden = false;
@@ -309,6 +467,7 @@
     const story = card.dataset.story || "";
 
     const isArtistic = card.dataset.artistic === "true";
+    const tipo = card.dataset.tipo || "cliente";
 
     // Parsear propuestas si existen para activar carrusel
     let proposals = [];
@@ -333,9 +492,10 @@
           fabric,
           price,
           story,
-          isArtistic
+          isArtistic,
+          tipo
         },
-        ...proposals.map(p => ({ ...p, isArtistic }))
+        ...proposals.map(p => ({ ...p, isArtistic, tipo }))
       ];
     } else {
       activeProposals = [
@@ -350,7 +510,8 @@
           fabric,
           price,
           story,
-          isArtistic
+          isArtistic,
+          tipo
         }
       ];
     }
@@ -460,177 +621,7 @@
   const yearEl = qs("#copyrightYear");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* --------------------------------------------------------------------------
-     Inyección de Datos Estructurados JSON-LD (Schema.org / Entity SEO)
-     Cumple estrictamente con CSP (script externo con src, sin inline <script>)
-     -------------------------------------------------------------------------- */
-  try {
-    const isEn = document.documentElement.lang === "en";
-    const path = window.location.pathname.toLowerCase();
-    const isPortfolio = path.includes("portfolio.html");
-    const siteUrl = "https://kingdombyramsesmartinez.github.io";
-    const canonicalUrl = isPortfolio
-      ? (isEn ? `${siteUrl}/en/portfolio.html` : `${siteUrl}/portfolio.html`)
-      : (isEn ? `${siteUrl}/en/` : `${siteUrl}/`);
-    const homeUrl = isEn ? `${siteUrl}/en/` : `${siteUrl}/`;
-    const logoUrl = `${siteUrl}/assets/brand/kingdom-logo-white.png`;
-    const ogImageUrl = `${siteUrl}/assets/brand/og-image.png`;
-
-    const orgEntity = {
-      "@type": "Organization",
-      "@id": `${siteUrl}/#organization`,
-      "name": "KINGDOM",
-      "alternateName": [
-        "Kingdom by Ramses Martínez",
-        "Kingdom Ramses Martinez",
-        "Kingdom"
-      ],
-      "url": siteUrl,
-      "logo": {
-        "@type": "ImageObject",
-        "@id": `${siteUrl}/#logo`,
-        "url": logoUrl,
-        "contentUrl": logoUrl,
-        "caption": "KINGDOM Logo"
-      },
-      "image": {
-        "@type": "ImageObject",
-        "@id": `${siteUrl}/#primaryimage`,
-        "url": ogImageUrl,
-        "contentUrl": ogImageUrl,
-        "caption": "KINGDOM — Diseño Textil & Bordado Industrial"
-      },
-      "description": isEn
-        ? "Official website of KINGDOM (Kingdom by Ramses Martínez). Textile design studio, industrial DST/PES embroidery digitizing, sports sublimation and custom apparel in Barquisimeto, Venezuela."
-        : "Sitio oficial de KINGDOM (Kingdom by Ramses Martínez). Estudio de diseño textil, matrices de bordado industrial DST/PES, sublimación deportiva y streetwear en Barquisimeto, Venezuela.",
-      "founder": {
-        "@type": "Person",
-        "@id": `${siteUrl}/#founder`,
-        "name": "Ramses Martínez",
-        "jobTitle": isEn ? "Textile Designer & Embroidery Digitizer" : "Diseñador Textil y Digitalizador de Bordado",
-        "sameAs": ["https://www.linkedin.com/in/ramses-martinez-bqto"]
-      },
-      "sameAs": [
-        "https://instagram.com/kingdom_vzla",
-        "https://www.tiktok.com/@kingdom_vzla",
-        "https://www.linkedin.com/in/ramses-martinez-bqto"
-      ],
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "telephone": `+${SITE_CONFIG.contact.whatsappNumber}`,
-          "contactType": "customer service",
-          "availableLanguage": ["Spanish", "English"],
-          "url": `https://wa.me/${SITE_CONFIG.contact.whatsappNumber}`
-        }
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Barquisimeto",
-        "addressRegion": "Lara",
-        "addressCountry": "VE"
-      }
-    };
-
-    const websiteEntity = {
-      "@type": "WebSite",
-      "@id": `${siteUrl}/#website`,
-      "url": siteUrl,
-      "name": "KINGDOM",
-      "alternateName": "Kingdom by Ramses Martínez",
-      "publisher": { "@id": `${siteUrl}/#organization` },
-      "inLanguage": isEn ? "en" : "es"
-    };
-
-    const graph = [orgEntity, websiteEntity];
-
-    if (!isPortfolio) {
-      graph.push(
-        {
-          "@type": "WebPage",
-          "@id": `${canonicalUrl}#webpage`,
-          "url": canonicalUrl,
-          "name": document.title,
-          "isPartOf": { "@id": `${siteUrl}/#website` },
-          "about": { "@id": `${siteUrl}/#organization` },
-          "inLanguage": isEn ? "en" : "es"
-        },
-        {
-          "@type": "Service",
-          "@id": `${siteUrl}/#service-embroidery`,
-          "name": isEn ? "Industrial Embroidery Digitizing (DST / PES)" : "Digitalización de Bordado Industrial (DST / PES)",
-          "provider": { "@id": `${siteUrl}/#organization` },
-          "description": isEn
-            ? "Technical digitizing calibrated with pull compensation, optimized density and clean stitch paths for industrial embroidery machines."
-            : "Digitalización técnica con compensación de estiramiento, densidad calibrada y secuencias limpias para optimizar el paso en máquina bordadora.",
-          "serviceType": isEn ? "Embroidery Digitizing" : "Matrices de Bordado"
-        },
-        {
-          "@type": "Service",
-          "@id": `${siteUrl}/#service-sublimation`,
-          "name": isEn ? "Full Print Sports Sublimation" : "Sublimación Deportiva Full Print",
-          "provider": { "@id": `${siteUrl}/#organization` },
-          "description": isEn
-            ? "Scale template engineering and color calibration for quick-dry athletic textiles (Dry-Fit, microfiber)."
-            : "Diseño de plantillas a escala y calibración de color para textiles deportivos de secado rápido (Dry-Fit, microfibras y win).",
-          "serviceType": isEn ? "Sports Apparel Sublimation" : "Sublimación Deportiva"
-        },
-        {
-          "@type": "Service",
-          "@id": `${siteUrl}/#service-vector`,
-          "name": isEn ? "Vector Illustration & Streetwear Graphic Design" : "Ilustración Vectorial & Streetwear",
-          "provider": { "@id": `${siteUrl}/#organization` },
-          "description": isEn
-            ? "Character vectorizing, logo cleanups and color separations for screen printing and DTF printing on cotton and blends."
-            : "Trazado de personajes, vectorización de logotipos y separación de color para serigrafía o impresión DTF sobre algodón y mezclas.",
-          "serviceType": isEn ? "Vector Graphic Design" : "Diseño Vectorial"
-        }
-      );
-    } else {
-      graph.push(
-        {
-          "@type": "WebPage",
-          "@id": `${canonicalUrl}#webpage`,
-          "url": canonicalUrl,
-          "name": document.title,
-          "isPartOf": { "@id": `${siteUrl}/#website` },
-          "breadcrumb": { "@id": `${canonicalUrl}#breadcrumb` },
-          "inLanguage": isEn ? "en" : "es"
-        },
-        {
-          "@type": "BreadcrumbList",
-          "@id": `${canonicalUrl}#breadcrumb`,
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": isEn ? "Home" : "Inicio",
-              "item": homeUrl
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": isEn ? "Textile Design Portfolio" : "Portafolio de Diseño Textil",
-              "item": canonicalUrl
-            }
-          ]
-        },
-        {
-          "@type": "CollectionPage",
-          "@id": `${canonicalUrl}#collection`,
-          "url": canonicalUrl,
-          "name": document.title,
-          "publisher": { "@id": `${siteUrl}/#organization` }
-        }
-      );
-    }
-
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.textContent = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
-    document.head.appendChild(script);
-  } catch (_) {
-    // Fail-safe silencioso
-  }
+  /* Los datos estructurados JSON-LD se escriben en el HTML estatico durante el build
+     (tools/build-i18n.mjs, buildJsonLd) para que los buscadores los lean sin ejecutar JS. */
 
 })();
