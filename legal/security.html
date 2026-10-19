@@ -39,6 +39,7 @@
 
 <h2>6. Arquitectura de seguridad y hosting</h2>
 <p>Este sitio se publica en <strong>GitHub Pages</strong> como un entorno estático sin backend, bases de datos activas ni procesamiento de sesiones o contraseñas.</p>
+<p>Debido a las limitaciones propias de la infraestructura de GitHub Pages, las cabeceras HTTP de respuesta a nivel de servidor como <code>X-Frame-Options</code>, <code>Content-Security-Policy: frame-ancestors</code> y <code>Strict-Transport-Security</code> (HSTS) <strong>no están activas</strong>.</p>
 <p>La protección en el navegador se gestiona mediante la etiqueta <code>&lt;meta http-equiv="Content-Security-Policy"&gt;</code>, la cual mitiga ataques de Cross-Site Scripting (XSS), inyecciones de código y carga de recursos no autorizados (restringiendo scripts, estilos, conexiones y objetos exclusivamente al propio origen y a endpoints autorizados de analítica bajo consentimiento). El archivo <code>_headers</code> se mantiene reservado para una eventual migración a infraestructura con soporte perimetral.</p>
 
 <footer>

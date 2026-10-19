@@ -45,7 +45,10 @@ test.describe('Formulario de Cotización y WhatsApp URL', () => {
       // Verificar enlace secundario a correo
       const emailLink = page.locator('#quoteEmailLink');
       await expect(emailLink).toBeVisible();
-      await expect(emailLink).toHaveAttribute('href', /mailto:/);
+      await expect(emailLink).toHaveAttribute('href', /^mailto:kingdombrandbqto@gmail\.com\?subject=/);
+      const emailHref = await emailLink.getAttribute('href');
+      expect(emailHref).not.toContain('undefined');
+      expect(emailHref).not.toContain('null');
 
       // Enviar formulario
       await submitBtn.click();

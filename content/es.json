@@ -153,14 +153,18 @@
   },
   "portfolio": {
     "eyebrow": "Trabajos Reales",
-    "title": "Portafolio de Clientes",
-    "desc": "Muestra de piezas reales elaboradas para clientes. Explora el catálogo completo para ver todas las presentaciones técnicas, encargos y exploraciones gráficas.",
+    "title": "Trabajos y exploraciones",
+    "desc": "Muestra de piezas reales elaboradas para clientes y exploraciones gráficas. Explora el catálogo completo para ver todas las presentaciones técnicas, encargos y exploraciones gráficas.",
     "ctaExplore": "Explorar Portafolio Completo ({{PORTFOLIO_COUNT}} Piezas) →",
     "ctaBack": "← Volver al Inicio",
     "filters": [
       {
         "id": "all",
         "label": "Todos"
+      },
+      {
+        "id": "bordado",
+        "label": "Bordado & Matrices"
       },
       {
         "id": "sublimacion",
@@ -213,7 +217,6 @@
       "emailWorkLabel": "Correo de Kingdom",
       "block2Title": "Colaboraciones & Proyectos Remotos",
       "block2Desc": "Para reclutadores, agencias de diseño y encargos de digitalización internacional:",
-      "emailPersonalLabel": "Correo Personal",
       "linkedinLabel": "Perfil LinkedIn",
       "locationLabel": "Ubicación",
       "locationVal": "Barquisimeto, Estado Lara, Venezuela",
@@ -285,5 +288,57 @@
     "submitBtn": "Cotizar por WhatsApp (+58 424-109-2124)",
     "preferEmail": "Prefiero solicitar cotización por correo electrónico",
     "trustText": "Atención directa y personalizada de Ramses Martínez"
+  },
+  "hire": {
+    "eyebrow": "Perfil Profesional & Remoto",
+    "title": "Disponible para trabajo remoto y proyectos de digitalización",
+    "desc": "Servicios de digitalización técnica de matrices de bordado y diseño gráfico textil para talleres, marcas y clientes particulares a nivel internacional.",
+    "servicesTitle": "Especialidades y Servicios",
+    "services": [
+      {
+        "title": "Digitalización DST / PES",
+        "desc": "Ponchado computarizado calibrado para máquinas de bordado industrial, con control de densidad, compensación de tiro y puntadas de soporte."
+      },
+      {
+        "title": "Arte Vectorial para Sublimación",
+        "desc": "Trazados limpios, separación de color y adaptación a patrones a escala para indumentaria deportiva y streetwear."
+      },
+      {
+        "title": "Diseño Textil y Uniformes",
+        "desc": "Desarrollo de propuestas visuales y fichas técnicas para camisas de trabajo, chaquetas institucionales y piezas personalizadas."
+      },
+      {
+        "title": "Modelado 3D (Nivel Intermedio)",
+        "desc": "Visualización tridimensional y mockups de prendas y componentes gráficos en Blender para validación previa de proyectos."
+      }
+    ],
+    "toolsTitle": "Software y Herramientas",
+    "tools": [
+      "Wilcom EmbroideryStudio",
+      "Adobe Illustrator",
+      "Adobe Photoshop",
+      "Blender (intermedio)"
+    ],
+    "languagesTitle": "Idiomas de Comunicación",
+    "languages": "Español nativo · Inglés básico",
+    "cvBtn": "Descargar CV (PDF)",
+    "linkedinBtn": "Ver LinkedIn ↗",
+    "emailBtn": "Escribir por Correo Personal ↗",
+    "localOrdersNote": "Pedidos locales y confección textil en Venezuela: coordinar directamente por WhatsApp o correo de Kingdom (kingdombrandbqto@gmail.com)."
+  },
+  "clients": {
+    "eyebrow": "Prueba Social",
+    "title": "Clientes y Testimonios",
+    "desc": "Opiniones y experiencias de clientes que confían en el diseño y confección de Kingdom.",
+    "instagramBtn": "Ver más en Instagram (@kingdom_vzla) ↗",
+    "googleReviewBtn": "Deja una reseña en Google ↗"
+  },
+  "bordadoSection": {
+    "eyebrow": "Bordado Computarizado",
+    "title": "Muestras de Bordado y Matrices",
+    "desc": "Comparativa técnica del diseño de puntadas en software (Wilcom) y el acabado físico en prenda terminada.",
+    "garmentPhotoLabel": "Prenda terminada",
+    "matrixScreenshotLabel": "Captura de matriz en Wilcom",
+    "videoLabel": "Video del proceso de bordado"
   }
 }

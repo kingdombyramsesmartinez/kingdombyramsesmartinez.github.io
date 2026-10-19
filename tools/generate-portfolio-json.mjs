@@ -48,7 +48,7 @@ const items = [
     imagen: "assets/artwork/alexauto-camisa-corporativa.webp",
     miniatura: "assets/artwork/thumbs/alexauto-camisa-corporativa.webp",
     alt: "Camisa corporativa para Alexauto con bordados institucionales de precisión",
-    alt_en: "Corporate button-down shirt for Alexauto with precision embroidered company logos"
+    alt_en: "Corporate button-down shirt for Alexauto with precision embroidered brand logos"
   },
   {
     id: "amigos-fc",
@@ -638,7 +638,7 @@ const items = [
     estado: "ejecutado",
     estado_en: "completed",
     precio_usd: "18",
-    descripcion: "Chemise de trabajo para la empresa Maderera 2PI con cuello y solapa reforzados y estampado nítido.",
+    descripcion: "Chemise de trabajo para Maderera 2PI con cuello y solapa reforzados y estampado nítido.",
     descripcion_en: "Work polo shirt for Maderera 2PI featuring reinforced collar, button placket, and crisp color sublimation.",
     imagen: "assets/artwork/maderera-2pi-chemise-sublimada.webp",
     miniatura: "assets/artwork/thumbs/maderera-2pi-chemise-sublimada.webp",
@@ -1150,7 +1150,7 @@ const items = [
     estado_en: "completed",
     precio_usd: "$25 con 2 logos bordados · $35 con 5 logos bordados",
     descripcion: "Camisa de dotación corporativa para el equipo comercial de ListaPrecio.com con bordado de logotipo en alta definición.",
-    descripcion_en: "Corporate staff work shirt for sales team of ListaPrecio.com with high-definition embroidered company logo.",
+    descripcion_en: "Corporate staff work shirt for sales team of ListaPrecio.com with high-definition embroidered brand logo.",
     imagen: "assets/artwork/listaprecio-com-camisa-corporativa.webp",
     miniatura: "assets/artwork/thumbs/listaprecio-com-camisa-corporativa.webp",
     alt: "Camisa corporativa con logotipo bordado para ListaPrecio.com",
@@ -1261,12 +1261,13 @@ for (const it of enriched) {
 
 console.log(`Validated all 39 items and their image/thumb assets!`);
 
-// Write to content/portfolio.json
-fs.writeFileSync(path.join(root, "content", "portfolio.json"), JSON.stringify(enriched, null, 2) + "\n", "utf8");
-console.log("Wrote content/portfolio.json");
-
-// Write to data/portfolio.json for full compliance with Phase 2 prompt
+// Write to data/portfolio.json (canonical single source of truth)
 const dataDir = path.join(root, "data");
 if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
-fs.writeFileSync(path.join(dataDir, "portfolio.json"), JSON.stringify(enriched, null, 2) + "\n", "utf8");
-console.log("Wrote data/portfolio.json");
+const serialized = JSON.stringify(enriched, null, 2) + "\n";
+fs.writeFileSync(path.join(dataDir, "portfolio.json"), serialized, "utf8");
+console.log("Wrote data/portfolio.json (canonical)");
+
+// Keep content/portfolio.json synchronized as derived artifact for legacy consumers
+fs.writeFileSync(path.join(root, "content", "portfolio.json"), serialized, "utf8");
+console.log("Synchronized content/portfolio.json (derived mirror)");

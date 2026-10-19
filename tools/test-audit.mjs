@@ -761,3 +761,40 @@ test("Auditor (CSP) - Detecta meta CSP completamente ausente", (t) => {
     fs.rmSync(tempDir, { recursive: true, force: true });
   }
 });
+
+// -----------------------------------------------------------------------------
+// G. Placeholders y Calidad de Plantillas (Fase 4)
+// -----------------------------------------------------------------------------
+
+test("Auditor (placeholders) - Detecta tokens de plantilla {{...}} sin sustituir", (t) => {
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "audit-fixture-unreplaced-token-"));
+  try {
+    createValidFixture(tempDir);
+    const indexFile = path.join(tempDir, "index.html");
+    fs.appendFileSync(indexFile, "\n<div>{{UNRESOLVED_TEST_TOKEN}}</div>\n");
+
+    const result = runAudit({ rootDir: tempDir, quiet: true });
+    assert.equal(result.passed, false, "Debe fallar cuando queda un token {{...}} en el HTML generado");
+    const violation = result.violations.find(v => v.rule === "unreplaced-template-token");
+    assert.ok(violation, "Debe registrar regla unreplaced-template-token");
+    assert.match(violation.details, /\{\{UNRESOLVED_TEST_TOKEN\}\}/);
+  } finally {
+    fs.rmSync(tempDir, { recursive: true, force: true });
+  }
+});
+
+test("Auditor (mailto) - Detecta enlaces mailto:undefined o mailto:null", (t) => {
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "audit-fixture-invalid-mailto-"));
+  try {
+    createValidFixture(tempDir);
+    const indexFile = path.join(tempDir, "index.html");
+    fs.appendFileSync(indexFile, '\n<a href="mailto:undefined?subject=test">Email</a>\n');
+
+    const result = runAudit({ rootDir: tempDir, quiet: true });
+    assert.equal(result.passed, false, "Debe fallar cuando hay un enlace mailto:undefined");
+    const violation = result.violations.find(v => v.rule === "invalid-mailto-link");
+    assert.ok(violation, "Debe registrar regla invalid-mailto-link");
+  } finally {
+    fs.rmSync(tempDir, { recursive: true, force: true });
+  }
+});

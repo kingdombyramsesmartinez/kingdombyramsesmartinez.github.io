@@ -1,6 +1,6 @@
 /**
  * scripts/build-portfolio.mjs
- * Script de compilación estática del portafolio (ES y EN) desde content/portfolio.json (o data/portfolio.json).
+ * Script de compilación estática del portafolio (ES y EN) desde data/portfolio.json.
  * Permite que los motores de búsqueda rastreen e indexen todo el contenido sin ejecutar JavaScript.
  * Sin dependencias externas (Node.js nativo).
  */

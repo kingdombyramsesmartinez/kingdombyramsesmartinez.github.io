@@ -8,12 +8,15 @@ Sitio oficial de portafolio y marca personal de **Ramses Martínez**: digitaliza
 
 El sitio utiliza una arquitectura de generación estática. **Nunca edites directamente los archivos `.html` generados.**
 
-### 1. Fuente única de verdad de las piezas
-Los datos de las 39 piezas del portafolio residen en:
-- `content/portfolio.json` (fuente principal utilizada por el build)
-- `data/portfolio.json` (réplica sincronizada)
+### 1. Fuente única de verdad de datos y configuración
+Los datos del sitio residen en el directorio `data/`:
+- `data/portfolio.json` (fuente única de verdad de las 39 piezas del portafolio; durante el build se sincroniza automáticamente `content/portfolio.json` por compatibilidad)
+- `data/config.json` (fuente única de verdad de configuración, contacto, redes sociales y enlaces externos; `assets/js/site.config.js` deriva sus valores de este archivo)
+- `data/precios.json` (catálogo estructurado de precios oficiales en USD)
+- `data/clientes.json` (testimonios verificables con consentimiento; si es `[]`, la sección se omite del HTML)
+- `data/bordado.json` (muestras técnicas de matriz vs. prenda bordada; si es `[]`, la sección se omite del HTML)
 
-Cada pieza contiene la siguiente estructura estandarizada:
+Cada pieza en `data/portfolio.json` contiene la siguiente estructura estandarizada:
 
 ```json
 {
@@ -37,7 +40,7 @@ Cada pieza contiene la siguiente estructura estandarizada:
   "imagen": "assets/artwork/alexauto-camisa-corporativa.webp",
   "miniatura": "assets/artwork/thumbs/alexauto-camisa-corporativa.webp",
   "alt": "Camisa corporativa para Alexauto con bordados institucionales de precisión",
-  "alt_en": "Corporate button-down shirt for Alexauto with precision embroidered company logos"
+  "alt_en": "Corporate button-down shirt for Alexauto with precision embroidered brand logos"
 }
 ```
 

@@ -77,9 +77,10 @@ export function createStaticServer(rootDir = ROOT_DIR) {
 
 // Si se ejecuta directamente desde la línea de comandos
 if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(__filename)) {
-  const port = parseInt(process.env.PORT || '4173', 10);
-  const server = createStaticServer();
+  const port = parseInt(process.argv[2] || process.env.PORT || '4173', 10);
+  const serveDir = process.argv[3] ? path.resolve(ROOT_DIR, process.argv[3]) : ROOT_DIR;
+  const server = createStaticServer(serveDir);
   server.listen(port, '127.0.0.1', () => {
-    console.log(`[static-server] Serving ${ROOT_DIR} at http://127.0.0.1:${port}`);
+    console.log(`[static-server] Serving ${serveDir} at http://127.0.0.1:${port}`);
   });
 }

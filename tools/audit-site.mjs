@@ -82,7 +82,7 @@ export function runAudit(options = {}) {
       return;
     }
     for (const entry of entries) {
-      if (entry.name === ".git" || entry.name === "node_modules" || entry.name === "tools" || entry.name === "_staging" || entry.name === "templates" || entry.name === "reportes" || entry.name === "motion-graphics") continue;
+      if (entry.name === ".git" || entry.name === "node_modules" || entry.name === "tools" || entry.name === "_staging" || entry.name === "templates" || entry.name === "reportes" || entry.name === "motion-graphics" || entry.name === "audit-reports" || entry.name === "graphify-out" || entry.name === "dist" || entry.name === "test-results") continue;
       const full = path.join(dir, entry.name);
       if (entry.isDirectory()) walk(full);
       else if (entry.name.endsWith(".html")) pages.push(full);
@@ -134,6 +134,18 @@ export function runAudit(options = {}) {
       if (text.toLowerCase().includes(term.toLowerCase())) {
         addViolation("prohibited-term", file, `contains strictly prohibited term: "${term}"`);
       }
+    }
+
+    // 1.1 Validar que no existan tokens de plantilla {{...}} sin resolver
+    const unreplacedTokens = [...text.matchAll(/\{\{[A-Z0-9_]+\}\}/g)].map(m => m[0]);
+    if (unreplacedTokens.length > 0) {
+      const unique = [...new Set(unreplacedTokens)];
+      addViolation("unreplaced-template-token", file, `contains unreplaced template token(s): ${unique.join(", ")}`);
+    }
+
+    // 1.2 Validar que no existan enlaces mailto:undefined o mailto:null
+    if (/href=["']mailto:(undefined|null)/i.test(text)) {
+      addViolation("invalid-mailto-link", file, "contains invalid mailto: link with 'undefined' or 'null'");
     }
 
     // 2. Prohibir claims no auditados en páginas públicas de marketing (index.html, 404.html)
@@ -398,9 +410,14 @@ export function runAudit(options = {}) {
     }
   }
 
-  // 12. Consistencia del catálogo portfolio.json
-  const portfolioPath = path.join(rootDir, "content", "portfolio.json");
-  if (fs.existsSync(portfolioPath)) {
+  // 12. Consistencia del catálogo portfolio.json (busca en data/ o content/)
+  const primaryPortfolioPath = path.join(rootDir, "data", "portfolio.json");
+  const fallbackPortfolioPath = path.join(rootDir, "content", "portfolio.json");
+  const portfolioPath = fs.existsSync(primaryPortfolioPath)
+    ? primaryPortfolioPath
+    : (fs.existsSync(fallbackPortfolioPath) ? fallbackPortfolioPath : null);
+
+  if (portfolioPath) {
     try {
       const portfolioRaw = fs.readFileSync(portfolioPath, "utf8");
       const items = JSON.parse(portfolioRaw);
@@ -431,7 +448,7 @@ export function runAudit(options = {}) {
       addViolation("portfolio-json-invalid", portfolioPath, `Failed to parse portfolio.json: ${err.message}`);
     }
   } else {
-    skippedChecks.push("content/portfolio.json not present in target directory");
+    skippedChecks.push("portfolio.json not present in data/ or content/");
   }
 
   // 13. Resumen y salida

@@ -153,14 +153,18 @@
   },
   "portfolio": {
     "eyebrow": "Real Client Work",
-    "title": "Client Portfolio",
-    "desc": "Selected authentic client apparel and digitizing projects. Explore the full catalog to browse all technical presentations, commissions, and graphic studies.",
+    "title": "Works & Explorations",
+    "desc": "Selected authentic client apparel, digitizing projects, and graphic explorations. Explore the full catalog to browse all technical presentations, commissions, and graphic studies.",
     "ctaExplore": "Explore Full Portfolio ({{PORTFOLIO_COUNT}} Pieces) →",
     "ctaBack": "← Back to Home",
     "filters": [
       {
         "id": "all",
         "label": "All"
+      },
+      {
+        "id": "bordado",
+        "label": "Embroidery & Digitizing"
       },
       {
         "id": "sublimacion",
@@ -213,7 +217,6 @@
       "emailWorkLabel": "Kingdom Email",
       "block2Title": "Collaborations & Remote Inquiries",
       "block2Desc": "For international design agencies, recruiters and remote freelance engagements:",
-      "emailPersonalLabel": "Personal Email",
       "linkedinLabel": "LinkedIn Profile",
       "locationLabel": "Location",
       "locationVal": "Barquisimeto, Lara State, Venezuela",
@@ -285,5 +288,57 @@
     "submitBtn": "Quote via WhatsApp (+58 424-109-2124)",
     "preferEmail": "I prefer to request a quote via email",
     "trustText": "Direct, personalized consultation with Ramses Martínez"
+  },
+  "hire": {
+    "eyebrow": "Professional Profile & Remote Work",
+    "title": "Available for remote work & digitizing projects",
+    "desc": "Technical embroidery digitizing services and textile graphic design for apparel shops, brands, and individual clients worldwide.",
+    "servicesTitle": "Specialties & Services",
+    "services": [
+      {
+        "title": "DST / PES Embroidery Digitizing",
+        "desc": "Calibrated computerized punch files for industrial embroidery machines, with precise density, pull compensation, and underlay paths."
+      },
+      {
+        "title": "Vector Art for Sublimation",
+        "desc": "Clean vector paths, color separations, and full-scale pattern layouts for athletic jerseys and streetwear."
+      },
+      {
+        "title": "Textile Design & Uniforms",
+        "desc": "Visual mockups and technical layout proposals for work shirts, institutional jackets, and custom teamwear."
+      },
+      {
+        "title": "3D Modeling (Intermediate)",
+        "desc": "Three-dimensional visualization and realistic product mockups in Blender for design validation."
+      }
+    ],
+    "toolsTitle": "Software & Tools",
+    "tools": [
+      "Wilcom EmbroideryStudio",
+      "Adobe Illustrator",
+      "Adobe Photoshop",
+      "Blender (intermediate)"
+    ],
+    "languagesTitle": "Communication Languages",
+    "languages": "Native Spanish · Basic English",
+    "cvBtn": "Download Resume (PDF)",
+    "linkedinBtn": "View LinkedIn Profile ↗",
+    "emailBtn": "Email Personal Inbox ↗",
+    "localOrdersNote": "Local orders & textile production in Venezuela: quote directly via WhatsApp or Kingdom email (kingdombrandbqto@gmail.com)."
+  },
+  "clients": {
+    "eyebrow": "Social Proof",
+    "title": "Clients & Testimonials",
+    "desc": "Authentic feedback and messages from clients who trusted Kingdom for design and apparel production.",
+    "instagramBtn": "See more on Instagram (@kingdom_vzla) ↗",
+    "googleReviewBtn": "Leave a review on Google ↗"
+  },
+  "bordadoSection": {
+    "eyebrow": "Computerized Technique",
+    "title": "Embroidery Process & Stitch Matrices",
+    "desc": "Showcase of technical digitizing in Wilcom paired with real embroidered results on textile.",
+    "garmentPhotoLabel": "Finished garment",
+    "matrixScreenshotLabel": "Wilcom matrix screenshot",
+    "videoLabel": "Embroidery machine video"
   }
 }

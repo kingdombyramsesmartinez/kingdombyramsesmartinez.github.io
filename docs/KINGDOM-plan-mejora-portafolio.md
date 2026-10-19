@@ -417,7 +417,7 @@ FASE 3 — Cotizador, servicios y home (aplica las Reglas permanentes; respeta e
 ### Fase 4 — Contrátame, CV y clientes
 ```text
 FASE 4 — Contrátame, CV, clientes y bordado (aplica las Reglas permanentes).
-1. Crea la sección "Contrátame" (es y en) según la sección 7 del documento: botones Descargar CV (PDF), Ver LinkedIn (https://www.linkedin.com/in/ramses-martinez-bqto) y Escribir por correo (ramsesm818@gmail.com). Deja claro aparte que pedidos locales van por WhatsApp o kingdombrandbqto@gmail.com.
+1. Crea la sección "Contrátame" (es y en) según la sección 7 del documento: botones Descargar CV (PDF), Ver LinkedIn (https://www.linkedin.com/in/ramses-martinez-bqto) y Escribir por correo (kingdombrandbqto@gmail.com). Deja claro aparte que pedidos locales van por WhatsApp o kingdombrandbqto@gmail.com.
 2. CV: busca assets/cv/ramses-martinez-cv.pdf; si no existe, deja el botón oculto y repórtalo (Ramses lo subirá). No lo generes ni lo inventes. Evento cv_download.
 3. Sección "Clientes": maqueta para 3–6 imágenes de testimonios (WebP, lazy, con alt) leídas de data/clientes.json, y botón "Ver más en Instagram (@kingdom_vzla)". Si el JSON está vacío, la sección no se muestra. NO incrustes widgets de Instagram.
 4. Enlace "Déjanos una reseña en Google" que lea la URL desde data/config.json (campo gbp_review_url). Si está vacío, no se muestra.

@@ -39,6 +39,7 @@
 
 <h2>6. Security Architecture and Hosting</h2>
 <p>This website is published on <strong>GitHub Pages</strong> as a static environment without backend databases, servers, or active user session processing.</p>
+<p>Due to the inherent platform characteristics of GitHub Pages, server-side HTTP response headers such as <code>X-Frame-Options</code>, <code>Content-Security-Policy: frame-ancestors</code>, and <code>Strict-Transport-Security</code> (HSTS) <strong>are not active</strong>.</p>
 <p>Browser-level protection is configured through the <code>&lt;meta http-equiv="Content-Security-Policy"&gt;</code> directive, mitigating Cross-Site Scripting (XSS), code injection, and unauthorized resources by restricting scripts, styles, connections, and objects to verified origins. The <code>_headers</code> file remains reserved for potential future edge hosting migrations.</p>
 
 <footer>

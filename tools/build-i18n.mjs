@@ -14,19 +14,44 @@ const portfolioTemplate = fs.readFileSync(portfolioTemplatePath, "utf8");
 
 const esData = JSON.parse(fs.readFileSync(path.join(root, "content", "es.json"), "utf8"));
 const enData = JSON.parse(fs.readFileSync(path.join(root, "content", "en.json"), "utf8"));
-const portfolioData = JSON.parse(fs.readFileSync(path.join(root, "content", "portfolio.json"), "utf8"));
+
+// Canonical data files: data/portfolio.json is single source of truth
+const portfolioDataPath = path.join(root, "data", "portfolio.json");
+const portfolioData = JSON.parse(
+  fs.existsSync(portfolioDataPath)
+    ? fs.readFileSync(portfolioDataPath, "utf8")
+    : fs.readFileSync(path.join(root, "content", "portfolio.json"), "utf8")
+);
+
 const preciosData = JSON.parse(fs.readFileSync(path.join(root, "data", "precios.json"), "utf8"));
 const faqData = JSON.parse(fs.readFileSync(path.join(root, "data", "faq.json"), "utf8"));
+const configData = JSON.parse(fs.readFileSync(path.join(root, "data", "config.json"), "utf8"));
+
+const clientesData = fs.existsSync(path.join(root, "data", "clientes.json"))
+  ? JSON.parse(fs.readFileSync(path.join(root, "data", "clientes.json"), "utf8"))
+  : [];
+
+const bordadoData = fs.existsSync(path.join(root, "data", "bordado.json"))
+  ? JSON.parse(fs.readFileSync(path.join(root, "data", "bordado.json"), "utf8"))
+  : [];
 
 // Escapa texto para atributos HTML (los campos del portafolio los escribe el dueño)
 const esc = (v) => String(v ?? "")
   .replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 
 /**
- * Datos estructurados JSON-LD (Person + Brand Kingdom + WebSite) escritos en el
- * HTML estático en tiempo de build, para que los buscadores los lean sin ejecutar
- * JavaScript. Un bloque application/ld+json no es ejecutable: la CSP no lo afecta.
- * Sin aggregateRating ni reseñas (plan, sección 9).
+ * Validación Fail-Fast de Placeholders sin sustituir
+ */
+function assertNoUnreplacedTokens(html, fileLabel) {
+  const matches = [...html.matchAll(/\{\{[A-Z0-9_]+\}\}/g)].map(m => m[0]);
+  if (matches.length > 0) {
+    const unique = [...new Set(matches)];
+    throw new Error(`[build-i18n] Error: se encontraron marcadores {{...}} sin resolver en ${fileLabel}: ${unique.join(", ")}`);
+  }
+}
+
+/**
+ * Datos estructurados JSON-LD (Person + Brand Kingdom + WebSite)
  */
 function buildJsonLd({ isEn, isPortfolio, pageTitle, canonicalUrl }) {
   const siteUrl = SITE_CONFIG.siteUrl;
@@ -161,13 +186,10 @@ function buildJsonLd({ isEn, isPortfolio, pageTitle, canonicalUrl }) {
     );
   }
 
-  // Escapar "<" evita que una cadena cierre el bloque </script> por accidente.
   const json = JSON.stringify({ "@context": "https://schema.org", "@graph": graph }, null, 2)
     .replaceAll("<", "\\u003c");
   return `<script type="application/ld+json">\n${json}\n  </script>`;
 }
-
-
 
 function renderIndex(data, isEn) {
   const assetPrefix = isEn ? "../" : "";
@@ -360,6 +382,71 @@ function renderIndex(data, isEn) {
           </details>`).join("");
   out = out.replaceAll("{{FAQ_ITEMS_HTML}}", faqItemsHtml);
 
+  // Phase 4: Sección Clientes y Testimonios (omisión limpia si no hay datos reales)
+  let clientsSectionHtml = "";
+  if (Array.isArray(clientesData) && clientesData.length > 0) {
+    const clientsCardsHtml = clientesData.map(c => `
+          <div class="glass-card client-card">
+            ${c.imagen ? `<div class="client-card-thumb"><img src="${assetPrefix}${c.imagen}" alt="${esc(isEn ? c.nombre_en || c.nombre : c.nombre)}" width="280" height="210" loading="lazy"/></div>` : ""}
+            <div class="client-card-info">
+              <h3 class="client-card-name">${esc(c.nombre)}</h3>
+              ${c.proyecto ? `<p class="client-card-project">${esc(isEn ? c.proyecto_en || c.proyecto : c.proyecto)}</p>` : ""}
+              ${c.testimonio ? `<blockquote class="client-card-quote">“${esc(isEn ? c.testimonio_en || c.testimonio : c.testimonio)}”</blockquote>` : ""}
+            </div>
+          </div>`).join("");
+
+    clientsSectionHtml = `
+    <!-- Sección Clientes y Testimonios -->
+    <div class="urban-divider urban-divider--tape" aria-hidden="true"></div>
+    <section id="clientes" class="clients-section">
+      <div class="container">
+        <div class="section-eyebrow">${esc(data.clients.eyebrow)}</div>
+        <h2 class="section-title">${esc(data.clients.title)}</h2>
+        <p class="section-desc">${esc(data.clients.desc)}</p>
+        <div class="clients-grid">
+          ${clientsCardsHtml}
+        </div>
+      </div>
+    </section>`;
+  }
+  out = out.replaceAll("{{CLIENTS_SECTION_HTML}}", clientsSectionHtml);
+
+  // Phase 4: Sección Contrátame (Perfil Profesional & Trabajo Remoto)
+  out = out.replaceAll("{{HIRE_EYEBROW}}", data.hire.eyebrow);
+  out = out.replaceAll("{{HIRE_TITLE}}", data.hire.title);
+  out = out.replaceAll("{{HIRE_DESC}}", data.hire.desc);
+  out = out.replaceAll("{{HIRE_SERVICES_TITLE}}", data.hire.servicesTitle);
+
+  const hireServicesHtml = data.hire.services.map(s => `
+              <div class="hire-service-item">
+                <h4 class="hire-service-item-title">${esc(s.title)}</h4>
+                <p class="hire-service-item-desc">${esc(s.desc)}</p>
+              </div>`).join("");
+  out = out.replaceAll("{{HIRE_SERVICES_ITEMS_HTML}}", hireServicesHtml);
+
+  out = out.replaceAll("{{HIRE_TOOLS_TITLE}}", data.hire.toolsTitle);
+  const hireToolsHtml = data.hire.tools.map(t => `<span class="hire-tool-badge" translate="no">${esc(t)}</span>`).join("");
+  out = out.replaceAll("{{HIRE_TOOLS_HTML}}", hireToolsHtml);
+
+  out = out.replaceAll("{{HIRE_LANGUAGES_TITLE}}", data.hire.languagesTitle);
+  out = out.replaceAll("{{HIRE_LANGUAGES_TEXT}}", data.hire.languages);
+
+  // CV Button: solo se muestra si el archivo físico de CV existe en disco
+  const cvPath = configData.cv_path || SITE_CONFIG.cvPath || "";
+  const cvPhysicalPath = path.join(root, cvPath);
+  let hireCvButtonHtml = "";
+  if (cvPath && fs.existsSync(cvPhysicalPath)) {
+    hireCvButtonHtml = `
+              <a class="btn-premium hire-btn" href="${assetPrefix}${cvPath}" target="_blank" rel="noopener noreferrer" download>
+                ${esc(data.hire.cvBtn)}
+              </a>`;
+  }
+  out = out.replaceAll("{{HIRE_CV_BUTTON_HTML}}", hireCvButtonHtml);
+
+  out = out.replaceAll("{{HIRE_LINKEDIN_BTN}}", data.hire.linkedinBtn);
+  out = out.replaceAll("{{HIRE_EMAIL_BTN}}", data.hire.emailBtn);
+  out = out.replaceAll("{{HIRE_LOCAL_ORDERS_NOTE}}", data.hire.localOrdersNote);
+
   // Contact & Interactive Quote
   out = out.replaceAll("{{CONTACT_EYEBROW}}", data.contact.eyebrow);
   out = out.replaceAll("{{CONTACT_QUOTE_TITLE}}", data.contact.quoteTitle);
@@ -418,7 +505,6 @@ function renderIndex(data, isEn) {
 
   out = out.replaceAll("{{BLOCK2_TITLE}}", data.contact.blocks.block2Title);
   out = out.replaceAll("{{BLOCK2_DESC}}", data.contact.blocks.block2Desc);
-  out = out.replaceAll("{{BLOCK2_EMAIL_LABEL}}", data.contact.blocks.emailPersonalLabel);
   out = out.replaceAll("{{BLOCK2_LINKEDIN_LABEL}}", data.contact.blocks.linkedinLabel);
 
   out = out.replaceAll("{{LOCATION_LABEL}}", data.contact.blocks.locationLabel);
@@ -426,14 +512,29 @@ function renderIndex(data, isEn) {
   out = out.replaceAll("{{CATALOG_LABEL}}", data.contact.blocks.catalogLabel);
   out = out.replaceAll("{{CATALOG_LINK_TEXT}}", data.contact.blocks.catalogLink);
 
+  const catalogUrl = configData.catalogo_url || SITE_CONFIG.contact.social.driveCatalog || "";
+  out = out.replaceAll("{{CATALOG_URL}}", catalogUrl);
+  out = out.replaceAll("{{DRIVE_CATALOG_URL}}", catalogUrl);
+
+  // Google Review Link: omitir si está vacío
+  const gbpReviewUrl = configData.gbp_review_url || SITE_CONFIG.contact.social.gbpReviewUrl || "";
+  let gbpReviewLinkItemHtml = "";
+  if (gbpReviewUrl) {
+    gbpReviewLinkItemHtml = `
+            <div class="contact-meta-item">
+              <span>Google</span>
+              <a class="link-magic" href="${esc(gbpReviewUrl)}" target="_blank" rel="noopener noreferrer">${esc(data.clients.googleReviewBtn)}</a>
+            </div>`;
+  }
+  out = out.replaceAll("{{GBP_REVIEW_LINK_ITEM_HTML}}", gbpReviewLinkItemHtml);
+
   out = out.replaceAll("{{WHATSAPP_NUMBER}}", SITE_CONFIG.contact.whatsappNumber);
   out = out.replaceAll("{{WHATSAPP_DISPLAY}}", SITE_CONFIG.contact.whatsappDisplay);
   out = out.replaceAll("{{EMAIL_WORK}}", SITE_CONFIG.contact.emailWork);
-  out = out.replaceAll("{{EMAIL_PERSONAL}}", SITE_CONFIG.contact.emailPersonal);
+  out = out.replaceAll("{{EMAIL_PERSONAL}}", SITE_CONFIG.contact.emailWork);
   out = out.replaceAll("{{LINKEDIN_URL}}", SITE_CONFIG.contact.social.linkedin);
   out = out.replaceAll("{{INSTAGRAM_URL}}", SITE_CONFIG.contact.social.instagram);
   out = out.replaceAll("{{TIKTOK_URL}}", SITE_CONFIG.contact.social.tiktok);
-  out = out.replaceAll("{{DRIVE_CATALOG_URL}}", SITE_CONFIG.contact.social.driveCatalog);
 
   // Modal
   out = out.replaceAll("{{MODAL_CLOSE_ARIA}}", data.modal.closeAria);
@@ -441,6 +542,7 @@ function renderIndex(data, isEn) {
   out = out.replaceAll("{{MODAL_EYEBROW}}", data.modal.eyebrow);
   out = out.replaceAll("{{MODAL_TECH_LABEL}}", data.modal.techLabel);
   out = out.replaceAll("{{MODAL_GARMENT_LABEL}}", data.modal.garmentLabel);
+  out = out.replaceAll("{{MODAL_FABRIC_LABEL}}", data.modal.fabricLabel);
   out = out.replaceAll("{{MODAL_PRICE_LABEL}}", data.modal.priceLabel);
   out = out.replaceAll("{{MODAL_CTA}}", data.modal.cta);
   out = out.replaceAll("{{MODAL_PRICE_REF}}", isEn ? "Reference price" : "Precio de referencia");
@@ -473,6 +575,7 @@ function renderIndex(data, isEn) {
   out = out.replaceAll("{{FOOTER_DISCLAIMER}}", data.footer.disclaimer);
   out = out.replaceAll("{{FOOTER_BROWSER_TRANSLATE}}", data.footer.browserTranslate);
 
+  assertNoUnreplacedTokens(out, isEn ? "en/index.html" : "index.html");
   return out;
 }
 
@@ -513,6 +616,7 @@ function renderPortfolioPage(data, isEn) {
   out = out.replaceAll("{{NAV_ABOUT}}", data.nav.about);
   out = out.replaceAll("{{NAV_SERVICES}}", data.nav.services);
   out = out.replaceAll("{{NAV_MATERIALS}}", data.nav.materials);
+  out = out.replaceAll("{{NAV_FAQ}}", data.nav.faq || "FAQ");
   out = out.replaceAll("{{NAV_CONTACT}}", data.nav.contact);
   out = out.replaceAll("{{NAV_MENU}}", data.nav.menu);
   out = out.replaceAll("{{NAV_LANG_TEXT}}", data.nav.langSwitchText);
@@ -525,7 +629,6 @@ function renderPortfolioPage(data, isEn) {
   out = out.replaceAll("{{PORTFOLIO_TITLE}}", data.portfolio.title);
   out = out.replaceAll("{{PORTFOLIO_SECTION_HEADING}}", isEn ? "Catalog Pieces" : "Piezas del Catálogo");
   out = out.replaceAll("{{PORTFOLIO_DESC}}", data.portfolio.desc);
-  out = out.replaceAll("{{PORTFOLIO_DISCLAIMER}}", data.portfolio.disclaimer);
 
   // Filters
   const filtersHtml = data.portfolio.filters.map((f, i) => `
@@ -616,6 +719,46 @@ function renderPortfolioPage(data, isEn) {
   out = out.replaceAll("{{FANART_CARDS_HTML}}", fanartCardsHtml);
   out = out.replaceAll("{{ENCARGO_CARDS_HTML}}", encargoCardsHtml);
 
+  // Phase 4: Sección Bordado Showcase (omisión limpia si bordado.json está vacío)
+  let bordadoSectionHtml = "";
+  if (Array.isArray(bordadoData) && bordadoData.length > 0) {
+    const bordadoCardsHtml = bordadoData.map(b => `
+          <div class="glass-card bordado-card">
+            <h3 class="bordado-card-title">${esc(isEn ? b.titulo_en || b.titulo : b.titulo)}</h3>
+            <p class="bordado-card-desc">${esc(isEn ? b.desc_en || b.desc : b.desc)}</p>
+            <div class="bordado-media-pair">
+              ${b.captura_wilcom ? `
+              <div class="bordado-media-col">
+                <span class="bordado-media-label">${esc(data.bordadoSection.matrixScreenshotLabel)}</span>
+                <img src="${assetPrefix}${b.captura_wilcom}" alt="${esc(isEn ? b.alt_matriz_en || b.titulo : b.titulo)}" width="480" height="360" loading="lazy"/>
+              </div>` : ""}
+              ${b.foto_prenda ? `
+              <div class="bordado-media-col">
+                <span class="bordado-media-label">${esc(data.bordadoSection.garmentPhotoLabel)}</span>
+                <img src="${assetPrefix}${b.foto_prenda}" alt="${esc(isEn ? b.alt_prenda_en || b.titulo : b.titulo)}" width="480" height="360" loading="lazy"/>
+              </div>` : ""}
+            </div>
+            ${b.video ? `
+            <div class="bordado-video-wrap">
+              <span class="bordado-media-label">${esc(data.bordadoSection.videoLabel)}</span>
+              <video src="${assetPrefix}${b.video}" controls preload="metadata"></video>
+            </div>` : ""}
+          </div>`).join("");
+
+    bordadoSectionHtml = `
+        <!-- Sección Muestrario de Bordado Computarizado -->
+        <div class="urban-divider urban-divider--tape" aria-hidden="true"></div>
+        <section class="bordado-showcase-section" id="bordadoShowcase">
+          <div class="section-eyebrow text-center">${esc(data.bordadoSection.eyebrow)}</div>
+          <h2 class="section-title text-center">${esc(data.bordadoSection.title)}</h2>
+          <p class="section-desc text-center">${esc(data.bordadoSection.desc)}</p>
+          <div class="bordado-grid">
+            ${bordadoCardsHtml}
+          </div>
+        </section>`;
+  }
+  out = out.replaceAll("{{BORDADO_SECTION_HTML}}", bordadoSectionHtml);
+
   out = out.replaceAll("{{FANART_SUBGROUP_TITLE}}", data.portfolio.fanartSubgroupTitle);
   out = out.replaceAll("{{FANART_SUBGROUP_DESC}}", data.portfolio.fanartSubgroupDesc);
   out = out.replaceAll("{{FANART_DISCLAIMER}}", data.portfolio.fanartDisclaimer);
@@ -642,6 +785,7 @@ function renderPortfolioPage(data, isEn) {
   out = out.replaceAll("{{MODAL_PREV}}", isEn ? "Previous image" : "Imagen anterior");
   out = out.replaceAll("{{MODAL_NEXT}}", isEn ? "Next image" : "Siguiente imagen");
   out = out.replaceAll("{{WHATSAPP_NUMBER}}", SITE_CONFIG.contact.whatsappNumber);
+  out = out.replaceAll("{{EMAIL_WORK}}", SITE_CONFIG.contact.emailWork);
 
   const modalWaMsg = encodeURIComponent(
     isEn
@@ -664,6 +808,7 @@ function renderPortfolioPage(data, isEn) {
   out = out.replaceAll("{{FOOTER_DISCLAIMER}}", data.footer.disclaimer);
   out = out.replaceAll("{{FOOTER_BROWSER_TRANSLATE}}", data.footer.browserTranslate);
 
+  assertNoUnreplacedTokens(out, isEn ? "en/portfolio.html" : "portfolio.html");
   return out;
 }
 
@@ -686,3 +831,13 @@ console.log("Generated: portfolio.html (ES)");
 const enPortfolioHtml = renderPortfolioPage(enData, true);
 fs.writeFileSync(path.join(enDir, "portfolio.html"), enPortfolioHtml, "utf8");
 console.log("Generated: en/portfolio.html (EN)");
+
+// 3. Update lastmod in sitemap.xml with build date
+const sitemapPath = path.join(root, "sitemap.xml");
+if (fs.existsSync(sitemapPath)) {
+  const today = new Date().toISOString().split("T")[0];
+  let sitemapContent = fs.readFileSync(sitemapPath, "utf8");
+  sitemapContent = sitemapContent.replace(/<lastmod>[^<]+<\/lastmod>/g, `<lastmod>${today}</lastmod>`);
+  fs.writeFileSync(sitemapPath, sitemapContent, "utf8");
+  console.log(`Updated sitemap.xml <lastmod> to ${today}`);
+}

@@ -3,9 +3,18 @@
 (() => {
   "use strict";
 
-  const SITE_CONFIG = { contact: { whatsappNumber: document.body.dataset.wa || "" } };
+  const SITE_CONFIG = {
+    contact: {
+      whatsappNumber: document.body.dataset.wa || "",
+      emailWork: document.body.dataset.emailWork || (document.querySelector("#quoteEmailLink")?.getAttribute("href")?.replace(/^mailto:/, "")?.split("?")[0]) || "kingdombrandbqto@gmail.com"
+    }
+  };
 
-  // Anti-clickjacking de respaldo (no ocultar la página en localhost ni en previewers)
+  // Anti-clickjacking de respaldo del lado del cliente (window.top.location).
+  // NOTA TÉCNICA: La protección robusta contra clickjacking requiere cabeceras HTTP
+  // reales (Content-Security-Policy con frame-ancestors o X-Frame-Options: DENY).
+  // Dado que GitHub Pages es un hosting estático que no permite configurar cabeceras HTTP
+  // del servidor web, esta salvaguarda en JS actúa como defensa en profundidad de mejor esfuerzo.
   if (window.top !== window.self) {
     try {
       if (window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1") {
@@ -127,6 +136,22 @@
     if (waLink && typeof window.gtag === "function") {
       window.gtag("event", "whatsapp_click", {
         link_url: "wa.me",
+        page_language: isEnglish ? "en" : "es"
+      });
+    }
+
+    const cvLink = e.target.closest('a[data-analytics="cv_download"], a[href*="ramses-martinez-cv.pdf"]');
+    if (cvLink && typeof window.gtag === "function") {
+      window.gtag("event", "cv_download", {
+        file_name: "ramses-martinez-cv.pdf",
+        page_language: isEnglish ? "en" : "es"
+      });
+    }
+
+    const mailLink = e.target.closest('a[href^="mailto:"]');
+    if (mailLink && typeof window.gtag === "function") {
+      window.gtag("event", "email_click", {
+        email_type: "work",
         page_language: isEnglish ? "en" : "es"
       });
     }
@@ -282,7 +307,7 @@
         showToast(
           isEnglish
             ? "An error occurred. Please contact via WhatsApp directly."
-            : "Ocurrió un error al procesar la cotización. Contáctanos directamente vía WhatsApp.",
+            : "Ocurrió un error al procesar la cotización. Contáctame directamente vía WhatsApp.",
           "error"
         );
       }
