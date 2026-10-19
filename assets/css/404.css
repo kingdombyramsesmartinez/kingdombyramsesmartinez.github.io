@@ -108,10 +108,16 @@ body {
 
 .error-shell p {
   max-width: 520px;
-  margin: 0 auto 36px;
+  margin: 0 auto 16px;
   color: var(--gray-500);
   font-size: 15px;
   line-height: 1.65;
+}
+
+.error-shell p.error-desc-en {
+  font-size: 13px;
+  color: var(--gray-400);
+  margin-bottom: 32px;
 }
 
 .error-actions {
@@ -166,8 +172,30 @@ body {
 }
 
 @media (max-width: 600px) {
+  body {
+    display: block;
+    padding: 20px 16px 140px;
+    min-height: 100vh;
+  }
   .error-shell {
-    padding: 40px 20px;
+    padding: 28px 16px 24px;
+    margin: 0 auto;
+  }
+  .brand-badge img {
+    max-width: 120px;
+    margin-bottom: 8px;
+  }
+  .error-code {
+    font-size: 72px;
+    margin-bottom: 8px;
+  }
+  .error-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .error-actions .btn-premium,
+  .error-actions .btn-secondary {
+    width: 100%;
   }
 }
 

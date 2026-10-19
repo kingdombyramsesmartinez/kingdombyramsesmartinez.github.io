@@ -149,11 +149,27 @@
     }
 
     const mailLink = e.target.closest('a[href^="mailto:"]');
-    if (mailLink && typeof window.gtag === "function") {
-      window.gtag("event", "email_click", {
-        email_type: "work",
-        page_language: isEnglish ? "en" : "es"
-      });
+    if (mailLink) {
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "email_click", {
+          email_type: "work",
+          page_language: isEnglish ? "en" : "es"
+        });
+      }
+
+      // Si el enlace tiene data-copy-email o es un mailto institucional, copiar al portapapeles
+      // como respaldo si el dispositivo no tiene cliente de correo predeterminado configurado.
+      const rawEmail = mailLink.dataset.copyEmail || (mailLink.getAttribute("href")?.replace(/^mailto:/, "")?.split("?")[0]) || SITE_CONFIG.contact.emailWork;
+      if (rawEmail && navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
+        navigator.clipboard.writeText(rawEmail).then(() => {
+          const msg = isEnglish
+            ? `Copied ${rawEmail} to clipboard! Opening mail app...`
+            : `¡Copiado ${rawEmail} al portapapeles! Abriendo correo...`;
+          showToast(msg, "success");
+        }).catch(() => {
+          // Si el permiso de portapapeles no está concedido, el mailto sigue su curso nativo
+        });
+      }
     }
   });
 

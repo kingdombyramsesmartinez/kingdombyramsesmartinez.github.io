@@ -445,6 +445,8 @@ function renderIndex(data, isEn) {
 
   out = out.replaceAll("{{HIRE_LINKEDIN_BTN}}", data.hire.linkedinBtn);
   out = out.replaceAll("{{HIRE_EMAIL_BTN}}", data.hire.emailBtn);
+  const hireSubject = encodeURIComponent(data.hire.emailSubject || "Contacto Laboral — Ramses Martinez / Kingdom");
+  out = out.replaceAll("{{HIRE_EMAIL_SUBJECT}}", hireSubject);
   out = out.replaceAll("{{HIRE_LOCAL_ORDERS_NOTE}}", data.hire.localOrdersNote);
 
   // Contact & Interactive Quote
